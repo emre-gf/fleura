@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollAnimations();
     initSmoothScroll();
     initContactForm();
-    initParallax();
     initFAQ();
     initLazyLoad();
     initServiceCards();
@@ -26,8 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
    ======================================== */
 function initPreloader() {
     const preloader = document.getElementById('preloader');
+    const isMobile = window.innerWidth <= 768;
     
-    // Hide preloader after page loads
+    // Hide preloader after page loads - faster on mobile
     window.addEventListener('load', () => {
         setTimeout(() => {
             preloader.classList.add('hidden');
@@ -35,7 +35,7 @@ function initPreloader() {
             
             // Trigger hero animations after preloader
             animateHero();
-        }, 800);
+        }, isMobile ? 300 : 600);
     });
     
     // Prevent scroll during preloader
@@ -53,15 +53,19 @@ function animateHero() {
     const trustBadges = document.querySelector('.hero-trust-badges');
     const heroStats = document.querySelector('.hero-stats');
     
-    // Staggered animation timing with smooth transitions
+    const isMobile = window.innerWidth <= 768;
+    
+    // Mobile: faster staggered animations
+    const multiplier = isMobile ? 0.5 : 1;
+    
     const timeline = [
-        { el: badge, delay: 100 },
-        { el: titleLines[0], delay: 200 },
-        { el: titleLines[1], delay: 350 },
-        { el: subtitle, delay: 500 },
-        { el: ctas, delay: 650 },
-        { el: trustBadges, delay: 800 },
-        { el: heroStats, delay: 950 }
+        { el: badge, delay: 50 * multiplier },
+        { el: titleLines[0], delay: 100 * multiplier },
+        { el: titleLines[1], delay: 180 * multiplier },
+        { el: subtitle, delay: 260 * multiplier },
+        { el: ctas, delay: 340 * multiplier },
+        { el: trustBadges, delay: 420 * multiplier },
+        { el: heroStats, delay: 500 * multiplier }
     ];
     
     timeline.forEach(({ el, delay }) => {
@@ -78,20 +82,14 @@ function animateHero() {
    ======================================== */
 function initNavbar() {
     const navbar = document.getElementById('navbar');
-    let lastScrollY = 0;
     let ticking = false;
     
     function updateNavbar() {
-        const scrollY = window.scrollY;
-        
-        // Add scrolled class for background
-        if (scrollY > 50) {
+        if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
         }
-        
-        lastScrollY = scrollY;
         ticking = false;
     }
     
@@ -100,7 +98,7 @@ function initNavbar() {
             requestAnimationFrame(updateNavbar);
             ticking = true;
         }
-    });
+    }, { passive: true });
 }
 
 /* ========================================
@@ -148,11 +146,13 @@ function initScrollAnimations() {
     
     // Check for reduced motion preference
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isMobile = window.innerWidth <= 768;
     
+    // Mobile: trigger earlier, desktop: trigger when more visible
     const observerOptions = {
         root: null,
-        rootMargin: prefersReducedMotion ? '0px' : '0px 0px -5% 0px',
-        threshold: prefersReducedMotion ? 0.01 : 0.15
+        rootMargin: isMobile ? '50px 0px' : '0px 0px -5% 0px',
+        threshold: isMobile ? 0.05 : 0.15
     };
     
     const observer = new IntersectionObserver((entries) => {
@@ -163,15 +163,13 @@ function initScrollAnimations() {
                 const siblings = parent ? Array.from(parent.querySelectorAll('[data-animate]')) : [];
                 const siblingIndex = siblings.indexOf(entry.target);
                 
-                // Staggered delay for grid items (smooth cascade effect)
-                const baseDelay = prefersReducedMotion ? 0 : siblingIndex * 80;
-                
-                // Add slight delay based on scroll position for smoother feel
-                const scrollDelay = prefersReducedMotion ? 0 : 50;
+                // Mobile: faster stagger, Desktop: normal stagger
+                const staggerDelay = isMobile ? 40 : 80;
+                const baseDelay = prefersReducedMotion ? 0 : siblingIndex * staggerDelay;
                 
                 setTimeout(() => {
                     entry.target.classList.add('visible');
-                }, baseDelay + scrollDelay);
+                }, baseDelay);
                 
                 observer.unobserve(entry.target);
             }
@@ -179,13 +177,7 @@ function initScrollAnimations() {
     }, observerOptions);
     
     // Observe all animated elements
-    animatedElements.forEach((el) => {
-        // Ensure smooth transition is set
-        if (!el.style.transition) {
-            el.style.transition = 'opacity 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-        }
-        observer.observe(el);
-    });
+    animatedElements.forEach((el) => observer.observe(el));
 }
 
 /* ========================================
@@ -478,13 +470,6 @@ function showFormSuccess() {
     }, 5000);
 }
 
-/* ========================================
-   Parallax Effects (Removed - No longer needed)
-   ======================================== */
-function initParallax() {
-    // Parallax removed for cleaner design
-    return;
-}
 
 /* ========================================
    Lazy Load Images
@@ -697,20 +682,8 @@ document.addEventListener('keydown', (e) => {
 });
 
 /* ========================================
-   Performance: Debounce & Throttle
+   Performance: Throttle
    ======================================== */
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
 function throttle(func, limit) {
     let inThrottle;
     return function(...args) {
@@ -775,4 +748,4 @@ function initScrollToTop() {
    ======================================== */
 console.log('%c✿ Fleura Nails', 'font-size: 24px; font-weight: bold; color: #c4a484;');
 console.log('%cElleriniz için sanat eseri', 'font-size: 14px; color: #6b6360;');
-console.log('%cİstanbul\'un Premium Tırnak Salonu', 'font-size: 12px; color: #999;');
+console.log('%cİzmir Balçova - Profesyonel Tırnak Bakımı', 'font-size: 12px; color: #999;');
