@@ -7,6 +7,7 @@
       "**/node_modules/**",
       "README.md"
     ],
+    "errorDocument": "404.html",
     "rewrites": [
       {
         "source": "**",

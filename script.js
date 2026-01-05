@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initPreloader();
     initNavbar();
     initMobileMenu();
-    initScrollAnimations();
+    initAOS();
     initSmoothScroll();
     initContactForm();
     initFAQ();
@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initGallery();
     initCountUp();
     initScrollToTop();
+    initHeroHoverVideo();
 });
 
 /* ========================================
@@ -141,43 +142,40 @@ function initMobileMenu() {
 /* ========================================
    Scroll Animations (Intersection Observer)
    ======================================== */
-function initScrollAnimations() {
-    const animatedElements = document.querySelectorAll('[data-animate]');
+/* ========================================
+   AOS - Animate On Scroll
+   ======================================== */
+function initAOS() {
+    // Initialize AOS with mobile-optimized settings
+    AOS.init({
+        duration: 800,
+        easing: 'ease-out-cubic',
+        once: true,
+        offset: 50,
+        delay: 0,
+        anchorPlacement: 'top-bottom',
+        disable: false,
+        startEvent: 'DOMContentLoaded',
+        animatedClassName: 'aos-animate',
+        useClassNames: false,
+        disableMutationObserver: false,
+        debounceDelay: 50,
+        throttleDelay: 99,
+        // Mobile optimizations
+        mobile: true,
+        tablet: true,
+        // Respect reduced motion
+        disable: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'mobile' : false
+    });
     
-    // Check for reduced motion preference
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const isMobile = window.innerWidth <= 768;
-    
-    // Mobile: trigger earlier, desktop: trigger when more visible
-    const observerOptions = {
-        root: null,
-        rootMargin: isMobile ? '50px 0px' : '0px 0px -5% 0px',
-        threshold: isMobile ? 0.05 : 0.15
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                // Calculate delay based on element position and siblings
-                const parent = entry.target.parentElement;
-                const siblings = parent ? Array.from(parent.querySelectorAll('[data-animate]')) : [];
-                const siblingIndex = siblings.indexOf(entry.target);
-                
-                // Mobile: faster stagger, Desktop: normal stagger
-                const staggerDelay = isMobile ? 40 : 80;
-                const baseDelay = prefersReducedMotion ? 0 : siblingIndex * staggerDelay;
-                
-                setTimeout(() => {
-                    entry.target.classList.add('visible');
-                }, baseDelay);
-                
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-    
-    // Observe all animated elements
-    animatedElements.forEach((el) => observer.observe(el));
+    // Refresh AOS on window resize for better mobile support
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            AOS.refresh();
+        }, 250);
+    });
 }
 
 /* ========================================
@@ -275,8 +273,12 @@ function initContactForm() {
         
         // Show loading state
         const submitBtn = form.querySelector('button[type="submit"]');
-        const originalText = submitBtn.innerHTML;
-        submitBtn.innerHTML = '<span>Gönderiliyor...</span>';
+        const btnText = submitBtn.querySelector('.btn-text');
+        const btnLoader = submitBtn.querySelector('.btn-loader');
+        const originalText = btnText ? btnText.textContent : 'Gönder';
+        
+        if (btnText) btnText.textContent = 'Gönderiliyor...';
+        if (btnLoader) btnLoader.style.display = 'inline-block';
         submitBtn.disabled = true;
         
         // Simulate API call (replace with actual API in production)
@@ -286,7 +288,8 @@ function initContactForm() {
             
             // Reset form
             form.reset();
-            submitBtn.innerHTML = originalText;
+            if (btnText) btnText.textContent = originalText;
+            if (btnLoader) btnLoader.style.display = 'none';
             submitBtn.disabled = false;
         }, 1500);
     });
@@ -744,8 +747,35 @@ function initScrollToTop() {
 }
 
 /* ========================================
+   Hero Auto Video (Image to Video after 2s)
+   ======================================== */
+function initHeroHoverVideo() {
+    const heroContainer = document.querySelector('.hero-image-container');
+    const heroVideo = document.querySelector('.hero-auto-video');
+    const heroImage = document.querySelector('.hero-image');
+    
+    if (!heroContainer || !heroVideo || !heroImage) return;
+    
+    // Wait for page to fully load
+    window.addEventListener('load', () => {
+        // After 2 seconds, start video transition
+        setTimeout(() => {
+            // Load and play video
+            heroVideo.load();
+            heroVideo.play().then(() => {
+                // Video started playing, fade transition
+                heroContainer.classList.add('video-active');
+            }).catch(() => {
+                // Video play failed, keep image visible
+                console.warn('Video autoplay failed');
+            });
+        }, 2000);
+    });
+}
+
+/* ========================================
    Console Branding
    ======================================== */
 console.log('%c✿ Fleura Nails', 'font-size: 24px; font-weight: bold; color: #c4a484;');
 console.log('%cElleriniz için sanat eseri', 'font-size: 14px; color: #6b6360;');
-console.log('%cİzmir Balçova - Profesyonel Tırnak Bakımı', 'font-size: 12px; color: #999;');
+console.log('%cTüm İzmir Bölgesine VIP Ev Hizmeti', 'font-size: 12px; color: #999;');
