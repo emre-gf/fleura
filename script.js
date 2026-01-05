@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initCountUp();
     initScrollToTop();
     initHeroHoverVideo();
+    initAppointmentBooking();
 });
 
 /* ========================================
@@ -28,13 +29,27 @@ function initPreloader() {
     const preloader = document.getElementById('preloader');
     const isMobile = window.innerWidth <= 768;
     
+    // Trigger hero animations immediately on DOM ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                animateHero();
+            }, 100);
+        });
+    } else {
+        // DOM already loaded
+        setTimeout(() => {
+            animateHero();
+        }, 100);
+    }
+    
     // Hide preloader after page loads - faster on mobile
     window.addEventListener('load', () => {
         setTimeout(() => {
             preloader.classList.add('hidden');
             document.body.classList.remove('no-scroll');
             
-            // Trigger hero animations after preloader
+            // Ensure hero animations are triggered
             animateHero();
         }, isMobile ? 300 : 600);
     });
@@ -44,37 +59,67 @@ function initPreloader() {
 }
 
 /* ========================================
-   Hero Animations
+   Hero Animations - Immediate on Load
    ======================================== */
 function animateHero() {
-    const badge = document.querySelector('.hero-badge');
-    const titleLines = document.querySelectorAll('.title-line');
-    const subtitle = document.querySelector('.hero-subtitle');
-    const ctas = document.querySelector('.hero-ctas');
-    const trustBadges = document.querySelector('.hero-trust-badges');
-    const heroStats = document.querySelector('.hero-stats');
+    // Get all hero elements with hero-animate class
+    const heroElements = document.querySelectorAll('.hero-animate');
     
-    const isMobile = window.innerWidth <= 768;
+    if (heroElements.length === 0) return;
     
-    // Mobile: faster staggered animations
-    const multiplier = isMobile ? 0.5 : 1;
-    
-    const timeline = [
-        { el: badge, delay: 50 * multiplier },
-        { el: titleLines[0], delay: 100 * multiplier },
-        { el: titleLines[1], delay: 180 * multiplier },
-        { el: subtitle, delay: 260 * multiplier },
-        { el: ctas, delay: 340 * multiplier },
-        { el: trustBadges, delay: 420 * multiplier },
-        { el: heroStats, delay: 500 * multiplier }
-    ];
-    
-    timeline.forEach(({ el, delay }) => {
-        if (el) {
-            setTimeout(() => {
-                el.classList.add('visible');
-            }, delay);
+    // Set initial state - hidden with direction-based transforms
+    heroElements.forEach(el => {
+        const direction = el.getAttribute('data-animate-direction') || 'up';
+        el.style.opacity = '0';
+        
+        // Set initial transform based on direction
+        switch(direction) {
+            case 'left':
+                el.style.transform = 'translateX(-80px) translateY(20px)';
+                break;
+            case 'right':
+                el.style.transform = 'translateX(80px) translateY(20px)';
+                break;
+            case 'zoom':
+                el.style.transform = 'scale(0.5)';
+                break;
+            case 'up':
+            default:
+                el.style.transform = 'translateY(40px)';
+                break;
         }
+        
+        // Smooth transition with bounce effect for titles
+        const isTitle = el.classList.contains('title-line');
+        const isButton = el.classList.contains('btn');
+        const duration = isTitle ? '1s' : (isButton ? '0.6s' : '0.9s');
+        const easing = isTitle ? 'cubic-bezier(0.34, 1.56, 0.64, 1)' : (isButton ? 'cubic-bezier(0.4, 0, 0.2, 1)' : 'cubic-bezier(0.4, 0, 0.2, 1)');
+        el.style.transition = `opacity ${duration} ${easing}, transform ${duration} ${easing}`;
+    });
+    
+    // Animate each element with its delay
+    heroElements.forEach(el => {
+        const delay = parseFloat(el.getAttribute('data-animate-delay') || '0') * 1000;
+        const isButton = el.classList.contains('btn');
+        
+        // Buttons should animate faster - cap delay at 800ms
+        const finalDelay = isButton && delay > 800 ? 800 : delay;
+        
+        setTimeout(() => {
+            // Force reflow
+            el.offsetHeight;
+            
+            // Apply animation - return to original position
+            requestAnimationFrame(() => {
+                el.style.opacity = '1';
+                const direction = el.getAttribute('data-animate-direction') || 'up';
+                if (direction === 'zoom') {
+                    el.style.transform = 'scale(1)';
+                } else {
+                    el.style.transform = 'translateX(0) translateY(0)';
+                }
+            });
+        }, finalDelay);
     });
 }
 
@@ -143,39 +188,24 @@ function initMobileMenu() {
    Scroll Animations (Intersection Observer)
    ======================================== */
 /* ========================================
-   AOS - Animate On Scroll
+   AOS - Animate On Scroll (Mobile Optimized)
    ======================================== */
 function initAOS() {
-    // Initialize AOS with mobile-optimized settings
-    AOS.init({
-        duration: 800,
-        easing: 'ease-out-cubic',
-        once: true,
-        offset: 50,
-        delay: 0,
-        anchorPlacement: 'top-bottom',
-        disable: false,
-        startEvent: 'DOMContentLoaded',
-        animatedClassName: 'aos-animate',
-        useClassNames: false,
-        disableMutationObserver: false,
-        debounceDelay: 50,
-        throttleDelay: 99,
-        // Mobile optimizations
-        mobile: true,
-        tablet: true,
-        // Respect reduced motion
-        disable: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'mobile' : false
-    });
-    
-    // Refresh AOS on window resize for better mobile support
-    let resizeTimer;
-    window.addEventListener('resize', () => {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(() => {
-            AOS.refresh();
-        }, 250);
-    });
+    // AOS is initialized in HTML for better control
+    // This function is kept for compatibility but AOS.init is called in HTML
+    if (typeof AOS !== 'undefined') {
+        // AOS is already initialized in HTML
+        // Just refresh if needed
+        const isMobile = window.innerWidth <= 768;
+        if (isMobile) {
+            // Additional mobile optimizations
+            setTimeout(() => {
+                AOS.refresh();
+            }, 200);
+        }
+    } else {
+        console.warn('AOS library not loaded');
+    }
 }
 
 /* ========================================
@@ -770,6 +800,220 @@ function initHeroHoverVideo() {
                 console.warn('Video autoplay failed');
             });
         }, 2000);
+    });
+}
+
+/* ========================================
+   Appointment Booking System
+   ======================================== */
+function initAppointmentBooking() {
+    const bookingContainer = document.getElementById('appointmentBooking');
+    if (!bookingContainer) return;
+    
+    const calendarDays = document.getElementById('calendarDays');
+    const calendarMonthYear = document.getElementById('calendarMonthYear');
+    const prevMonthBtn = document.getElementById('prevMonthBtn');
+    const nextMonthBtn = document.getElementById('nextMonthBtn');
+    const dateNextBtn = document.getElementById('dateNextBtn');
+    const timeSlots = document.getElementById('timeSlots');
+    const timeNextBtn = document.getElementById('timeNextBtn');
+    const timeBackBtn = document.getElementById('timeBackBtn');
+    const summaryBackBtn = document.getElementById('summaryBackBtn');
+    const confirmBtn = document.getElementById('confirmAppointmentBtn');
+    const summaryDate = document.getElementById('summaryDate');
+    const summaryTime = document.getElementById('summaryTime');
+    
+    let selectedDate = '';
+    let selectedTime = '';
+    let currentDate = new Date();
+    let currentMonth = currentDate.getMonth();
+    let currentYear = currentDate.getFullYear();
+    
+    const monthNames = ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'];
+    
+    // Render calendar
+    function renderCalendar() {
+        calendarDays.innerHTML = '';
+        calendarMonthYear.textContent = `${monthNames[currentMonth]} ${currentYear}`;
+        
+        const firstDay = new Date(currentYear, currentMonth, 1);
+        const lastDay = new Date(currentYear, currentMonth + 1, 0);
+        const daysInMonth = lastDay.getDate();
+        const startingDayOfWeek = firstDay.getDay() === 0 ? 6 : firstDay.getDay() - 1; // Monday = 0
+        
+        const today = new Date();
+        const isCurrentMonth = currentMonth === today.getMonth() && currentYear === today.getFullYear();
+        
+        // Empty cells for days before month starts
+        for (let i = 0; i < startingDayOfWeek; i++) {
+            const emptyCell = document.createElement('div');
+            emptyCell.className = 'calendar-day empty';
+            calendarDays.appendChild(emptyCell);
+        }
+        
+        // Days of the month
+        for (let day = 1; day <= daysInMonth; day++) {
+            const dayCell = document.createElement('button');
+            dayCell.type = 'button';
+            dayCell.className = 'calendar-day';
+            dayCell.textContent = day;
+            
+            const cellDate = new Date(currentYear, currentMonth, day);
+            const isPast = cellDate < today && !(cellDate.getDate() === today.getDate() && cellDate.getMonth() === today.getMonth() && cellDate.getFullYear() === today.getFullYear());
+            const isToday = isCurrentMonth && day === today.getDate();
+            const dateStr = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+            
+            if (isPast) {
+                dayCell.classList.add('past');
+                dayCell.disabled = true;
+            } else if (isToday) {
+                dayCell.classList.add('today');
+            }
+            
+            dayCell.addEventListener('click', () => {
+                if (!isPast) {
+                    // Remove active from all days (including today)
+                    document.querySelectorAll('.calendar-day').forEach(cell => {
+                        cell.classList.remove('active');
+                    });
+                    // Add active to clicked day
+                    dayCell.classList.add('active');
+                    selectedDate = dateStr;
+                    dateNextBtn.disabled = false;
+                }
+            });
+            
+            // Check if this day matches selectedDate and mark as active
+            if (selectedDate === dateStr) {
+                dayCell.classList.add('active');
+            }
+            
+            calendarDays.appendChild(dayCell);
+        }
+    }
+    
+    // Initialize calendar
+    renderCalendar();
+    
+    // Month navigation
+    prevMonthBtn.addEventListener('click', () => {
+        currentMonth--;
+        if (currentMonth < 0) {
+            currentMonth = 11;
+            currentYear--;
+        }
+        renderCalendar();
+    });
+    
+    nextMonthBtn.addEventListener('click', () => {
+        currentMonth++;
+        if (currentMonth > 11) {
+            currentMonth = 0;
+            currentYear++;
+        }
+        renderCalendar();
+    });
+    
+    // Generate time slots (9:00 - 21:00)
+    function generateTimeSlots() {
+        timeSlots.innerHTML = '';
+        for (let hour = 9; hour <= 21; hour++) {
+            const timeSlot = document.createElement('button');
+            timeSlot.type = 'button';
+            timeSlot.className = 'time-slot';
+            timeSlot.textContent = `${String(hour).padStart(2, '0')}:00`;
+            timeSlot.dataset.time = `${String(hour).padStart(2, '0')}:00`;
+            
+            timeSlot.addEventListener('click', () => {
+                // Remove active from all slots
+                document.querySelectorAll('.time-slot').forEach(slot => {
+                    slot.classList.remove('active');
+                });
+                // Add active to clicked slot
+                timeSlot.classList.add('active');
+                selectedTime = timeSlot.dataset.time;
+                timeNextBtn.disabled = false;
+            });
+            
+            timeSlots.appendChild(timeSlot);
+        }
+    }
+    
+    generateTimeSlots();
+    
+    // Step navigation
+    function showStep(step) {
+        const allSteps = document.querySelectorAll('.booking-step');
+        allSteps.forEach(s => {
+            s.classList.remove('active');
+        });
+        const targetStep = document.querySelector(`.booking-step[data-step="${step}"]`);
+        if (targetStep) {
+            targetStep.classList.add('active');
+        }
+    }
+    
+    // Date Next
+    dateNextBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (selectedDate) {
+            console.log('Moving to step 2, selectedDate:', selectedDate);
+            showStep(2);
+            // Scroll to time selection smoothly
+            setTimeout(() => {
+                const timeStep = document.querySelector('.booking-step[data-step="2"]');
+                if (timeStep) {
+                    timeStep.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
+            }, 100);
+        } else {
+            alert('Lütfen bir tarih seçin');
+        }
+    });
+    
+    // Time Back
+    timeBackBtn.addEventListener('click', () => {
+        showStep(1);
+    });
+    
+    // Time Next
+    timeNextBtn.addEventListener('click', () => {
+        if (selectedTime) {
+            // Format date for display
+            const dateObj = new Date(selectedDate);
+            const formattedDate = dateObj.toLocaleDateString('tr-TR', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric'
+            });
+            
+            summaryDate.textContent = formattedDate;
+            summaryTime.textContent = selectedTime;
+            showStep(3);
+        }
+    });
+    
+    // Summary Back
+    summaryBackBtn.addEventListener('click', () => {
+        showStep(2);
+    });
+    
+    // Confirm Appointment - WhatsApp redirect
+    confirmBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        const dateObj = new Date(selectedDate);
+        const formattedDate = dateObj.toLocaleDateString('tr-TR', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric'
+        });
+        
+        const message = `Merhaba, randevu almak istiyorum.\n\nTarih: ${formattedDate}\nSaat: ${selectedTime}\n\nMüsait saatlerinizi öğrenebilir miyim?`;
+        const phoneNumber = '905558903511';
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+        
+        window.open(whatsappUrl, '_blank');
     });
 }
 
