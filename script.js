@@ -233,12 +233,33 @@ function initSmoothScroll() {
                 
                 const navbar = document.getElementById('navbar');
                 const navbarHeight = navbar.offsetHeight;
-                const targetPosition = target.getBoundingClientRect().top + window.scrollY - navbarHeight - 20;
                 
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
+                // Special handling for appointment booking section
+                if (href === '#randevu-al') {
+                    const appointmentBooking = document.getElementById('appointmentBooking');
+                    if (appointmentBooking) {
+                        // Scroll to appointment booking (inside the section)
+                        const bookingPosition = appointmentBooking.getBoundingClientRect().top + window.scrollY - navbarHeight - 40;
+                        window.scrollTo({
+                            top: bookingPosition,
+                            behavior: 'smooth'
+                        });
+                    } else {
+                        // Fallback to section
+                        const targetPosition = target.getBoundingClientRect().top + window.scrollY - navbarHeight - 20;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                } else {
+                    // Normal scroll for other sections
+                    const targetPosition = target.getBoundingClientRect().top + window.scrollY - navbarHeight - 20;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
                 
                 // Update URL without jumping
                 history.pushState(null, '', href);

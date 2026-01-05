@@ -1728,8 +1728,16 @@ section {
    Responsive Design - MOBILE FIRST
    ======================================== */
 
+/* Hide elements on mobile */
+.hide-mobile {
+    display: none;
+}
+
 /* ===== TABLET (min-width: 768px) ===== */
 @media (min-width: 768px) {
+    .hide-mobile {
+        display: inline !important;
+    }
     .hero {
         padding: calc(100px + var(--space-xl)) var(--space-lg) var(--space-2xl);
     }
@@ -2773,7 +2781,7 @@ textarea:focus-visible {
     align-items: center;
     justify-content: center;
     gap: 16px;
-    margin-bottom: var(--space-md);
+    margin-bottom: 0;
     width: 100%;
 }
 
