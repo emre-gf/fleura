@@ -43,15 +43,15 @@ function initPreloader() {
         }, 100);
     }
     
-    // Hide preloader after page loads - faster on mobile
+    // Hide preloader immediately - no artificial delay
     window.addEventListener('load', () => {
-        setTimeout(() => {
+        // Use requestAnimationFrame for smoother hide
+        requestAnimationFrame(() => {
             preloader.classList.add('hidden');
             document.body.classList.remove('no-scroll');
-            
-            // Ensure hero animations are triggered
+            // Trigger hero animations immediately
             animateHero();
-        }, isMobile ? 300 : 600);
+        });
     });
     
     // Prevent scroll during preloader
@@ -332,9 +332,36 @@ function initContactForm() {
         if (btnLoader) btnLoader.style.display = 'inline-block';
         submitBtn.disabled = true;
         
-        // Simulate API call (replace with actual API in production)
+        // Prepare email content
+        const serviceNames = {
+            'kalici-oje': 'Kalıcı Oje',
+            'manikur-pedikur': 'Manikür & Pedikür',
+            'protez-tirnak': 'Protez Tırnak',
+            'tirnak-bakimi': 'Tırnak Bakımı & Onarım',
+            'nail-art': 'Nail Art & Özel Tasarım',
+            'diger': 'Diğer / Bilgi Almak İstiyorum'
+        };
+        
+        const serviceName = serviceNames[data.service] || data.service;
+        
+        const subject = encodeURIComponent(`Yeni Randevu Talebi - ${data.name}`);
+        const body = encodeURIComponent(
+            `Yeni Randevu Talebi\n\n` +
+            `Ad Soyad: ${data.name}\n` +
+            `Telefon: ${data.phone}\n` +
+            `Hizmet: ${serviceName}\n` +
+            (data.message ? `Mesaj: ${data.message}\n` : '') +
+            `\n---\nBu mesaj Fleura Nails web sitesinden gönderilmiştir.`
+        );
+        
+        // Create mailto link
+        const mailtoLink = `mailto:zeynepeke16@gmail.com?subject=${subject}&body=${body}`;
+        
+        // Open email client
+        window.location.href = mailtoLink;
+        
+        // Show success message after a short delay
         setTimeout(() => {
-            // Show success message
             showFormSuccess();
             
             // Reset form
@@ -342,7 +369,7 @@ function initContactForm() {
             if (btnText) btnText.textContent = originalText;
             if (btnLoader) btnLoader.style.display = 'none';
             submitBtn.disabled = false;
-        }, 1500);
+        }, 500);
     });
     
     // Real-time validation
