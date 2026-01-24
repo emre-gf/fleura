@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initCountUp();
     initScrollToTop();
     initHeroHoverVideo();
+    initValentinesVideo();
     initAppointmentBooking();
 });
 
@@ -850,6 +851,43 @@ function initHeroHoverVideo() {
         }, 2000);
     });
 }
+
+/* ========================================
+   Valentine's Day Video - Lazy Load & Autoplay
+   ======================================== */
+function initValentinesVideo() {
+    const valentinesVideo = document.querySelector('.valentines-video');
+    
+    if (!valentinesVideo) return;
+    
+    // Use Intersection Observer for lazy loading
+    const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Load and play video when it comes into view
+                valentinesVideo.load();
+                valentinesVideo.play().catch(() => {
+                    console.warn('Valentine\'s video autoplay failed');
+                });
+                
+                // Stop observing once loaded
+                videoObserver.unobserve(valentinesVideo);
+            }
+        });
+    }, {
+        rootMargin: '100px 0px' // Start loading 100px before it comes into view
+    });
+    
+    // Start observing the video
+    videoObserver.observe(valentinesVideo);
+    
+    // Ensure video loops infinitely
+    valentinesVideo.addEventListener('ended', () => {
+        valentinesVideo.currentTime = 0;
+        valentinesVideo.play();
+    });
+}
+
 
 /* ========================================
    Appointment Booking System
