@@ -28,20 +28,23 @@ document.addEventListener('DOMContentLoaded', () => {
    ======================================== */
 function initPreloader() {
     const preloader = document.getElementById('preloader');
-    const isMobile = window.innerWidth <= 768;
+    const triggerHeroAnimation = () => {
+        setTimeout(() => {
+            animateHero();
+        }, 100);
+    };
     
     // Trigger hero animations immediately on DOM ready
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', () => {
-            setTimeout(() => {
-                animateHero();
-            }, 100);
+            triggerHeroAnimation();
         });
     } else {
-        // DOM already loaded
-        setTimeout(() => {
-            animateHero();
-        }, 100);
+        triggerHeroAnimation();
+    }
+
+    if (!preloader) {
+        return;
     }
     
     // Hide preloader immediately - no artificial delay
@@ -129,6 +132,8 @@ function animateHero() {
    ======================================== */
 function initNavbar() {
     const navbar = document.getElementById('navbar');
+    if (!navbar) return;
+
     let ticking = false;
     
     function updateNavbar() {
@@ -154,6 +159,8 @@ function initNavbar() {
 function initMobileMenu() {
     const toggle = document.getElementById('mobileToggle');
     const menu = document.getElementById('mobileMenu');
+    if (!toggle || !menu) return;
+
     const links = menu.querySelectorAll('a');
     
     function toggleMenu() {
@@ -233,7 +240,7 @@ function initSmoothScroll() {
                 e.preventDefault();
                 
                 const navbar = document.getElementById('navbar');
-                const navbarHeight = navbar.offsetHeight;
+                const navbarHeight = navbar ? navbar.offsetHeight : 0;
                 
                 // Special handling for appointment booking section
                 if (href === '#randevu-al') {
@@ -277,6 +284,7 @@ function initFAQ() {
     
     faqItems.forEach(item => {
         const summary = item.querySelector('summary');
+        if (!summary) return;
         
         summary.addEventListener('click', (e) => {
             e.preventDefault();
@@ -501,7 +509,10 @@ function clearFieldError(input) {
 
 function showFormSuccess() {
     const form = document.getElementById('contactForm');
+    if (!form) return;
+
     const wrapper = form.parentElement;
+    if (!wrapper) return;
     
     // Create success message
     const success = document.createElement('div');
@@ -749,6 +760,8 @@ document.addEventListener('keydown', (e) => {
         const mobileMenu = document.getElementById('mobileMenu');
         if (mobileMenu && mobileMenu.classList.contains('active')) {
             const focusableElements = mobileMenu.querySelectorAll('a, button');
+            if (focusableElements.length === 0) return;
+
             const firstElement = focusableElements[0];
             const lastElement = focusableElements[focusableElements.length - 1];
             
@@ -908,6 +921,21 @@ function initAppointmentBooking() {
     const confirmBtn = document.getElementById('confirmAppointmentBtn');
     const summaryDate = document.getElementById('summaryDate');
     const summaryTime = document.getElementById('summaryTime');
+    const requiredElements = [
+        calendarDays,
+        calendarMonthYear,
+        prevMonthBtn,
+        nextMonthBtn,
+        dateNextBtn,
+        timeSlots,
+        timeNextBtn,
+        timeBackBtn,
+        summaryBackBtn,
+        confirmBtn,
+        summaryDate,
+        summaryTime
+    ];
+    if (requiredElements.some(element => !element)) return;
     
     let selectedDate = '';
     let selectedTime = '';

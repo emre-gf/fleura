@@ -9,12 +9,6 @@
       "README.md"
     ],
     "errorDocument": "404.html",
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ],
     "headers": [
       {
         "source": "**",

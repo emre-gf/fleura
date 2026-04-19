@@ -1,8 +1,3 @@
-# Fleura Nails - İzmir Balçova
-# https://fleura.com.tr
-
 User-agent: *
 Allow: /
-
-# Sitemap
 Sitemap: https://fleura.com.tr/sitemap.xml

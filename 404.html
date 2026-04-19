@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sayfa Bulunamadı | Fleura Nails</title>
+    <title>404 Sayfa Bulunamadı | Fleura Nails İzmir</title>
+    <meta name="description" content="Aradığınız sayfa bulunamadı. Fleura Nails ana sayfasına dönerek hizmetlerimizi, blog yazılarımızı ve iletişim seçeneklerimizi inceleyebilirsiniz.">
     <meta name="robots" content="noindex, nofollow">
     <link rel="icon" type="image/png" href="/assets/logo-white.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,166 +16,248 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         :root {
             --color-primary: #c4a484;
+            --color-primary-dark: #9b7a59;
             --color-dark: #1a1614;
             --color-text: #3d3835;
             --color-light: #faf8f5;
+            --color-border: rgba(196, 164, 132, 0.24);
         }
-        
+
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background: linear-gradient(135deg, #faf8f5 0%, #f5ebe0 100%);
             min-height: 100vh;
+            color: var(--color-text);
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid var(--color-primary-dark);
+            outline-offset: 4px;
+        }
+
+        .skip-link {
+            position: absolute;
+            left: 12px;
+            top: -48px;
+            background: var(--color-dark);
+            color: #fff;
+            padding: 10px 14px;
+            border-radius: 999px;
+            text-decoration: none;
+            z-index: 10;
+        }
+
+        .skip-link:focus {
+            top: 12px;
+        }
+
+        .layout {
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px;
-            color: var(--color-text);
+            padding: 24px;
         }
-        
-        .container {
+
+        .panel {
+            width: min(100%, 560px);
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--color-border);
+            border-radius: 32px;
+            box-shadow: 0 20px 60px rgba(29, 22, 18, 0.08);
+            padding: 36px 28px;
             text-align: center;
-            max-width: 500px;
         }
-        
+
         .error-icon {
-            font-size: 80px;
-            margin-bottom: 20px;
+            font-size: 72px;
+            margin-bottom: 16px;
             animation: float 3s ease-in-out infinite;
         }
-        
+
         @keyframes float {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-10px); }
         }
-        
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: rgba(196, 164, 132, 0.14);
+            color: var(--color-primary-dark);
+            font-size: 0.92rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
         .error-code {
             font-family: 'Playfair Display', serif;
-            font-size: 120px;
+            font-size: clamp(4.5rem, 14vw, 7rem);
             font-weight: 600;
             color: var(--color-primary);
-            line-height: 1;
-            margin-bottom: 10px;
+            line-height: 0.95;
+            margin-bottom: 14px;
         }
-        
+
         .error-title {
             font-family: 'Playfair Display', serif;
-            font-size: 28px;
+            font-size: clamp(1.8rem, 5vw, 2.3rem);
             color: var(--color-dark);
-            margin-bottom: 15px;
+            margin-bottom: 14px;
         }
-        
+
         .error-text {
-            font-size: 16px;
-            color: var(--color-text);
-            margin-bottom: 30px;
-            line-height: 1.6;
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 28px;
         }
-        
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 28px;
+        }
+
         .btn {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            padding: 16px 32px;
-            background: var(--color-primary);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(196, 164, 132, 0.3);
-        }
-        
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(196, 164, 132, 0.4);
-        }
-        
-        .links {
-            margin-top: 40px;
-            display: flex;
             justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-        
-        .links a {
-            color: var(--color-primary);
+            gap: 10px;
+            padding: 15px 24px;
+            border-radius: 999px;
             text-decoration: none;
-            font-size: 14px;
-            transition: color 0.3s ease;
+            font-weight: 600;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
         }
-        
-        .links a:hover {
+
+        .btn-primary {
+            background: var(--color-primary);
+            color: #fff;
+            box-shadow: 0 10px 28px rgba(196, 164, 132, 0.28);
+        }
+
+        .btn-secondary {
+            background: #fff;
+            color: var(--color-primary-dark);
+            border: 1px solid var(--color-border);
+        }
+
+        .btn:hover,
+        .btn:focus-visible {
+            transform: translateY(-2px);
+        }
+
+        .helper-nav {
+            border-top: 1px solid var(--color-border);
+            padding-top: 22px;
+        }
+
+        .helper-nav h2 {
+            font-size: 1rem;
+            margin-bottom: 14px;
             color: var(--color-dark);
         }
-        
+
+        .helper-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px 18px;
+            list-style: none;
+        }
+
+        .helper-links a {
+            color: var(--color-primary-dark);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .report {
+            margin-top: 24px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .report a {
+            color: var(--color-primary-dark);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
         .logo {
-            margin-top: 50px;
-            opacity: 0.6;
+            margin-top: 28px;
+            opacity: 0.72;
         }
-        
+
         .logo img {
-            height: 40px;
+            width: 78px;
+            height: auto;
         }
-        
-        @media (max-width: 480px) {
-            .error-code {
-                font-size: 80px;
+
+        @media (max-width: 520px) {
+            .panel {
+                padding: 28px 20px;
+                border-radius: 24px;
             }
-            
-            .error-title {
-                font-size: 22px;
-            }
-            
-            .links {
+
+            .actions {
                 flex-direction: column;
-                gap: 15px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="error-icon">💅</div>
-        <div class="error-code">404</div>
-        <h1 class="error-title">Sayfa Bulunamadı</h1>
-        <p class="error-text">
-            Aradığınız sayfa mevcut değil veya taşınmış olabilir. 
-            Ana sayfamıza dönerek hizmetlerimizi inceleyebilirsiniz.
-        </p>
-        <a href="/" class="btn">
-            <span>✿</span>
-            <span>Ana Sayfaya Dön</span>
-        </a>
-        
-        <div class="links">
-            <a href="/">Ana Sayfa</a>
-            <a href="/#hizmetler">Hizmetlerimiz</a>
-            <a href="/#galeri">Galeri</a>
-            <a href="/#iletisim">İletişim</a>
-            <a href="https://wa.me/905558903511">WhatsApp</a>
-        </div>
-        
-        <div style="margin-top: 30px; padding-top: 30px; border-top: 1px solid rgba(196, 164, 132, 0.2);">
-            <p style="font-size: 14px; color: var(--color-text); opacity: 0.7; margin-bottom: 10px;">
-                Bir hata mı buldunuz? Bize bildirin:
+    <a href="#main" class="skip-link">Ana içeriğe geç</a>
+
+    <div class="layout">
+        <main class="panel" id="main" tabindex="-1" aria-labelledby="error-title">
+            <div class="error-icon" aria-hidden="true">💅</div>
+            <p class="eyebrow">Hata 404</p>
+            <div class="error-code" aria-hidden="true">404</div>
+            <h1 class="error-title" id="error-title">Bu sayfa artık burada değil</h1>
+            <p class="error-text">
+                Aradığınız içerik silinmiş, taşınmış ya da bağlantı hatalı olabilir.
+                Ana sayfaya dönerek hizmetlerimizi, blog yazılarımızı ve iletişim yollarımızı kolayca bulabilirsiniz.
             </p>
-            <a href="https://wa.me/905558903511?text=Merhaba%2C%20sitede%20bir%20sayfa%20bulunamadı%20hatası%20aldım.%20Lütfen%20kontrol%20edebilir%20misiniz%3F" 
-               target="_blank" 
-               rel="noopener noreferrer" 
-               style="color: var(--color-primary); text-decoration: none; font-size: 14px; font-weight: 500;">
-                📱 WhatsApp ile Bildir
-            </a>
-        </div>
-        
-        <div class="logo">
-            <img src="/assets/logo.png" alt="Fleura Nails">
-        </div>
+
+            <div class="actions">
+                <a href="/" class="btn btn-primary">
+                    <span aria-hidden="true">✿</span>
+                    <span>Ana sayfaya dön</span>
+                </a>
+                <a href="/blog.html" class="btn btn-secondary">Blog yazılarını incele</a>
+            </div>
+
+            <nav class="helper-nav" aria-label="Yardımcı bağlantılar">
+                <h2>Devam etmek için hızlı bağlantılar</h2>
+                <ul class="helper-links">
+                    <li><a href="/">Ana Sayfa</a></li>
+                    <li><a href="/#services">Hizmetler</a></li>
+                    <li><a href="/#gallery">Galeri</a></li>
+                    <li><a href="/iletisim.html">İletişim</a></li>
+                    <li><a href="https://wa.me/905558903511">WhatsApp</a></li>
+                </ul>
+            </nav>
+
+            <p class="report">
+                Sorunlu bir bağlantı mı fark ettiniz?
+                <a href="https://wa.me/905558903511?text=Merhaba%2C%20sitede%20404%20sayfas%C4%B1na%20d%C3%BC%C5%9Ft%C3%BCm.%20Kontrol%20edebilir%20misiniz%3F" target="_blank" rel="noopener noreferrer">Bize WhatsApp üzerinden bildirin.</a>
+            </p>
+
+            <div class="logo">
+                <img src="/assets/logo.png" alt="Fleura Nails logosu" width="260" height="332">
+            </div>
+        </main>
     </div>
 </body>
 </html>
-
