@@ -14,7 +14,7 @@
     />
     <meta
       name="description"
-        content="İzmir'de protez tırnak, kalıcı oje, manikür ve nail art için Fleura Nails VIP hizmet. Hijyenik uygulama, uzman ekip ve WhatsApp randevu desteği."
+      content="İzmir'de protez tırnak, kalıcı oje, manikür, pedikür ve nail art için Fleura Nails'ten VIP bakım alın. Steril uygulama, premium ürünler ve hızlı WhatsApp randevu desteğiyle hemen yerinizi ayırtın."
     />
     <meta name="keywords" content="izmir protez tırnak, kalıcı oje izmir, izmir manikür, nail art izmir, jel tırnak izmir, vip tırnak hizmeti, fleura nails, izmir tırnak bakımı" />
     <meta name="author" content="Fleura Nails" />
@@ -90,9 +90,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="preload"
-      href="assets/1.webp"
+      href="assets/1.avif"
       as="image"
-      type="image/webp"
+      type="image/avif"
       fetchpriority="high"
     />
     <link
@@ -165,7 +165,13 @@
         min-height: 100dvh;
       }
     </style>
-    <link rel="stylesheet" href="style.min.css" />
+    <link
+      rel="preload"
+      href="style.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript><link rel="stylesheet" href="style.min.css" /></noscript>
     <link
       href="https://unpkg.com/aos@2.3.1/dist/aos.css"
       rel="stylesheet"
@@ -175,6 +181,13 @@
     <noscript
       ><link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"
     /></noscript>
+    <style>
+      .footer-logo .logo-img {
+        width: auto !important;
+        height: 44px !important;
+        object-fit: contain !important;
+      }
+    </style>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -526,7 +539,7 @@
             aria-label="Fleura Nails - Ana Sayfa"
             title="Fleura Nails - Ana Sayfa"
             ><img
-              src="assets/logo.webp"
+              src="assets/logo.avif" data-fallback-src="assets/logo.png" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
               alt="Fleuranails Logo"
               class="logo-img"
               width="260"
@@ -762,14 +775,14 @@
         <div class="hero-visual hero-animate" data-animate-delay="0.3s">
           <div class="hero-image-container">
             <img
-              src="assets/1.webp"
+              src="assets/1.avif" data-fallback-src="assets/1.png" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
               alt="Fleura Nails - Profesyonel tırnak tasarımı"
               class="hero-image"
               loading="eager"
               fetchpriority="high"
               width="800"
               height="800"
-            /><video
+            srcset="assets/1-400.avif 400w, assets/1.avif 800w" data-fallback-srcset="assets/1-400.png 400w, assets/1.png 800w" sizes="(max-width: 1024px) 90vw, 420px"><video
               class="hero-auto-video"
               muted
               loop
@@ -806,7 +819,7 @@
                 src="assets/icons/calendar.png"
                 alt="Randevu ikonu"
                 aria-hidden="true"
-              />
+               width="150" height="150" />
             </div>
             <h2 class="appointment-title" id="appointment-title">
               <span class="title-small">Hayalinizdeki Tırnaklar</span>
@@ -824,7 +837,7 @@
                   alt="Sertifikalı hizmet ikonu"
                   class="feature-icon-img"
                   aria-hidden="true"
-                />
+                 width="150" height="150" />
                 <span class="feature-text-desktop">Memnuniyet Garantisi</span>
                 <span class="feature-text-mobile">Garanti</span>
               </div>
@@ -834,7 +847,7 @@
                   alt="Doğrulanmış hizmet ikonu"
                   class="feature-icon-img"
                   aria-hidden="true"
-                />
+                 width="150" height="150" />
                 <span class="feature-text-desktop">Esnek Randevu Saatleri</span>
                 <span class="feature-text-mobile">Esnek Saatler</span>
               </div>
@@ -844,7 +857,7 @@
                   alt="Garanti ikonu"
                   class="feature-icon-img"
                   aria-hidden="true"
-                />
+                 width="150" height="150" />
                 <span class="feature-text-desktop">Kişiye Özel Hizmet</span>
                 <span class="feature-text-mobile">Özel Hizmet</span>
               </div>
@@ -993,7 +1006,7 @@
                     alt="Randevu butonu ikonu"
                     class="btn-icon"
                     aria-hidden="true"
-                  />
+                   width="150" height="150" />
                   <span>Randevu Al</span></a
                 >
               </div>
@@ -1112,7 +1125,7 @@
                   alt="Tırnak bakım kiti ikonu"
                   aria-hidden="true"
                   loading="lazy"
-                />
+                 width="150" height="150" />
               </div>
               <h3>Sertifikalı Uzmanlar</h3>
               <p>
@@ -1134,7 +1147,7 @@
                   alt="Parlayan oje ikonu"
                   aria-hidden="true"
                   loading="lazy"
-                />
+                 width="150" height="150" />
               </div>
               <h3>Premium Kalite</h3>
               <p>
@@ -1155,7 +1168,7 @@
                   alt="Tırnak makası ikonu"
                   aria-hidden="true"
                   loading="lazy"
-                />
+                 width="150" height="150" />
               </div>
               <h3>%100 Steril Ortam</h3>
               <p>
@@ -1176,7 +1189,7 @@
                   alt="Tırnak boyama ikonu"
                   aria-hidden="true"
                   loading="lazy"
-                />
+                 width="150" height="150" />
               </div>
               <h3>Kişiye Özel Tasarım</h3>
               <p>
@@ -1199,13 +1212,13 @@
                 data-aos-easing="ease-out-cubic"
               >
                 <img
-                  src="assets/15.webp"
+                  src="assets/15.avif" data-fallback-src="assets/15.png" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
                   alt="Fleura Nails - Çiçekli nail art tasarımı"
                   class="about-img"
                   loading="lazy"
                   width="800"
                   height="800"
-                />
+                srcset="assets/15-400.avif 400w, assets/15.avif 800w" data-fallback-srcset="assets/15-400.png 400w, assets/15.png 800w" sizes="(max-width: 1024px) 90vw, 360px">
               </div>
               <div
                 class="about-image-secondary"
@@ -1215,13 +1228,13 @@
                 data-aos-easing="ease-out-cubic"
               >
                 <img
-                  src="assets/17.webp"
+                  src="assets/17.avif" data-fallback-src="assets/17.png" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
                   alt="Fleura Nails - Profesyonel manikür"
                   class="about-img"
                   loading="lazy"
                   width="800"
                   height="800"
-                />
+                srcset="assets/17-400.avif 400w, assets/17.avif 800w" data-fallback-srcset="assets/17-400.png 400w, assets/17.png 800w" sizes="(max-width: 1024px) 90vw, 360px">
               </div>
               <div
                 class="experience-badge"
@@ -1329,7 +1342,7 @@
                     class="feature-icon-img"
                     aria-hidden="true"
                     loading="lazy"
-                  />
+                   width="150" height="150" />
                   <span>Steril Ekipman</span>
                 </div>
                 <div class="feature">
@@ -1339,7 +1352,7 @@
                     class="feature-icon-img"
                     aria-hidden="true"
                     loading="lazy"
-                  />
+                   width="150" height="150" />
                   <span>Sertifikalı Ürünler</span>
                 </div>
                 <div class="feature">
@@ -1349,7 +1362,7 @@
                     class="feature-icon-img"
                     aria-hidden="true"
                     loading="lazy"
-                  />
+                   width="150" height="150" />
                   <span>VIP Hizmet</span>
                 </div>
                 <div class="feature">
@@ -1359,7 +1372,7 @@
                     class="feature-icon-img"
                     aria-hidden="true"
                     loading="lazy"
-                  />
+                   width="150" height="150" />
                   <span>Garanti Hizmeti</span>
                 </div>
               </div>
@@ -1427,10 +1440,15 @@
                 <div class="ig-profile-header">
                   <div class="ig-avatar-wrapper">
                     <img
-                      src="assets/by-zey.jpeg"
+                      src="assets/by-zey.avif" data-fallback-src="assets/by-zey.jpeg" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
                       alt="fleuranails"
                       class="ig-avatar"
                       loading="lazy"
+                      width="1024"
+                      height="1024"
+                      srcset="assets/by-zey-400.avif 400w, assets/by-zey.avif 800w"
+                      data-fallback-srcset="assets/by-zey-400.jpeg 400w, assets/by-zey.jpeg 800w"
+                      sizes="72px"
                     />
                   </div>
                   <div class="ig-stats">
@@ -1479,9 +1497,15 @@
                   <div class="ig-highlight">
                     <div class="ig-highlight-ring">
                       <img
-                        src="assets/by-zey.jpeg"
+                        src="assets/by-zey.avif" data-fallback-src="assets/by-zey.jpeg" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
                         alt="clean"
                         class="ig-highlight-img"
+                        loading="lazy"
+                        width="1024"
+                        height="1024"
+                        srcset="assets/by-zey-400.avif 400w, assets/by-zey.avif 800w"
+                        data-fallback-srcset="assets/by-zey-400.jpeg 400w, assets/by-zey.jpeg 800w"
+                        sizes="72px"
                       />
                     </div>
                     <span class="ig-highlight-label">clean ✨</span>
@@ -1537,10 +1561,10 @@
                   class="ig-post"
                   title="Instagram'da Görüntüle"
                   ><img
-                    src="assets/instagram/1.jpg"
+                    src="assets/instagram/1.avif" data-fallback-src="assets/instagram/1.jpg" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
                     alt="Post"
                     loading="lazy"
-                  /> </a
+                   width="1394"  height="1514" srcset="assets/instagram/1-400.avif 400w, assets/instagram/1.avif 800w" data-fallback-srcset="assets/instagram/1-400.jpg 400w, assets/instagram/1.jpg 800w" sizes="(max-width: 768px) 33vw, 130px"> </a
                 ><a
                   href="https://www.instagram.com/fleuranails"
                   target="_blank"
@@ -1548,10 +1572,10 @@
                   class="ig-post"
                   title="Instagram'da Görüntüle"
                   ><img
-                    src="assets/instagram/2.jpg"
+                    src="assets/instagram/2.avif" data-fallback-src="assets/instagram/2.jpg" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
                     alt="Post"
                     loading="lazy"
-                  /> </a
+                   width="1440"  height="1673" srcset="assets/instagram/2-400.avif 400w, assets/instagram/2.avif 800w" data-fallback-srcset="assets/instagram/2-400.jpg 400w, assets/instagram/2.jpg 800w" sizes="(max-width: 768px) 33vw, 130px"> </a
                 ><a
                   href="https://www.instagram.com/fleuranails"
                   target="_blank"
@@ -1559,10 +1583,10 @@
                   class="ig-post"
                   title="Instagram'da Görüntüle"
                   ><img
-                    src="assets/instagram/3.jpg"
+                    src="assets/instagram/3.avif" data-fallback-src="assets/instagram/3.jpg" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
                     alt="Post"
                     loading="lazy"
-                  /> </a
+                   width="1440"  height="1495" srcset="assets/instagram/3-400.avif 400w, assets/instagram/3.avif 800w" data-fallback-srcset="assets/instagram/3-400.jpg 400w, assets/instagram/3.jpg 800w" sizes="(max-width: 768px) 33vw, 130px"> </a
                 ><a
                   href="https://www.instagram.com/fleuranails"
                   target="_blank"
@@ -1570,10 +1594,10 @@
                   class="ig-post"
                   title="Instagram'da Görüntüle"
                   ><img
-                    src="assets/instagram/4.jpg"
+                    src="assets/instagram/4.avif" data-fallback-src="assets/instagram/4.jpg" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
                     alt="Post"
                     loading="lazy"
-                  /> </a
+                   width="1440"  height="1489" srcset="assets/instagram/4-400.avif 400w, assets/instagram/4.avif 800w" data-fallback-srcset="assets/instagram/4-400.jpg 400w, assets/instagram/4.jpg 800w" sizes="(max-width: 768px) 33vw, 130px"> </a
                 ><a
                   href="https://www.instagram.com/fleuranails"
                   target="_blank"
@@ -1581,18 +1605,18 @@
                   class="ig-post"
                   title="Instagram'da Görüntüle"
                   ><img
-                    src="assets/instagram/5.jpg"
+                    src="assets/instagram/5.avif" data-fallback-src="assets/instagram/5.jpg" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
                     alt="Post"
                     loading="lazy"
-                  /> </a
+                   width="150"  height="150" srcset="assets/instagram/5-400.avif 400w, assets/instagram/5.avif 800w" data-fallback-srcset="assets/instagram/5-400.jpg 400w, assets/instagram/5.jpg 800w" sizes="(max-width: 768px) 33vw, 130px"> </a
                 ><a
                   href="https://www.instagram.com/fleuranails"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="ig-post"
                   title="Instagram'da Görüntüle"
-                  ><img src="assets/instagram/6.jpg" alt="Post" loading="lazy"
-                /></a>
+                  ><img src="assets/instagram/6.avif" data-fallback-src="assets/instagram/6.jpg" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}" alt="Post" loading="lazy"
+                 width="1440"  height="1720" srcset="assets/instagram/6-400.avif 400w, assets/instagram/6.avif 800w" data-fallback-srcset="assets/instagram/6-400.jpg 400w, assets/instagram/6.jpg 800w" sizes="(max-width: 768px) 33vw, 130px"></a>
               </div>
             </div>
           </div>
@@ -1666,10 +1690,10 @@
               <div class="featured-badge">⭐ En Çok Tercih Edilen</div>
               <div class="service-image">
                 <img
-                  src="assets/2.png"
+                  src="assets/2.avif" data-fallback-src="assets/2.png" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
                   alt="Kalıcı oje uygulaması"
                   loading="lazy"
-                />
+                 width="800"  height="800" srcset="assets/2-400.avif 400w, assets/2.avif 800w" data-fallback-srcset="assets/2-400.png 400w, assets/2.png 800w" sizes="(max-width: 768px) 100vw, 400px">
               </div>
               <h3 class="service-title">Kalıcı Oje</h3>
               <p class="service-desc">
@@ -1709,10 +1733,10 @@
             >
               <div class="service-image">
                 <img
-                  src="assets/5.png"
+                  src="assets/5.avif" data-fallback-src="assets/5.png" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
                   alt="Manikür ve pedikür hizmeti"
                   loading="lazy"
-                />
+                 width="800"  height="800" srcset="assets/5-400.avif 400w, assets/5.avif 800w" data-fallback-srcset="assets/5-400.png 400w, assets/5.png 800w" sizes="(max-width: 768px) 100vw, 400px">
               </div>
               <h3 class="service-title">Manikür & Pedikür</h3>
               <p class="service-desc">
@@ -1752,10 +1776,10 @@
             >
               <div class="service-image">
                 <img
-                  src="assets/11.png"
+                  src="assets/11.avif" data-fallback-src="assets/11.png" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
                   alt="Protez tırnak uygulaması"
                   loading="lazy"
-                />
+                 width="800"  height="800" srcset="assets/11-400.avif 400w, assets/11.avif 800w" data-fallback-srcset="assets/11-400.png 400w, assets/11.png 800w" sizes="(max-width: 768px) 100vw, 400px">
               </div>
               <h3 class="service-title">Protez Tırnak</h3>
               <p class="service-desc">
@@ -1794,10 +1818,10 @@
             >
               <div class="service-image">
                 <img
-                  src="assets/6.png"
+                  src="assets/6.avif" data-fallback-src="assets/6.png" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
                   alt="Tırnak bakımı ve onarım"
                   loading="lazy"
-                />
+                 width="800"  height="800" srcset="assets/6-400.avif 400w, assets/6.avif 800w" data-fallback-srcset="assets/6-400.png 400w, assets/6.png 800w" sizes="(max-width: 768px) 100vw, 400px">
               </div>
               <h3 class="service-title">Tırnak Bakımı & Onarım</h3>
               <p class="service-desc">
@@ -1876,7 +1900,7 @@
                   src="assets/icons/calendar.png"
                   alt="Randevu takvimi ikonu"
                   aria-hidden="true"
-                />
+                 width="150" height="150" />
               </div>
               <h3>Randevu Al</h3>
               <p>
@@ -1896,7 +1920,7 @@
                   src="assets/icons/proffesional.png"
                   alt="Profesyonel hizmet ikonu"
                   aria-hidden="true"
-                />
+                 width="150" height="150" />
               </div>
               <h3>Tasarımınızı Seçin</h3>
               <p>Renk, şekil ve stil tercihlerinizi birlikte belirleyelim.</p>
@@ -1913,7 +1937,7 @@
                   src="assets/icons/verified.png"
                   alt="Doğrulanmış hizmet ikonu"
                   aria-hidden="true"
-                />
+                 width="150" height="150" />
               </div>
               <h3>Uygulama</h3>
               <p>
@@ -1933,7 +1957,7 @@
                   src="assets/icons/garanty.png"
                   alt="Garanti ikonu"
                   aria-hidden="true"
-                />
+                 width="150" height="150" />
               </div>
               <h3>Memnuniyet</h3>
               <p>Bakım ipuçlarıyla tırnaklarınız her zaman kusursuz kalsın.</p>
@@ -1987,11 +2011,10 @@
               data-aos-easing="ease-out-cubic"
             >
               <img
-                src="assets/1.png"
+                src="assets/1.avif" data-fallback-src="assets/1.png" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
                 alt="Protez tırnak tasarımı"
-                loading="eager"
-                fetchpriority="high"
-              />
+                loading="lazy"
+               width="800"  height="800" srcset="assets/1-400.avif 400w, assets/1.avif 800w" data-fallback-srcset="assets/1-400.png 400w, assets/1.png 800w" sizes="(max-width: 768px) 100vw, 400px">
               <div class="gallery-overlay">
                 <span class="gallery-label">Protez Tırnak</span>
               </div>
@@ -2004,11 +2027,11 @@
               data-aos-easing="ease-out-cubic"
             >
               <img
-                src="assets/7.png"
+                src="assets/7.avif" data-fallback-src="assets/7.png" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
                 alt="Kalıcı oje uygulaması"
                 loading="eager"
                 fetchpriority="high"
-              />
+               width="800"  height="800" srcset="assets/7-400.avif 400w, assets/7.avif 800w" data-fallback-srcset="assets/7-400.png 400w, assets/7.png 800w" sizes="(max-width: 768px) 100vw, 400px">
               <div class="gallery-overlay">
                 <span class="gallery-label">Kalıcı Oje</span>
               </div>
@@ -2020,7 +2043,7 @@
               data-aos-delay="200"
               data-aos-easing="ease-out-cubic"
             >
-              <img src="assets/8.png" alt="Nail art tasarımı" loading="lazy" />
+              <img src="assets/8.avif" data-fallback-src="assets/8.png" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}" alt="Nail art tasarımı" loading="lazy"  width="800"  height="800" srcset="assets/8-400.avif 400w, assets/8.avif 800w" data-fallback-srcset="assets/8-400.png 400w, assets/8.png 800w" sizes="(max-width: 768px) 100vw, 400px">
               <div class="gallery-overlay">
                 <span class="gallery-label">Nail Art</span>
               </div>
@@ -2032,7 +2055,7 @@
               data-aos-delay="250"
               data-aos-easing="ease-out-cubic"
             >
-              <img src="assets/11.png" alt="French manikür" loading="lazy" />
+              <img src="assets/11.avif" data-fallback-src="assets/11.png" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}" alt="French manikür" loading="lazy"  width="800"  height="800" srcset="assets/11-400.avif 400w, assets/11.avif 800w" data-fallback-srcset="assets/11-400.png 400w, assets/11.png 800w" sizes="(max-width: 768px) 100vw, 400px">
               <div class="gallery-overlay">
                 <span class="gallery-label">French Manikür</span>
               </div>
@@ -2045,10 +2068,10 @@
               data-aos-easing="ease-out-cubic"
             >
               <img
-                src="assets/14.png"
+                src="assets/14.avif" data-fallback-src="assets/14.png" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
                 alt="Özel tasarım tırnak"
                 loading="lazy"
-              />
+               width="800"  height="800" srcset="assets/14-400.avif 400w, assets/14.avif 800w" data-fallback-srcset="assets/14-400.png 400w, assets/14.png 800w" sizes="(max-width: 768px) 100vw, 400px">
               <div class="gallery-overlay">
                 <span class="gallery-label">Özel Tasarım</span>
               </div>
@@ -2061,10 +2084,10 @@
               data-aos-easing="ease-out-cubic"
             >
               <img
-                src="assets/24.png"
+                src="assets/24.avif" data-fallback-src="assets/24.png" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
                 alt="Stiletto tırnak modeli"
                 loading="lazy"
-              />
+               width="800"  height="800" srcset="assets/24-400.avif 400w, assets/24.avif 800w" data-fallback-srcset="assets/24-400.png 400w, assets/24.png 800w" sizes="(max-width: 768px) 100vw, 400px">
               <div class="gallery-overlay">
                 <span class="gallery-label">Stiletto</span>
               </div>
@@ -2077,10 +2100,10 @@
               data-aos-easing="ease-out-cubic"
             >
               <img
-                src="assets/4.png"
+                src="assets/4.avif" data-fallback-src="assets/4.png" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
                 alt="Minimal tırnak tasarımı"
                 loading="lazy"
-              />
+               width="800"  height="800" srcset="assets/4-400.avif 400w, assets/4.avif 800w" data-fallback-srcset="assets/4-400.png 400w, assets/4.png 800w" sizes="(max-width: 768px) 100vw, 400px">
               <div class="gallery-overlay">
                 <span class="gallery-label">Minimal Tasarım</span>
               </div>
@@ -2093,10 +2116,10 @@
               data-aos-easing="ease-out-cubic"
             >
               <img
-                src="assets/9.png"
+                src="assets/9.avif" data-fallback-src="assets/9.png" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
                 alt="Badem tırnak modeli"
                 loading="lazy"
-              />
+               width="800"  height="800" srcset="assets/9-400.avif 400w, assets/9.avif 800w" data-fallback-srcset="assets/9-400.png 400w, assets/9.png 800w" sizes="(max-width: 768px) 100vw, 400px">
               <div class="gallery-overlay">
                 <span class="gallery-label">Badem Tırnak</span>
               </div>
@@ -2109,10 +2132,10 @@
               data-aos-easing="ease-out-cubic"
             >
               <img
-                src="assets/25.png"
+                src="assets/25.avif" data-fallback-src="assets/25.png" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
                 alt="Mermer desen tırnak"
                 loading="lazy"
-              />
+               width="800"  height="800" srcset="assets/25-400.avif 400w, assets/25.avif 800w" data-fallback-srcset="assets/25-400.png 400w, assets/25.png 800w" sizes="(max-width: 768px) 100vw, 400px">
               <div class="gallery-overlay">
                 <span class="gallery-label">Mermer Desen</span>
               </div>
@@ -2125,10 +2148,10 @@
               data-aos-easing="ease-out-cubic"
             >
               <img
-                src="assets/16.png"
+                src="assets/16.avif" data-fallback-src="assets/16.png" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
                 alt="Ombre tırnak tasarımı"
                 loading="lazy"
-              />
+               width="800"  height="800" srcset="assets/16-400.avif 400w, assets/16.avif 800w" data-fallback-srcset="assets/16-400.png 400w, assets/16.png 800w" sizes="(max-width: 768px) 100vw, 400px">
               <div class="gallery-overlay">
                 <span class="gallery-label">Ombre</span>
               </div>
@@ -2141,10 +2164,10 @@
               data-aos-easing="ease-out-cubic"
             >
               <img
-                src="assets/18.png"
+                src="assets/18.avif" data-fallback-src="assets/18.png" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
                 alt="Taşlı tırnak süslemesi"
                 loading="lazy"
-              />
+               width="800"  height="800" srcset="assets/18-400.avif 400w, assets/18.avif 800w" data-fallback-srcset="assets/18-400.png 400w, assets/18.png 800w" sizes="(max-width: 768px) 100vw, 400px">
               <div class="gallery-overlay">
                 <span class="gallery-label">Taşlı Tasarım</span>
               </div>
@@ -2156,7 +2179,7 @@
               data-aos-delay="650"
               data-aos-easing="ease-out-cubic"
             >
-              <img src="assets/19.png" alt="Çiçekli nail art" loading="lazy" />
+              <img src="assets/19.avif" data-fallback-src="assets/19.png" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}" alt="Çiçekli nail art" loading="lazy"  width="800"  height="800" srcset="assets/19-400.avif 400w, assets/19.avif 800w" data-fallback-srcset="assets/19-400.png 400w, assets/19.png 800w" sizes="(max-width: 768px) 100vw, 400px">
               <div class="gallery-overlay">
                 <span class="gallery-label">Çiçek Deseni</span>
               </div>
@@ -2169,10 +2192,10 @@
               data-aos-easing="ease-out-cubic"
             >
               <img
-                src="assets/20.png"
+                src="assets/20.avif" data-fallback-src="assets/20.png" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
                 alt="Krom tırnak uygulaması"
                 loading="lazy"
-              />
+               width="800"  height="800" srcset="assets/20-400.avif 400w, assets/20.avif 800w" data-fallback-srcset="assets/20-400.png 400w, assets/20.png 800w" sizes="(max-width: 768px) 100vw, 400px">
               <div class="gallery-overlay">
                 <span class="gallery-label">Krom Tırnak</span>
               </div>
@@ -2185,10 +2208,10 @@
               data-aos-easing="ease-out-cubic"
             >
               <img
-                src="assets/21.png"
+                src="assets/21.avif" data-fallback-src="assets/21.png" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
                 alt="Geometrik tırnak deseni"
                 loading="lazy"
-              />
+               width="800"  height="800" srcset="assets/21-400.avif 400w, assets/21.avif 800w" data-fallback-srcset="assets/21-400.png 400w, assets/21.png 800w" sizes="(max-width: 768px) 100vw, 400px">
               <div class="gallery-overlay">
                 <span class="gallery-label">Geometrik</span>
               </div>
@@ -2201,10 +2224,10 @@
               data-aos-easing="ease-out-cubic"
             >
               <img
-                src="assets/22.png"
+                src="assets/22.avif" data-fallback-src="assets/22.png" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
                 alt="Cat eye tırnak tasarımı"
                 loading="lazy"
-              />
+               width="800"  height="800" srcset="assets/22-400.avif 400w, assets/22.avif 800w" data-fallback-srcset="assets/22-400.png 400w, assets/22.png 800w" sizes="(max-width: 768px) 100vw, 400px">
               <div class="gallery-overlay">
                 <span class="gallery-label">Cat Eye</span>
               </div>
@@ -2217,10 +2240,10 @@
               data-aos-easing="ease-out-cubic"
             >
               <img
-                src="assets/23.png"
+                src="assets/23.avif" data-fallback-src="assets/23.png" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
                 alt="Nude tırnak uygulaması"
                 loading="lazy"
-              />
+               width="800"  height="800" srcset="assets/23-400.avif 400w, assets/23.avif 800w" data-fallback-srcset="assets/23-400.png 400w, assets/23.png 800w" sizes="(max-width: 768px) 100vw, 400px">
               <div class="gallery-overlay">
                 <span class="gallery-label">Nude Tırnak</span>
               </div>
@@ -2682,7 +2705,7 @@
                       src="assets/icons/location.png"
                       alt="Konum ikonu"
                       aria-hidden="true"
-                    />
+                     width="150" height="150" />
                   </div>
                   <div class="contact-item-content">
                     <span class="contact-label">Adresimiz</span>
@@ -2697,7 +2720,7 @@
                       src="assets/icons/phone.png"
                       alt="Telefon ikonu"
                       aria-hidden="true"
-                    />
+                     width="150" height="150" />
                   </div>
                   <div class="contact-item-content">
                     <span class="contact-label">Telefon</span>
@@ -2710,7 +2733,7 @@
                       src="assets/icons/clock.png"
                       alt="Çalışma saatleri ikonu"
                       aria-hidden="true"
-                    />
+                     width="150" height="150" />
                   </div>
                   <div class="contact-item-content">
                     <span class="contact-label">Çalışma Saatleri</span>
@@ -2731,7 +2754,7 @@
                       src="assets/icons/social-media.png"
                       alt="Sosyal medya ikonu"
                       aria-hidden="true"
-                    />
+                     width="150" height="150" />
                   </div>
                   <div class="contact-item-content">
                     <span class="contact-label">Instagram</span>
@@ -2862,7 +2885,7 @@
               aria-label="Fleura Nails - Ana Sayfa"
               title="Fleura Nails - Ana Sayfa"
               ><img
-                src="assets/logo-white.webp"
+                src="assets/logo-white.avif" data-fallback-src="assets/logo-white.png" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
                 alt="Fleuranails Logo"
                 class="logo-img"
                 width="260"
@@ -2899,7 +2922,7 @@
                   alt="Kalıcı oje ikonu"
                   class="footer-service-icon"
                   aria-hidden="true"
-                />
+                 width="150" height="150" />
                 <span>Kalıcı Oje</span> </a
               ><a href="#services" title="Manikür ve Pedikür Hizmeti"
                 ><img
@@ -2907,7 +2930,7 @@
                   alt="Manikür pedikür ikonu"
                   class="footer-service-icon"
                   aria-hidden="true"
-                />
+                 width="150" height="150" />
                 <span>Manikür & Pedikür</span> </a
               ><a href="#services" title="Protez Tırnak Hizmeti"
                 ><img
@@ -2915,7 +2938,7 @@
                   alt="Protez tırnak ikonu"
                   class="footer-service-icon"
                   aria-hidden="true"
-                />
+                 width="150" height="150" />
                 <span>Protez Tırnak</span> </a
               ><a href="#services" title="Tırnak Bakımı Hizmeti"
                 ><img
@@ -2923,7 +2946,7 @@
                   alt="Tırnak bakımı ikonu"
                   class="footer-service-icon"
                   aria-hidden="true"
-                />
+                 width="150" height="150" />
                 <span>Tırnak Bakımı</span> </a
               ><a href="#services" title="Nail Art Hizmeti"
                 ><img
@@ -2931,7 +2954,7 @@
                   alt="Nail art ikonu"
                   class="footer-service-icon"
                   aria-hidden="true"
-                />
+                 width="150" height="150" />
                 <span>Nail Art</span></a
               >
             </nav>
@@ -2966,7 +2989,7 @@
                   src="assets/icons/social-media.png"
                   alt="Instagram"
                   class="footer-social-icon"
-              /></a>
+               width="150" height="150" /></a>
             </div>
           </div>
         </div>

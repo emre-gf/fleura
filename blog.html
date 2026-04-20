@@ -60,17 +60,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <!-- Preload Critical Resources -->
-    <link rel="preload" href="assets/2.webp" as="image" type="image/webp" fetchpriority="high">
+    <link rel="preload" href="assets/2.avif" as="image" type="image/avif" fetchpriority="high">
     
     <!-- Fonts - Non-blocking Load -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet"></noscript>
     
     <!-- Styles - Non-blocking Load -->
-    <link rel="stylesheet" href="style.min.css">
+    <link rel="preload" href="style.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="style.min.css"></noscript>
     
     <!-- AOS - Animate On Scroll Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"></noscript>
     
     <!-- Schema.org - Blog -->
     <script type="application/ld+json">
@@ -484,7 +486,7 @@
         <nav class="navbar" id="navbar" role="navigation" aria-label="Ana menü">
             <div class="nav-container">
                 <a href="index.html" class="logo" aria-label="Fleura Nails - Ana Sayfa" title="Fleura Nails - Ana Sayfa">
-                    <img src="assets/logo.webp" alt="Fleuranails Logo" class="logo-img" width="260" height="332">
+                    <img src="assets/logo.avif" data-fallback-src="assets/logo.png" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}" alt="Fleuranails Logo" class="logo-img" width="260" height="332">
                     <span class="logo-text">Fleuranails</span>
                 </a>
                 <ul class="nav-links">
@@ -564,7 +566,7 @@
                             <!-- Post 1: Kalıcı Oje -->
                             <article class="blog-post" data-category="kalici-oje" data-aos="zoom-in-left" data-aos-duration="800" data-aos-delay="50" data-aos-easing="ease-out-cubic" id="kalici-oje-bakimi">
                                 <div class="blog-post-image" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="75">
-                                    <img src="assets/2.webp" alt="Kalıcı oje uygulaması ve bakımı - İzmir Fleura Nails" loading="lazy" width="800" height="800">
+                                    <img src="assets/2.avif" data-fallback-src="assets/2.png" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}" alt="Kalıcı oje uygulaması ve bakımı - İzmir Fleura Nails" loading="lazy" width="800" height="800" srcset="assets/2-400.avif 400w, assets/2.avif 800w" data-fallback-srcset="assets/2-400.png 400w, assets/2.png 800w" sizes="(max-width: 768px) 92vw, 400px">
                                     <div class="blog-post-category" data-aos="fade-down" data-aos-duration="500" data-aos-delay="100">Kalıcı Oje</div>
                                 </div>
                                 <div class="blog-post-content">
@@ -617,7 +619,7 @@
                             <!-- Post 2: Manikür & Pedikür -->
                             <article class="blog-post" data-category="manikur-pedikur" data-aos="flip-left" data-aos-duration="800" data-aos-delay="100" data-aos-easing="ease-out-cubic" id="manikur-pedikur-rehberi">
                                 <div class="blog-post-image" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="125">
-                                    <img src="assets/17.webp" alt="Manikür ve pedikür hizmeti - İzmir Fleura Nails" loading="lazy" width="800" height="800">
+                                    <img src="assets/17.avif" data-fallback-src="assets/17.png" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}" alt="Manikür ve pedikür hizmeti - İzmir Fleura Nails" loading="lazy" width="800" height="800" srcset="assets/17-400.avif 400w, assets/17.avif 800w" data-fallback-srcset="assets/17-400.png 400w, assets/17.png 800w" sizes="(max-width: 768px) 92vw, 400px">
                                     <div class="blog-post-category" data-aos="fade-down" data-aos-duration="500" data-aos-delay="150">Manikür & Pedikür</div>
                                 </div>
                                 <div class="blog-post-content">
@@ -664,7 +666,7 @@
                             <!-- Post 3: Protez Tırnak -->
                             <article class="blog-post" data-category="protez-tirnak" data-aos="zoom-in-right" data-aos-duration="800" data-aos-delay="150" data-aos-easing="ease-out-cubic" id="protez-tirnak-rehberi">
                                 <div class="blog-post-image" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="175">
-                                    <img src="assets/3.png" alt="Protez tırnak uygulaması - İzmir Fleura Nails" loading="lazy" width="800" height="800">
+                                    <img src="assets/3.avif" data-fallback-src="assets/3.png" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}" alt="Protez tırnak uygulaması - İzmir Fleura Nails" loading="lazy" width="800" height="800" srcset="assets/3-400.avif 400w, assets/3.avif 800w" data-fallback-srcset="assets/3-400.png 400w, assets/3.png 800w" sizes="(max-width: 768px) 92vw, 400px">
                                     <div class="blog-post-category" data-aos="fade-down" data-aos-duration="500" data-aos-delay="200">Protez Tırnak</div>
                                 </div>
                                 <div class="blog-post-content">
@@ -725,7 +727,7 @@
                             <!-- Post 4: Nail Art -->
                             <article class="blog-post" data-category="nail-art" data-aos="flip-right" data-aos-duration="800" data-aos-delay="200" data-aos-easing="ease-out-cubic" id="nail-art-trendleri">
                                 <div class="blog-post-image" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="225">
-                                    <img src="assets/15.webp" alt="Nail art tasarımları - İzmir Fleura Nails" loading="lazy" width="800" height="800">
+                                    <img src="assets/15.avif" data-fallback-src="assets/15.png" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}" alt="Nail art tasarımları - İzmir Fleura Nails" loading="lazy" width="800" height="800" srcset="assets/15-400.avif 400w, assets/15.avif 800w" data-fallback-srcset="assets/15-400.png 400w, assets/15.png 800w" sizes="(max-width: 768px) 92vw, 400px">
                                     <div class="blog-post-category" data-aos="fade-down" data-aos-duration="500" data-aos-delay="250">Nail Art</div>
                                 </div>
                                 <div class="blog-post-content">
@@ -774,7 +776,7 @@
                             <!-- Post 5: Tırnak Sağlığı -->
                             <article class="blog-post" data-category="tirnak-sagligi" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="250" data-aos-easing="ease-out-cubic" id="tirnak-sagligi">
                                 <div class="blog-post-image" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="275">
-                                    <img src="assets/1.webp" alt="Tırnak sağlığı ve bakımı - İzmir Fleura Nails" loading="lazy" width="800" height="800">
+                                    <img src="assets/1.avif" data-fallback-src="assets/1.png" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}" alt="Tırnak sağlığı ve bakımı - İzmir Fleura Nails" loading="lazy" width="800" height="800" srcset="assets/1-400.avif 400w, assets/1.avif 800w" data-fallback-srcset="assets/1-400.png 400w, assets/1.png 800w" sizes="(max-width: 768px) 92vw, 400px">
                                     <div class="blog-post-category" data-aos="fade-down" data-aos-duration="500" data-aos-delay="300">Tırnak Sağlığı</div>
                                 </div>
                                 <div class="blog-post-content">
@@ -831,7 +833,7 @@
                             <!-- Post 6: French Manikür -->
                             <article class="blog-post" data-category="nail-art" data-aos="fade-right" data-aos-duration="800" data-aos-delay="300" data-aos-easing="ease-out-cubic" id="french-manikur-rehberi">
                                 <div class="blog-post-image" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="325">
-                                    <img src="assets/11.png" alt="French manikür uygulaması - İzmir Fleura Nails" loading="lazy" width="800" height="800">
+                                    <img src="assets/11.avif" data-fallback-src="assets/11.png" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}" alt="French manikür uygulaması - İzmir Fleura Nails" loading="lazy" width="800" height="800" srcset="assets/11-400.avif 400w, assets/11.avif 800w" data-fallback-srcset="assets/11-400.png 400w, assets/11.png 800w" sizes="(max-width: 768px) 92vw, 400px">
                                     <div class="blog-post-category" data-aos="fade-down" data-aos-duration="500" data-aos-delay="350">Nail Art</div>
                                 </div>
                                 <div class="blog-post-content">
@@ -880,7 +882,7 @@
                             <!-- Post 7: Tırnak Uzatma -->
                             <article class="blog-post" data-category="protez-tirnak" data-aos="fade-left" data-aos-duration="800" data-aos-delay="1100" data-aos-easing="ease-out-cubic" id="tirnak-uzatma-teknikleri">
                                 <div class="blog-post-image" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="1150">
-                                    <img src="assets/4.png" alt="Tırnak uzatma teknikleri - İzmir Fleura Nails" loading="lazy" width="800" height="800">
+                                    <img src="assets/4.avif" data-fallback-src="assets/4.png" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}" alt="Tırnak uzatma teknikleri - İzmir Fleura Nails" loading="lazy" width="800" height="800" srcset="assets/4-400.avif 400w, assets/4.avif 800w" data-fallback-srcset="assets/4-400.png 400w, assets/4.png 800w" sizes="(max-width: 768px) 92vw, 400px">
                                     <div class="blog-post-category" data-aos="fade-down" data-aos-duration="500" data-aos-delay="1200">Protez Tırnak</div>
                                 </div>
                                 <div class="blog-post-content">
@@ -937,7 +939,7 @@
                             <!-- Post 8: Tırnak Bakım Rutini -->
                             <article class="blog-post" data-category="tirnak-sagligi" data-aos="zoom-in-up" data-aos-duration="800" data-aos-delay="1500" data-aos-easing="ease-out-cubic" id="tirnak-bakim-rutini">
                                 <div class="blog-post-image" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="1550">
-                                    <img src="assets/5.png" alt="Tırnak bakım rutini - İzmir Fleura Nails" loading="lazy" width="800" height="800">
+                                    <img src="assets/5.avif" data-fallback-src="assets/5.png" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}" alt="Tırnak bakım rutini - İzmir Fleura Nails" loading="lazy" width="800" height="800" srcset="assets/5-400.avif 400w, assets/5.avif 800w" data-fallback-srcset="assets/5-400.png 400w, assets/5.png 800w" sizes="(max-width: 768px) 92vw, 400px">
                                     <div class="blog-post-category" data-aos="fade-down" data-aos-duration="500" data-aos-delay="1600">Tırnak Sağlığı</div>
                                 </div>
                                 <div class="blog-post-content">
@@ -992,7 +994,7 @@
                             <!-- Post 9: Mevsimsel Nail Art -->
                             <article class="blog-post" data-category="nail-art" data-aos="flip-up" data-aos-duration="800" data-aos-delay="1900" data-aos-easing="ease-out-cubic" id="mevsimsel-nail-art">
                                 <div class="blog-post-image" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="1950">
-                                    <img src="assets/6.png" alt="Mevsimsel nail art tasarımları - İzmir Fleura Nails" loading="lazy" width="800" height="800">
+                                    <img src="assets/6.avif" data-fallback-src="assets/6.png" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}" alt="Mevsimsel nail art tasarımları - İzmir Fleura Nails" loading="lazy" width="800" height="800" srcset="assets/6-400.avif 400w, assets/6.avif 800w" data-fallback-srcset="assets/6-400.png 400w, assets/6.png 800w" sizes="(max-width: 768px) 92vw, 400px">
                                     <div class="blog-post-category" data-aos="fade-down" data-aos-duration="500" data-aos-delay="2000">Nail Art</div>
                                 </div>
                                 <div class="blog-post-content">
@@ -1035,7 +1037,7 @@
                             <!-- Post 10: Tırnak Mantarı -->
                             <article class="blog-post" data-category="tirnak-sagligi" data-aos="zoom-out" data-aos-duration="800" data-aos-delay="2300" data-aos-easing="ease-out-cubic" id="tirnak-mantari">
                                 <div class="blog-post-image" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="2350">
-                                    <img src="assets/7.png" alt="Tırnak mantarı ve çözümleri - İzmir Fleura Nails" loading="lazy" width="800" height="800">
+                                    <img src="assets/7.avif" data-fallback-src="assets/7.png" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}" alt="Tırnak mantarı ve çözümleri - İzmir Fleura Nails" loading="lazy" width="800" height="800" srcset="assets/7-400.avif 400w, assets/7.avif 800w" data-fallback-srcset="assets/7-400.png 400w, assets/7.png 800w" sizes="(max-width: 768px) 92vw, 400px">
                                     <div class="blog-post-category" data-aos="fade-down" data-aos-duration="500" data-aos-delay="2400">Tırnak Sağlığı</div>
                                 </div>
                                 <div class="blog-post-content">
@@ -1090,7 +1092,7 @@
                             <!-- Post 11: Evde Tırnak Bakımı -->
                             <article class="blog-post" data-category="tirnak-sagligi" data-aos="slide-up" data-aos-duration="800" data-aos-delay="2700" data-aos-easing="ease-out-cubic" id="evde-tirnak-bakimi">
                                 <div class="blog-post-image" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="2750">
-                                    <img src="assets/8.png" alt="Evde tırnak bakımı ipuçları - İzmir Fleura Nails" loading="lazy" width="800" height="800">
+                                    <img src="assets/8.avif" data-fallback-src="assets/8.png" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}" alt="Evde tırnak bakımı ipuçları - İzmir Fleura Nails" loading="lazy" width="800" height="800" srcset="assets/8-400.avif 400w, assets/8.avif 800w" data-fallback-srcset="assets/8-400.png 400w, assets/8.png 800w" sizes="(max-width: 768px) 92vw, 400px">
                                     <div class="blog-post-category" data-aos="fade-down" data-aos-duration="500" data-aos-delay="2800">Tırnak Sağlığı</div>
                                 </div>
                                 <div class="blog-post-content">
@@ -1152,7 +1154,7 @@
                             <!-- Post 12: Tırnak Şekilleri -->
                             <article class="blog-post" data-category="protez-tirnak" data-aos="slide-right" data-aos-duration="800" data-aos-delay="3100" data-aos-easing="ease-out-cubic" id="tirnak-sekilleri">
                                 <div class="blog-post-image" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="3150">
-                                    <img src="assets/9.png" alt="Tırnak şekilleri rehberi - İzmir Fleura Nails" loading="lazy" width="800" height="800">
+                                    <img src="assets/9.avif" data-fallback-src="assets/9.png" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}" alt="Tırnak şekilleri rehberi - İzmir Fleura Nails" loading="lazy" width="800" height="800" srcset="assets/9-400.avif 400w, assets/9.avif 800w" data-fallback-srcset="assets/9-400.png 400w, assets/9.png 800w" sizes="(max-width: 768px) 92vw, 400px">
                                     <div class="blog-post-category" data-aos="fade-down" data-aos-duration="500" data-aos-delay="3200">Protez Tırnak</div>
                                 </div>
                                 <div class="blog-post-content">
@@ -1204,7 +1206,7 @@
                             <!-- Post 13: Tırnak Güçlendirme -->
                             <article class="blog-post" data-category="tirnak-sagligi" data-aos="slide-left" data-aos-duration="800" data-aos-delay="3500" data-aos-easing="ease-out-cubic" id="tirnak-guclendirme">
                                 <div class="blog-post-image" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="3550">
-                                    <img src="assets/12.png" alt="Tırnak güçlendirme yöntemleri - İzmir Fleura Nails" loading="lazy" width="800" height="800">
+                                    <img src="assets/12.avif" data-fallback-src="assets/12.png" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}" alt="Tırnak güçlendirme yöntemleri - İzmir Fleura Nails" loading="lazy" width="800" height="800" srcset="assets/12-400.avif 400w, assets/12.avif 800w" data-fallback-srcset="assets/12-400.png 400w, assets/12.png 800w" sizes="(max-width: 768px) 92vw, 400px">
                                     <div class="blog-post-category" data-aos="fade-down" data-aos-duration="500" data-aos-delay="3600">Tırnak Sağlığı</div>
                                 </div>
                                 <div class="blog-post-content">
@@ -1258,7 +1260,7 @@
                             <!-- Post 14: Özel Günler Nail Art -->
                             <article class="blog-post" data-category="nail-art" data-aos="fade-down" data-aos-duration="800" data-aos-delay="3900" data-aos-easing="ease-out-cubic" id="ozel-gunler-nail-art">
                                 <div class="blog-post-image" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="3950">
-                                    <img src="assets/13.png" alt="Özel günler için nail art - İzmir Fleura Nails" loading="lazy" width="800" height="800">
+                                    <img src="assets/13.avif" data-fallback-src="assets/13.png" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}" alt="Özel günler için nail art - İzmir Fleura Nails" loading="lazy" width="800" height="800" srcset="assets/13-400.avif 400w, assets/13.avif 800w" data-fallback-srcset="assets/13-400.png 400w, assets/13.png 800w" sizes="(max-width: 768px) 92vw, 400px">
                                     <div class="blog-post-category" data-aos="fade-down" data-aos-duration="500" data-aos-delay="4000">Nail Art</div>
                                 </div>
                                 <div class="blog-post-content">
@@ -1301,7 +1303,7 @@
                             <!-- Post 15: Tırnak Bakım Hataları -->
                             <article class="blog-post" data-category="tirnak-sagligi" data-aos="zoom-in-down" data-aos-duration="800" data-aos-delay="4300" data-aos-easing="ease-out-cubic" id="tirnak-bakim-hatalari">
                                 <div class="blog-post-image" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="4350">
-                                    <img src="assets/14.png" alt="Tırnak bakımında yapılan hatalar - İzmir Fleura Nails" loading="lazy" width="800" height="800">
+                                    <img src="assets/14.avif" data-fallback-src="assets/14.png" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}" alt="Tırnak bakımında yapılan hatalar - İzmir Fleura Nails" loading="lazy" width="800" height="800" srcset="assets/14-400.avif 400w, assets/14.avif 800w" data-fallback-srcset="assets/14-400.png 400w, assets/14.png 800w" sizes="(max-width: 768px) 92vw, 400px">
                                     <div class="blog-post-category" data-aos="fade-down" data-aos-duration="500" data-aos-delay="4400">Tırnak Sağlığı</div>
                                 </div>
                                 <div class="blog-post-content">
@@ -1446,7 +1448,7 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <a href="index.html" class="footer-logo" title="Fleura Nails - Ana Sayfa">
-                        <img src="assets/logo-white.webp" alt="Fleuranails Logo" width="260" height="332">
+                        <img src="assets/logo-white.avif" data-fallback-src="assets/logo-white.png" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}" alt="Fleuranails Logo" width="260" height="332">
                     </a>
                     <p class="footer-slogan">✦ Tırnaklarınız Sanat Eserine Dönüşsün</p>
                     <p class="footer-desc">Tüm İzmir bölgesine VIP ev hizmeti veren profesyonel tırnak bakımı uzmanları. Kalıcı oje, manikür, pedikür, protez tırnak ve nail art hizmetleri.</p>

@@ -2,6 +2,33 @@
   "hosting": {
     "site": "fleuranails",
     "public": ".",
+    "redirects": [
+      {
+        "source": "/index.html",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/blog",
+        "destination": "/blog.html",
+        "type": 301
+      },
+      {
+        "source": "/iletisim",
+        "destination": "/iletisim.html",
+        "type": 301
+      },
+      {
+        "source": "/izmir-protez-tirnak",
+        "destination": "/izmir-protez-tirnak.html",
+        "type": 301
+      },
+      {
+        "source": "/balcovada-tirnak",
+        "destination": "/balcovada-tirnak.html",
+        "type": 301
+      }
+    ],
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -28,7 +55,7 @@
         ]
       },
       {
-        "source": "**/*.@(jpg|jpeg|gif|png|svg|webp|ico|woff|woff2|ttf|eot)",
+        "source": "**/*.@(jpg|jpeg|gif|png|svg|webp|avif|ico|woff|woff2|ttf|eot)",
         "headers": [
           {
             "key": "Cache-Control",
