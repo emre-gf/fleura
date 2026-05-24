@@ -1612,5 +1612,21 @@
             });
         });
     </script>
+    <script>
+      (function() {
+        var preloader = document.getElementById('preloader');
+        function hidePreloader() {
+          if (preloader) preloader.classList.add('hidden');
+        }
+        if (document.readyState === 'complete') {
+          setTimeout(hidePreloader, 100);
+        } else {
+          window.addEventListener('load', function() {
+            setTimeout(hidePreloader, 100);
+          });
+          setTimeout(hidePreloader, 3000);
+        }
+      })();
+    </script>
 </body>
 </html>
