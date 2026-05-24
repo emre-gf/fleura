@@ -14,7 +14,7 @@
     />
     <meta
       name="description"
-      content="İzmir'de protez tırnak, kalıcı oje, manikür, pedikür ve nail art için Fleura Nails'ten VIP bakım alın. Steril uygulama, premium ürünler ve hızlı WhatsApp randevu desteğiyle hemen yerinizi ayırtın."
+      content="İzmir'de protez tırnak, kalıcı oje, manikür, pedikür ve nail art için Fleura Nails. Steril uygulama, uzman ekip ve hızlı WhatsApp randevusu."
     />
     <meta name="keywords" content="izmir protez tırnak, kalıcı oje izmir, izmir manikür, nail art izmir, jel tırnak izmir, vip tırnak hizmeti, fleura nails, izmir tırnak bakımı" />
     <meta name="author" content="Fleura Nails" />
@@ -128,20 +128,48 @@
       }
       .preloader {
         position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: #faf8f5;
+        inset: 0;
+        background: linear-gradient(135deg, #fdf6ef 0%, #faf8f5 100%);
         z-index: 9999;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
+        gap: 20px;
+        transition: opacity 0.5s ease, visibility 0.5s ease;
       }
       .preloader.hidden {
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
+      }
+      .preloader-logo {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 2rem;
+        font-weight: 600;
+        color: #2c2c2c;
+        letter-spacing: 0.05em;
+      }
+      .preloader-logo span {
+        color: #c4a484;
+        font-style: italic;
+      }
+      .preloader-dots {
+        display: flex;
+        gap: 8px;
+      }
+      .preloader-dots i {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #c4a484;
+        animation: dotPulse 1.2s ease-in-out infinite;
+      }
+      .preloader-dots i:nth-child(2) { animation-delay: 0.2s; }
+      .preloader-dots i:nth-child(3) { animation-delay: 0.4s; }
+      @keyframes dotPulse {
+        0%, 80%, 100% { transform: scale(0.7); opacity: 0.4; }
+        40% { transform: scale(1); opacity: 1; }
       }
       .skip-link {
         position: absolute;
@@ -186,6 +214,158 @@
         width: auto !important;
         height: 44px !important;
         object-fit: contain !important;
+      }
+      .regions {
+        padding: 80px 0;
+        background: linear-gradient(180deg, #faf8f5 0%, #fffdf9 100%);
+      }
+      .regions-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 16px;
+        margin-top: 40px;
+      }
+      .region-card {
+        display: block;
+        padding: 22px 20px;
+        background: #fff;
+        border: 1px solid rgba(196, 164, 132, 0.2);
+        border-radius: 16px;
+        text-decoration: none;
+        color: #2c2c2c;
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease,
+          border-color 0.25s ease;
+      }
+      .region-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 14px 40px rgba(36, 29, 23, 0.1);
+        border-color: #c4a484;
+      }
+      .region-card h3 {
+        margin: 0 0 6px;
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 1.15rem;
+        color: #a88968;
+      }
+      .region-card p {
+        margin: 0;
+        font-size: 0.92rem;
+        line-height: 1.55;
+        color: #6b6360;
+      }
+      @media (max-width: 600px) {
+        .regions-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 10px;
+        }
+        .region-card {
+          padding: 14px 12px;
+        }
+        .region-card h3 {
+          font-size: 0.95rem;
+          margin-bottom: 4px;
+        }
+        .region-card p {
+          font-size: 0.78rem;
+          line-height: 1.4;
+        }
+      }
+      .compare {
+        padding: 80px 0;
+        background: #fffdf9;
+      }
+      .compare-table-wrap {
+        margin-top: 40px;
+        overflow-x: auto;
+        border-radius: 18px;
+        border: 1px solid rgba(196, 164, 132, 0.2);
+      }
+      .compare-table {
+        width: 100%;
+        min-width: 640px;
+        border-collapse: collapse;
+        background: #fff;
+      }
+      .compare-table th,
+      .compare-table td {
+        padding: 16px 18px;
+        text-align: left;
+        border-bottom: 1px solid rgba(196, 164, 132, 0.15);
+      }
+      .compare-table th {
+        background: linear-gradient(135deg, #c4a484, #a88968);
+        color: #fff;
+        font-family: "Playfair Display", Georgia, serif;
+        font-weight: 600;
+        font-size: 1.02rem;
+      }
+      .compare-table td:first-child {
+        font-weight: 600;
+        color: #a88968;
+        background: #faf8f5;
+      }
+      .compare-table tr:last-child td {
+        border-bottom: 0;
+      }
+      .trust {
+        padding: 70px 0;
+        background: #faf8f5;
+      }
+      .blog-preview {
+        padding: 80px 0;
+        background: linear-gradient(180deg, #fffdf9 0%, #faf8f5 100%);
+      }
+      .blog-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 22px;
+        margin-top: 40px;
+      }
+      .blog-card {
+        background: #fff;
+        border: 1px solid rgba(196, 164, 132, 0.2);
+        border-radius: 18px;
+        padding: 24px;
+        text-decoration: none;
+        color: #2c2c2c;
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .blog-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 14px 40px rgba(36, 29, 23, 0.1);
+      }
+      .blog-card .blog-tag {
+        display: inline-block;
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: #a88968;
+        font-weight: 600;
+      }
+      .blog-card h3 {
+        margin: 0;
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 1.2rem;
+        line-height: 1.35;
+      }
+      .blog-card p {
+        margin: 0;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: #6b6360;
+      }
+      .blog-card .blog-arrow {
+        margin-top: auto;
+        color: #c4a484;
+        font-weight: 600;
+        font-size: 0.95rem;
       }
     </style>
     <script type="application/ld+json">
@@ -395,7 +575,7 @@
             "name": "Kalıcı oje ne kadar dayanır?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Kalıcı oje, doğru uygulama ve bakımla ortalama 2-3 hafta boyunca parlak ve pürüzsüz kalır. Tırnak uzama hızınıza ve günlük aktivitelerinize bağlı olarak bu süre değişebilir."
+              "text": "Kalıcı oje, doğru uygulama ve bakımla ortalama 2-3 hafta boyunca parlak ve pürüzsüz kalır. Tırnak uzama hızınıza ve günlük aktivitelerinize bağlı olarak bu süre değişebilir. Ellerinizi sık sık suya maruz bırakmamak ve eldiven kullanmak ömrü uzatır."
             }
           },
           {
@@ -403,7 +583,7 @@
             "name": "Protez tırnak uygulaması tırnaklarıma zarar verir mi?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Profesyonel uygulama ve doğru çıkarma tekniği ile protez tırnaklar doğal tırnaklarınıza zarar vermez. Fleura Nails'te VIP hizmet anlayışımızla, tırnak sağlığınızı koruyarak uygulama yapıyoruz."
+              "text": "Profesyonel uygulama ve doğru çıkarma tekniği ile protez tırnaklar doğal tırnaklarınıza zarar vermez. Fleura Nails'te VIP hizmet anlayışımızla, tırnak sağlığınızı önceliklendirerek jel tırnak uygulaması yapıyoruz."
             }
           },
           {
@@ -411,7 +591,7 @@
             "name": "Randevu almadan gelebilir miyim?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Randevusuz müşterilerimize de hizmet veriyoruz, ancak bekleme süresi olabilir. Size en iyi hizmeti sunabilmemiz için önceden randevu almanızı öneririz."
+              "text": "Randevusuz müşterilerimize de hizmet veriyoruz, ancak bekleme süresi olabilir. Size en iyi hizmeti, yeterli zamanı ayırarak sunabilmemiz için önceden randevu almanızı öneririz. Telefon, WhatsApp veya web sitemizden kolayca randevu alabilirsiniz."
             }
           },
           {
@@ -419,9 +599,106 @@
             "name": "Hijyen konusunda ne gibi önlemler alıyorsunuz?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Tüm ekipmanlarımız her müşteri sonrası sterilize edilmektedir. Tek kullanımlık malzemeler tercih edilmekte ve çalışma alanımız düzenli olarak dezenfekte edilmektedir. Müşteri sağlığı bizim için en önemli önceliktir."
+              "text": "Hijyen bizim için en önemli önceliktir. Tüm metal ekipmanlarımız her müşteri sonrası otoklavda sterilize edilmektedir. Tek kullanımlık malzemeler (törpü, buffer vb.) tercih edilmekte ve çalışma alanımız düzenli olarak dezenfekte edilmektedir."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hamilelik döneminde tırnak yaptırabilir miyim?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Hamilelik döneminde kalıcı oje ve manikür uygulamaları genellikle güvenlidir. Ancak protez tırnak uygulamalarını özellikle ilk trimesterde önermiyoruz. Durumunuza göre en uygun hizmeti birlikte belirleyebiliriz. Doktorunuza danışmanızı da öneririz."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Tırnaklarım çok kırılgan, ne yapmalıyım?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Kırılgan tırnaklar için özel bakım tedavileri sunuyoruz. IBX tedavisi, keratin uygulaması ve besleyici maskeler ile tırnaklarınızı güçlendirebiliriz. İlk randevunuzda tırnak yapınızı analiz edip size özel bir bakım planı oluşturuyoruz."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "İptal ve değişiklik politikanız nedir?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Randevunuzu en az 24 saat önceden iptal etmenizi veya değiştirmenizi rica ediyoruz. Bu sayede başka müşterilerimize yer açabiliriz. Son dakika iptallerinde anlayışla karşılaşırız, ancak sık tekrarlanması durumunda ön ödeme talep edebiliriz."
             }
           }
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "Fleura Nails'te Tırnak Bakım Süreci",
+        "description": "Randevu almaktan kusursuz tırnaklara, Fleura Nails'in 4 adımlı VIP hizmet süreci.",
+        "image": "https://fleura.com.tr/assets/og-image.jpg",
+        "totalTime": "PT2H",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "position": 1,
+            "name": "Randevu Al",
+            "text": "WhatsApp veya web formumuz üzerinden hızlıca randevunuzu oluşturun.",
+            "url": "https://fleura.com.tr/#randevu-al"
+          },
+          {
+            "@type": "HowToStep",
+            "position": 2,
+            "name": "Tasarımınızı Seçin",
+            "text": "Renk, şekil ve stil tercihlerinizi uzman ekibimizle birlikte belirleyin.",
+            "url": "https://fleura.com.tr/#services"
+          },
+          {
+            "@type": "HowToStep",
+            "position": 3,
+            "name": "Uygulama",
+            "text": "Steril ortamda, premium ürünlerle hayalinizdeki tırnaklara kavuşun.",
+            "url": "https://fleura.com.tr/#process"
+          },
+          {
+            "@type": "HowToStep",
+            "position": 4,
+            "name": "Memnuniyet",
+            "text": "Bakım ipuçlarıyla tırnaklarınız her zaman kusursuz kalsın.",
+            "url": "https://fleura.com.tr/#guven"
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ImageGallery",
+        "name": "Fleura Nails Tırnak Tasarımları Galerisi",
+        "description": "İzmir'de Fleura Nails tarafından uygulanan protez tırnak, kalıcı oje ve nail art örnekleri.",
+        "url": "https://fleura.com.tr/#gallery",
+        "image": [
+          "https://fleura.com.tr/assets/8.avif",
+          "https://fleura.com.tr/assets/11.avif",
+          "https://fleura.com.tr/assets/19.avif"
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Fleura Nails Hizmet Bölgeleri - İzmir",
+        "description": "Fleura Nails'in İzmir'de hizmet verdiği semtler.",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Balçova", "url": "https://fleura.com.tr/balcova-protez-tirnak"},
+          {"@type": "ListItem", "position": 2, "name": "Karşıyaka", "url": "https://fleura.com.tr/karsiyaka-protez-tirnak"},
+          {"@type": "ListItem", "position": 3, "name": "Bornova", "url": "https://fleura.com.tr/bornova-kalici-oje"},
+          {"@type": "ListItem", "position": 4, "name": "Konak & Alsancak", "url": "https://fleura.com.tr/alsancak-nail-art"},
+          {"@type": "ListItem", "position": 5, "name": "Narlıdere", "url": "https://fleura.com.tr/narlidere-tirnak"},
+          {"@type": "ListItem", "position": 6, "name": "Güzelbahçe", "url": "https://fleura.com.tr/guzelbahce-kalici-oje"},
+          {"@type": "ListItem", "position": 7, "name": "Çiğli", "url": "https://fleura.com.tr/cigli-protez-tirnak"},
+          {"@type": "ListItem", "position": 8, "name": "Buca", "url": "https://fleura.com.tr/buca-tirnak"},
+          {"@type": "ListItem", "position": 9, "name": "Bayraklı", "url": "https://fleura.com.tr/bayrakli-kalici-oje"}
         ]
       }
     </script>
@@ -527,6 +804,12 @@
     <script type="module" src="firebase-config.js"></script>
   </head>
   <body>
+    <div class="preloader" id="preloader" aria-hidden="true">
+      <div class="preloader-logo">Fleura <span>Nails</span></div>
+      <div class="preloader-dots">
+        <i></i><i></i><i></i>
+      </div>
+    </div>
     <a href="#main" class="skip-link" title="Ana içeriğe geç"
       >Ana içeriğe geç</a
     >
@@ -550,6 +833,7 @@
           <ul class="nav-links">
             <li><a href="#about" title="Hakkımızda">Hakkımızda</a></li>
             <li><a href="#services" title="Hizmetlerimiz">Hizmetler</a></li>
+            <li><a href="#bolgeler" title="Hizmet Bölgelerimiz">Bölgeler</a></li>
             <li>
               <a href="#gallery" title="Galeri - Çalışmalarımız">Galeri</a>
             </li>
@@ -580,6 +864,8 @@
       <ul class="mobile-nav-links">
         <li><a href="#about" title="Hakkımızda">Hakkımızda</a></li>
         <li><a href="#services" title="Hizmetlerimiz">Hizmetler</a></li>
+        <li><a href="#bolgeler" title="Hizmet Bölgelerimiz">Bölgeler</a></li>
+        <li><a href="#karsilastirma" title="Hizmet Karşılaştırma">Karşılaştırma</a></li>
         <li><a href="#gallery" title="Galeri - Çalışmalarımız">Galeri</a></li>
         <li><a href="blog.html" title="Blog">Blog</a></li>
         <li><a href="#faq" title="Sıkça Sorulan Sorular">SSS</a></li>
@@ -622,7 +908,7 @@
               class="title-line hero-animate"
               data-animate-delay="0.3s"
               data-animate-direction="left"
-              >Elleriniz İçin</span
+              >Elleriniz İçin </span
             >
             <span
               class="title-line accent hero-animate"
@@ -636,13 +922,13 @@
               class="subtitle-word hero-animate"
               data-animate-delay="0.7s"
               data-animate-direction="left"
-              >Fleura Nails'te</span
+              >Fleura Nails'te elleriniz için </span
             >
             <span
               class="subtitle-word highlight hero-animate"
               data-animate-delay="0.75s"
               data-animate-direction="right"
-              ><strong>elleriniz için</strong></span
+              ><strong>sanat eseri</strong></span
             >
             <span
               class="subtitle-word hero-animate"
@@ -756,20 +1042,6 @@
               data-animate-direction="up"
               >Hizmetlerimizi Keşfedin</a
             >
-          </div>
-          <div class="hero-trust-badges">
-            <div class="trust-item hero-animate" data-animate-delay="1.7s">
-              <span class="trust-icon" aria-hidden="true">✓</span>
-              <span>Steril Ortam</span>
-            </div>
-            <div class="trust-item hero-animate" data-animate-delay="1.8s">
-              <span class="trust-icon" aria-hidden="true">✓</span>
-              <span>Premium Ürünler</span>
-            </div>
-            <div class="trust-item hero-animate" data-animate-delay="1.9s">
-              <span class="trust-icon" aria-hidden="true">✓</span>
-              <span>Uzman Ekip</span>
-            </div>
           </div>
         </div>
         <div class="hero-visual hero-animate" data-animate-delay="0.3s">
@@ -1014,6 +1286,84 @@
           </div>
         </div>
       </section>
+
+      <section
+        class="regions"
+        id="bolgeler"
+        aria-labelledby="regions-title"
+      >
+        <div class="container">
+          <div class="section-header">
+            <div
+              class="section-label"
+              data-aos="fade-down"
+              data-aos-duration="600"
+            >
+              <span class="label-line"></span>
+              <span>Hizmet Bölgelerimiz</span>
+            </div>
+            <h2
+              class="section-title centered"
+              id="regions-title"
+              data-aos="zoom-in"
+              data-aos-duration="800"
+            >
+              İzmir'in <span class="highlight">Her Semtinde</span> Yanınızdayız
+            </h2>
+            <p
+              class="section-subtitle"
+              data-aos="fade-up"
+              data-aos-duration="700"
+            >
+              Fleura Nails, İzmir genelinde VIP ev hizmeti sunar. Bulunduğunuz
+              semtte protez tırnak, kalıcı oje, manikür ve nail art hizmeti
+              almak için bize ulaşın.
+            </p>
+          </div>
+          <div class="regions-grid">
+            <a href="/balcova-protez-tirnak" class="region-card" data-aos="fade-up" data-aos-delay="100">
+              <h3>Balçova</h3>
+              <p>Balçova protez tırnak ve kalıcı oje uygulamaları için özel sayfamız.</p>
+            </a>
+            <a href="/karsiyaka-protez-tirnak" class="region-card" data-aos="fade-up" data-aos-delay="150">
+              <h3>Karşıyaka</h3>
+              <p>Bostanlı, Mavişehir, Atakent dahil Karşıyaka'da VIP kalıcı oje ve protez tırnak.</p>
+            </a>
+            <a href="/bornova-kalici-oje" class="region-card" data-aos="fade-up" data-aos-delay="200">
+              <h3>Bornova</h3>
+              <p>Erzene, Kazımdirik, Evka çevresinde öğrenci ve çalışan dostu kalıcı oje.</p>
+            </a>
+            <a href="/alsancak-nail-art" class="region-card" data-aos="fade-up" data-aos-delay="250">
+              <h3>Konak & Alsancak</h3>
+              <p>Alsancak'ta trend nail art tasarımları, otel ve Airbnb hizmeti.</p>
+            </a>
+            <a href="/narlidere-tirnak" class="region-card" data-aos="fade-up" data-aos-delay="300">
+              <h3>Narlıdere</h3>
+              <p>İlica, Limanreis, Yenikale dahil Narlıdere'de tam hizmet yelpazesi.</p>
+            </a>
+            <a href="/guzelbahce-kalici-oje" class="region-card" data-aos="fade-up" data-aos-delay="350">
+              <h3>Güzelbahçe</h3>
+              <p>Çelebi, Kahramandere, Yelki dahil sahil ve yazlık bölgesi özel bakımı.</p>
+            </a>
+            <a href="/cigli-protez-tirnak" class="region-card" data-aos="fade-up" data-aos-delay="400">
+              <h3>Çiğli</h3>
+              <p>Ataşehir, Egekent, Yakakent çevresinde ofis ve ev randevuları.</p>
+            </a>
+            <a href="/buca-tirnak" class="region-card" data-aos="fade-up" data-aos-delay="450">
+              <h3>Buca</h3>
+              <p>Şirinyer, Adatepe, DEÜ çevresinde öğrenci ve aile dostu hizmet.</p>
+            </a>
+            <a href="/bayrakli-kalici-oje" class="region-card" data-aos="fade-up" data-aos-delay="500">
+              <h3>Bayraklı</h3>
+              <p>Folkart Towers, Mistral, Mahall Bomonti rezidans ve plazalara hizmet.</p>
+            </a>
+            <a href="/karabaglar-tirnak" class="region-card" data-aos="fade-up" data-aos-delay="550">
+              <h3>Karabağlar</h3>
+              <p>Gaziemir, Poligon, Yeşilyurt, Üçkuyular dahil Karabağlar'da VIP ev hizmeti.</p>
+            </a>
+          </div>
+        </div>
+      </section>
       <!-- VALENTINES SECTION - Sevgililer Günü geçti, sonraki yıl aktif et
       <section class="valentines-section" id="valentines">
         <div class="valentines-bg">
@@ -1219,22 +1569,6 @@
                   width="800"
                   height="800"
                 srcset="assets/15-400.avif 400w, assets/15.avif 800w" data-fallback-srcset="assets/15-400.png 400w, assets/15.png 800w" sizes="(max-width: 1024px) 90vw, 360px">
-              </div>
-              <div
-                class="about-image-secondary"
-                data-aos="zoom-in-right"
-                data-aos-duration="800"
-                data-aos-delay="300"
-                data-aos-easing="ease-out-cubic"
-              >
-                <img
-                  src="assets/17.avif" data-fallback-src="assets/17.png" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
-                  alt="Fleura Nails - Profesyonel manikür"
-                  class="about-img"
-                  loading="lazy"
-                  width="800"
-                  height="800"
-                srcset="assets/17-400.avif 400w, assets/17.avif 800w" data-fallback-srcset="assets/17-400.png 400w, assets/17.png 800w" sizes="(max-width: 1024px) 90vw, 360px">
               </div>
               <div
                 class="experience-badge"
@@ -1453,11 +1787,11 @@
                   </div>
                   <div class="ig-stats">
                     <div class="ig-stat">
-                      <span class="ig-stat-num">48</span>
+                      <span class="ig-stat-num">90</span>
                       <span class="ig-stat-label">gönderi</span>
                     </div>
                     <div class="ig-stat">
-                      <span class="ig-stat-num">105</span>
+                      <span class="ig-stat-num">120</span>
                       <span class="ig-stat-label">takipçi</span>
                     </div>
                     <div class="ig-stat">
@@ -2651,7 +2985,151 @@
             <a href="#contact" class="btn btn-secondary">Bize Sorun</a>
           </div>
         </div>
+
+      <section
+        class="compare"
+        id="karsilastirma"
+        aria-labelledby="compare-title"
+      >
+        <div class="container">
+          <div class="section-header">
+            <div
+              class="section-label"
+              data-aos="fade-down"
+              data-aos-duration="600"
+            >
+              <span class="label-line"></span>
+              <span>Karşılaştırma</span>
+            </div>
+            <h2
+              class="section-title centered"
+              id="compare-title"
+              data-aos="zoom-in"
+              data-aos-duration="800"
+            >
+              Size Uygun <span class="highlight">Hizmeti Seçin</span>
+            </h2>
+            <p
+              class="section-subtitle"
+              data-aos="fade-up"
+              data-aos-duration="700"
+            >
+              Kalıcı oje, protez tırnak ve klasik manikür arasındaki farkları
+              karşılaştırın, ihtiyacınıza en uygun uygulamayı belirleyin.
+            </p>
+          </div>
+          <div class="compare-table-wrap" data-aos="fade-up" data-aos-duration="800">
+            <table class="compare-table">
+              <thead>
+                <tr>
+                  <th scope="col">Özellik</th>
+                  <th scope="col">Kalıcı Oje</th>
+                  <th scope="col">Protez Tırnak</th>
+                  <th scope="col">Klasik Manikür</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Dayanıklılık</td>
+                  <td>2-3 hafta</td>
+                  <td>3-4 hafta</td>
+                  <td>3-7 gün</td>
+                </tr>
+                <tr>
+                  <td>Uygulama Süresi</td>
+                  <td>45-75 dakika</td>
+                  <td>90-150 dakika</td>
+                  <td>30-45 dakika</td>
+                </tr>
+                <tr>
+                  <td>Tırnak Uzatma</td>
+                  <td>Evet</td>
+                  <td>Evet (her uzunluk)</td>
+                  <td>Evet</td>
+                </tr>
+                <tr>
+                  <td>Doğal Görünüm</td>
+                  <td>Yüksek</td>
+                  <td>Çok Yüksek</td>
+                  <td>En Doğal</td>
+                </tr>
+                <tr>
+                  <td>Bakım İhtiyacı</td>
+                  <td>Orta</td>
+                  <td>2-4 haftada dolgu</td>
+                  <td>Haftalık</td>
+                </tr>
+                <tr>
+                  <td>Önerilen Kişi</td>
+                  <td>Pratik çözüm isteyenler</td>
+                  <td>Uzun ömür &amp; uzatma</td>
+                  <td>Doğal stil sevenler</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </section>
+
+
+      <section
+        class="blog-preview"
+        id="blog-preview"
+        aria-labelledby="blog-preview-title"
+      >
+        <div class="container">
+          <div class="section-header">
+            <div
+              class="section-label"
+              data-aos="fade-down"
+              data-aos-duration="600"
+            >
+              <span class="label-line"></span>
+              <span>Bakım Rehberi</span>
+            </div>
+            <h2
+              class="section-title centered"
+              id="blog-preview-title"
+              data-aos="zoom-in"
+              data-aos-duration="800"
+            >
+              Tırnak Bakım <span class="highlight">İpuçları</span>
+            </h2>
+            <p
+              class="section-subtitle"
+              data-aos="fade-up"
+              data-aos-duration="700"
+            >
+              Tırnaklarınızın ömrünü uzatmanın ve sağlıklı tutmanın profesyonel
+              yöntemleri.
+            </p>
+          </div>
+          <div class="blog-cards">
+            <a href="/blog.html#kalici-oje-bakimi" class="blog-card" data-aos="fade-up" data-aos-delay="100">
+              <span class="blog-tag">Kalıcı Oje</span>
+              <h3>Kalıcı Oje Bakımı ve Ömrünü Uzatma</h3>
+              <p>Bulaşık eldiveni kullanımından, küvet sıcaklığına kadar — kalıcı ojenizin parlaklığını 3 haftaya çıkaran pratik kurallar.</p>
+              <span class="blog-arrow">Devamını Oku →</span>
+            </a>
+            <a href="/blog.html#protez-tirnak-rehberi" class="blog-card" data-aos="fade-up" data-aos-delay="200">
+              <span class="blog-tag">Protez Tırnak</span>
+              <h3>Protez Tırnak Rehberi: Bilmeniz Gerekenler</h3>
+              <p>Protez tırnaklarınız hangi durumlarda ayrılır, nasıl onarılır ve dolgu randevusu ne zaman alınmalı? Uzman önerilerimiz.</p>
+              <span class="blog-arrow">Devamını Oku →</span>
+            </a>
+            <a href="/blog.html#tirnak-guclendirme" class="blog-card" data-aos="fade-up" data-aos-delay="300">
+              <span class="blog-tag">Tırnak Sağlığı</span>
+              <h3>Kırılgan Tırnaklara Güçlendirme Yöntemleri</h3>
+              <p>Beslenmeden topikal uygulamalara, tırnaklarınızı güçlendirmenin bilimsel olarak kanıtlanmış yöntemleri.</p>
+              <span class="blog-arrow">Devamını Oku →</span>
+            </a>
+          </div>
+          <div class="faq-cta" data-aos="zoom-in" data-aos-delay="400" style="text-align:center;margin-top:40px;">
+            <a href="/blog.html" class="btn btn-secondary">Tüm Blog Yazıları</a>
+          </div>
+        </div>
+      </section>
+
       <section class="contact" id="contact" aria-labelledby="contact-title">
         <div class="container">
           <div class="contact-grid">
@@ -2959,6 +3437,20 @@
               >
             </nav>
           </div>
+          <div class="footer-nav">
+            <h4>Hizmet Bölgeleri</h4>
+            <nav aria-label="Hizmet Bölgeleri">
+              <a href="/karsiyaka-protez-tirnak" title="Karşıyaka Protez Tırnak">Karşıyaka</a>
+              <a href="/bornova-kalici-oje" title="Bornova Kalıcı Oje">Bornova</a>
+              <a href="/alsancak-nail-art" title="Alsancak Nail Art">Alsancak</a>
+              <a href="/balcova-protez-tirnak" title="Balçova Protez Tırnak">Balçova</a>
+              <a href="/narlidere-tirnak" title="Narlıdere Tırnak">Narlıdere</a>
+              <a href="/guzelbahce-kalici-oje" title="Güzelbahçe Kalıcı Oje">Güzelbahçe</a>
+              <a href="/cigli-protez-tirnak" title="Çiğli Protez Tırnak">Çiğli</a>
+              <a href="/buca-tirnak" title="Buca Tırnak">Buca</a>
+              <a href="/bayrakli-kalici-oje" title="Bayraklı Kalıcı Oje">Bayraklı</a>
+            </nav>
+          </div>
           <div class="footer-contact">
             <h4>İletişim</h4>
             <address>
@@ -3119,6 +3611,24 @@
                   ((n.email = t), (e.textContent = JSON.stringify(n)));
               } catch (t) {}
             }));
+      })();
+    </script>
+    <script>
+      (function() {
+        var preloader = document.getElementById('preloader');
+        function hidePreloader() {
+          if (preloader) {
+            preloader.classList.add('hidden');
+          }
+        }
+        if (document.readyState === 'complete') {
+          setTimeout(hidePreloader, 100);
+        } else {
+          window.addEventListener('load', function() {
+            setTimeout(hidePreloader, 100);
+          });
+          setTimeout(hidePreloader, 3000);
+        }
       })();
     </script>
   </body>

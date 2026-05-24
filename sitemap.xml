@@ -1,33 +1,139 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://fleura.com.tr/</loc>
-    <lastmod>2026-04-20</lastmod>
+    <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://fleura.com.tr/blog.html</loc>
-    <lastmod>2026-04-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleura.com.tr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://fleura.com.tr/"/>
+    <image:image>
+      <image:loc>https://fleura.com.tr/assets/og-image.jpg</image:loc>
+      <image:title>Fleura Nails İzmir VIP Tırnak Hizmeti</image:title>
+      <image:caption>İzmir protez tırnak ve kalıcı oje uygulamaları</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://fleura.com.tr/assets/1.avif</image:loc>
+      <image:title>Fleura Nails - Profesyonel tırnak tasarımı</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fleura.com.tr/assets/8.avif</image:loc>
+      <image:title>Nail art tasarımı</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fleura.com.tr/assets/11.avif</image:loc>
+      <image:title>French manikür uygulaması</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://fleura.com.tr/assets/19.avif</image:loc>
+      <image:title>Çiçekli nail art</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://fleura.com.tr/izmir-protez-tirnak.html</loc>
-    <lastmod>2026-04-20</lastmod>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleura.com.tr/izmir-protez-tirnak.html"/>
+  </url>
+  <url>
+    <loc>https://fleura.com.tr/izmir-kalici-oje</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleura.com.tr/izmir-kalici-oje"/>
+  </url>
+  <url>
+    <loc>https://fleura.com.tr/balcova-protez-tirnak</loc>
+    <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleura.com.tr/balcova-protez-tirnak"/>
+  </url>
+  <url>
+    <loc>https://fleura.com.tr/karsiyaka-protez-tirnak</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleura.com.tr/karsiyaka-protez-tirnak"/>
+  </url>
+  <url>
+    <loc>https://fleura.com.tr/bornova-kalici-oje</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleura.com.tr/bornova-kalici-oje"/>
+  </url>
+  <url>
+    <loc>https://fleura.com.tr/alsancak-nail-art</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleura.com.tr/alsancak-nail-art"/>
+  </url>
+  <url>
+    <loc>https://fleura.com.tr/narlidere-tirnak</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleura.com.tr/narlidere-tirnak"/>
+  </url>
+  <url>
+    <loc>https://fleura.com.tr/guzelbahce-kalici-oje</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleura.com.tr/guzelbahce-kalici-oje"/>
+  </url>
+  <url>
+    <loc>https://fleura.com.tr/cigli-protez-tirnak</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleura.com.tr/cigli-protez-tirnak"/>
+  </url>
+  <url>
+    <loc>https://fleura.com.tr/buca-tirnak</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleura.com.tr/buca-tirnak"/>
+  </url>
+  <url>
+    <loc>https://fleura.com.tr/bayrakli-kalici-oje</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleura.com.tr/bayrakli-kalici-oje"/>
+  </url>
+  <url>
+    <loc>https://fleura.com.tr/karabaglar-tirnak</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleura.com.tr/karabaglar-tirnak"/>
   </url>
   <url>
     <loc>https://fleura.com.tr/balcovada-tirnak.html</loc>
-    <lastmod>2026-04-20</lastmod>
+    <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleura.com.tr/balcovada-tirnak.html"/>
+  </url>
+  <url>
+    <loc>https://fleura.com.tr/blog.html</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleura.com.tr/blog.html"/>
   </url>
   <url>
     <loc>https://fleura.com.tr/iletisim.html</loc>
-    <lastmod>2026-04-20</lastmod>
+    <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleura.com.tr/iletisim.html"/>
   </url>
 </urlset>

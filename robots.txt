@@ -1,3 +1,29 @@
 User-agent: *
 Allow: /
+Disallow: /404.html
+Disallow: /node_modules/
+Disallow: /.firebase/
+
+User-agent: Googlebot
+Allow: /
+Allow: /assets/
+Allow: /*.css$
+Allow: /*.js$
+
+User-agent: Googlebot-Image
+Allow: /assets/
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
 Sitemap: https://fleura.com.tr/sitemap.xml
+Host: https://fleura.com.tr

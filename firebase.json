@@ -29,6 +29,52 @@
         "type": 301
       }
     ],
+    "rewrites": [
+      {
+        "source": "/balcova-protez-tirnak",
+        "destination": "/balcova-protez-tirnak/index.html"
+      },
+      {
+        "source": "/izmir-kalici-oje",
+        "destination": "/izmir-kalici-oje/index.html"
+      },
+      {
+        "source": "/karsiyaka-protez-tirnak",
+        "destination": "/karsiyaka-protez-tirnak/index.html"
+      },
+      {
+        "source": "/bornova-kalici-oje",
+        "destination": "/bornova-kalici-oje/index.html"
+      },
+      {
+        "source": "/alsancak-nail-art",
+        "destination": "/alsancak-nail-art/index.html"
+      },
+      {
+        "source": "/narlidere-tirnak",
+        "destination": "/narlidere-tirnak/index.html"
+      },
+      {
+        "source": "/guzelbahce-kalici-oje",
+        "destination": "/guzelbahce-kalici-oje/index.html"
+      },
+      {
+        "source": "/cigli-protez-tirnak",
+        "destination": "/cigli-protez-tirnak/index.html"
+      },
+      {
+        "source": "/buca-tirnak",
+        "destination": "/buca-tirnak/index.html"
+      },
+      {
+        "source": "/bayrakli-kalici-oje",
+        "destination": "/bayrakli-kalici-oje/index.html"
+      },
+      {
+        "source": "/karabaglar-tirnak",
+        "destination": "/karabaglar-tirnak/index.html"
+      }
+    ],
     "ignore": [
       "firebase.json",
       "**/.*",

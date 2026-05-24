@@ -2792,7 +2792,6 @@ textarea:focus-visible {
     font-size: 0.75rem;
     white-space: nowrap;
     color: var(--color-text-light);
-    white-space: nowrap;
 }
 
 .trust-icon {
@@ -3425,7 +3424,7 @@ a.contact-item:hover .contact-icon svg {
         justify-content: center;
         gap: 12px;
     }
-    
+
     .trust-item {
         font-size: 0.65rem;
         gap: 4px;
@@ -3437,15 +3436,15 @@ a.contact-item:hover .contact-icon svg {
         grid-template-columns: 1fr 1fr;
         gap: var(--space-sm);
     }
-    
+
     .stat-number {
         font-size: 2rem;
     }
-    
+
     .faq-question {
         padding: var(--space-sm) var(--space-md);
     }
-    
+
     .faq-answer {
         padding: var(--space-sm) var(--space-md);
     }
