@@ -73,6 +73,14 @@
       {
         "source": "/karabaglar-tirnak",
         "destination": "/karabaglar-tirnak/index.html"
+      },
+      {
+        "source": "/cesme-kalici-oje",
+        "destination": "/cesme-kalici-oje/index.html"
+      },
+      {
+        "source": "/alacati-kalici-oje",
+        "destination": "/alacati-kalici-oje/index.html"
       }
     ],
     "ignore": [

@@ -116,6 +116,20 @@
     <xhtml:link rel="alternate" hreflang="tr" href="https://fleura.com.tr/karabaglar-tirnak"/>
   </url>
   <url>
+    <loc>https://fleura.com.tr/cesme-kalici-oje</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleura.com.tr/cesme-kalici-oje"/>
+  </url>
+  <url>
+    <loc>https://fleura.com.tr/alacati-kalici-oje</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleura.com.tr/alacati-kalici-oje"/>
+  </url>
+  <url>
     <loc>https://fleura.com.tr/balcovada-tirnak.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
