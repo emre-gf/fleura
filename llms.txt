@@ -9,10 +9,10 @@ Fleura Nails, İzmir genelinde VIP tırnak bakımı hizmeti sunan bir güzellik 
 
 ## Önemli Sayfalar
 - Ana sayfa: https://fleura.com.tr/
-- Blog: https://fleura.com.tr/blog.html
-- İzmir Protez Tırnak: https://fleura.com.tr/izmir-protez-tirnak.html
-- İzmir Tırnak Hizmeti: https://fleura.com.tr/balcovada-tirnak.html
-- İletişim: https://fleura.com.tr/iletisim.html
+- Blog: https://fleura.com.tr/blog
+- İzmir Protez Tırnak: https://fleura.com.tr/izmir-protez-tirnak
+- İzmir Tırnak Hizmeti: https://fleura.com.tr/balcovada-tirnak
+- İletişim: https://fleura.com.tr/iletisim
 - Sitemap: https://fleura.com.tr/sitemap.xml
 - Robots: https://fleura.com.tr/robots.txt
 
@@ -24,4 +24,4 @@ Fleura Nails, İzmir genelinde VIP tırnak bakımı hizmeti sunan bir güzellik 
 ## İçerik Notu
 Bu dosya, LLM tabanlı sistemlerin site içeriğini daha doğru anlamasına yardımcı olmak için hazırlanmıştır.
 
-Son güncelleme: 2026-04-20
+Son güncelleme: 2026-07-09

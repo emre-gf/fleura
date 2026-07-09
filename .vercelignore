@@ -1,0 +1,7 @@
+node_modules
+.firebase
+firebase.json
+.firebaserc
+README.md
+convert-to-webp.py
+assets/valentines_day.mp4

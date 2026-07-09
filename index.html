@@ -1,6 +1,12 @@
 <!doctype html>
 <html lang="tr" dir="ltr">
   <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=5"
+    />
+
     <meta name="google-site-verification" content="pCyczzQFiQl4oXr1X1qkzBT-nM8sS0an9gPdZPX7sS0" />
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-5MWKVSGTQV"></script>
@@ -10,11 +16,6 @@
     gtag('js', new Date());
     gtag('config', 'G-5MWKVSGTQV');
   </script>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width,initial-scale=1,maximum-scale=5"
-    />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>İzmir Protez Tırnak ve Kalıcı Oje | Fleura Nails VIP Hizmet</title>
     <meta
@@ -210,13 +211,13 @@
     />
     <noscript><link rel="stylesheet" href="style.min.css" /></noscript>
     <link
-      href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+      href="/assets/vendor/aos/aos.css"
       rel="stylesheet"
       media="print"
       onload="this.media = 'all'"
     />
     <noscript
-      ><link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"
+      ><link href="/assets/vendor/aos/aos.css" rel="stylesheet"
     /></noscript>
     <style>
       .footer-logo .logo-img {
@@ -435,10 +436,8 @@
         "logo": "https://fleura.com.tr/assets/logo.webp",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "İzmir",
           "addressLocality": "İzmir",
           "addressRegion": "İzmir",
-          "postalCode": "35330",
           "addressCountry": "TR"
         },
         "geo": {
@@ -446,7 +445,6 @@
           "latitude": 38.389,
           "longitude": 27.04
         },
-        "hasMap": "https://maps.google.com/?q=İzmir",
         "openingHoursSpecification": [
           {
             "@type": "OpeningHoursSpecification",
@@ -471,13 +469,19 @@
         "currenciesAccepted": "TRY",
         "areaServed": [
           { "@type": "City", "name": "İzmir" },
+          { "@type": "City", "name": "Çeşme" },
+          { "@type": "City", "name": "Alaçatı" },
           { "@type": "Place", "name": "Narlıdere" },
           { "@type": "Place", "name": "Güzelbahçe" },
           { "@type": "Place", "name": "Konak" },
           { "@type": "Place", "name": "Karşıyaka" },
           { "@type": "Place", "name": "Bornova" },
+          { "@type": "Place", "name": "Bayraklı" },
           { "@type": "Place", "name": "Çiğli" },
-          { "@type": "Place", "name": "Buca" }
+          { "@type": "Place", "name": "Buca" },
+          { "@type": "Place", "name": "Balçova" },
+          { "@type": "Place", "name": "Karabağlar" },
+          { "@type": "Place", "name": "Alsancak" }
         ],
         "serviceArea": {
           "@type": "GeoCircle",
@@ -486,7 +490,7 @@
             "latitude": 38.389,
             "longitude": 27.04
           },
-          "geoRadius": "15000"
+          "geoRadius": "85000"
         },
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
@@ -845,7 +849,7 @@
             <li>
               <a href="#gallery" title="Galeri - Çalışmalarımız">Galeri</a>
             </li>
-            <li><a href="blog.html" title="Blog">Blog</a></li>
+            <li><a href="/blog" title="Blog">Blog</a></li>
             <li><a href="#faq" title="Sıkça Sorulan Sorular">SSS</a></li>
             <li><a href="#contact" title="İletişim">İletişim</a></li>
           </ul>
@@ -875,7 +879,7 @@
         <li><a href="#bolgeler" title="Hizmet Bölgelerimiz">Bölgeler</a></li>
         <li><a href="#karsilastirma" title="Hizmet Karşılaştırma">Karşılaştırma</a></li>
         <li><a href="#gallery" title="Galeri - Çalışmalarımız">Galeri</a></li>
-        <li><a href="blog.html" title="Blog">Blog</a></li>
+        <li><a href="/blog" title="Blog">Blog</a></li>
         <li><a href="#faq" title="Sıkça Sorulan Sorular">SSS</a></li>
         <li><a href="#contact" title="İletişim">İletişim</a></li>
         <li>
@@ -1068,6 +1072,7 @@
               loop
               playsinline
               preload="none"
+              poster="assets/1.avif"
               aria-hidden="true"
             >
               <source src="assets/section-video.mp4" type="video/mp4" />
@@ -3121,19 +3126,19 @@
             </p>
           </div>
           <div class="blog-cards">
-            <a href="/blog.html#kalici-oje-bakimi" class="blog-card" data-aos="fade-up" data-aos-delay="100">
+            <a href="/blog/kalici-oje-bakimi" class="blog-card" data-aos="fade-up" data-aos-delay="100">
               <span class="blog-tag">Kalıcı Oje</span>
               <h3>Kalıcı Oje Bakımı ve Ömrünü Uzatma</h3>
               <p>Bulaşık eldiveni kullanımından, küvet sıcaklığına kadar — kalıcı ojenizin parlaklığını 3 haftaya çıkaran pratik kurallar.</p>
               <span class="blog-arrow">Devamını Oku →</span>
             </a>
-            <a href="/blog.html#protez-tirnak-rehberi" class="blog-card" data-aos="fade-up" data-aos-delay="200">
+            <a href="/blog/protez-tirnak-rehberi" class="blog-card" data-aos="fade-up" data-aos-delay="200">
               <span class="blog-tag">Protez Tırnak</span>
               <h3>Protez Tırnak Rehberi: Bilmeniz Gerekenler</h3>
               <p>Protez tırnaklarınız hangi durumlarda ayrılır, nasıl onarılır ve dolgu randevusu ne zaman alınmalı? Uzman önerilerimiz.</p>
               <span class="blog-arrow">Devamını Oku →</span>
             </a>
-            <a href="/blog.html#tirnak-guclendirme" class="blog-card" data-aos="fade-up" data-aos-delay="300">
+            <a href="/blog/tirnak-guclendirme" class="blog-card" data-aos="fade-up" data-aos-delay="300">
               <span class="blog-tag">Tırnak Sağlığı</span>
               <h3>Kırılgan Tırnaklara Güçlendirme Yöntemleri</h3>
               <p>Beslenmeden topikal uygulamalara, tırnaklarınızı güçlendirmenin bilimsel olarak kanıtlanmış yöntemleri.</p>
@@ -3141,7 +3146,7 @@
             </a>
           </div>
           <div class="faq-cta" data-aos="zoom-in" data-aos-delay="400" style="text-align:center;margin-top:40px;">
-            <a href="/blog.html" class="btn btn-secondary">Tüm Blog Yazıları</a>
+            <a href="/blog" class="btn btn-secondary">Tüm Blog Yazıları</a>
           </div>
         </div>
       </section>
@@ -3402,7 +3407,7 @@
               <a href="#about" title="Hakkımızda">Hakkımızda</a>
               <a href="#services" title="Hizmetlerimiz">Hizmetler</a>
               <a href="#gallery" title="Galeri - Çalışmalarımız">Galeri</a>
-              <a href="blog.html" title="Blog">Blog</a>
+              <a href="/blog" title="Blog">Blog</a>
               <a href="#faq" title="Sıkça Sorulan Sorular">SSS</a>
               <a href="#contact" title="İletişim">İletişim</a>
             </nav>
@@ -3560,7 +3565,7 @@
       </svg>
     </button>
     <script
-      src="https://unpkg.com/aos@2.3.1/dist/aos.js"
+      src="/assets/vendor/aos/aos.js"
       defer="defer"
     ></script>
     <script src="script.min.js" defer="defer"></script>

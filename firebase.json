@@ -2,30 +2,11 @@
   "hosting": {
     "site": "fleuranails",
     "public": ".",
+    "cleanUrls": true,
     "redirects": [
       {
         "source": "/index.html",
         "destination": "/",
-        "type": 301
-      },
-      {
-        "source": "/blog",
-        "destination": "/blog.html",
-        "type": 301
-      },
-      {
-        "source": "/iletisim",
-        "destination": "/iletisim.html",
-        "type": 301
-      },
-      {
-        "source": "/izmir-protez-tirnak",
-        "destination": "/izmir-protez-tirnak.html",
-        "type": 301
-      },
-      {
-        "source": "/balcovada-tirnak",
-        "destination": "/balcovada-tirnak.html",
         "type": 301
       }
     ],

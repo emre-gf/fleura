@@ -4,7 +4,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://fleura.com.tr/</loc>
-    <lastmod>2026-05-24</lastmod>
+    <lastmod>2026-07-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://fleura.com.tr/"/>
@@ -32,11 +32,11 @@
     </image:image>
   </url>
   <url>
-    <loc>https://fleura.com.tr/izmir-protez-tirnak.html</loc>
-    <lastmod>2026-05-24</lastmod>
+    <loc>https://fleura.com.tr/izmir-protez-tirnak</loc>
+    <lastmod>2026-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fleura.com.tr/izmir-protez-tirnak.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleura.com.tr/izmir-protez-tirnak"/>
   </url>
   <url>
     <loc>https://fleura.com.tr/izmir-kalici-oje</loc>
@@ -130,24 +130,129 @@
     <xhtml:link rel="alternate" hreflang="tr" href="https://fleura.com.tr/alacati-kalici-oje"/>
   </url>
   <url>
-    <loc>https://fleura.com.tr/balcovada-tirnak.html</loc>
-    <lastmod>2026-05-24</lastmod>
+    <loc>https://fleura.com.tr/balcovada-tirnak</loc>
+    <lastmod>2026-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fleura.com.tr/balcovada-tirnak.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleura.com.tr/balcovada-tirnak"/>
   </url>
   <url>
-    <loc>https://fleura.com.tr/blog.html</loc>
-    <lastmod>2026-05-24</lastmod>
+    <loc>https://fleura.com.tr/blog</loc>
+    <lastmod>2026-07-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fleura.com.tr/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleura.com.tr/blog"/>
   </url>
   <url>
-    <loc>https://fleura.com.tr/iletisim.html</loc>
-    <lastmod>2026-05-24</lastmod>
+    <loc>https://fleura.com.tr/iletisim</loc>
+    <lastmod>2026-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://fleura.com.tr/iletisim.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleura.com.tr/iletisim"/>
+  </url>
+  <url>
+    <loc>https://fleura.com.tr/blog/kalici-oje-bakimi</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleura.com.tr/blog/kalici-oje-bakimi"/>
+  </url>
+  <url>
+    <loc>https://fleura.com.tr/blog/manikur-pedikur-rehberi</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleura.com.tr/blog/manikur-pedikur-rehberi"/>
+  </url>
+  <url>
+    <loc>https://fleura.com.tr/blog/protez-tirnak-rehberi</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleura.com.tr/blog/protez-tirnak-rehberi"/>
+  </url>
+  <url>
+    <loc>https://fleura.com.tr/blog/nail-art-trendleri</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleura.com.tr/blog/nail-art-trendleri"/>
+  </url>
+  <url>
+    <loc>https://fleura.com.tr/blog/tirnak-sagligi</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleura.com.tr/blog/tirnak-sagligi"/>
+  </url>
+  <url>
+    <loc>https://fleura.com.tr/blog/french-manikur-rehberi</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleura.com.tr/blog/french-manikur-rehberi"/>
+  </url>
+  <url>
+    <loc>https://fleura.com.tr/blog/tirnak-uzatma-teknikleri</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleura.com.tr/blog/tirnak-uzatma-teknikleri"/>
+  </url>
+  <url>
+    <loc>https://fleura.com.tr/blog/tirnak-bakim-rutini</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleura.com.tr/blog/tirnak-bakim-rutini"/>
+  </url>
+  <url>
+    <loc>https://fleura.com.tr/blog/mevsimsel-nail-art</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleura.com.tr/blog/mevsimsel-nail-art"/>
+  </url>
+  <url>
+    <loc>https://fleura.com.tr/blog/tirnak-mantari</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleura.com.tr/blog/tirnak-mantari"/>
+  </url>
+  <url>
+    <loc>https://fleura.com.tr/blog/evde-tirnak-bakimi</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleura.com.tr/blog/evde-tirnak-bakimi"/>
+  </url>
+  <url>
+    <loc>https://fleura.com.tr/blog/tirnak-sekilleri</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleura.com.tr/blog/tirnak-sekilleri"/>
+  </url>
+  <url>
+    <loc>https://fleura.com.tr/blog/tirnak-guclendirme</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleura.com.tr/blog/tirnak-guclendirme"/>
+  </url>
+  <url>
+    <loc>https://fleura.com.tr/blog/ozel-gunler-nail-art</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleura.com.tr/blog/ozel-gunler-nail-art"/>
+  </url>
+  <url>
+    <loc>https://fleura.com.tr/blog/tirnak-bakim-hatalari</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://fleura.com.tr/blog/tirnak-bakim-hatalari"/>
   </url>
 </urlset>
