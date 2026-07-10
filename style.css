@@ -1486,11 +1486,7 @@ section {
   transform: scale(1.06);
 }
 
-@media (hover: none) {
-  .carousel-nav {
-    display: none;
-  }
-}
+/* Nav buttons stay visible on touch devices too */
 
 .carousel-slide[data-lightbox-trigger] {
   cursor: zoom-in;
@@ -2562,6 +2558,29 @@ body.lightbox-open {
     flex-basis: 78vw;
     width: 78vw;
     max-width: 320px;
+  }
+
+  /* Mobile carousel head: keep title + nav buttons on one tidy row */
+  .carousel-head {
+    gap: var(--space-sm);
+  }
+
+  .carousel-head::before {
+    display: none;
+  }
+
+  .carousel-title {
+    flex: 1;
+    font-size: 1.35rem;
+  }
+
+  .carousel-nav {
+    display: flex;
+  }
+
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
   }
 
   .footer-content {
