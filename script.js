@@ -15,7 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initFAQ();
     initLazyLoad();
     initServiceCards();
-    initGallery();
+    initCarousels();
+    initProcessLine();
     initCountUp();
     initScrollToTop();
     initHeroHoverVideo();
@@ -619,24 +620,222 @@ function initServiceCards() {
 /* ========================================
    Gallery Hover Effects
    ======================================== */
-function initGallery() {
-    const items = document.querySelectorAll('.gallery-item');
-    
-    items.forEach(item => {
-        item.addEventListener('mouseenter', function() {
-            const placeholder = this.querySelector('.gallery-placeholder');
-            if (placeholder && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                placeholder.style.transform = 'scale(1.05)';
+function initCarousels() {
+    const carousels = document.querySelectorAll('[data-carousel]');
+    if (!carousels.length) return;
+
+    carousels.forEach(carousel => {
+        const track = carousel.querySelector('[data-carousel-track]');
+        const prevBtn = carousel.querySelector('.carousel-prev');
+        const nextBtn = carousel.querySelector('.carousel-next');
+        if (!track) return;
+
+        // How far to scroll per arrow click: ~90% of visible width, snapped to slides
+        const scrollAmount = () => {
+            const slide = track.querySelector('.carousel-slide');
+            const gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap) || 16;
+            const step = slide ? slide.getBoundingClientRect().width + gap : track.clientWidth * 0.9;
+            const perView = Math.max(1, Math.floor(track.clientWidth / step));
+            return step * perView;
+        };
+
+        const updateButtons = () => {
+            if (!prevBtn || !nextBtn) return;
+            const tolerance = 12;
+            const maxScroll = track.scrollWidth - track.clientWidth;
+            prevBtn.disabled = track.scrollLeft <= tolerance;
+            nextBtn.disabled = track.scrollLeft >= maxScroll - tolerance;
+        };
+
+        prevBtn && prevBtn.addEventListener('click', () => {
+            track.scrollBy({ left: -scrollAmount(), behavior: 'smooth' });
+        });
+        nextBtn && nextBtn.addEventListener('click', () => {
+            track.scrollBy({ left: scrollAmount(), behavior: 'smooth' });
+        });
+
+        // Keyboard support on the focusable track
+        track.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') { e.preventDefault(); track.scrollBy({ left: scrollAmount(), behavior: 'smooth' }); }
+            else if (e.key === 'ArrowLeft') { e.preventDefault(); track.scrollBy({ left: -scrollAmount(), behavior: 'smooth' }); }
+        });
+
+        // Pointer drag-to-scroll (mouse); native touch scroll handles mobile
+        let isDown = false, startX = 0, startScroll = 0, moved = false;
+        track.addEventListener('pointerdown', (e) => {
+            if (e.pointerType === 'touch') return; // let native touch scroll work
+            isDown = true; moved = false;
+            startX = e.clientX;
+            startScroll = track.scrollLeft;
+            track.classList.add('is-dragging');
+            track.setPointerCapture(e.pointerId);
+        });
+        track.addEventListener('pointermove', (e) => {
+            if (!isDown) return;
+            const dx = e.clientX - startX;
+            if (Math.abs(dx) > 4) moved = true;
+            track.scrollLeft = startScroll - dx;
+        });
+        const endDrag = (e) => {
+            if (!isDown) return;
+            isDown = false;
+            track.classList.remove('is-dragging');
+            try { track.releasePointerCapture(e.pointerId); } catch (_) {}
+        };
+        track.addEventListener('pointerup', endDrag);
+        track.addEventListener('pointercancel', endDrag);
+        track.addEventListener('pointerleave', endDrag);
+        // Prevent click navigation right after a drag
+        track.addEventListener('click', (e) => {
+            if (moved) { e.preventDefault(); }
+        }, true);
+
+        track.addEventListener('scroll', () => {
+            window.requestAnimationFrame(updateButtons);
+        }, { passive: true });
+        window.addEventListener('resize', updateButtons);
+        window.addEventListener('load', updateButtons);
+        updateButtons();
+        window.requestAnimationFrame(updateButtons);
+    });
+
+    initLightbox();
+}
+
+/* ========================================
+   Lightbox (Fullscreen Gallery)
+   ======================================== */
+function initLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    if (!lightbox) return;
+
+    const triggers = [...document.querySelectorAll('[data-lightbox-trigger]')];
+    if (!triggers.length) return;
+
+    const avifSource = lightbox.querySelector('[data-lightbox-avif]');
+    const webpSource = lightbox.querySelector('[data-lightbox-webp]');
+    const img = lightbox.querySelector('[data-lightbox-img]');
+    const caption = lightbox.querySelector('[data-lightbox-caption]');
+    const prevBtn = lightbox.querySelector('[data-lightbox-prev]');
+    const nextBtn = lightbox.querySelector('[data-lightbox-next]');
+    const closeEls = lightbox.querySelectorAll('[data-lightbox-close]');
+
+    // Group slides by their parent carousel so prev/next stays within a category
+    const groups = [];
+    triggers.forEach(t => {
+        const carousel = t.closest('[data-carousel]') || document.body;
+        let group = groups.find(g => g.carousel === carousel);
+        if (!group) { group = { carousel, items: [] }; groups.push(group); }
+        t.dataset.lbGroup = groups.indexOf(group);
+        t.dataset.lbIndex = group.items.length;
+        group.items.push(t);
+    });
+
+    let current = null; // {groupIndex, index}
+    let lastFocused = null;
+
+    const render = () => {
+        const group = groups[current.groupIndex];
+        const item = group.items[current.index];
+        const base = item.dataset.full;
+        const cap = item.dataset.caption || '';
+        avifSource.srcset = base + '.avif';
+        webpSource.srcset = base + '.webp';
+        img.src = base + '.webp';
+        img.alt = cap;
+        caption.textContent = cap;
+        const many = group.items.length > 1;
+        prevBtn.hidden = !many;
+        nextBtn.hidden = !many;
+        prevBtn.disabled = current.index === 0;
+        nextBtn.disabled = current.index === group.items.length - 1;
+        // preload neighbours
+        [current.index - 1, current.index + 1].forEach(i => {
+            if (i >= 0 && i < group.items.length) {
+                const pre = new Image();
+                pre.src = group.items[i].dataset.full + '.webp';
             }
         });
-        
-        item.addEventListener('mouseleave', function() {
-            const placeholder = this.querySelector('.gallery-placeholder');
-            if (placeholder) {
-                placeholder.style.transform = '';
-            }
+    };
+
+    const open = (item) => {
+        current = { groupIndex: +item.dataset.lbGroup, index: +item.dataset.lbIndex };
+        lastFocused = item;
+        render();
+        lightbox.hidden = false;
+        document.body.classList.add('lightbox-open');
+        // force reflow then animate
+        void lightbox.offsetWidth;
+        lightbox.classList.add('is-open');
+        (nextBtn.hidden ? closeEls[closeEls.length - 1] : nextBtn).focus();
+    };
+
+    const close = () => {
+        lightbox.classList.remove('is-open');
+        document.body.classList.remove('lightbox-open');
+        const done = () => {
+            lightbox.hidden = true;
+            lightbox.removeEventListener('transitionend', done);
+        };
+        lightbox.addEventListener('transitionend', done);
+        if (lastFocused) lastFocused.focus();
+    };
+
+    const step = (dir) => {
+        const group = groups[current.groupIndex];
+        const next = current.index + dir;
+        if (next < 0 || next >= group.items.length) return;
+        current.index = next;
+        render();
+    };
+
+    triggers.forEach(t => {
+        t.addEventListener('click', () => open(t));
+        t.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(t); }
         });
     });
+
+    closeEls.forEach(el => el.addEventListener('click', close));
+    prevBtn.addEventListener('click', () => step(-1));
+    nextBtn.addEventListener('click', () => step(1));
+
+    document.addEventListener('keydown', (e) => {
+        if (lightbox.hidden) return;
+        if (e.key === 'Escape') close();
+        else if (e.key === 'ArrowRight') step(1);
+        else if (e.key === 'ArrowLeft') step(-1);
+    });
+
+    // Swipe on the image (touch)
+    let sx = 0, sy = 0;
+    lightbox.addEventListener('touchstart', (e) => {
+        sx = e.changedTouches[0].clientX; sy = e.changedTouches[0].clientY;
+    }, { passive: true });
+    lightbox.addEventListener('touchend', (e) => {
+        const dx = e.changedTouches[0].clientX - sx;
+        const dy = e.changedTouches[0].clientY - sy;
+        if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) step(dx < 0 ? 1 : -1);
+    }, { passive: true });
+}
+
+/* ========================================
+   Process Connecting Line Reveal
+   ======================================== */
+function initProcessLine() {
+    const steps = document.querySelector('.process-steps');
+    if (!steps) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.35 });
+
+    observer.observe(steps);
 }
 
 /* ========================================

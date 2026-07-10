@@ -329,9 +329,32 @@
       }
       .blog-cards {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        grid-template-columns: repeat(3, 1fr);
         gap: 22px;
         margin-top: 40px;
+      }
+      @media (max-width: 768px) {
+        .blog-cards {
+          display: flex;
+          grid-template-columns: none;
+          overflow-x: auto;
+          scroll-snap-type: x mandatory;
+          scroll-behavior: smooth;
+          -webkit-overflow-scrolling: touch;
+          scrollbar-width: none;
+          gap: 16px;
+          margin-left: -20px;
+          margin-right: -20px;
+          padding: 4px 20px 8px;
+        }
+        .blog-cards::-webkit-scrollbar {
+          display: none;
+        }
+        .blog-cards .blog-card {
+          flex: 0 0 80%;
+          max-width: 320px;
+          scroll-snap-align: center;
+        }
       }
       .blog-card {
         background: #fff;
@@ -689,9 +712,10 @@
         "description": "İzmir'de Fleura Nails tarafından uygulanan protez tırnak, kalıcı oje ve nail art örnekleri.",
         "url": "https://fleura.com.tr/#gallery",
         "image": [
-          "https://fleura.com.tr/assets/8.avif",
-          "https://fleura.com.tr/assets/11.avif",
-          "https://fleura.com.tr/assets/19.avif"
+          "https://fleura.com.tr/assets/gallery/protez-tirnak-1.avif",
+          "https://fleura.com.tr/assets/gallery/kalici-oje-1.avif",
+          "https://fleura.com.tr/assets/gallery/nail-art-1.avif",
+          "https://fleura.com.tr/assets/gallery/el-ayak-1.avif"
         ]
       }
     </script>
@@ -1299,6 +1323,386 @@
           </div>
         </div>
       </section>
+
+      <section class="showcase" id="gallery" aria-labelledby="showcase-title">
+        <div class="container">
+          <div class="section-header">
+            <div
+              class="section-label"
+              data-aos="fade-down"
+              data-aos-duration="600"
+              data-aos-delay="100"
+              data-aos-easing="ease-out-cubic"
+            >
+              <span class="label-line"></span> <span>Portfolyo</span>
+            </div>
+            <h2
+              class="section-title centered"
+              id="showcase-title"
+              data-aos="zoom-in"
+              data-aos-duration="800"
+              data-aos-delay="200"
+              data-aos-easing="ease-out-cubic"
+            >
+              Gerçek <span class="highlight">Çalışmalarımızdan</span> İlham Alın
+            </h2>
+            <p
+              class="section-subtitle"
+              data-aos="fade-up"
+              data-aos-duration="700"
+              data-aos-delay="300"
+              data-aos-easing="ease-out-cubic"
+            >
+              İzmir'deki stüdyomuzda müşterilerimiz için hazırladığımız
+              <a href="#services" class="text-link" title="Hizmetlerimiz">protez tırnak, kalıcı oje ve nail art</a>
+              çalışmalarından bazıları
+            </p>
+          </div>
+          <div class="showcase-carousels">
+
+          <div class="carousel" data-carousel data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">
+            <div class="carousel-head">
+              <h3 class="carousel-title">Protez Tırnak</h3>
+              <div class="carousel-nav" aria-hidden="true">
+                <button type="button" class="carousel-btn carousel-prev" aria-label="Protez Tırnak önceki görseller" data-dir="prev">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </button>
+                <button type="button" class="carousel-btn carousel-next" aria-label="Protez Tırnak sonraki görseller" data-dir="next">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+            </div>
+            <div class="carousel-track" data-carousel-track tabindex="0" role="region" aria-label="Protez Tırnak çalışmalarımız galerisi">
+              <figure class="carousel-slide" aria-label="Protez tırnak uygulaması 1" data-lightbox-trigger data-full="assets/gallery/protez-tirnak-1" data-caption="Protez tırnak uygulaması - 1" tabindex="0" role="button">
+                <picture>
+                  <source type="image/avif" srcset="assets/gallery/protez-tirnak-1-400.avif 400w, assets/gallery/protez-tirnak-1.avif 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <source type="image/webp" srcset="assets/gallery/protez-tirnak-1-400.webp 400w, assets/gallery/protez-tirnak-1.webp 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <img src="assets/gallery/protez-tirnak-1-400.webp" alt="Protez tırnak uygulaması - 1" width="800" height="800" loading="eager" fetchpriority="high" decoding="async">
+                </picture>
+              </figure>
+              <figure class="carousel-slide" aria-label="Protez tırnak uygulaması 2" data-lightbox-trigger data-full="assets/gallery/protez-tirnak-2" data-caption="Protez tırnak uygulaması - 2" tabindex="0" role="button">
+                <picture>
+                  <source type="image/avif" srcset="assets/gallery/protez-tirnak-2-400.avif 400w, assets/gallery/protez-tirnak-2.avif 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <source type="image/webp" srcset="assets/gallery/protez-tirnak-2-400.webp 400w, assets/gallery/protez-tirnak-2.webp 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <img src="assets/gallery/protez-tirnak-2-400.webp" alt="Protez tırnak uygulaması - 2" width="800" height="800" loading="eager" fetchpriority="high" decoding="async">
+                </picture>
+              </figure>
+              <figure class="carousel-slide" aria-label="Protez tırnak uygulaması 3" data-lightbox-trigger data-full="assets/gallery/protez-tirnak-3" data-caption="Protez tırnak uygulaması - 3" tabindex="0" role="button">
+                <picture>
+                  <source type="image/avif" srcset="assets/gallery/protez-tirnak-3-400.avif 400w, assets/gallery/protez-tirnak-3.avif 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <source type="image/webp" srcset="assets/gallery/protez-tirnak-3-400.webp 400w, assets/gallery/protez-tirnak-3.webp 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <img src="assets/gallery/protez-tirnak-3-400.webp" alt="Protez tırnak uygulaması - 3" width="800" height="800" loading="lazy" decoding="async">
+                </picture>
+              </figure>
+              <figure class="carousel-slide" aria-label="Protez tırnak uygulaması 4" data-lightbox-trigger data-full="assets/gallery/protez-tirnak-4" data-caption="Protez tırnak uygulaması - 4" tabindex="0" role="button">
+                <picture>
+                  <source type="image/avif" srcset="assets/gallery/protez-tirnak-4-400.avif 400w, assets/gallery/protez-tirnak-4.avif 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <source type="image/webp" srcset="assets/gallery/protez-tirnak-4-400.webp 400w, assets/gallery/protez-tirnak-4.webp 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <img src="assets/gallery/protez-tirnak-4-400.webp" alt="Protez tırnak uygulaması - 4" width="800" height="800" loading="lazy" decoding="async">
+                </picture>
+              </figure>
+              <figure class="carousel-slide" aria-label="Protez tırnak uygulaması 5" data-lightbox-trigger data-full="assets/gallery/protez-tirnak-5" data-caption="Protez tırnak uygulaması - 5" tabindex="0" role="button">
+                <picture>
+                  <source type="image/avif" srcset="assets/gallery/protez-tirnak-5-400.avif 400w, assets/gallery/protez-tirnak-5.avif 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <source type="image/webp" srcset="assets/gallery/protez-tirnak-5-400.webp 400w, assets/gallery/protez-tirnak-5.webp 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <img src="assets/gallery/protez-tirnak-5-400.webp" alt="Protez tırnak uygulaması - 5" width="800" height="800" loading="lazy" decoding="async">
+                </picture>
+              </figure>
+              <figure class="carousel-slide" aria-label="Protez tırnak uygulaması 6" data-lightbox-trigger data-full="assets/gallery/protez-tirnak-6" data-caption="Protez tırnak uygulaması - 6" tabindex="0" role="button">
+                <picture>
+                  <source type="image/avif" srcset="assets/gallery/protez-tirnak-6-400.avif 400w, assets/gallery/protez-tirnak-6.avif 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <source type="image/webp" srcset="assets/gallery/protez-tirnak-6-400.webp 400w, assets/gallery/protez-tirnak-6.webp 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <img src="assets/gallery/protez-tirnak-6-400.webp" alt="Protez tırnak uygulaması - 6" width="800" height="800" loading="lazy" decoding="async">
+                </picture>
+              </figure>
+              <figure class="carousel-slide" aria-label="Protez tırnak uygulaması 7" data-lightbox-trigger data-full="assets/gallery/protez-tirnak-7" data-caption="Protez tırnak uygulaması - 7" tabindex="0" role="button">
+                <picture>
+                  <source type="image/avif" srcset="assets/gallery/protez-tirnak-7-400.avif 400w, assets/gallery/protez-tirnak-7.avif 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <source type="image/webp" srcset="assets/gallery/protez-tirnak-7-400.webp 400w, assets/gallery/protez-tirnak-7.webp 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <img src="assets/gallery/protez-tirnak-7-400.webp" alt="Protez tırnak uygulaması - 7" width="800" height="800" loading="lazy" decoding="async">
+                </picture>
+              </figure>
+              <figure class="carousel-slide" aria-label="Protez tırnak uygulaması 8" data-lightbox-trigger data-full="assets/gallery/protez-tirnak-8" data-caption="Protez tırnak uygulaması - 8" tabindex="0" role="button">
+                <picture>
+                  <source type="image/avif" srcset="assets/gallery/protez-tirnak-8-400.avif 400w, assets/gallery/protez-tirnak-8.avif 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <source type="image/webp" srcset="assets/gallery/protez-tirnak-8-400.webp 400w, assets/gallery/protez-tirnak-8.webp 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <img src="assets/gallery/protez-tirnak-8-400.webp" alt="Protez tırnak uygulaması - 8" width="800" height="800" loading="lazy" decoding="async">
+                </picture>
+              </figure>
+              <figure class="carousel-slide" aria-label="Protez tırnak uygulaması 9" data-lightbox-trigger data-full="assets/gallery/protez-tirnak-9" data-caption="Protez tırnak uygulaması - 9" tabindex="0" role="button">
+                <picture>
+                  <source type="image/avif" srcset="assets/gallery/protez-tirnak-9-400.avif 400w, assets/gallery/protez-tirnak-9.avif 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <source type="image/webp" srcset="assets/gallery/protez-tirnak-9-400.webp 400w, assets/gallery/protez-tirnak-9.webp 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <img src="assets/gallery/protez-tirnak-9-400.webp" alt="Protez tırnak uygulaması - 9" width="800" height="800" loading="lazy" decoding="async">
+                </picture>
+              </figure>
+            </div>
+          </div>
+          <div class="carousel" data-carousel data-aos="fade-up" data-aos-duration="700" data-aos-delay="160">
+            <div class="carousel-head">
+              <h3 class="carousel-title">Kalıcı Oje</h3>
+              <div class="carousel-nav" aria-hidden="true">
+                <button type="button" class="carousel-btn carousel-prev" aria-label="Kalıcı Oje önceki görseller" data-dir="prev">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </button>
+                <button type="button" class="carousel-btn carousel-next" aria-label="Kalıcı Oje sonraki görseller" data-dir="next">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+            </div>
+            <div class="carousel-track" data-carousel-track tabindex="0" role="region" aria-label="Kalıcı Oje çalışmalarımız galerisi">
+              <figure class="carousel-slide" aria-label="Kalıcı oje uygulaması 1" data-lightbox-trigger data-full="assets/gallery/kalici-oje-1" data-caption="Kalıcı oje uygulaması - 1" tabindex="0" role="button">
+                <picture>
+                  <source type="image/avif" srcset="assets/gallery/kalici-oje-1-400.avif 400w, assets/gallery/kalici-oje-1.avif 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <source type="image/webp" srcset="assets/gallery/kalici-oje-1-400.webp 400w, assets/gallery/kalici-oje-1.webp 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <img src="assets/gallery/kalici-oje-1-400.webp" alt="Kalıcı oje uygulaması - 1" width="800" height="800" loading="lazy" decoding="async">
+                </picture>
+              </figure>
+              <figure class="carousel-slide" aria-label="Kalıcı oje uygulaması 2" data-lightbox-trigger data-full="assets/gallery/kalici-oje-2" data-caption="Kalıcı oje uygulaması - 2" tabindex="0" role="button">
+                <picture>
+                  <source type="image/avif" srcset="assets/gallery/kalici-oje-2-400.avif 400w, assets/gallery/kalici-oje-2.avif 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <source type="image/webp" srcset="assets/gallery/kalici-oje-2-400.webp 400w, assets/gallery/kalici-oje-2.webp 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <img src="assets/gallery/kalici-oje-2-400.webp" alt="Kalıcı oje uygulaması - 2" width="800" height="800" loading="lazy" decoding="async">
+                </picture>
+              </figure>
+              <figure class="carousel-slide" aria-label="Kalıcı oje uygulaması 3" data-lightbox-trigger data-full="assets/gallery/kalici-oje-3" data-caption="Kalıcı oje uygulaması - 3" tabindex="0" role="button">
+                <picture>
+                  <source type="image/avif" srcset="assets/gallery/kalici-oje-3-400.avif 400w, assets/gallery/kalici-oje-3.avif 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <source type="image/webp" srcset="assets/gallery/kalici-oje-3-400.webp 400w, assets/gallery/kalici-oje-3.webp 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <img src="assets/gallery/kalici-oje-3-400.webp" alt="Kalıcı oje uygulaması - 3" width="800" height="800" loading="lazy" decoding="async">
+                </picture>
+              </figure>
+              <figure class="carousel-slide" aria-label="Kalıcı oje uygulaması 4" data-lightbox-trigger data-full="assets/gallery/kalici-oje-4" data-caption="Kalıcı oje uygulaması - 4" tabindex="0" role="button">
+                <picture>
+                  <source type="image/avif" srcset="assets/gallery/kalici-oje-4-400.avif 400w, assets/gallery/kalici-oje-4.avif 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <source type="image/webp" srcset="assets/gallery/kalici-oje-4-400.webp 400w, assets/gallery/kalici-oje-4.webp 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <img src="assets/gallery/kalici-oje-4-400.webp" alt="Kalıcı oje uygulaması - 4" width="800" height="800" loading="lazy" decoding="async">
+                </picture>
+              </figure>
+              <figure class="carousel-slide" aria-label="Kalıcı oje uygulaması 5" data-lightbox-trigger data-full="assets/gallery/kalici-oje-5" data-caption="Kalıcı oje uygulaması - 5" tabindex="0" role="button">
+                <picture>
+                  <source type="image/avif" srcset="assets/gallery/kalici-oje-5-400.avif 400w, assets/gallery/kalici-oje-5.avif 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <source type="image/webp" srcset="assets/gallery/kalici-oje-5-400.webp 400w, assets/gallery/kalici-oje-5.webp 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <img src="assets/gallery/kalici-oje-5-400.webp" alt="Kalıcı oje uygulaması - 5" width="800" height="800" loading="lazy" decoding="async">
+                </picture>
+              </figure>
+              <figure class="carousel-slide" aria-label="Kalıcı oje uygulaması 6" data-lightbox-trigger data-full="assets/gallery/kalici-oje-6" data-caption="Kalıcı oje uygulaması - 6" tabindex="0" role="button">
+                <picture>
+                  <source type="image/avif" srcset="assets/gallery/kalici-oje-6-400.avif 400w, assets/gallery/kalici-oje-6.avif 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <source type="image/webp" srcset="assets/gallery/kalici-oje-6-400.webp 400w, assets/gallery/kalici-oje-6.webp 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <img src="assets/gallery/kalici-oje-6-400.webp" alt="Kalıcı oje uygulaması - 6" width="800" height="800" loading="lazy" decoding="async">
+                </picture>
+              </figure>
+            </div>
+          </div>
+          <div class="carousel" data-carousel data-aos="fade-up" data-aos-duration="700" data-aos-delay="220">
+            <div class="carousel-head">
+              <h3 class="carousel-title">Nail Art</h3>
+              <div class="carousel-nav" aria-hidden="true">
+                <button type="button" class="carousel-btn carousel-prev" aria-label="Nail Art önceki görseller" data-dir="prev">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </button>
+                <button type="button" class="carousel-btn carousel-next" aria-label="Nail Art sonraki görseller" data-dir="next">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+            </div>
+            <div class="carousel-track" data-carousel-track tabindex="0" role="region" aria-label="Nail Art çalışmalarımız galerisi">
+              <figure class="carousel-slide" aria-label="Nail art tırnak tasarımı 1" data-lightbox-trigger data-full="assets/gallery/nail-art-1" data-caption="Nail art tırnak tasarımı - 1" tabindex="0" role="button">
+                <picture>
+                  <source type="image/avif" srcset="assets/gallery/nail-art-1-400.avif 400w, assets/gallery/nail-art-1.avif 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <source type="image/webp" srcset="assets/gallery/nail-art-1-400.webp 400w, assets/gallery/nail-art-1.webp 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <img src="assets/gallery/nail-art-1-400.webp" alt="Nail art tırnak tasarımı - 1" width="800" height="800" loading="lazy" decoding="async">
+                </picture>
+              </figure>
+              <figure class="carousel-slide" aria-label="Nail art tırnak tasarımı 2" data-lightbox-trigger data-full="assets/gallery/nail-art-2" data-caption="Nail art tırnak tasarımı - 2" tabindex="0" role="button">
+                <picture>
+                  <source type="image/avif" srcset="assets/gallery/nail-art-2-400.avif 400w, assets/gallery/nail-art-2.avif 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <source type="image/webp" srcset="assets/gallery/nail-art-2-400.webp 400w, assets/gallery/nail-art-2.webp 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <img src="assets/gallery/nail-art-2-400.webp" alt="Nail art tırnak tasarımı - 2" width="800" height="800" loading="lazy" decoding="async">
+                </picture>
+              </figure>
+              <figure class="carousel-slide" aria-label="Nail art tırnak tasarımı 3" data-lightbox-trigger data-full="assets/gallery/nail-art-3" data-caption="Nail art tırnak tasarımı - 3" tabindex="0" role="button">
+                <picture>
+                  <source type="image/avif" srcset="assets/gallery/nail-art-3-400.avif 400w, assets/gallery/nail-art-3.avif 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <source type="image/webp" srcset="assets/gallery/nail-art-3-400.webp 400w, assets/gallery/nail-art-3.webp 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <img src="assets/gallery/nail-art-3-400.webp" alt="Nail art tırnak tasarımı - 3" width="800" height="800" loading="lazy" decoding="async">
+                </picture>
+              </figure>
+              <figure class="carousel-slide" aria-label="Nail art tırnak tasarımı 4" data-lightbox-trigger data-full="assets/gallery/nail-art-4" data-caption="Nail art tırnak tasarımı - 4" tabindex="0" role="button">
+                <picture>
+                  <source type="image/avif" srcset="assets/gallery/nail-art-4-400.avif 400w, assets/gallery/nail-art-4.avif 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <source type="image/webp" srcset="assets/gallery/nail-art-4-400.webp 400w, assets/gallery/nail-art-4.webp 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <img src="assets/gallery/nail-art-4-400.webp" alt="Nail art tırnak tasarımı - 4" width="800" height="800" loading="lazy" decoding="async">
+                </picture>
+              </figure>
+              <figure class="carousel-slide" aria-label="Nail art tırnak tasarımı 5" data-lightbox-trigger data-full="assets/gallery/nail-art-5" data-caption="Nail art tırnak tasarımı - 5" tabindex="0" role="button">
+                <picture>
+                  <source type="image/avif" srcset="assets/gallery/nail-art-5-400.avif 400w, assets/gallery/nail-art-5.avif 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <source type="image/webp" srcset="assets/gallery/nail-art-5-400.webp 400w, assets/gallery/nail-art-5.webp 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <img src="assets/gallery/nail-art-5-400.webp" alt="Nail art tırnak tasarımı - 5" width="800" height="800" loading="lazy" decoding="async">
+                </picture>
+              </figure>
+              <figure class="carousel-slide" aria-label="Nail art tırnak tasarımı 6" data-lightbox-trigger data-full="assets/gallery/nail-art-6" data-caption="Nail art tırnak tasarımı - 6" tabindex="0" role="button">
+                <picture>
+                  <source type="image/avif" srcset="assets/gallery/nail-art-6-400.avif 400w, assets/gallery/nail-art-6.avif 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <source type="image/webp" srcset="assets/gallery/nail-art-6-400.webp 400w, assets/gallery/nail-art-6.webp 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <img src="assets/gallery/nail-art-6-400.webp" alt="Nail art tırnak tasarımı - 6" width="800" height="800" loading="lazy" decoding="async">
+                </picture>
+              </figure>
+              <figure class="carousel-slide" aria-label="Nail art tırnak tasarımı 7" data-lightbox-trigger data-full="assets/gallery/nail-art-7" data-caption="Nail art tırnak tasarımı - 7" tabindex="0" role="button">
+                <picture>
+                  <source type="image/avif" srcset="assets/gallery/nail-art-7-400.avif 400w, assets/gallery/nail-art-7.avif 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <source type="image/webp" srcset="assets/gallery/nail-art-7-400.webp 400w, assets/gallery/nail-art-7.webp 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <img src="assets/gallery/nail-art-7-400.webp" alt="Nail art tırnak tasarımı - 7" width="800" height="800" loading="lazy" decoding="async">
+                </picture>
+              </figure>
+              <figure class="carousel-slide" aria-label="Nail art tırnak tasarımı 8" data-lightbox-trigger data-full="assets/gallery/nail-art-8" data-caption="Nail art tırnak tasarımı - 8" tabindex="0" role="button">
+                <picture>
+                  <source type="image/avif" srcset="assets/gallery/nail-art-8-400.avif 400w, assets/gallery/nail-art-8.avif 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <source type="image/webp" srcset="assets/gallery/nail-art-8-400.webp 400w, assets/gallery/nail-art-8.webp 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <img src="assets/gallery/nail-art-8-400.webp" alt="Nail art tırnak tasarımı - 8" width="800" height="800" loading="lazy" decoding="async">
+                </picture>
+              </figure>
+              <figure class="carousel-slide" aria-label="Nail art tırnak tasarımı 9" data-lightbox-trigger data-full="assets/gallery/nail-art-9" data-caption="Nail art tırnak tasarımı - 9" tabindex="0" role="button">
+                <picture>
+                  <source type="image/avif" srcset="assets/gallery/nail-art-9-400.avif 400w, assets/gallery/nail-art-9.avif 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <source type="image/webp" srcset="assets/gallery/nail-art-9-400.webp 400w, assets/gallery/nail-art-9.webp 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <img src="assets/gallery/nail-art-9-400.webp" alt="Nail art tırnak tasarımı - 9" width="800" height="800" loading="lazy" decoding="async">
+                </picture>
+              </figure>
+              <figure class="carousel-slide" aria-label="Nail art tırnak tasarımı 10" data-lightbox-trigger data-full="assets/gallery/nail-art-10" data-caption="Nail art tırnak tasarımı - 10" tabindex="0" role="button">
+                <picture>
+                  <source type="image/avif" srcset="assets/gallery/nail-art-10-400.avif 400w, assets/gallery/nail-art-10.avif 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <source type="image/webp" srcset="assets/gallery/nail-art-10-400.webp 400w, assets/gallery/nail-art-10.webp 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <img src="assets/gallery/nail-art-10-400.webp" alt="Nail art tırnak tasarımı - 10" width="800" height="800" loading="lazy" decoding="async">
+                </picture>
+              </figure>
+              <figure class="carousel-slide" aria-label="Nail art tırnak tasarımı 11" data-lightbox-trigger data-full="assets/gallery/nail-art-11" data-caption="Nail art tırnak tasarımı - 11" tabindex="0" role="button">
+                <picture>
+                  <source type="image/avif" srcset="assets/gallery/nail-art-11-400.avif 400w, assets/gallery/nail-art-11.avif 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <source type="image/webp" srcset="assets/gallery/nail-art-11-400.webp 400w, assets/gallery/nail-art-11.webp 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <img src="assets/gallery/nail-art-11-400.webp" alt="Nail art tırnak tasarımı - 11" width="800" height="800" loading="lazy" decoding="async">
+                </picture>
+              </figure>
+              <figure class="carousel-slide" aria-label="Nail art tırnak tasarımı 12" data-lightbox-trigger data-full="assets/gallery/nail-art-12" data-caption="Nail art tırnak tasarımı - 12" tabindex="0" role="button">
+                <picture>
+                  <source type="image/avif" srcset="assets/gallery/nail-art-12-400.avif 400w, assets/gallery/nail-art-12.avif 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <source type="image/webp" srcset="assets/gallery/nail-art-12-400.webp 400w, assets/gallery/nail-art-12.webp 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <img src="assets/gallery/nail-art-12-400.webp" alt="Nail art tırnak tasarımı - 12" width="800" height="800" loading="lazy" decoding="async">
+                </picture>
+              </figure>
+              <figure class="carousel-slide" aria-label="Nail art tırnak tasarımı 13" data-lightbox-trigger data-full="assets/gallery/nail-art-13" data-caption="Nail art tırnak tasarımı - 13" tabindex="0" role="button">
+                <picture>
+                  <source type="image/avif" srcset="assets/gallery/nail-art-13-400.avif 400w, assets/gallery/nail-art-13.avif 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <source type="image/webp" srcset="assets/gallery/nail-art-13-400.webp 400w, assets/gallery/nail-art-13.webp 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <img src="assets/gallery/nail-art-13-400.webp" alt="Nail art tırnak tasarımı - 13" width="800" height="800" loading="lazy" decoding="async">
+                </picture>
+              </figure>
+              <figure class="carousel-slide" aria-label="Nail art tırnak tasarımı 14" data-lightbox-trigger data-full="assets/gallery/nail-art-14" data-caption="Nail art tırnak tasarımı - 14" tabindex="0" role="button">
+                <picture>
+                  <source type="image/avif" srcset="assets/gallery/nail-art-14-400.avif 400w, assets/gallery/nail-art-14.avif 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <source type="image/webp" srcset="assets/gallery/nail-art-14-400.webp 400w, assets/gallery/nail-art-14.webp 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <img src="assets/gallery/nail-art-14-400.webp" alt="Nail art tırnak tasarımı - 14" width="800" height="800" loading="lazy" decoding="async">
+                </picture>
+              </figure>
+              <figure class="carousel-slide" aria-label="Nail art tırnak tasarımı 15" data-lightbox-trigger data-full="assets/gallery/nail-art-15" data-caption="Nail art tırnak tasarımı - 15" tabindex="0" role="button">
+                <picture>
+                  <source type="image/avif" srcset="assets/gallery/nail-art-15-400.avif 400w, assets/gallery/nail-art-15.avif 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <source type="image/webp" srcset="assets/gallery/nail-art-15-400.webp 400w, assets/gallery/nail-art-15.webp 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <img src="assets/gallery/nail-art-15-400.webp" alt="Nail art tırnak tasarımı - 15" width="800" height="800" loading="lazy" decoding="async">
+                </picture>
+              </figure>
+            </div>
+          </div>
+          <div class="carousel" data-carousel data-aos="fade-up" data-aos-duration="700" data-aos-delay="280">
+            <div class="carousel-head">
+              <h3 class="carousel-title">El & Ayak</h3>
+              <div class="carousel-nav" aria-hidden="true">
+                <button type="button" class="carousel-btn carousel-prev" aria-label="El & Ayak önceki görseller" data-dir="prev">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </button>
+                <button type="button" class="carousel-btn carousel-next" aria-label="El & Ayak sonraki görseller" data-dir="next">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+              </div>
+            </div>
+            <div class="carousel-track" data-carousel-track tabindex="0" role="region" aria-label="El & Ayak çalışmalarımız galerisi">
+              <figure class="carousel-slide" aria-label="El ve ayak bakımı uygulaması 1" data-lightbox-trigger data-full="assets/gallery/el-ayak-1" data-caption="El ve ayak bakımı uygulaması - 1" tabindex="0" role="button">
+                <picture>
+                  <source type="image/avif" srcset="assets/gallery/el-ayak-1-400.avif 400w, assets/gallery/el-ayak-1.avif 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <source type="image/webp" srcset="assets/gallery/el-ayak-1-400.webp 400w, assets/gallery/el-ayak-1.webp 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <img src="assets/gallery/el-ayak-1-400.webp" alt="El ve ayak bakımı uygulaması - 1" width="800" height="800" loading="lazy" decoding="async">
+                </picture>
+              </figure>
+              <figure class="carousel-slide" aria-label="El ve ayak bakımı uygulaması 2" data-lightbox-trigger data-full="assets/gallery/el-ayak-2" data-caption="El ve ayak bakımı uygulaması - 2" tabindex="0" role="button">
+                <picture>
+                  <source type="image/avif" srcset="assets/gallery/el-ayak-2-400.avif 400w, assets/gallery/el-ayak-2.avif 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <source type="image/webp" srcset="assets/gallery/el-ayak-2-400.webp 400w, assets/gallery/el-ayak-2.webp 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <img src="assets/gallery/el-ayak-2-400.webp" alt="El ve ayak bakımı uygulaması - 2" width="800" height="800" loading="lazy" decoding="async">
+                </picture>
+              </figure>
+              <figure class="carousel-slide" aria-label="El ve ayak bakımı uygulaması 3" data-lightbox-trigger data-full="assets/gallery/el-ayak-3" data-caption="El ve ayak bakımı uygulaması - 3" tabindex="0" role="button">
+                <picture>
+                  <source type="image/avif" srcset="assets/gallery/el-ayak-3-400.avif 400w, assets/gallery/el-ayak-3.avif 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <source type="image/webp" srcset="assets/gallery/el-ayak-3-400.webp 400w, assets/gallery/el-ayak-3.webp 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <img src="assets/gallery/el-ayak-3-400.webp" alt="El ve ayak bakımı uygulaması - 3" width="800" height="800" loading="lazy" decoding="async">
+                </picture>
+              </figure>
+              <figure class="carousel-slide" aria-label="El ve ayak bakımı uygulaması 4" data-lightbox-trigger data-full="assets/gallery/el-ayak-4" data-caption="El ve ayak bakımı uygulaması - 4" tabindex="0" role="button">
+                <picture>
+                  <source type="image/avif" srcset="assets/gallery/el-ayak-4-400.avif 400w, assets/gallery/el-ayak-4.avif 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <source type="image/webp" srcset="assets/gallery/el-ayak-4-400.webp 400w, assets/gallery/el-ayak-4.webp 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <img src="assets/gallery/el-ayak-4-400.webp" alt="El ve ayak bakımı uygulaması - 4" width="800" height="800" loading="lazy" decoding="async">
+                </picture>
+              </figure>
+              <figure class="carousel-slide" aria-label="El ve ayak bakımı uygulaması 5" data-lightbox-trigger data-full="assets/gallery/el-ayak-5" data-caption="El ve ayak bakımı uygulaması - 5" tabindex="0" role="button">
+                <picture>
+                  <source type="image/avif" srcset="assets/gallery/el-ayak-5-400.avif 400w, assets/gallery/el-ayak-5.avif 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <source type="image/webp" srcset="assets/gallery/el-ayak-5-400.webp 400w, assets/gallery/el-ayak-5.webp 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <img src="assets/gallery/el-ayak-5-400.webp" alt="El ve ayak bakımı uygulaması - 5" width="800" height="800" loading="lazy" decoding="async">
+                </picture>
+              </figure>
+              <figure class="carousel-slide" aria-label="El ve ayak bakımı uygulaması 6" data-lightbox-trigger data-full="assets/gallery/el-ayak-6" data-caption="El ve ayak bakımı uygulaması - 6" tabindex="0" role="button">
+                <picture>
+                  <source type="image/avif" srcset="assets/gallery/el-ayak-6-400.avif 400w, assets/gallery/el-ayak-6.avif 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <source type="image/webp" srcset="assets/gallery/el-ayak-6-400.webp 400w, assets/gallery/el-ayak-6.webp 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <img src="assets/gallery/el-ayak-6-400.webp" alt="El ve ayak bakımı uygulaması - 6" width="800" height="800" loading="lazy" decoding="async">
+                </picture>
+              </figure>
+              <figure class="carousel-slide" aria-label="El ve ayak bakımı uygulaması 7" data-lightbox-trigger data-full="assets/gallery/el-ayak-7" data-caption="El ve ayak bakımı uygulaması - 7" tabindex="0" role="button">
+                <picture>
+                  <source type="image/avif" srcset="assets/gallery/el-ayak-7-400.avif 400w, assets/gallery/el-ayak-7.avif 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <source type="image/webp" srcset="assets/gallery/el-ayak-7-400.webp 400w, assets/gallery/el-ayak-7.webp 800w" sizes="(max-width: 600px) 78vw, 320px">
+                  <img src="assets/gallery/el-ayak-7-400.webp" alt="El ve ayak bakımı uygulaması - 7" width="800" height="800" loading="lazy" decoding="async">
+                </picture>
+              </figure>
+            </div>
+          </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Galeri görüntüleyici" hidden>
+        <div class="lightbox-backdrop" data-lightbox-close></div>
+        <button type="button" class="lightbox-close" data-lightbox-close aria-label="Kapat">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+        <button type="button" class="lightbox-arrow lightbox-prev" data-lightbox-prev aria-label="Önceki görsel">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+        <figure class="lightbox-stage">
+          <picture class="lightbox-picture">
+            <source type="image/avif" data-lightbox-avif>
+            <source type="image/webp" data-lightbox-webp>
+            <img class="lightbox-img" data-lightbox-img alt="" width="800" height="800" decoding="async">
+          </picture>
+          <figcaption class="lightbox-caption" data-lightbox-caption></figcaption>
+        </figure>
+        <button type="button" class="lightbox-arrow lightbox-next" data-lightbox-next aria-label="Sonraki görsel">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      </div>
 
       <section
         class="regions"
@@ -1909,69 +2313,15 @@
                 </div>
               </div>
               <div class="ig-grid">
-                <a
-                  href="https://www.instagram.com/fleuranails"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="ig-post"
-                  title="Instagram'da Görüntüle"
-                  ><img
-                    src="assets/instagram/1.avif" data-fallback-src="assets/instagram/1.webp" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
-                    alt="Post"
-                    loading="lazy"
-                   width="1394"  height="1514" srcset="assets/instagram/1-400.avif 400w, assets/instagram/1.avif 800w" data-fallback-srcset="assets/instagram/1-400.webp 400w, assets/instagram/1.webp 800w" sizes="(max-width: 768px) 33vw, 130px"> </a
-                ><a
-                  href="https://www.instagram.com/fleuranails"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="ig-post"
-                  title="Instagram'da Görüntüle"
-                  ><img
-                    src="assets/instagram/2.avif" data-fallback-src="assets/instagram/2.webp" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
-                    alt="Post"
-                    loading="lazy"
-                   width="1440"  height="1673" srcset="assets/instagram/2-400.avif 400w, assets/instagram/2.avif 800w" data-fallback-srcset="assets/instagram/2-400.webp 400w, assets/instagram/2.webp 800w" sizes="(max-width: 768px) 33vw, 130px"> </a
-                ><a
-                  href="https://www.instagram.com/fleuranails"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="ig-post"
-                  title="Instagram'da Görüntüle"
-                  ><img
-                    src="assets/instagram/3.avif" data-fallback-src="assets/instagram/3.webp" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
-                    alt="Post"
-                    loading="lazy"
-                   width="1440"  height="1495" srcset="assets/instagram/3-400.avif 400w, assets/instagram/3.avif 800w" data-fallback-srcset="assets/instagram/3-400.webp 400w, assets/instagram/3.webp 800w" sizes="(max-width: 768px) 33vw, 130px"> </a
-                ><a
-                  href="https://www.instagram.com/fleuranails"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="ig-post"
-                  title="Instagram'da Görüntüle"
-                  ><img
-                    src="assets/instagram/4.avif" data-fallback-src="assets/instagram/4.webp" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
-                    alt="Post"
-                    loading="lazy"
-                   width="1440"  height="1489" srcset="assets/instagram/4-400.avif 400w, assets/instagram/4.avif 800w" data-fallback-srcset="assets/instagram/4-400.webp 400w, assets/instagram/4.webp 800w" sizes="(max-width: 768px) 33vw, 130px"> </a
-                ><a
-                  href="https://www.instagram.com/fleuranails"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="ig-post"
-                  title="Instagram'da Görüntüle"
-                  ><img
-                    src="assets/instagram/5.avif" data-fallback-src="assets/instagram/5.webp" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
-                    alt="Post"
-                    loading="lazy"
-                   width="150"  height="150" srcset="assets/instagram/5-400.avif 400w, assets/instagram/5.avif 800w" data-fallback-srcset="assets/instagram/5-400.webp 400w, assets/instagram/5.webp 800w" sizes="(max-width: 768px) 33vw, 130px"> </a
-                ><a
-                  href="https://www.instagram.com/fleuranails"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="ig-post"
-                  title="Instagram'da Görüntüle"
-                  ><img src="assets/instagram/6.avif" data-fallback-src="assets/instagram/6.webp" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}" alt="Post" loading="lazy"
-                 width="1440"  height="1720" srcset="assets/instagram/6-400.avif 400w, assets/instagram/6.avif 800w" data-fallback-srcset="assets/instagram/6-400.webp 400w, assets/instagram/6.webp 800w" sizes="(max-width: 768px) 33vw, 130px"></a>
+                <a href="https://www.instagram.com/fleuranails" target="_blank" rel="noopener noreferrer" class="ig-post" title="Instagram'da Görüntüle"><img src="assets/gallery/nail-art-1-400.avif" data-fallback-src="assets/gallery/nail-art-1-400.webp" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}" alt="Nail art tırnak tasarımı" loading="eager" width="800" height="800" srcset="assets/gallery/nail-art-1-400.avif 400w, assets/gallery/nail-art-1.avif 800w" data-fallback-srcset="assets/gallery/nail-art-1-400.webp 400w, assets/gallery/nail-art-1.webp 800w" sizes="(max-width: 768px) 33vw, 130px"></a>
+                <a href="https://www.instagram.com/fleuranails" target="_blank" rel="noopener noreferrer" class="ig-post" title="Instagram'da Görüntüle"><img src="assets/gallery/protez-tirnak-1-400.avif" data-fallback-src="assets/gallery/protez-tirnak-1-400.webp" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}" alt="Protez tırnak uygulaması" loading="eager" width="800" height="800" srcset="assets/gallery/protez-tirnak-1-400.avif 400w, assets/gallery/protez-tirnak-1.avif 800w" data-fallback-srcset="assets/gallery/protez-tirnak-1-400.webp 400w, assets/gallery/protez-tirnak-1.webp 800w" sizes="(max-width: 768px) 33vw, 130px"></a>
+                <a href="https://www.instagram.com/fleuranails" target="_blank" rel="noopener noreferrer" class="ig-post" title="Instagram'da Görüntüle"><img src="assets/gallery/kalici-oje-1-400.avif" data-fallback-src="assets/gallery/kalici-oje-1-400.webp" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}" alt="Kalıcı oje uygulaması" loading="eager" width="800" height="800" srcset="assets/gallery/kalici-oje-1-400.avif 400w, assets/gallery/kalici-oje-1.avif 800w" data-fallback-srcset="assets/gallery/kalici-oje-1-400.webp 400w, assets/gallery/kalici-oje-1.webp 800w" sizes="(max-width: 768px) 33vw, 130px"></a>
+                <a href="https://www.instagram.com/fleuranails" target="_blank" rel="noopener noreferrer" class="ig-post" title="Instagram'da Görüntüle"><img src="assets/gallery/nail-art-8-400.avif" data-fallback-src="assets/gallery/nail-art-8-400.webp" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}" alt="Nail art tırnak tasarımı" loading="lazy" width="800" height="800" srcset="assets/gallery/nail-art-8-400.avif 400w, assets/gallery/nail-art-8.avif 800w" data-fallback-srcset="assets/gallery/nail-art-8-400.webp 400w, assets/gallery/nail-art-8.webp 800w" sizes="(max-width: 768px) 33vw, 130px"></a>
+                <a href="https://www.instagram.com/fleuranails" target="_blank" rel="noopener noreferrer" class="ig-post" title="Instagram'da Görüntüle"><img src="assets/gallery/protez-tirnak-7-400.avif" data-fallback-src="assets/gallery/protez-tirnak-7-400.webp" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}" alt="Protez tırnak uygulaması" loading="lazy" width="800" height="800" srcset="assets/gallery/protez-tirnak-7-400.avif 400w, assets/gallery/protez-tirnak-7.avif 800w" data-fallback-srcset="assets/gallery/protez-tirnak-7-400.webp 400w, assets/gallery/protez-tirnak-7.webp 800w" sizes="(max-width: 768px) 33vw, 130px"></a>
+                <a href="https://www.instagram.com/fleuranails" target="_blank" rel="noopener noreferrer" class="ig-post" title="Instagram'da Görüntüle"><img src="assets/gallery/el-ayak-1-400.avif" data-fallback-src="assets/gallery/el-ayak-1-400.webp" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}" alt="El ve ayak bakımı" loading="lazy" width="800" height="800" srcset="assets/gallery/el-ayak-1-400.avif 400w, assets/gallery/el-ayak-1.avif 800w" data-fallback-srcset="assets/gallery/el-ayak-1-400.webp 400w, assets/gallery/el-ayak-1.webp 800w" sizes="(max-width: 768px) 33vw, 130px"></a>
+                <a href="https://www.instagram.com/fleuranails" target="_blank" rel="noopener noreferrer" class="ig-post" title="Instagram'da Görüntüle"><img src="assets/gallery/nail-art-13-400.avif" data-fallback-src="assets/gallery/nail-art-13-400.webp" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}" alt="Nail art tırnak tasarımı" loading="lazy" width="800" height="800" srcset="assets/gallery/nail-art-13-400.avif 400w, assets/gallery/nail-art-13.avif 800w" data-fallback-srcset="assets/gallery/nail-art-13-400.webp 400w, assets/gallery/nail-art-13.webp 800w" sizes="(max-width: 768px) 33vw, 130px"></a>
+                <a href="https://www.instagram.com/fleuranails" target="_blank" rel="noopener noreferrer" class="ig-post" title="Instagram'da Görüntüle"><img src="assets/gallery/kalici-oje-4-400.avif" data-fallback-src="assets/gallery/kalici-oje-4-400.webp" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}" alt="Kalıcı oje uygulaması" loading="lazy" width="800" height="800" srcset="assets/gallery/kalici-oje-4-400.avif 400w, assets/gallery/kalici-oje-4.avif 800w" data-fallback-srcset="assets/gallery/kalici-oje-4-400.webp 400w, assets/gallery/kalici-oje-4.webp 800w" sizes="(max-width: 768px) 33vw, 130px"></a>
+                <a href="https://www.instagram.com/fleuranails" target="_blank" rel="noopener noreferrer" class="ig-post" title="Instagram'da Görüntüle"><img src="assets/gallery/protez-tirnak-3-400.avif" data-fallback-src="assets/gallery/protez-tirnak-3-400.webp" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}" alt="Protez tırnak uygulaması" loading="lazy" width="800" height="800" srcset="assets/gallery/protez-tirnak-3-400.avif 400w, assets/gallery/protez-tirnak-3.avif 800w" data-fallback-srcset="assets/gallery/protez-tirnak-3-400.webp 400w, assets/gallery/protez-tirnak-3.webp 800w" sizes="(max-width: 768px) 33vw, 130px"></a>
               </div>
             </div>
           </div>
@@ -2243,13 +2593,12 @@
             </p>
           </div>
           <div class="process-steps">
+            <span class="process-flow" aria-hidden="true"></span>
             <div
               class="process-step"
-              data-aos="flip-left"
-              data-aos-duration="800"
-              data-aos-delay="100"
-              data-aos-easing="ease-out-cubic"
+              data-step="1"
             >
+              <span class="step-number" aria-hidden="true">01</span>
               <div class="step-icon-wrap">
                 <img
                   src="assets/icons/calendar.webp"
@@ -2265,11 +2614,9 @@
             </div>
             <div
               class="process-step"
-              data-aos="flip-left"
-              data-aos-duration="800"
-              data-aos-delay="200"
-              data-aos-easing="ease-out-cubic"
+              data-step="2"
             >
+              <span class="step-number" aria-hidden="true">02</span>
               <div class="step-icon-wrap">
                 <img
                   src="assets/icons/proffesional.webp"
@@ -2282,11 +2629,9 @@
             </div>
             <div
               class="process-step"
-              data-aos="flip-left"
-              data-aos-duration="800"
-              data-aos-delay="300"
-              data-aos-easing="ease-out-cubic"
+              data-step="3"
             >
+              <span class="step-number" aria-hidden="true">03</span>
               <div class="step-icon-wrap">
                 <img
                   src="assets/icons/verified.webp"
@@ -2302,11 +2647,9 @@
             </div>
             <div
               class="process-step"
-              data-aos="flip-left"
-              data-aos-duration="800"
-              data-aos-delay="400"
-              data-aos-easing="ease-out-cubic"
+              data-step="4"
             >
+              <span class="step-number" aria-hidden="true">04</span>
               <div class="step-icon-wrap">
                 <img
                   src="assets/icons/garanty.webp"
@@ -2321,291 +2664,6 @@
         </div>
       </section>
 
-      <section class="gallery" id="gallery" aria-labelledby="gallery-title">
-        <div class="container">
-          <div class="section-header">
-            <div
-              class="section-label"
-              data-aos="fade-down"
-              data-aos-duration="600"
-              data-aos-delay="100"
-              data-aos-easing="ease-out-cubic"
-            >
-              <span class="label-line"></span> <span>Portfolyo</span>
-            </div>
-            <h2
-              class="section-title centered"
-              id="gallery-title"
-              data-aos="zoom-in"
-              data-aos-duration="800"
-              data-aos-delay="200"
-              data-aos-easing="ease-out-cubic"
-            >
-              Çalışmalarımızdan <span class="highlight">İlham</span> Alın
-            </h2>
-            <p
-              class="section-subtitle"
-              data-aos="fade-up"
-              data-aos-duration="700"
-              data-aos-delay="300"
-              data-aos-easing="ease-out-cubic"
-            >
-              Müşterilerimiz için hazırladığımız özel
-              <a href="#services" class="text-link" title="Hizmetlerimiz"
-                >tasarımlardan</a
-              >
-              bazıları
-            </p>
-          </div>
-          <div class="gallery-grid">
-            <div
-              class="gallery-item large"
-              data-aos="zoom-in"
-              data-aos-duration="700"
-              data-aos-delay="100"
-              data-aos-easing="ease-out-cubic"
-            >
-              <img
-                src="assets/1.avif" data-fallback-src="assets/1.webp" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
-                alt="Protez tırnak tasarımı"
-                loading="lazy"
-               width="800"  height="800" srcset="assets/1-400.avif 400w, assets/1.avif 800w" data-fallback-srcset="assets/1-400.webp 400w, assets/1.webp 800w" sizes="(max-width: 768px) 100vw, 400px">
-              <div class="gallery-overlay">
-                <span class="gallery-label">Protez Tırnak</span>
-              </div>
-            </div>
-            <div
-              class="gallery-item"
-              data-aos="fade-left"
-              data-aos-duration="600"
-              data-aos-delay="150"
-              data-aos-easing="ease-out-cubic"
-            >
-              <img
-                src="assets/7.avif" data-fallback-src="assets/7.webp" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
-                alt="Kalıcı oje uygulaması"
-                loading="eager"
-                fetchpriority="high"
-               width="800"  height="800" srcset="assets/7-400.avif 400w, assets/7.avif 800w" data-fallback-srcset="assets/7-400.webp 400w, assets/7.webp 800w" sizes="(max-width: 768px) 100vw, 400px">
-              <div class="gallery-overlay">
-                <span class="gallery-label">Kalıcı Oje</span>
-              </div>
-            </div>
-            <div
-              class="gallery-item"
-              data-aos="fade-right"
-              data-aos-duration="600"
-              data-aos-delay="200"
-              data-aos-easing="ease-out-cubic"
-            >
-              <img src="assets/8.avif" data-fallback-src="assets/8.webp" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}" alt="Nail art tasarımı" loading="lazy"  width="800"  height="800" srcset="assets/8-400.avif 400w, assets/8.avif 800w" data-fallback-srcset="assets/8-400.webp 400w, assets/8.webp 800w" sizes="(max-width: 768px) 100vw, 400px">
-              <div class="gallery-overlay">
-                <span class="gallery-label">Nail Art</span>
-              </div>
-            </div>
-            <div
-              class="gallery-item"
-              data-aos="zoom-in"
-              data-aos-duration="600"
-              data-aos-delay="250"
-              data-aos-easing="ease-out-cubic"
-            >
-              <img src="assets/11.avif" data-fallback-src="assets/11.webp" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}" alt="French manikür" loading="lazy"  width="800"  height="800" srcset="assets/11-400.avif 400w, assets/11.avif 800w" data-fallback-srcset="assets/11-400.webp 400w, assets/11.webp 800w" sizes="(max-width: 768px) 100vw, 400px">
-              <div class="gallery-overlay">
-                <span class="gallery-label">French Manikür</span>
-              </div>
-            </div>
-            <div
-              class="gallery-item tall"
-              data-aos="fade-up"
-              data-aos-duration="700"
-              data-aos-delay="300"
-              data-aos-easing="ease-out-cubic"
-            >
-              <img
-                src="assets/14.avif" data-fallback-src="assets/14.webp" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
-                alt="Özel tasarım tırnak"
-                loading="lazy"
-               width="800"  height="800" srcset="assets/14-400.avif 400w, assets/14.avif 800w" data-fallback-srcset="assets/14-400.webp 400w, assets/14.webp 800w" sizes="(max-width: 768px) 100vw, 400px">
-              <div class="gallery-overlay">
-                <span class="gallery-label">Özel Tasarım</span>
-              </div>
-            </div>
-            <div
-              class="gallery-item"
-              data-aos="fade-left"
-              data-aos-duration="600"
-              data-aos-delay="350"
-              data-aos-easing="ease-out-cubic"
-            >
-              <img
-                src="assets/24.avif" data-fallback-src="assets/24.webp" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
-                alt="Stiletto tırnak modeli"
-                loading="lazy"
-               width="800"  height="800" srcset="assets/24-400.avif 400w, assets/24.avif 800w" data-fallback-srcset="assets/24-400.webp 400w, assets/24.webp 800w" sizes="(max-width: 768px) 100vw, 400px">
-              <div class="gallery-overlay">
-                <span class="gallery-label">Stiletto</span>
-              </div>
-            </div>
-            <div
-              class="gallery-item"
-              data-aos="fade-right"
-              data-aos-duration="600"
-              data-aos-delay="400"
-              data-aos-easing="ease-out-cubic"
-            >
-              <img
-                src="assets/4.avif" data-fallback-src="assets/4.webp" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
-                alt="Minimal tırnak tasarımı"
-                loading="lazy"
-               width="800"  height="800" srcset="assets/4-400.avif 400w, assets/4.avif 800w" data-fallback-srcset="assets/4-400.webp 400w, assets/4.webp 800w" sizes="(max-width: 768px) 100vw, 400px">
-              <div class="gallery-overlay">
-                <span class="gallery-label">Minimal Tasarım</span>
-              </div>
-            </div>
-            <div
-              class="gallery-item large"
-              data-aos="zoom-in"
-              data-aos-duration="700"
-              data-aos-delay="450"
-              data-aos-easing="ease-out-cubic"
-            >
-              <img
-                src="assets/9.avif" data-fallback-src="assets/9.webp" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
-                alt="Badem tırnak modeli"
-                loading="lazy"
-               width="800"  height="800" srcset="assets/9-400.avif 400w, assets/9.avif 800w" data-fallback-srcset="assets/9-400.webp 400w, assets/9.webp 800w" sizes="(max-width: 768px) 100vw, 400px">
-              <div class="gallery-overlay">
-                <span class="gallery-label">Badem Tırnak</span>
-              </div>
-            </div>
-            <div
-              class="gallery-item"
-              data-aos="fade-left"
-              data-aos-duration="600"
-              data-aos-delay="500"
-              data-aos-easing="ease-out-cubic"
-            >
-              <img
-                src="assets/25.avif" data-fallback-src="assets/25.webp" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
-                alt="Mermer desen tırnak"
-                loading="lazy"
-               width="800"  height="800" srcset="assets/25-400.avif 400w, assets/25.avif 800w" data-fallback-srcset="assets/25-400.webp 400w, assets/25.webp 800w" sizes="(max-width: 768px) 100vw, 400px">
-              <div class="gallery-overlay">
-                <span class="gallery-label">Mermer Desen</span>
-              </div>
-            </div>
-            <div
-              class="gallery-item tall"
-              data-aos="fade-up"
-              data-aos-duration="700"
-              data-aos-delay="550"
-              data-aos-easing="ease-out-cubic"
-            >
-              <img
-                src="assets/16.avif" data-fallback-src="assets/16.webp" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
-                alt="Ombre tırnak tasarımı"
-                loading="lazy"
-               width="800"  height="800" srcset="assets/16-400.avif 400w, assets/16.avif 800w" data-fallback-srcset="assets/16-400.webp 400w, assets/16.webp 800w" sizes="(max-width: 768px) 100vw, 400px">
-              <div class="gallery-overlay">
-                <span class="gallery-label">Ombre</span>
-              </div>
-            </div>
-            <div
-              class="gallery-item"
-              data-aos="fade-right"
-              data-aos-duration="600"
-              data-aos-delay="600"
-              data-aos-easing="ease-out-cubic"
-            >
-              <img
-                src="assets/18.avif" data-fallback-src="assets/18.webp" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
-                alt="Taşlı tırnak süslemesi"
-                loading="lazy"
-               width="800"  height="800" srcset="assets/18-400.avif 400w, assets/18.avif 800w" data-fallback-srcset="assets/18-400.webp 400w, assets/18.webp 800w" sizes="(max-width: 768px) 100vw, 400px">
-              <div class="gallery-overlay">
-                <span class="gallery-label">Taşlı Tasarım</span>
-              </div>
-            </div>
-            <div
-              class="gallery-item"
-              data-aos="zoom-in"
-              data-aos-duration="600"
-              data-aos-delay="650"
-              data-aos-easing="ease-out-cubic"
-            >
-              <img src="assets/19.avif" data-fallback-src="assets/19.webp" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}" alt="Çiçekli nail art" loading="lazy"  width="800"  height="800" srcset="assets/19-400.avif 400w, assets/19.avif 800w" data-fallback-srcset="assets/19-400.webp 400w, assets/19.webp 800w" sizes="(max-width: 768px) 100vw, 400px">
-              <div class="gallery-overlay">
-                <span class="gallery-label">Çiçek Deseni</span>
-              </div>
-            </div>
-            <div
-              class="gallery-item large"
-              data-aos="zoom-in"
-              data-aos-duration="700"
-              data-aos-delay="700"
-              data-aos-easing="ease-out-cubic"
-            >
-              <img
-                src="assets/20.avif" data-fallback-src="assets/20.webp" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
-                alt="Krom tırnak uygulaması"
-                loading="lazy"
-               width="800"  height="800" srcset="assets/20-400.avif 400w, assets/20.avif 800w" data-fallback-srcset="assets/20-400.webp 400w, assets/20.webp 800w" sizes="(max-width: 768px) 100vw, 400px">
-              <div class="gallery-overlay">
-                <span class="gallery-label">Krom Tırnak</span>
-              </div>
-            </div>
-            <div
-              class="gallery-item"
-              data-aos="fade-left"
-              data-aos-duration="600"
-              data-aos-delay="750"
-              data-aos-easing="ease-out-cubic"
-            >
-              <img
-                src="assets/21.avif" data-fallback-src="assets/21.webp" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
-                alt="Geometrik tırnak deseni"
-                loading="lazy"
-               width="800"  height="800" srcset="assets/21-400.avif 400w, assets/21.avif 800w" data-fallback-srcset="assets/21-400.webp 400w, assets/21.webp 800w" sizes="(max-width: 768px) 100vw, 400px">
-              <div class="gallery-overlay">
-                <span class="gallery-label">Geometrik</span>
-              </div>
-            </div>
-            <div
-              class="gallery-item tall"
-              data-aos="fade-up"
-              data-aos-duration="700"
-              data-aos-delay="800"
-              data-aos-easing="ease-out-cubic"
-            >
-              <img
-                src="assets/22.avif" data-fallback-src="assets/22.webp" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
-                alt="Cat eye tırnak tasarımı"
-                loading="lazy"
-               width="800"  height="800" srcset="assets/22-400.avif 400w, assets/22.avif 800w" data-fallback-srcset="assets/22-400.webp 400w, assets/22.webp 800w" sizes="(max-width: 768px) 100vw, 400px">
-              <div class="gallery-overlay">
-                <span class="gallery-label">Cat Eye</span>
-              </div>
-            </div>
-            <div
-              class="gallery-item"
-              data-aos="fade-right"
-              data-aos-duration="600"
-              data-aos-delay="850"
-              data-aos-easing="ease-out-cubic"
-            >
-              <img
-                src="assets/23.avif" data-fallback-src="assets/23.webp" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
-                alt="Nude tırnak uygulaması"
-                loading="lazy"
-               width="800"  height="800" srcset="assets/23-400.avif 400w, assets/23.avif 800w" data-fallback-srcset="assets/23-400.webp 400w, assets/23.webp 800w" sizes="(max-width: 768px) 100vw, 400px">
-              <div class="gallery-overlay">
-                <span class="gallery-label">Nude Tırnak</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
       <section class="testimonials" aria-labelledby="testimonials-title">
         <div class="testimonials-bg"></div>
         <div class="container">
@@ -2631,28 +2689,10 @@
             </h2>
           </div>
           <div class="testimonials-slider">
-            <article
-              class="testimonial-card"
-              data-aos="fade-right"
-              data-aos-duration="700"
-              data-aos-delay="100"
-              data-aos-easing="ease-out-cubic"
-            >
-              <div class="testimonial-stars" aria-label="5 üzerinden 5 yıldız">
-                ★★★★★
-              </div>
+            <article class="testimonial-card" data-aos="fade-up" data-aos-duration="700" data-aos-delay="100" data-aos-easing="ease-out-cubic">
+              <div class="testimonial-stars" aria-label="5 üzerinden 5 yıldız">★★★★★</div>
               <blockquote class="testimonial-text">
-                "Fleura Nails'i keşfettiğim için çok mutluyum! Yıllardır tırnak
-                yaptırıyorum ama bu kadar profesyonel ve hijyenik bir hizmet
-                almamıştım.
-                <a
-                  href="#services"
-                  class="text-link"
-                  title="Protez Tırnak Hizmeti"
-                  >Protez tırnak</a
-                >
-                uygulamam 4 haftadır sapasağlam duruyor, herkes kendi
-                tırnaklarım sanıyor!"
+                "Fleura Nails'i keşfettiğim için çok mutluyum! Yıllardır tırnak yaptırıyorum ama bu kadar profesyonel ve hijyenik bir hizmet almamıştım. <a href="#services" class="text-link" title="Protez Tırnak Hizmeti">Protez tırnak</a> uygulamam 4 haftadır sapasağlam duruyor, herkes kendi tırnaklarım sanıyor!"
               </blockquote>
               <div class="testimonial-author">
                 <div class="author-avatar">A</div>
@@ -2662,28 +2702,10 @@
                 </div>
               </div>
             </article>
-            <article
-              class="testimonial-card"
-              data-aos="fade-right"
-              data-aos-duration="700"
-              data-aos-delay="200"
-              data-aos-easing="ease-out-cubic"
-            >
-              <div class="testimonial-stars" aria-label="5 üzerinden 5 yıldız">
-                ★★★★★
-              </div>
+            <article class="testimonial-card" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200" data-aos-easing="ease-out-cubic">
+              <div class="testimonial-stars" aria-label="5 üzerinden 5 yıldız">★★★★★</div>
               <blockquote class="testimonial-text">
-                "İş hayatım yoğun olduğu için tırnaklarıma fazla zaman
-                ayıramıyordum. Fleura'da aldığım
-                <a href="#services" class="text-link" title="Kalıcı Oje Hizmeti"
-                  >kalıcı oje</a
-                >
-                tam 3 hafta boyunca ilk günkü gibi parlak kaldı. Artık düzenli
-                müşteriyim,
-                <a href="#randevu-al" class="text-link" title="Randevu Al"
-                  >randevu</a
-                >
-                almadan gitmiyorum!"
+                "İş hayatım yoğun olduğu için tırnaklarıma fazla zaman ayıramıyordum. Fleura'da aldığım <a href="#services" class="text-link" title="Kalıcı Oje Hizmeti">kalıcı oje</a> tam 3 hafta boyunca ilk günkü gibi parlak kaldı. Artık düzenli müşteriyim, <a href="#randevu-al" class="text-link" title="Randevu Al">randevu</a> almadan gitmiyorum!"
               </blockquote>
               <div class="testimonial-author">
                 <div class="author-avatar">M</div>
@@ -2693,30 +2715,81 @@
                 </div>
               </div>
             </article>
-            <article
-              class="testimonial-card"
-              data-aos="fade-right"
-              data-aos-duration="700"
-              data-aos-delay="300"
-              data-aos-easing="ease-out-cubic"
-            >
-              <div class="testimonial-stars" aria-label="5 üzerinden 5 yıldız">
-                ★★★★★
-              </div>
+            <article class="testimonial-card" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300" data-aos-easing="ease-out-cubic">
+              <div class="testimonial-stars" aria-label="5 üzerinden 5 yıldız">★★★★★</div>
               <blockquote class="testimonial-text">
-                "Düğünüm için özel
-                <a href="#services" class="text-link" title="Nail Art Hizmeti"
-                  >nail art</a
-                >
-                yaptırdım. Hayalimdeki tasarımı birebir uyguladılar! Gelin
-                manikürüm için aldığım tüm övgüler Fleura'ya ait. Nedimelerim de
-                şimdi buraya geliyor."
+                "Düğünüm için özel <a href="#services" class="text-link" title="Nail Art Hizmeti">nail art</a> yaptırdım. Hayalimdeki tasarımı birebir uyguladılar! Gelin manikürüm için aldığım tüm övgüler Fleura'ya ait. Nedimelerim de şimdi buraya geliyor."
               </blockquote>
               <div class="testimonial-author">
                 <div class="author-avatar">Z</div>
                 <div class="author-info">
                   <cite class="author-name">Zeynep B.</cite>
                   <span class="author-service">Gelin Manikürü</span>
+                </div>
+              </div>
+            </article>
+            <article class="testimonial-card" data-aos="fade-up" data-aos-duration="700" data-aos-delay="400" data-aos-easing="ease-out-cubic">
+              <div class="testimonial-stars" aria-label="5 üzerinden 5 yıldız">★★★★★</div>
+              <blockquote class="testimonial-text">
+                "Eve gelip hizmet vermeleri benim için tam bir kurtarıcı oldu. İki çocuk annesiyim, salona gidecek vaktim yok. <a href="#services" class="text-link" title="Kalıcı Oje Hizmeti">Kalıcı oje</a> ve manikürümü evimin konforunda hallettim, sonuç kusursuz!"
+              </blockquote>
+              <div class="testimonial-author">
+                <div class="author-avatar">S</div>
+                <div class="author-info">
+                  <cite class="author-name">Selin A.</cite>
+                  <span class="author-service">Ev Hizmeti Müşterisi</span>
+                </div>
+              </div>
+            </article>
+            <article class="testimonial-card" data-aos="fade-up" data-aos-duration="700" data-aos-delay="500" data-aos-easing="ease-out-cubic">
+              <div class="testimonial-stars" aria-label="5 üzerinden 5 yıldız">★★★★★</div>
+              <blockquote class="testimonial-text">
+                "Hijyen konusundaki hassasiyetleri beni çok etkiledi. Tüm aletler gözümün önünde steril paketten çıktı. <a href="#services" class="text-link" title="Protez Tırnak Hizmeti">Protez tırnak</a> yaptırdım, hem doğal göründü hem de hiç kırılmadı."
+              </blockquote>
+              <div class="testimonial-author">
+                <div class="author-avatar">E</div>
+                <div class="author-info">
+                  <cite class="author-name">Elif D.</cite>
+                  <span class="author-service">Protez Tırnak Müşterisi</span>
+                </div>
+              </div>
+            </article>
+            <article class="testimonial-card" data-aos="fade-up" data-aos-duration="700" data-aos-delay="600" data-aos-easing="ease-out-cubic">
+              <div class="testimonial-stars" aria-label="5 üzerinden 5 yıldız">★★★★★</div>
+              <blockquote class="testimonial-text">
+                "Instagram'dan görüp denemek istedim, pişman olmadım! El ve ayak bakımım harika oldu, ayrıca çok da keyifli sohbet ettik. İzmir'de bu kalitede hizmet bulmak gerçekten zor."
+              </blockquote>
+              <div class="testimonial-author">
+                <div class="author-avatar">G</div>
+                <div class="author-info">
+                  <cite class="author-name">Gamze Y.</cite>
+                  <span class="author-service">El & Ayak Bakımı</span>
+                </div>
+              </div>
+            </article>
+            <article class="testimonial-card" data-aos="fade-up" data-aos-duration="700" data-aos-delay="700" data-aos-easing="ease-out-cubic">
+              <div class="testimonial-stars" aria-label="5 üzerinden 5 yıldız">★★★★★</div>
+              <blockquote class="testimonial-text">
+                "Kızımın doğum günü için birlikte <a href="#services" class="text-link" title="Nail Art Hizmeti">nail art</a> yaptırdık. Hem çok eğlendik hem de tasarımlar muhteşemdi. İlgileri ve güler yüzleri için teşekkürler Fleura!"
+              </blockquote>
+              <div class="testimonial-author">
+                <div class="author-avatar">B</div>
+                <div class="author-info">
+                  <cite class="author-name">Burcu N.</cite>
+                  <span class="author-service">Nail Art Müşterisi</span>
+                </div>
+              </div>
+            </article>
+            <article class="testimonial-card" data-aos="fade-up" data-aos-duration="700" data-aos-delay="800" data-aos-easing="ease-out-cubic">
+              <div class="testimonial-stars" aria-label="5 üzerinden 5 yıldız">★★★★★</div>
+              <blockquote class="testimonial-text">
+                "Yıllardır aradığım tırnak stüdyosunu buldum. Randevu sistemi çok pratik, WhatsApp'tan hemen dönüş yapıyorlar. Kalıcı ojem 3 haftayı geçti hâlâ tertemiz. Kesinlikle tavsiye ederim."
+              </blockquote>
+              <div class="testimonial-author">
+                <div class="author-avatar">D</div>
+                <div class="author-info">
+                  <cite class="author-name">Deniz K.</cite>
+                  <span class="author-service">Kalıcı Oje Müşterisi</span>
                 </div>
               </div>
             </article>
@@ -3144,9 +3217,27 @@
               <p>Beslenmeden topikal uygulamalara, tırnaklarınızı güçlendirmenin bilimsel olarak kanıtlanmış yöntemleri.</p>
               <span class="blog-arrow">Devamını Oku →</span>
             </a>
+            <a href="/blog/nail-art-trendleri" class="blog-card" data-aos="fade-up" data-aos-delay="400">
+              <span class="blog-tag">Nail Art</span>
+              <h3>2026 Nail Art Trendleri</h3>
+              <p>Bu sezonun öne çıkan renkleri, desenleri ve teknikleri — ilham verecek en yeni tırnak sanatı akımları.</p>
+              <span class="blog-arrow">Devamını Oku →</span>
+            </a>
+            <a href="/blog/evde-tirnak-bakimi" class="blog-card" data-aos="fade-up" data-aos-delay="500">
+              <span class="blog-tag">Bakım</span>
+              <h3>Evde Tırnak Bakımı Rutini</h3>
+              <p>Salon randevuları arasında tırnaklarınızı sağlıklı ve bakımlı tutmanın adım adım evde uygulanabilir yöntemleri.</p>
+              <span class="blog-arrow">Devamını Oku →</span>
+            </a>
+            <a href="/blog/french-manikur-rehberi" class="blog-card" data-aos="fade-up" data-aos-delay="600">
+              <span class="blog-tag">Manikür</span>
+              <h3>French Manikür Rehberi</h3>
+              <p>Klasik ve modern French manikür arasındaki farklar, hangi tırnak şekline hangi stilin yakıştığı ve bakım önerileri.</p>
+              <span class="blog-arrow">Devamını Oku →</span>
+            </a>
           </div>
           <div class="faq-cta" data-aos="zoom-in" data-aos-delay="400" style="text-align:center;margin-top:40px;">
-            <a href="/blog" class="btn btn-secondary">Tüm Blog Yazıları</a>
+            <a href="/blog.html" class="btn btn-secondary">Tüm Blog Yazıları</a>
           </div>
         </div>
       </section>
