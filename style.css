@@ -3528,12 +3528,12 @@ textarea:focus-visible {
   box-shadow: var(--shadow-md);
   z-index: 1;
   border: 1px solid rgba(196, 164, 132, 0.1);
-  transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1),
-    box-shadow 0.45s ease, border-color 0.45s ease, opacity 0.7s ease;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.4s ease, border-color 0.4s ease, opacity 0.4s ease;
   overflow: hidden;
   /* hidden state before reveal */
   opacity: 0;
-  transform: translateY(40px);
+  transform: translateY(28px);
 }
 
 /* Staggered reveal — each card flows up in sequence */
@@ -3542,19 +3542,19 @@ textarea:focus-visible {
   transform: translateY(0);
 }
 
-.process-steps.is-visible .process-step[data-step="1"] { transition-delay: 0.15s; }
-.process-steps.is-visible .process-step[data-step="2"] { transition-delay: 0.45s; }
-.process-steps.is-visible .process-step[data-step="3"] { transition-delay: 0.75s; }
-.process-steps.is-visible .process-step[data-step="4"] { transition-delay: 1.05s; }
+.process-steps.is-visible .process-step[data-step="1"] { transition-delay: 0.05s; }
+.process-steps.is-visible .process-step[data-step="2"] { transition-delay: 0.18s; }
+.process-steps.is-visible .process-step[data-step="3"] { transition-delay: 0.31s; }
+.process-steps.is-visible .process-step[data-step="4"] { transition-delay: 0.44s; }
 
 /* Icon "activates" (glows) in sequence as the flow reaches it */
 .process-steps.is-visible .step-icon-wrap {
-  animation: step-activate 0.7s ease both;
+  animation: step-activate 0.5s ease both;
 }
-.process-steps.is-visible .process-step[data-step="1"] .step-icon-wrap { animation-delay: 0.35s; }
-.process-steps.is-visible .process-step[data-step="2"] .step-icon-wrap { animation-delay: 0.65s; }
-.process-steps.is-visible .process-step[data-step="3"] .step-icon-wrap { animation-delay: 0.95s; }
-.process-steps.is-visible .process-step[data-step="4"] .step-icon-wrap { animation-delay: 1.25s; }
+.process-steps.is-visible .process-step[data-step="1"] .step-icon-wrap { animation-delay: 0.15s; }
+.process-steps.is-visible .process-step[data-step="2"] .step-icon-wrap { animation-delay: 0.28s; }
+.process-steps.is-visible .process-step[data-step="3"] .step-icon-wrap { animation-delay: 0.41s; }
+.process-steps.is-visible .process-step[data-step="4"] .step-icon-wrap { animation-delay: 0.54s; }
 
 @keyframes step-activate {
   0% {

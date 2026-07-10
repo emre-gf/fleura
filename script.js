@@ -835,9 +835,15 @@ function initProcessLine() {
                 observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.35 });
+    }, { threshold: 0.15 });
 
     observer.observe(steps);
+
+    // Fallback: if already in/above viewport on load, reveal right away
+    const r = steps.getBoundingClientRect();
+    if (r.top < window.innerHeight && r.bottom > 0) {
+        steps.classList.add('is-visible');
+    }
 }
 
 /* ========================================
