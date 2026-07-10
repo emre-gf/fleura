@@ -1317,17 +1317,59 @@ section {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--space-sm);
+  gap: var(--space-md);
   margin-bottom: var(--space-md);
   padding: 0 var(--space-xs);
 }
 
+/* Title + decorative accent block on the left */
 .carousel-title {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
   font-family: var(--font-display);
-  font-size: clamp(1.35rem, 3vw, 1.9rem);
+  font-size: clamp(1.4rem, 3vw, 2rem);
   font-weight: 600;
   color: var(--color-dark);
-  line-height: 1.2;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  padding-left: var(--space-md);
+}
+
+/* Vertical gradient accent bar before the title */
+.carousel-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 1.6em;
+  border-radius: var(--radius-full);
+  background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-rose) 100%);
+}
+
+/* Flowing accent line filling the space between title and nav */
+.carousel-head::before {
+  content: "";
+  flex: 1;
+  height: 1px;
+  margin-top: 0.15em;
+  background: linear-gradient(
+    90deg,
+    rgba(196, 164, 132, 0.35) 0%,
+    rgba(196, 164, 132, 0.05) 100%
+  );
+  order: 2;
+}
+
+.carousel-title {
+  order: 1;
+}
+
+.carousel-nav {
+  order: 3;
 }
 
 .carousel-nav {

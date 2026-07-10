@@ -737,11 +737,13 @@ function initLightbox() {
     const render = () => {
         const group = groups[current.groupIndex];
         const item = group.items[current.index];
-        const base = item.dataset.full;
+        const base = item.dataset.full + '-full';
         const cap = item.dataset.caption || '';
         avifSource.srcset = base + '.avif';
         webpSource.srcset = base + '.webp';
         img.src = base + '.webp';
+        img.removeAttribute('width');
+        img.removeAttribute('height');
         img.alt = cap;
         caption.textContent = cap;
         const many = group.items.length > 1;
@@ -753,7 +755,7 @@ function initLightbox() {
         [current.index - 1, current.index + 1].forEach(i => {
             if (i >= 0 && i < group.items.length) {
                 const pre = new Image();
-                pre.src = group.items[i].dataset.full + '.webp';
+                pre.src = group.items[i].dataset.full + '-full.webp';
             }
         });
     };
