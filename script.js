@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initProcessLine();
     initCountUp();
     initScrollToTop();
-    initHeroHoverVideo();
+    initHeroRotator();
     initValentinesVideo();
     initAppointmentBooking();
 });
@@ -1046,30 +1046,107 @@ function initScrollToTop() {
 }
 
 /* ========================================
-   Hero Auto Video (Image to Video after 2s)
+   Hero Rotator (Wheel-style Image Carousel)
    ======================================== */
-function initHeroHoverVideo() {
-    const heroContainer = document.querySelector('.hero-image-container');
-    const heroVideo = document.querySelector('.hero-auto-video');
-    const heroImage = document.querySelector('.hero-image');
-    
-    if (!heroContainer || !heroVideo || !heroImage) return;
-    
-    // Wait for page to fully load
-    window.addEventListener('load', () => {
-        // After 2 seconds, start video transition
-        setTimeout(() => {
-            // Load and play video
-            heroVideo.load();
-            heroVideo.play().then(() => {
-                // Video started playing, fade transition
-                heroContainer.classList.add('video-active');
-            }).catch(() => {
-                // Video play failed, keep image visible
-                console.warn('Video autoplay failed');
-            });
-        }, 2000);
+function initHeroRotator() {
+    const rotator = document.querySelector('[data-hero-rotator]');
+    if (!rotator) return;
+
+    const slides = Array.from(rotator.querySelectorAll('.hero-image-slide'));
+    const dots = Array.from(rotator.querySelectorAll('.hero-rotator-dot'));
+    const caption = rotator.querySelector('.hero-rotator-caption');
+    if (slides.length < 2) return;
+
+    const INTERVAL = 3000;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let current = 0;
+    let timer = null;
+    let inView = true;
+    let hovered = false;
+
+    function goTo(next) {
+        if (next === current) return;
+        const leaving = slides[current];
+        leaving.classList.remove('is-active');
+        leaving.classList.add('is-leaving');
+        setTimeout(() => leaving.classList.remove('is-leaving'), 800);
+
+        slides[next].classList.add('is-active');
+        dots[current].classList.remove('is-active');
+        dots[current].removeAttribute('aria-current');
+        dots[next].classList.add('is-active');
+        dots[next].setAttribute('aria-current', 'true');
+        current = next;
+
+        if (caption) {
+            caption.textContent = slides[next].dataset.label || '';
+            caption.style.animation = 'none';
+            void caption.offsetWidth;
+            caption.style.animation = '';
+        }
+    }
+
+    function restartProgress() {
+        // Retrigger the active dot's progress animation
+        const dot = dots[current];
+        dot.classList.remove('is-active');
+        void dot.offsetWidth;
+        dot.classList.add('is-active');
+    }
+
+    function stop() {
+        if (timer) {
+            clearInterval(timer);
+            timer = null;
+        }
+        rotator.classList.add('is-paused');
+    }
+
+    function start() {
+        if (timer || !inView || hovered || document.hidden || reducedMotion.matches) return;
+        rotator.classList.remove('is-paused');
+        restartProgress(); // keep the dot's progress bar in sync with the timer
+        timer = setInterval(() => {
+            goTo((current + 1) % slides.length);
+        }, INTERVAL);
+    }
+
+    // Manual selection via dots
+    dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => {
+            stop();
+            goTo(i);
+            restartProgress();
+            start();
+        });
     });
+
+    // Pause on hover / touch so visitors can look closely
+    rotator.addEventListener('mouseenter', () => { hovered = true; stop(); });
+    rotator.addEventListener('mouseleave', () => { hovered = false; start(); });
+    rotator.addEventListener('touchstart', () => { hovered = true; stop(); }, { passive: true });
+    rotator.addEventListener('touchend', () => { hovered = false; start(); }, { passive: true });
+
+    // Pause when the tab is hidden or the hero scrolls out of view
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) stop(); else start();
+    });
+
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                inView = entry.isIntersecting;
+                if (inView) start(); else stop();
+            });
+        }, { threshold: 0.15 });
+        observer.observe(rotator);
+    }
+
+    reducedMotion.addEventListener?.('change', () => {
+        if (reducedMotion.matches) stop(); else start();
+    });
+
+    start();
 }
 
 /* ========================================
