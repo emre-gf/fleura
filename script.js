@@ -1062,7 +1062,6 @@ function initHeroRotator() {
     let current = 0;
     let timer = null;
     let inView = true;
-    let hovered = false;
 
     function goTo(next) {
         if (next === current) return;
@@ -1103,7 +1102,7 @@ function initHeroRotator() {
     }
 
     function start() {
-        if (timer || !inView || hovered || document.hidden || reducedMotion.matches) return;
+        if (timer || !inView || document.hidden || reducedMotion.matches) return;
         rotator.classList.remove('is-paused');
         restartProgress(); // keep the dot's progress bar in sync with the timer
         timer = setInterval(() => {
@@ -1120,12 +1119,6 @@ function initHeroRotator() {
             start();
         });
     });
-
-    // Pause on hover / touch so visitors can look closely
-    rotator.addEventListener('mouseenter', () => { hovered = true; stop(); });
-    rotator.addEventListener('mouseleave', () => { hovered = false; start(); });
-    rotator.addEventListener('touchstart', () => { hovered = true; stop(); }, { passive: true });
-    rotator.addEventListener('touchend', () => { hovered = false; start(); }, { passive: true });
 
     // Pause when the tab is hidden or the hero scrolls out of view
     document.addEventListener('visibilitychange', () => {
