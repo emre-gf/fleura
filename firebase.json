@@ -81,7 +81,7 @@
           },
           {
             "key": "Content-Security-Policy",
-            "value": "frame-ancestors 'self' https://mytos.website"
+            "value": "frame-ancestors 'self' https://mytos.website https://www.mytos.website http://localhost:3000 http://localhost:3001"
           },
           {
             "key": "X-XSS-Protection",

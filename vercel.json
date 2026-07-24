@@ -14,7 +14,7 @@
       "source": "/(.*)",
       "headers": [
         { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Content-Security-Policy", "value": "frame-ancestors 'self' https://mytos.website" },
+        { "key": "Content-Security-Policy", "value": "frame-ancestors 'self' https://mytos.website https://www.mytos.website http://localhost:3000 http://localhost:3001" },
         { "key": "X-XSS-Protection", "value": "1; mode=block" }
       ]
     },
