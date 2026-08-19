@@ -630,6 +630,34 @@ function initCarousels() {
         const nextBtn = carousel.querySelector('.carousel-next');
         if (!track) return;
 
+        const slides = Array.from(track.querySelectorAll('.carousel-slide'));
+        slides.forEach((slide, index) => {
+            slide.dataset.index = String(index + 1).padStart(2, '0');
+        });
+
+        // A compact editorial progress rail makes touch scrolling discoverable.
+        const progress = document.createElement('div');
+        progress.className = 'carousel-progress';
+        progress.setAttribute('aria-hidden', 'true');
+
+        const progressHint = document.createElement('span');
+        progressHint.className = 'carousel-progress-hint';
+        progressHint.textContent = 'Kaydırarak keşfet';
+
+        const progressLine = document.createElement('span');
+        progressLine.className = 'carousel-progress-line';
+        const progressFill = document.createElement('i');
+        progressLine.appendChild(progressFill);
+
+        const progressCount = document.createElement('span');
+        progressCount.className = 'carousel-progress-count';
+        const progressCurrent = document.createElement('b');
+        progressCurrent.textContent = '01';
+        progressCount.append(progressCurrent, ` / ${String(slides.length).padStart(2, '0')}`);
+
+        progress.append(progressHint, progressLine, progressCount);
+        track.insertAdjacentElement('afterend', progress);
+
         // How far to scroll per arrow click: ~90% of visible width, snapped to slides
         const scrollAmount = () => {
             const slide = track.querySelector('.carousel-slide');
@@ -639,12 +667,27 @@ function initCarousels() {
             return step * perView;
         };
 
-        const updateButtons = () => {
-            if (!prevBtn || !nextBtn) return;
+        const updateCarouselUI = () => {
             const tolerance = 12;
             const maxScroll = track.scrollWidth - track.clientWidth;
-            prevBtn.disabled = track.scrollLeft <= tolerance;
-            nextBtn.disabled = track.scrollLeft >= maxScroll - tolerance;
+            if (prevBtn) prevBtn.disabled = track.scrollLeft <= tolerance;
+            if (nextBtn) nextBtn.disabled = track.scrollLeft >= maxScroll - tolerance;
+
+            const viewedRatio = track.scrollWidth
+                ? Math.min(1, Math.max(1 / Math.max(1, slides.length), (track.scrollLeft + track.clientWidth) / track.scrollWidth))
+                : 1;
+            progressFill.style.transform = `scaleX(${viewedRatio})`;
+
+            if (slides.length) {
+                const viewportCenter = track.scrollLeft + track.clientWidth / 2;
+                const closestIndex = slides.reduce((best, slide, index) => {
+                    const center = slide.offsetLeft + slide.offsetWidth / 2;
+                    return Math.abs(center - viewportCenter) < best.distance
+                        ? { index, distance: Math.abs(center - viewportCenter) }
+                        : best;
+                }, { index: 0, distance: Infinity }).index;
+                progressCurrent.textContent = String(closestIndex + 1).padStart(2, '0');
+            }
         };
 
         prevBtn && prevBtn.addEventListener('click', () => {
@@ -691,12 +734,12 @@ function initCarousels() {
         }, true);
 
         track.addEventListener('scroll', () => {
-            window.requestAnimationFrame(updateButtons);
+            window.requestAnimationFrame(updateCarouselUI);
         }, { passive: true });
-        window.addEventListener('resize', updateButtons);
-        window.addEventListener('load', updateButtons);
-        updateButtons();
-        window.requestAnimationFrame(updateButtons);
+        window.addEventListener('resize', updateCarouselUI);
+        window.addEventListener('load', updateCarouselUI);
+        updateCarouselUI();
+        window.requestAnimationFrame(updateCarouselUI);
     });
 
     initLightbox();
@@ -1055,13 +1098,22 @@ function initHeroRotator() {
     const slides = Array.from(rotator.querySelectorAll('.hero-image-slide'));
     const dots = Array.from(rotator.querySelectorAll('.hero-rotator-dot'));
     const caption = rotator.querySelector('.hero-rotator-caption');
+    const indexLabel = rotator.querySelector('.hero-rotator-index b');
     if (slides.length < 2) return;
 
-    const INTERVAL = 3000;
+    const INTERVAL = 4500;
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     let current = 0;
     let timer = null;
     let inView = true;
+    let pointerHover = false;
+    let focusWithin = false;
+
+    rotator.tabIndex = 0;
+    dots.forEach((dot, index) => {
+        const label = slides[index]?.dataset.label || `Görsel ${index + 1}`;
+        dot.setAttribute('aria-label', `${label} görselini göster`);
+    });
 
     function goTo(next) {
         if (next === current) return;
@@ -1076,6 +1128,7 @@ function initHeroRotator() {
         dots[next].classList.add('is-active');
         dots[next].setAttribute('aria-current', 'true');
         current = next;
+        if (indexLabel) indexLabel.textContent = String(current + 1).padStart(2, '0');
 
         if (caption) {
             caption.textContent = slides[next].dataset.label || '';
@@ -1102,7 +1155,7 @@ function initHeroRotator() {
     }
 
     function start() {
-        if (timer || !inView || document.hidden || reducedMotion.matches) return;
+        if (timer || !inView || document.hidden || reducedMotion.matches || pointerHover || focusWithin) return;
         rotator.classList.remove('is-paused');
         restartProgress(); // keep the dot's progress bar in sync with the timer
         timer = setInterval(() => {
@@ -1118,6 +1171,57 @@ function initHeroRotator() {
             restartProgress();
             start();
         });
+    });
+
+    // Keyboard and swipe navigation keep the hero tactile without a dependency.
+    rotator.addEventListener('keydown', (event) => {
+        if (event.target.closest('button')) return;
+        if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+        event.preventDefault();
+        stop();
+        const direction = event.key === 'ArrowRight' ? 1 : -1;
+        goTo((current + direction + slides.length) % slides.length);
+        restartProgress();
+    });
+
+    let swipeStartX = null;
+    let swipeStartY = null;
+    rotator.addEventListener('pointerdown', (event) => {
+        if (event.pointerType !== 'touch' || event.target.closest('button')) return;
+        swipeStartX = event.clientX;
+        swipeStartY = event.clientY;
+    }, { passive: true });
+    rotator.addEventListener('pointerup', (event) => {
+        if (swipeStartX === null || swipeStartY === null) return;
+        const deltaX = event.clientX - swipeStartX;
+        const deltaY = event.clientY - swipeStartY;
+        swipeStartX = null;
+        swipeStartY = null;
+        if (Math.abs(deltaX) < 42 || Math.abs(deltaX) < Math.abs(deltaY) * 1.2) return;
+        stop();
+        goTo((current + (deltaX < 0 ? 1 : -1) + slides.length) % slides.length);
+        restartProgress();
+        start();
+    }, { passive: true });
+
+    rotator.addEventListener('pointerenter', (event) => {
+        if (event.pointerType !== 'mouse') return;
+        pointerHover = true;
+        stop();
+    });
+    rotator.addEventListener('pointerleave', (event) => {
+        if (event.pointerType !== 'mouse') return;
+        pointerHover = false;
+        start();
+    });
+    rotator.addEventListener('focusin', () => {
+        focusWithin = true;
+        stop();
+    });
+    rotator.addEventListener('focusout', (event) => {
+        if (rotator.contains(event.relatedTarget)) return;
+        focusWithin = false;
+        start();
     });
 
     // Pause when the tab is hidden or the hero scrolls out of view

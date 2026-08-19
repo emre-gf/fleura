@@ -25,5 +25,5 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-Sitemap: https://fleura.com.tr/sitemap.xml
-Host: https://fleura.com.tr
+Sitemap: https://www.fleura.com.tr/sitemap.xml
+Host: https://www.fleura.com.tr
