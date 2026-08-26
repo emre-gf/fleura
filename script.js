@@ -165,14 +165,24 @@ function initMobileMenu() {
     const root = document.documentElement;
     const links = menu.querySelectorAll('a');
     const closeButtons = menu.querySelectorAll('[data-mobile-menu-close]');
-    const groups = [...menu.querySelectorAll('.mobile-nav-group')];
+    const toggles = [...menu.querySelectorAll('.mm-row--toggle')];
+
+    function setGroup(button, open) {
+        const panel = document.getElementById(button.getAttribute('aria-controls'));
+        button.setAttribute('aria-expanded', open ? 'true' : 'false');
+        if (panel) panel.classList.toggle('is-open', open);
+    }
+
+    function collapseGroups() {
+        toggles.forEach(button => setGroup(button, false));
+    }
     const scroller = menu.querySelector('.mobile-menu__scroll');
     const pageContent = [document.querySelector('main'), document.querySelector('footer')].filter(Boolean);
     let scrollPosition = 0;
 
     function getFocusableElements() {
-        return [...menu.querySelectorAll('a[href], summary, button:not([disabled]), [tabindex]:not([tabindex="-1"])')]
-            .filter(element => element.offsetParent !== null);
+        return [...menu.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])')]
+            .filter(element => element.offsetParent !== null && !element.closest('.mm-panel:not(.is-open)'));
     }
 
     function openMenu() {
@@ -219,9 +229,9 @@ function initMobileMenu() {
         setTimeout(() => {
             if (!menu.classList.contains('active')) {
                 if (scroller) scroller.scrollTop = 0;
-                groups.forEach(group => group.removeAttribute('open'));
+                collapseGroups();
             }
-        }, 350);
+        }, 400);
     }
 
     function toggleMenu() {
@@ -247,13 +257,24 @@ function initMobileMenu() {
         });
     });
 
-    // Use the expandable sections as an accordion to keep the panel compact.
-    groups.forEach(group => {
-        group.addEventListener('toggle', () => {
-            if (!group.open) return;
-            groups.forEach(otherGroup => {
-                if (otherGroup !== group) otherGroup.removeAttribute('open');
+    // One section open at a time keeps the panel scannable on a phone screen.
+    toggles.forEach(button => {
+        button.addEventListener('click', () => {
+            const willOpen = button.getAttribute('aria-expanded') !== 'true';
+            toggles.forEach(other => {
+                if (other !== button) setGroup(other, false);
             });
+            setGroup(button, willOpen);
+
+            // Bring the freshly opened section into view without a jarring jump.
+            if (willOpen && scroller) {
+                setTimeout(() => {
+                    const buttonTop = button.getBoundingClientRect().top - scroller.getBoundingClientRect().top;
+                    if (buttonTop < 0 || buttonTop > scroller.clientHeight * 0.5) {
+                        scroller.scrollTo({ top: scroller.scrollTop + buttonTop - 8, behavior: 'smooth' });
+                    }
+                }, 220);
+            }
         });
     });
 

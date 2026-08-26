@@ -859,93 +859,128 @@
       id="mobileMenu"
       role="dialog"
       aria-modal="true"
-      aria-label="Mobil menü"
+      aria-labelledby="mobileMenuTitle"
       aria-hidden="true"
     >
-      <div class="mobile-menu__header">
-        <a class="mobile-menu__brand" href="#hero" aria-label="Fleura Nails ana sayfa">
-          <strong>Fleura</strong>
-          <span>Nail atelier · İzmir</span>
+      <div class="mm-head">
+        <a class="mm-brand" href="#hero" aria-label="Fleura Nails ana sayfa">
+          <span class="mm-brand__name" id="mobileMenuTitle">Fleura</span>
+          <span class="mm-brand__meta">Nail Atelier — İzmir</span>
         </a>
-        <button class="mobile-menu__close" type="button" data-mobile-menu-close aria-label="Mobil menüyü kapat">
-          <span>Kapat</span>
-          <i aria-hidden="true"></i>
+        <button
+          class="mm-close"
+          type="button"
+          data-mobile-menu-close
+          aria-label="Menüyü kapat"
+        >
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
         </button>
       </div>
 
       <div class="mobile-menu__scroll">
-
-        <div class="mobile-menu__intro" aria-hidden="true">
-          <span>Keşfet</span>
-          <span>F / 01—04</span>
-        </div>
-
-        <nav class="mobile-menu__nav" aria-label="Mobil site menüsü">
-          <a class="mobile-nav-item" href="#about" title="Hakkımızda">
-            <span class="mobile-nav-index">01</span>
-            <span>Hakkımızda<small>Fleura’yı yakından tanıyın</small></span>
+        <nav class="mm-nav" aria-label="Mobil site menüsü">
+          <a class="mm-row" href="#about" style="--i: 1">
+            <span class="mm-row__label">Hakkımızda</span>
+            <svg class="mm-row__go" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12.5 6l5.5 6-5.5 6"/></svg>
           </a>
 
-          <details class="mobile-nav-group">
-            <summary>
-              <span class="mobile-nav-index">02</span>
-              <span>Hizmetler<small>Tüm uygulamaları keşfedin</small></span>
-              <i aria-hidden="true"></i>
-            </summary>
-            <div class="mobile-submenu">
-              <a href="/hizmetler">Tüm Hizmetler</a>
-              <a href="/izmir-kalici-oje">Kalıcı Oje</a>
-              <a href="/izmir-protez-tirnak">Protez Tırnak</a>
-              <a href="/izmir-manikur-pedikur">Manikür &amp; Pedikür</a>
-              <a href="/izmir-rus-manikuru">Rus Manikürü</a>
-              <a href="/izmir-nail-art">Nail Art</a>
-              <a href="/izmir-gelin-tirnagi">Gelin Tırnağı</a>
-              <a href="#karsilastirma">Hizmet Karşılaştırma</a>
+          <div class="mm-group" style="--i: 2">
+            <button
+              class="mm-row mm-row--toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="mmPanelServices"
+            >
+              <span class="mm-row__label">Hizmetler</span>
+              <svg class="mm-row__chevron" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9.5l6 6 6-6"/></svg>
+            </button>
+            <div class="mm-panel" id="mmPanelServices">
+              <div class="mm-panel__inner">
+                <a href="/hizmetler">Tüm Hizmetler</a>
+                <a href="/izmir-kalici-oje">Kalıcı Oje</a>
+                <a href="/izmir-protez-tirnak">Protez Tırnak</a>
+                <a href="/izmir-manikur-pedikur">Manikür &amp; Pedikür</a>
+                <a href="/izmir-rus-manikuru">Rus Manikürü</a>
+                <a href="/izmir-nail-art">Nail Art</a>
+                <a href="/izmir-gelin-tirnagi">Gelin Tırnağı</a>
+                <a href="#karsilastirma">Hizmet Karşılaştırma</a>
+              </div>
             </div>
-          </details>
-
-          <a class="mobile-nav-item mobile-nav-item--price" href="/izmir-protez-tirnak-fiyatlari" title="Güncel Fiyat Listesi">
-            <span class="mobile-nav-index">03</span>
-            <span>Fiyat Listesi<small>Güncel ve şeffaf fiyatlar</small></span>
-            <strong>Görüntüle</strong>
-          </a>
-
-          <details class="mobile-nav-group">
-            <summary>
-              <span class="mobile-nav-index">04</span>
-              <span>Hizmet Bölgeleri<small>İzmir’de hizmet verdiğimiz yerler</small></span>
-              <i aria-hidden="true"></i>
-            </summary>
-            <div class="mobile-submenu mobile-submenu--regions">
-              <a href="/balcova-protez-tirnak">Balçova</a>
-              <a href="/karsiyaka-protez-tirnak">Karşıyaka</a>
-              <a href="/bornova-kalici-oje">Bornova</a>
-              <a href="/buca-tirnak">Buca</a>
-              <a href="/cigli-protez-tirnak">Çiğli</a>
-              <a href="/narlidere-tirnak">Narlıdere</a>
-              <a href="/karabaglar-tirnak">Karabağlar</a>
-              <a href="/bayrakli-kalici-oje">Bayraklı</a>
-              <a href="/gaziemir-kalici-oje">Gaziemir</a>
-              <a href="/konak-tirnak">Konak</a>
-              <a href="/guzelbahce-kalici-oje">Güzelbahçe</a>
-              <a href="/urla-kalici-oje">Urla</a>
-              <a href="/cesme-kalici-oje">Çeşme</a>
-              <a href="/alacati-kalici-oje">Alaçatı</a>
-            </div>
-          </details>
-
-          <div class="mobile-nav-quick" aria-label="Diğer bağlantılar">
-            <a href="#gallery">Galeri</a>
-            <a href="/blog">Blog</a>
-            <a href="#faq">SSS</a>
-            <a href="#contact">İletişim</a>
           </div>
+
+          <a class="mm-row" href="/izmir-protez-tirnak-fiyatlari" style="--i: 3">
+            <span class="mm-row__label">Fiyat Listesi</span>
+            <span class="mm-tag">Güncel</span>
+          </a>
+
+          <div class="mm-group" style="--i: 4">
+            <button
+              class="mm-row mm-row--toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="mmPanelRegions"
+            >
+              <span class="mm-row__label">Hizmet Bölgeleri</span>
+              <svg class="mm-row__chevron" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9.5l6 6 6-6"/></svg>
+            </button>
+            <div class="mm-panel" id="mmPanelRegions">
+              <div class="mm-panel__inner mm-panel__inner--two">
+                <a href="/balcova-protez-tirnak">Balçova</a>
+                <a href="/karsiyaka-protez-tirnak">Karşıyaka</a>
+                <a href="/bornova-kalici-oje">Bornova</a>
+                <a href="/buca-tirnak">Buca</a>
+                <a href="/cigli-protez-tirnak">Çiğli</a>
+                <a href="/narlidere-tirnak">Narlıdere</a>
+                <a href="/karabaglar-tirnak">Karabağlar</a>
+                <a href="/bayrakli-kalici-oje">Bayraklı</a>
+                <a href="/gaziemir-kalici-oje">Gaziemir</a>
+                <a href="/konak-tirnak">Konak</a>
+                <a href="/guzelbahce-kalici-oje">Güzelbahçe</a>
+                <a href="/urla-kalici-oje">Urla</a>
+                <a href="/cesme-kalici-oje">Çeşme</a>
+                <a href="/alacati-kalici-oje">Alaçatı</a>
+              </div>
+            </div>
+          </div>
+
+          <a class="mm-row" href="#gallery" style="--i: 5">
+            <span class="mm-row__label">Galeri</span>
+            <svg class="mm-row__go" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12.5 6l5.5 6-5.5 6"/></svg>
+          </a>
+          <a class="mm-row" href="/blog" style="--i: 6">
+            <span class="mm-row__label">Blog</span>
+            <svg class="mm-row__go" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12.5 6l5.5 6-5.5 6"/></svg>
+          </a>
+          <a class="mm-row" href="#faq" style="--i: 7">
+            <span class="mm-row__label">Sıkça Sorulanlar</span>
+            <svg class="mm-row__go" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12.5 6l5.5 6-5.5 6"/></svg>
+          </a>
+          <a class="mm-row" href="#contact" style="--i: 8">
+            <span class="mm-row__label">İletişim</span>
+            <svg class="mm-row__go" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M12.5 6l5.5 6-5.5 6"/></svg>
+          </a>
         </nav>
 
-        <div class="mobile-menu__footer">
-          <p>Hazırsanız randevunuzu birlikte planlayalım.</p>
-          <a href="#randevu-al" class="mobile-cta" title="Randevu Al">Randevu Al</a>
-          <a href="https://wa.me/905558903511" class="mobile-menu__whatsapp" title="WhatsApp ile iletişime geç">WhatsApp’tan Yazın</a>
+        <div class="mm-foot" style="--i: 9">
+          <p class="mm-foot__hours">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.2V12l3 1.8"/></svg>
+            Pzt–Cmt 10:00–20:00 · Pazar kapalı
+          </p>
+          <a href="#randevu-al" class="mm-cta" title="Randevu Al">Randevu Al</a>
+          <div class="mm-foot__row">
+            <a href="https://wa.me/905558903511" class="mm-ghost" title="WhatsApp ile iletişime geçin">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.22 8.22 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.69 8.23-8.23 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.15.16-.29.18-.53.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.44.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.47c-.17 0-.44.06-.66.31-.23.25-.87.85-.87 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.14.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29Z"/></svg>
+              WhatsApp
+            </a>
+            <a href="tel:+905558903511" class="mm-ghost" title="Telefonla arayın">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.2 3.5h3l1.5 3.8-2 1.4a12 12 0 0 0 5.6 5.6l1.4-2 3.8 1.5v3a1.7 1.7 0 0 1-1.9 1.7A16.5 16.5 0 0 1 4.5 5.4 1.7 1.7 0 0 1 6.2 3.5Z"/></svg>
+              Ara
+            </a>
+            <a href="https://instagram.com/fleuranails" class="mm-ghost" title="Instagram hesabımız" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="4.8"/><circle cx="12" cy="12" r="3.9"/><circle cx="17.1" cy="6.9" r="1.05" fill="currentColor" stroke="none"/></svg>
+              Instagram
+            </a>
+          </div>
         </div>
       </div>
     </div>
