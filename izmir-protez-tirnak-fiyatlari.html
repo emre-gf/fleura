@@ -193,6 +193,97 @@
       color: var(--page-muted);
       font-size: .89rem;
     }
+
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+    .price-hint { display: flex; align-items: center; gap: 9px; margin: 0 0 14px;
+      color: var(--page-muted); font-size: .9rem; }
+    .price-hint svg { flex: none; color: var(--page-accent); }
+    .price-table thead th:first-child { width: 54px; }
+    .price-table thead th:last-child { width: 132px; text-align: right; }
+    .pick-cell { padding-right: 0 !important; }
+    .pick-row { cursor: pointer; transition: background .16s ease; }
+    .pick-row:hover { background: #fdf8f2; }
+    .pick-row.is-picked { background: #f7efe5; }
+    .pick-row.is-picked .pick-name > label { color: var(--page-accent-dark); font-weight: 650; }
+    .pick-input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+    .pick-box { position: relative; display: block; width: 21px; height: 21px; cursor: pointer;
+      border: 1.5px solid rgba(118, 86, 60, .38); border-radius: 7px; background: #fff;
+      transition: border-color .16s ease, background .16s ease; }
+    .pick-box::after { position: absolute; inset: 0; display: flex; align-items: center;
+      justify-content: center; color: #fff; font-size: 13px; font-weight: 700;
+      line-height: 1; opacity: 0; transform: scale(.5); content: "\2713";
+      transition: opacity .16s ease, transform .16s ease; }
+    .pick-input:checked + .pick-box { border-color: var(--page-accent);
+      background: var(--page-accent); }
+    .pick-input:checked + .pick-box::after { opacity: 1; transform: scale(1); }
+    .pick-input:focus-visible + .pick-box { outline: 2px solid var(--page-accent-dark);
+      outline-offset: 2px; }
+    .pick-name > label { cursor: pointer; }
+    .qty[hidden] { display: none; }
+    .qty { display: inline-flex; align-items: center; gap: 2px; margin-top: 9px;
+      padding: 3px; border: 1px solid var(--page-border); border-radius: 999px;
+      background: #fff; vertical-align: middle; }
+    .qty-btn { width: 26px; height: 26px; border: 0; border-radius: 50%;
+      background: #f4e9dd; color: var(--page-accent-dark); font-size: 15px;
+      font-weight: 700; line-height: 1; cursor: pointer; transition: background .15s ease; }
+    .qty-btn:hover { background: var(--page-accent); color: #fff; }
+    .qty-btn:disabled { opacity: .38; cursor: not-allowed; background: #f4e9dd;
+      color: var(--page-accent-dark); }
+    .qty-val { min-width: 22px; font-size: .9rem; font-weight: 700; text-align: center;
+      font-variant-numeric: tabular-nums; }
+    .qty-unit { padding: 0 8px 0 3px; color: var(--page-muted); font-size: .78rem; }
+
+    .price-bar { position: fixed; z-index: 60; right: 0; bottom: 0; left: 0;
+      padding: 0 16px 16px; pointer-events: none; visibility: hidden;
+      transform: translateY(130%);
+      transition: transform .28s cubic-bezier(.4, 0, .2, 1), visibility 0s linear .28s; }
+    .price-bar.is-open { visibility: visible; transform: translateY(0);
+      transition: transform .28s cubic-bezier(.4, 0, .2, 1), visibility 0s; }
+    .price-bar-inner { display: flex; flex-wrap: wrap; gap: 14px; align-items: center;
+      justify-content: space-between; max-width: var(--page-max); margin: 0 auto;
+      padding: 14px 18px; border: 1px solid rgba(118, 86, 60, .18); border-radius: 18px;
+      background: rgba(62, 50, 41, .97); color: #fff; pointer-events: auto;
+      box-shadow: 0 18px 48px rgba(40, 28, 19, .3); }
+    @supports (backdrop-filter: blur(8px)) {
+      .price-bar-inner { background: rgba(62, 50, 41, .92); backdrop-filter: blur(8px); }
+    }
+    .pb-info { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+    .pb-count { font-size: .78rem; letter-spacing: .04em; opacity: .78; }
+    .pb-total { font-size: 1.22rem; font-weight: 750; font-variant-numeric: tabular-nums;
+      letter-spacing: -.01em; }
+    .pb-actions { display: flex; gap: 9px; align-items: center; margin-left: auto; }
+    .pb-clear { padding: 11px 15px; border: 1px solid rgba(255, 255, 255, .28);
+      border-radius: 999px; background: transparent; color: #fff; font-family: inherit;
+      font-size: .88rem; font-weight: 600; cursor: pointer; transition: background .15s ease; }
+    .pb-clear:hover { background: rgba(255, 255, 255, .12); }
+    .pb-send { display: inline-flex; gap: 8px; align-items: center; padding: 12px 20px;
+      border-radius: 999px; background: #25d366; color: #06331a; font-size: .92rem;
+      font-weight: 750; text-decoration: none; white-space: nowrap;
+      transition: transform .15s ease, filter .15s ease; }
+    .pb-send:hover { transform: translateY(-1px); filter: brightness(1.06); }
+    body.has-bar { padding-bottom: 104px; }
+    @media (max-width: 560px) {
+      .price-bar { padding: 0 10px 10px; }
+      .price-bar-inner { gap: 10px; padding: 12px 14px; }
+      .pb-actions { width: 100%; }
+      .pb-send { flex: 1; justify-content: center; }
+      .price-table th, .price-table td { padding: 13px 12px; }
+      .price-table thead th:last-child { width: 96px; }
+      .amount { font-size: .93rem !important; }
+    }
+    .card-pick { display: inline-flex; gap: 6px; align-items: center; margin-top: 10px;
+      padding: 8px 14px; border: 1px solid var(--page-border); border-radius: 999px;
+      background: #fff; color: var(--page-accent-dark); font-family: inherit;
+      font-size: .84rem; font-weight: 650; cursor: pointer;
+      transition: background .15s ease, border-color .15s ease, color .15s ease; }
+    .card-pick:hover { border-color: var(--page-accent); background: var(--page-accent);
+      color: #fff; }
+    .card-pick.is-on { border-color: var(--page-accent); background: var(--page-accent);
+      color: #fff; }
+    @media (prefers-reduced-motion: reduce) {
+      .price-bar, .pick-box, .pick-box::after, .pick-row, .pb-send { transition: none; }
+    }
     .service-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin: 24px 0; }
     .service-card {
       min-width: 0;
@@ -765,29 +856,157 @@
           <span>Ulaşım dahil</span>
           <span>Steril malzeme dahil</span>
         </div>
+        <p class="price-hint">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          İstediğiniz hizmetleri seçin; toplam tutar hesaplansın ve WhatsApp mesajınız otomatik hazırlansın.
+        </p>
         <div class="price-wrap">
           <table class="price-table">
             <caption>Fiyatlara adresinize ulaşım, ekipman ve steril tek kullanımlık malzeme dahildir.</caption>
             <thead>
-              <tr><th scope="col">Hizmet</th><th scope="col">Fiyat</th></tr>
+              <tr>
+                <th scope="col" class="pick-cell"><span class="sr-only">Seç</span></th>
+                <th scope="col">Hizmet</th>
+                <th scope="col">Fiyat</th>
+              </tr>
             </thead>
             <tbody>
-            <tr class="price-group"><th colspan="2" scope="colgroup">Manikür Hizmetleri</th></tr>
-            <tr><th scope="row">Manikür</th><td>650 ₺</td></tr>
-            <tr><th scope="row">Manikür + Kalıcı Oje</th><td>1.150 ₺</td></tr>
-            <tr><th scope="row">Manikür + Jel Güçlendirme + Kalıcı Oje</th><td>1.300 ₺</td></tr>
-            <tr><th scope="row">Manikür + Protez Tırnak + Kalıcı Oje</th><td>1.500 ₺</td></tr>
-            <tr class="price-group"><th colspan="2" scope="colgroup">Pedikür Hizmetleri</th></tr>
-            <tr><th scope="row">Pedikür</th><td>850 ₺</td></tr>
-            <tr><th scope="row">Pedikür + Kalıcı Oje</th><td>1.250 ₺</td></tr>
-            <tr><th scope="row">Pedikür + Jel Güçlendirme + Kalıcı Oje</th><td>1.500 ₺</td></tr>
-            <tr class="price-group"><th colspan="2" scope="colgroup">Ek Hizmetler</th></tr>
-            <tr><th scope="row">Tek Tırnak Onarım</th><td>150 ₺</td></tr>
-            <tr><th scope="row">French / Cat Eye / Ombre</th><td>250 ₺</td></tr>
-            <tr><th scope="row">Tek Tırnak Nail Art</th><td>50 – 150 ₺</td></tr>
-            <tr class="price-group"><th colspan="2" scope="colgroup">Çıkarma Hizmetleri</th></tr>
-            <tr><th scope="row">Kalıcı Oje Çıkarma</th><td>400 ₺</td></tr>
-            <tr><th scope="row">Protez Tırnak Çıkarma</th><td>500 ₺</td></tr>
+              <tr class="price-group"><th colspan="3" scope="colgroup">Manikür Hizmetleri</th></tr>
+              <tr class="pick-row" data-name="Manikür" data-min="650" data-max="650">
+                <td class="pick-cell">
+                  <input type="checkbox" class="pick-input" id="svc1">
+                  <label class="pick-box" for="svc1"><span class="sr-only">Manikür hizmetini seç</span></label>
+                </td>
+                <th scope="row" class="pick-name">
+                  <label for="svc1">Manikür</label>
+                </th>
+                <td class="amount">650 ₺</td>
+              </tr>
+              <tr class="pick-row" data-name="Manikür + Kalıcı Oje" data-min="1150" data-max="1150">
+                <td class="pick-cell">
+                  <input type="checkbox" class="pick-input" id="svc2">
+                  <label class="pick-box" for="svc2"><span class="sr-only">Manikür + Kalıcı Oje hizmetini seç</span></label>
+                </td>
+                <th scope="row" class="pick-name">
+                  <label for="svc2">Manikür + Kalıcı Oje</label>
+                </th>
+                <td class="amount">1.150 ₺</td>
+              </tr>
+              <tr class="pick-row" data-name="Manikür + Jel Güçlendirme + Kalıcı Oje" data-min="1300" data-max="1300">
+                <td class="pick-cell">
+                  <input type="checkbox" class="pick-input" id="svc3">
+                  <label class="pick-box" for="svc3"><span class="sr-only">Manikür + Jel Güçlendirme + Kalıcı Oje hizmetini seç</span></label>
+                </td>
+                <th scope="row" class="pick-name">
+                  <label for="svc3">Manikür + Jel Güçlendirme + Kalıcı Oje</label>
+                </th>
+                <td class="amount">1.300 ₺</td>
+              </tr>
+              <tr class="pick-row" data-name="Manikür + Protez Tırnak + Kalıcı Oje" data-min="1500" data-max="1500">
+                <td class="pick-cell">
+                  <input type="checkbox" class="pick-input" id="svc4">
+                  <label class="pick-box" for="svc4"><span class="sr-only">Manikür + Protez Tırnak + Kalıcı Oje hizmetini seç</span></label>
+                </td>
+                <th scope="row" class="pick-name">
+                  <label for="svc4">Manikür + Protez Tırnak + Kalıcı Oje</label>
+                </th>
+                <td class="amount">1.500 ₺</td>
+              </tr>
+              <tr class="price-group"><th colspan="3" scope="colgroup">Pedikür Hizmetleri</th></tr>
+              <tr class="pick-row" data-name="Pedikür" data-min="850" data-max="850">
+                <td class="pick-cell">
+                  <input type="checkbox" class="pick-input" id="svc5">
+                  <label class="pick-box" for="svc5"><span class="sr-only">Pedikür hizmetini seç</span></label>
+                </td>
+                <th scope="row" class="pick-name">
+                  <label for="svc5">Pedikür</label>
+                </th>
+                <td class="amount">850 ₺</td>
+              </tr>
+              <tr class="pick-row" data-name="Pedikür + Kalıcı Oje" data-min="1250" data-max="1250">
+                <td class="pick-cell">
+                  <input type="checkbox" class="pick-input" id="svc6">
+                  <label class="pick-box" for="svc6"><span class="sr-only">Pedikür + Kalıcı Oje hizmetini seç</span></label>
+                </td>
+                <th scope="row" class="pick-name">
+                  <label for="svc6">Pedikür + Kalıcı Oje</label>
+                </th>
+                <td class="amount">1.250 ₺</td>
+              </tr>
+              <tr class="pick-row" data-name="Pedikür + Jel Güçlendirme + Kalıcı Oje" data-min="1500" data-max="1500">
+                <td class="pick-cell">
+                  <input type="checkbox" class="pick-input" id="svc7">
+                  <label class="pick-box" for="svc7"><span class="sr-only">Pedikür + Jel Güçlendirme + Kalıcı Oje hizmetini seç</span></label>
+                </td>
+                <th scope="row" class="pick-name">
+                  <label for="svc7">Pedikür + Jel Güçlendirme + Kalıcı Oje</label>
+                </th>
+                <td class="amount">1.500 ₺</td>
+              </tr>
+              <tr class="price-group"><th colspan="3" scope="colgroup">Ek Hizmetler</th></tr>
+              <tr class="pick-row" data-name="Tek Tırnak Onarım" data-min="150" data-max="150" data-unit="1">
+                <td class="pick-cell">
+                  <input type="checkbox" class="pick-input" id="svc8">
+                  <label class="pick-box" for="svc8"><span class="sr-only">Tek Tırnak Onarım hizmetini seç</span></label>
+                </td>
+                <th scope="row" class="pick-name">
+                  <label for="svc8">Tek Tırnak Onarım</label>
+                    <span class="qty" hidden>
+                      <button type="button" class="qty-btn" data-step="-1" aria-label="Tek Tırnak Onarım adedini azalt">&minus;</button>
+                      <output class="qty-val" aria-label="Adet">1</output>
+                      <button type="button" class="qty-btn" data-step="1" aria-label="Tek Tırnak Onarım adedini artır">+</button>
+                      <span class="qty-unit">tırnak</span>
+                    </span>
+                </th>
+                <td class="amount">150 ₺</td>
+              </tr>
+              <tr class="pick-row" data-name="French / Cat Eye / Ombre" data-min="250" data-max="250">
+                <td class="pick-cell">
+                  <input type="checkbox" class="pick-input" id="svc9">
+                  <label class="pick-box" for="svc9"><span class="sr-only">French / Cat Eye / Ombre hizmetini seç</span></label>
+                </td>
+                <th scope="row" class="pick-name">
+                  <label for="svc9">French / Cat Eye / Ombre</label>
+                </th>
+                <td class="amount">250 ₺</td>
+              </tr>
+              <tr class="pick-row" data-name="Tek Tırnak Nail Art" data-min="50" data-max="150" data-unit="1">
+                <td class="pick-cell">
+                  <input type="checkbox" class="pick-input" id="svc10">
+                  <label class="pick-box" for="svc10"><span class="sr-only">Tek Tırnak Nail Art hizmetini seç</span></label>
+                </td>
+                <th scope="row" class="pick-name">
+                  <label for="svc10">Tek Tırnak Nail Art</label>
+                    <span class="qty" hidden>
+                      <button type="button" class="qty-btn" data-step="-1" aria-label="Tek Tırnak Nail Art adedini azalt">&minus;</button>
+                      <output class="qty-val" aria-label="Adet">1</output>
+                      <button type="button" class="qty-btn" data-step="1" aria-label="Tek Tırnak Nail Art adedini artır">+</button>
+                      <span class="qty-unit">tırnak</span>
+                    </span>
+                </th>
+                <td class="amount">50 – 150 ₺</td>
+              </tr>
+              <tr class="price-group"><th colspan="3" scope="colgroup">Çıkarma Hizmetleri</th></tr>
+              <tr class="pick-row" data-name="Kalıcı Oje Çıkarma" data-min="400" data-max="400">
+                <td class="pick-cell">
+                  <input type="checkbox" class="pick-input" id="svc11">
+                  <label class="pick-box" for="svc11"><span class="sr-only">Kalıcı Oje Çıkarma hizmetini seç</span></label>
+                </td>
+                <th scope="row" class="pick-name">
+                  <label for="svc11">Kalıcı Oje Çıkarma</label>
+                </th>
+                <td class="amount">400 ₺</td>
+              </tr>
+              <tr class="pick-row" data-name="Protez Tırnak Çıkarma" data-min="500" data-max="500">
+                <td class="pick-cell">
+                  <input type="checkbox" class="pick-input" id="svc12">
+                  <label class="pick-box" for="svc12"><span class="sr-only">Protez Tırnak Çıkarma hizmetini seç</span></label>
+                </td>
+                <th scope="row" class="pick-name">
+                  <label for="svc12">Protez Tırnak Çıkarma</label>
+                </th>
+                <td class="amount">500 ₺</td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -812,23 +1031,28 @@
           <div class="service-card"><h3>Sadece bakım istiyorum</h3>
             <p><strong>Manikür (650 ₺)</strong> veya <strong>Pedikür (850 ₺)</strong>.
             Şekillendirme, kütikül bakımı ve nemlendirme.
-            <a class="inline-link" href="/izmir-manikur-pedikur">Detaylar</a>.</p></div>
+            <a class="inline-link" href="/izmir-manikur-pedikur">Detaylar</a>.</p>
+            <button type="button" class="card-pick" data-pick="Manikür">Bu paketi seç</button></div>
           <div class="service-card"><h3>Kalıcı renk istiyorum</h3>
             <p><strong>Manikür + Kalıcı Oje (1.150 ₺)</strong>. Tırnağınız yeterince uzunsa
             en çok tercih edilen seçenek. 2-3 hafta dayanır.
-            <a class="inline-link" href="/izmir-kalici-oje">Detaylar</a>.</p></div>
+            <a class="inline-link" href="/izmir-kalici-oje">Detaylar</a>.</p>
+            <button type="button" class="card-pick" data-pick="Manikür + Kalıcı Oje">Bu paketi seç</button></div>
           <div class="service-card"><h3>Tırnağım kırılgan</h3>
             <p><strong>Manikür + Jel Güçlendirme + Kalıcı Oje (1.300 ₺)</strong>. Doğal
             tırnağı uzatmadan destekler.
-            <a class="inline-link" href="/blog/tirnak-guclendirme">Güçlendirme rehberi</a>.</p></div>
+            <a class="inline-link" href="/blog/tirnak-guclendirme">Güçlendirme rehberi</a>.</p>
+            <button type="button" class="card-pick" data-pick="Manikür + Jel Güçlendirme + Kalıcı Oje">Bu paketi seç</button></div>
           <div class="service-card"><h3>Uzunluk istiyorum</h3>
             <p><strong>Manikür + Protez Tırnak + Kalıcı Oje (1.500 ₺)</strong>. Form ve
             uzunluk seçimiyle birlikte.
-            <a class="inline-link" href="/izmir-protez-tirnak">Detaylar</a>.</p></div>
+            <a class="inline-link" href="/izmir-protez-tirnak">Detaylar</a>.</p>
+            <button type="button" class="card-pick" data-pick="Manikür + Protez Tırnak + Kalıcı Oje">Bu paketi seç</button></div>
           <div class="service-card"><h3>Tasarım da istiyorum</h3>
             <p>Uygulamanın üzerine <strong>French / Cat Eye / Ombre 250 ₺</strong> veya
             <strong>tek tırnak nail art 50–150 ₺</strong>.
-            <a class="inline-link" href="/izmir-nail-art">Detaylar</a>.</p></div>
+            <a class="inline-link" href="/izmir-nail-art">Detaylar</a>.</p>
+            <button type="button" class="card-pick" data-pick="French / Cat Eye / Ombre">Bu paketi seç</button></div>
           <div class="service-card"><h3>Özel günüm var</h3>
             <p>Gelin tırnağı prova + düğün günü olarak planlanır; kapsamı birlikte
             belirlediğimiz için ayrıca fiyatlandırılır.
@@ -898,17 +1122,180 @@
     <nav aria-label="Site bağlantıları">
       <p>
         <a href="/">Ana Sayfa</a> |
-        <a href="/balcova-protez-tirnak">Balçova Protez Tırnak</a> |
-        <a href="/izmir-kalici-oje">İzmir Kalıcı Oje</a> |
-        <a href="/izmir-protez-tirnak">İzmir Protez Tırnak</a> |
-        <a href="/karsiyaka-protez-tirnak">Karşıyaka</a> |
-        <a href="/bornova-kalici-oje">Bornova</a> |
-        <a href="/alsancak-nail-art">Alsancak</a> |
         <a href="/blog">Blog</a> |
         <a href="/iletisim">İletişim</a>
+      </p>
+      <p>
+        <a href="/hizmetler">Hizmetler</a> |
+        <a href="/izmir-protez-tirnak">İzmir Protez Tırnak</a> |
+        <a href="/izmir-kalici-oje">İzmir Kalıcı Oje</a> |
+        <a href="/izmir-nail-art">Nail Art</a> |
+        <a href="/izmir-manikur-pedikur">Manikür &amp; Pedikür</a> |
+        <a href="/izmir-rus-manikuru">Rus Manikürü</a> |
+        <a href="/izmir-gelin-tirnagi">Gelin Tırnağı</a> |
+        <a href="/izmir-protez-tirnak-fiyatlari">Fiyatlar</a>
+      </p>
+      <p>
+        <a href="/narlidere-tirnak">Narlıdere</a> |
+        <a href="/guzelbahce-kalici-oje">Güzelbahçe</a> |
+        <a href="/balcova-protez-tirnak">Balçova</a> |
+        <a href="/konak-tirnak">Konak</a> |
+        <a href="/alsancak-nail-art">Alsancak</a> |
+        <a href="/karsiyaka-protez-tirnak">Karşıyaka</a> |
+        <a href="/bornova-kalici-oje">Bornova</a> |
+        <a href="/bayrakli-kalici-oje">Bayraklı</a> |
+        <a href="/cigli-protez-tirnak">Çiğli</a> |
+        <a href="/buca-tirnak">Buca</a> |
+        <a href="/karabaglar-tirnak">Karabağlar</a> |
+        <a href="/gaziemir-kalici-oje">Gaziemir</a> |
+        <a href="/urla-kalici-oje">Urla</a> |
+        <a href="/cesme-kalici-oje">Çeşme</a> |
+        <a href="/alacati-kalici-oje">Alaçatı</a>
       </p>
     </nav>
   </footer>
   <script>(function(){var p=document.getElementById('preloader');function h(){if(p)p.classList.add('hidden');}if(document.readyState==='complete'){setTimeout(h,100);}else{window.addEventListener('load',function(){setTimeout(h,100);});setTimeout(h,3000);}})();</script>
+  <div class="price-bar" id="priceBar" aria-hidden="true">
+    <div class="price-bar-inner">
+      <div class="pb-info">
+        <span class="pb-count" id="pbCount">0 hizmet seçildi</span>
+        <span class="pb-total" id="pbTotal">0 ₺</span>
+      </div>
+      <div class="pb-actions">
+        <button type="button" class="pb-clear" id="pbClear">Temizle</button>
+        <a class="pb-send" id="pbSend" href="https://wa.me/905558903511" target="_blank" rel="noopener noreferrer">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.22 8.22 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.83 2.41a8.19 8.19 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.15.16-.29.18-.53.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.44.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.47c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.11-.22-.17-.47-.29Z"/></svg>
+          <span id="pbSendLabel">WhatsApp'tan Gönder</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <script>
+  (function () {
+    var table = document.querySelector('.price-table');
+    var bar = document.getElementById('priceBar');
+    if (!table || !bar) return;
+
+    var WA = 'https://wa.me/905558903511';
+    var rows = Array.prototype.slice.call(table.querySelectorAll('.pick-row'));
+    var elCount = document.getElementById('pbCount');
+    var elTotal = document.getElementById('pbTotal');
+    var elSend = document.getElementById('pbSend');
+    var elClear = document.getElementById('pbClear');
+
+    function fmt(n) { return n.toLocaleString('tr-TR'); }
+
+    function state(row) {
+      var box = row.querySelector('.pick-input');
+      var out = row.querySelector('.qty-val');
+      var q = out ? parseInt(out.textContent, 10) || 1 : 1;
+      return {
+        on: box.checked,
+        name: row.dataset.name,
+        min: parseInt(row.dataset.min, 10) * q,
+        max: parseInt(row.dataset.max, 10) * q,
+        qty: q,
+        unit: row.hasAttribute('data-unit')
+      };
+    }
+
+    function update() {
+      var picked = [], min = 0, max = 0;
+      rows.forEach(function (row) {
+        var s = state(row);
+        row.classList.toggle('is-picked', s.on);
+        var qty = row.querySelector('.qty');
+        if (qty) qty.hidden = !s.on;
+        if (!s.on) return;
+        picked.push(s);
+        min += s.min; max += s.max;
+      });
+
+      var n = picked.length;
+      bar.classList.toggle('is-open', n > 0);
+      bar.setAttribute('aria-hidden', n > 0 ? 'false' : 'true');
+      document.body.classList.toggle('has-bar', n > 0);
+      if (!n) { syncCards(); return; }
+
+      elCount.textContent = n + ' hizmet seçildi';
+      elTotal.textContent = (min === max ? fmt(min) : fmt(min) + ' – ' + fmt(max)) + ' \u20BA';
+
+      var lines = picked.map(function (s) {
+        var label = s.unit && s.qty > 1 ? s.name + ' (' + s.qty + ' tırnak)' : s.name;
+        var price = s.min === s.max ? fmt(s.min) + ' TL' : fmt(s.min) + '-' + fmt(s.max) + ' TL';
+        return '• ' + label + ' — ' + price;
+      });
+      var total = min === max ? fmt(min) + ' TL' : fmt(min) + '-' + fmt(max) + ' TL';
+      var msg = 'Merhaba! Fiyat listesinden şu hizmetleri seçtim:\n\n'
+        + lines.join('\n') + '\n\nToplam: ' + total
+        + '\n\nRandevu için uygun günleri paylaşabilir misiniz?';
+      elSend.href = WA + '?text=' + encodeURIComponent(msg);
+      syncCards();
+    }
+
+    // satirin herhangi bir yerine tiklama secer (buton/link haric)
+    rows.forEach(function (row) {
+      row.addEventListener('click', function (e) {
+        if (e.target.closest('a, button, .qty')) return;
+        var box = row.querySelector('.pick-input');
+        if (e.target.tagName !== 'INPUT' && !e.target.closest('label')) box.checked = !box.checked;
+        update();
+      });
+      row.querySelectorAll('.qty-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var out = row.querySelector('.qty-val');
+          var q = Math.min(10, Math.max(1, (parseInt(out.textContent, 10) || 1)
+            + parseInt(btn.dataset.step, 10)));
+          out.textContent = q;
+          row.querySelectorAll('.qty-btn').forEach(function (b) {
+            b.disabled = (b.dataset.step === '-1' && q === 1) || (b.dataset.step === '1' && q === 10);
+          });
+          update();
+        });
+      });
+    });
+    table.addEventListener('change', function (e) {
+      if (e.target.classList.contains('pick-input')) update();
+    });
+
+    elClear.addEventListener('click', function () {
+      rows.forEach(function (r) {
+        r.querySelector('.pick-input').checked = false;
+        var o = r.querySelector('.qty-val'); if (o) o.textContent = '1';
+      });
+      update();
+    });
+
+    // paket kartlarindaki "Bu paketi seç" butonlari
+    var cardBtns = Array.prototype.slice.call(document.querySelectorAll('.card-pick'));
+    function rowByName(name) {
+      for (var i = 0; i < rows.length; i++) if (rows[i].dataset.name === name) return rows[i];
+      return null;
+    }
+    function syncCards() {
+      cardBtns.forEach(function (b) {
+        var r = rowByName(b.dataset.pick);
+        var on = !!(r && r.querySelector('.pick-input').checked);
+        b.classList.toggle('is-on', on);
+        b.textContent = on ? '\u2713 Seçildi' : 'Bu paketi seç';
+      });
+    }
+    cardBtns.forEach(function (b) {
+      b.addEventListener('click', function () {
+        var r = rowByName(b.dataset.pick);
+        if (!r) return;
+        var box = r.querySelector('.pick-input');
+        box.checked = !box.checked;
+        update();
+        if (box.checked) {
+          r.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          r.animate([{ background: '#efe0cd' }, { background: '#f7efe5' }], { duration: 900 });
+        }
+      });
+    });
+
+    update();
+  })();
+  </script>
 </body>
 </html>

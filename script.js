@@ -164,16 +164,15 @@ function initMobileMenu() {
 
     const root = document.documentElement;
     const links = menu.querySelectorAll('a');
+    const closeButtons = menu.querySelectorAll('[data-mobile-menu-close]');
     const groups = [...menu.querySelectorAll('.mobile-nav-group')];
     const scroller = menu.querySelector('.mobile-menu__scroll');
     const pageContent = [document.querySelector('main'), document.querySelector('footer')].filter(Boolean);
     let scrollPosition = 0;
 
     function getFocusableElements() {
-        return [
-            toggle,
-            ...menu.querySelectorAll('a[href], summary, button:not([disabled]), [tabindex]:not([tabindex="-1"])')
-        ].filter(element => element.offsetParent !== null);
+        return [...menu.querySelectorAll('a[href], summary, button:not([disabled]), [tabindex]:not([tabindex="-1"])')]
+            .filter(element => element.offsetParent !== null);
     }
 
     function openMenu() {
@@ -191,7 +190,7 @@ function initMobileMenu() {
         pageContent.forEach(element => element.setAttribute('inert', ''));
 
         requestAnimationFrame(() => {
-            const firstTarget = menu.querySelector('.mobile-nav-item, summary, a');
+            const firstTarget = menu.querySelector('[data-mobile-menu-close]');
             if (firstTarget) firstTarget.focus({ preventScroll: true });
         });
     }
@@ -239,6 +238,12 @@ function initMobileMenu() {
     links.forEach(link => {
         link.addEventListener('click', () => {
             closeMenu();
+        });
+    });
+
+    closeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            closeMenu({ restoreFocus: true });
         });
     });
 
