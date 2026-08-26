@@ -162,33 +162,132 @@ function initMobileMenu() {
     const menu = document.getElementById('mobileMenu');
     if (!toggle || !menu) return;
 
+    const root = document.documentElement;
     const links = menu.querySelectorAll('a');
-    
-    function toggleMenu() {
-        const isActive = toggle.classList.toggle('active');
-        menu.classList.toggle('active');
-        document.body.classList.toggle('no-scroll');
-        
-        // Update ARIA attributes
-        toggle.setAttribute('aria-expanded', isActive);
+    const groups = [...menu.querySelectorAll('.mobile-nav-group')];
+    const scroller = menu.querySelector('.mobile-menu__scroll');
+    const pageContent = [document.querySelector('main'), document.querySelector('footer')].filter(Boolean);
+    let scrollPosition = 0;
+
+    function getFocusableElements() {
+        return [
+            toggle,
+            ...menu.querySelectorAll('a[href], summary, button:not([disabled]), [tabindex]:not([tabindex="-1"])')
+        ].filter(element => element.offsetParent !== null);
     }
-    
+
+    function openMenu() {
+        if (menu.classList.contains('active')) return;
+
+        scrollPosition = window.scrollY;
+        toggle.classList.add('active');
+        menu.classList.add('active');
+        root.classList.add('menu-open');
+        document.body.classList.add('menu-open');
+        document.body.style.top = `-${scrollPosition}px`;
+        toggle.setAttribute('aria-expanded', 'true');
+        toggle.setAttribute('aria-label', 'Menüyü kapat');
+        menu.setAttribute('aria-hidden', 'false');
+        pageContent.forEach(element => element.setAttribute('inert', ''));
+
+        requestAnimationFrame(() => {
+            const firstTarget = menu.querySelector('.mobile-nav-item, summary, a');
+            if (firstTarget) firstTarget.focus({ preventScroll: true });
+        });
+    }
+
+    function closeMenu({ restoreFocus = false } = {}) {
+        if (!menu.classList.contains('active')) return;
+
+        toggle.classList.remove('active');
+        menu.classList.remove('active');
+        root.classList.remove('menu-open');
+        document.body.classList.remove('menu-open');
+        document.body.style.top = '';
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Menüyü aç');
+        menu.setAttribute('aria-hidden', 'true');
+        pageContent.forEach(element => element.removeAttribute('inert'));
+
+        const previousScrollBehavior = root.style.scrollBehavior;
+        root.style.scrollBehavior = 'auto';
+        window.scrollTo(0, scrollPosition);
+        requestAnimationFrame(() => {
+            root.style.scrollBehavior = previousScrollBehavior;
+            if (restoreFocus) toggle.focus({ preventScroll: true });
+        });
+
+        setTimeout(() => {
+            if (!menu.classList.contains('active')) {
+                if (scroller) scroller.scrollTop = 0;
+                groups.forEach(group => group.removeAttribute('open'));
+            }
+        }, 350);
+    }
+
+    function toggleMenu() {
+        if (menu.classList.contains('active')) {
+            closeMenu({ restoreFocus: true });
+        } else {
+            openMenu();
+        }
+    }
+
     toggle.addEventListener('click', toggleMenu);
-    
+
     // Close menu on link click
     links.forEach(link => {
         link.addEventListener('click', () => {
-            toggle.classList.remove('active');
-            menu.classList.remove('active');
-            document.body.classList.remove('no-scroll');
-            toggle.setAttribute('aria-expanded', 'false');
+            closeMenu();
         });
     });
-    
-    // Close on escape key
+
+    // Use the expandable sections as an accordion to keep the panel compact.
+    groups.forEach(group => {
+        group.addEventListener('toggle', () => {
+            if (!group.open) return;
+            groups.forEach(otherGroup => {
+                if (otherGroup !== group) otherGroup.removeAttribute('open');
+            });
+        });
+    });
+
+    // Keep keyboard focus inside the open dialog and close it with Escape.
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && menu.classList.contains('active')) {
-            toggleMenu();
+            e.preventDefault();
+            closeMenu({ restoreFocus: true });
+            return;
+        }
+
+        if (e.key === 'Tab' && menu.classList.contains('active')) {
+            const focusableElements = getFocusableElements();
+            if (!focusableElements.length) return;
+            const first = focusableElements[0];
+            const last = focusableElements[focusableElements.length - 1];
+
+            if (e.shiftKey && document.activeElement === first) {
+                e.preventDefault();
+                last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+                e.preventDefault();
+                first.focus();
+            }
+        }
+    });
+
+    // A tablet rotation or desktop resize must never leave the page locked.
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 1024 && menu.classList.contains('active')) {
+            closeMenu();
+        }
+    }, { passive: true });
+
+    window.addEventListener('pageshow', () => {
+        if (!menu.classList.contains('active')) {
+            root.classList.remove('menu-open');
+            document.body.classList.remove('menu-open');
+            document.body.style.top = '';
         }
     });
 }
@@ -999,31 +1098,6 @@ function updateActiveNavLink() {
 
 window.addEventListener('scroll', () => {
     requestAnimationFrame(updateActiveNavLink);
-});
-
-/* ========================================
-   Keyboard Navigation (Accessibility)
-   ======================================== */
-document.addEventListener('keydown', (e) => {
-    // Focus management for modal/menu
-    if (e.key === 'Tab') {
-        const mobileMenu = document.getElementById('mobileMenu');
-        if (mobileMenu && mobileMenu.classList.contains('active')) {
-            const focusableElements = mobileMenu.querySelectorAll('a, button');
-            if (focusableElements.length === 0) return;
-
-            const firstElement = focusableElements[0];
-            const lastElement = focusableElements[focusableElements.length - 1];
-            
-            if (e.shiftKey && document.activeElement === firstElement) {
-                e.preventDefault();
-                lastElement.focus();
-            } else if (!e.shiftKey && document.activeElement === lastElement) {
-                e.preventDefault();
-                firstElement.focus();
-            }
-        }
-    }
 });
 
 /* ========================================

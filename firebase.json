@@ -8,6 +8,11 @@
         "source": "/index.html",
         "destination": "/",
         "type": 301
+      },
+      {
+        "source": "/balcovada-tirnak",
+        "destination": "/hizmetler",
+        "type": 301
       }
     ],
     "rewrites": [

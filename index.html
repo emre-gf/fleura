@@ -83,16 +83,16 @@
     />
     <meta name="twitter:creator" content="@fleuranails" />
     <meta name="twitter:site" content="@fleuranails" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="mask-icon" href="/apple-touch-icon.png" color="#c4a484" />
-    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="mask-icon" href="apple-touch-icon.png" color="#c4a484" />
+    <link rel="manifest" href="site.webmanifest" />
     <meta name="theme-color" content="#c4a484" />
     <meta name="msapplication-TileColor" content="#c4a484" />
-    <meta name="msapplication-TileImage" content="/favicon-48x48.png" />
+    <meta name="msapplication-TileImage" content="favicon-48x48.png" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="Fleura Nails" />
@@ -214,13 +214,13 @@
     <noscript><link rel="stylesheet" href="style.min.css" /></noscript>
     <link rel="stylesheet" href="atelier.min.css" />
     <link
-      href="/assets/vendor/aos/aos.css"
+      href="assets/vendor/aos/aos.css"
       rel="stylesheet"
       media="print"
       onload="this.media = 'all'"
     />
     <noscript
-      ><link href="/assets/vendor/aos/aos.css" rel="stylesheet"
+      ><link href="assets/vendor/aos/aos.css" rel="stylesheet"
     /></noscript>
     <style>
       .footer-logo .logo-img {
@@ -832,7 +832,7 @@
           >
           <ul class="nav-links">
             <li><a href="#about" title="Hakkımızda">Hakkımızda</a></li>
-            <li><a href="#services" title="Hizmetlerimiz">Hizmetler</a></li>
+            <li><a href="/hizmetler" title="Hizmetlerimiz">Hizmetler</a></li>
             <li><a href="#bolgeler" title="Hizmet Bölgelerimiz">Bölgeler</a></li>
             <li>
               <a href="#gallery" title="Galeri - Çalışmalarımız">Galeri</a>
@@ -845,7 +845,7 @@
           <button
             class="mobile-toggle"
             id="mobileToggle"
-            aria-label="Menüyü aç/kapat"
+            aria-label="Menüyü aç"
             aria-expanded="false"
             aria-controls="mobileMenu"
           >
@@ -860,22 +860,82 @@
       role="dialog"
       aria-modal="true"
       aria-label="Mobil menü"
+      aria-hidden="true"
     >
-      <ul class="mobile-nav-links">
-        <li><a href="#about" title="Hakkımızda">Hakkımızda</a></li>
-        <li><a href="#services" title="Hizmetlerimiz">Hizmetler</a></li>
-        <li><a href="#bolgeler" title="Hizmet Bölgelerimiz">Bölgeler</a></li>
-        <li><a href="#karsilastirma" title="Hizmet Karşılaştırma">Karşılaştırma</a></li>
-        <li><a href="#gallery" title="Galeri - Çalışmalarımız">Galeri</a></li>
-        <li><a href="/blog" title="Blog">Blog</a></li>
-        <li><a href="#faq" title="Sıkça Sorulan Sorular">SSS</a></li>
-        <li><a href="#contact" title="İletişim">İletişim</a></li>
-        <li>
-          <a href="#randevu-al" class="mobile-cta" title="Randevu Al"
-            >Randevu Al</a
-          >
-        </li>
-      </ul>
+      <div class="mobile-menu__scroll">
+        <div class="mobile-menu__intro" aria-hidden="true">
+          <span>Menü</span>
+          <span>İzmir · VIP Ev Hizmeti</span>
+        </div>
+
+        <nav class="mobile-menu__nav" aria-label="Mobil site menüsü">
+          <a class="mobile-nav-item" href="#about" title="Hakkımızda">
+            <span class="mobile-nav-index">01</span>
+            <span>Hakkımızda<small>Fleura’yı yakından tanıyın</small></span>
+          </a>
+
+          <details class="mobile-nav-group">
+            <summary>
+              <span class="mobile-nav-index">02</span>
+              <span>Hizmetler<small>Tüm uygulamaları keşfedin</small></span>
+              <i aria-hidden="true"></i>
+            </summary>
+            <div class="mobile-submenu">
+              <a href="/hizmetler">Tüm Hizmetler</a>
+              <a href="/izmir-kalici-oje">Kalıcı Oje</a>
+              <a href="/izmir-protez-tirnak">Protez Tırnak</a>
+              <a href="/izmir-manikur-pedikur">Manikür &amp; Pedikür</a>
+              <a href="/izmir-rus-manikuru">Rus Manikürü</a>
+              <a href="/izmir-nail-art">Nail Art</a>
+              <a href="/izmir-gelin-tirnagi">Gelin Tırnağı</a>
+              <a href="#karsilastirma">Hizmet Karşılaştırma</a>
+            </div>
+          </details>
+
+          <a class="mobile-nav-item mobile-nav-item--price" href="/izmir-protez-tirnak-fiyatlari" title="Güncel Fiyat Listesi">
+            <span class="mobile-nav-index">03</span>
+            <span>Fiyat Listesi<small>Güncel ve şeffaf fiyatlar</small></span>
+            <strong>Görüntüle</strong>
+          </a>
+
+          <details class="mobile-nav-group">
+            <summary>
+              <span class="mobile-nav-index">04</span>
+              <span>Hizmet Bölgeleri<small>İzmir’de hizmet verdiğimiz yerler</small></span>
+              <i aria-hidden="true"></i>
+            </summary>
+            <div class="mobile-submenu mobile-submenu--regions">
+              <a href="/balcova-protez-tirnak">Balçova</a>
+              <a href="/karsiyaka-protez-tirnak">Karşıyaka</a>
+              <a href="/bornova-kalici-oje">Bornova</a>
+              <a href="/buca-tirnak">Buca</a>
+              <a href="/cigli-protez-tirnak">Çiğli</a>
+              <a href="/narlidere-tirnak">Narlıdere</a>
+              <a href="/karabaglar-tirnak">Karabağlar</a>
+              <a href="/bayrakli-kalici-oje">Bayraklı</a>
+              <a href="/gaziemir-kalici-oje">Gaziemir</a>
+              <a href="/konak-tirnak">Konak</a>
+              <a href="/guzelbahce-kalici-oje">Güzelbahçe</a>
+              <a href="/urla-kalici-oje">Urla</a>
+              <a href="/cesme-kalici-oje">Çeşme</a>
+              <a href="/alacati-kalici-oje">Alaçatı</a>
+            </div>
+          </details>
+
+          <div class="mobile-nav-quick" aria-label="Diğer bağlantılar">
+            <a href="#gallery">Galeri</a>
+            <a href="/blog">Blog</a>
+            <a href="#faq">SSS</a>
+            <a href="#contact">İletişim</a>
+          </div>
+        </nav>
+
+        <div class="mobile-menu__footer">
+          <p>Hazırsanız randevunuzu birlikte planlayalım.</p>
+          <a href="#randevu-al" class="mobile-cta" title="Randevu Al">Randevu Al</a>
+          <a href="https://wa.me/905558903511" class="mobile-menu__whatsapp" title="WhatsApp ile iletişime geç">WhatsApp’tan Yazın</a>
+        </div>
+      </div>
     </div>
     <main id="main">
       <section class="hero" id="hero" aria-labelledby="hero-title">
@@ -2304,7 +2364,11 @@
               data-aos-easing="ease-out-cubic"
             >
               Her ihtiyaca özel çözümler, uzman ellerde güvenli uygulamalar.
-              Detaylı bilgi ve fiyatlandırma için bizimle iletişime geçin.
+              Tüm uygulamaların güncel
+              <a href="/izmir-protez-tirnak-fiyatlari" title="İzmir kalıcı oje ve protez tırnak fiyatları"
+                >fiyat listesini</a
+              >
+              inceleyebilirsiniz.
             </p>
           </div>
           <div class="services-grid">
@@ -2480,6 +2544,17 @@
                   <path d="M5 12h14M12 5l7 7-7 7" /></svg
               ></a>
             </article>
+          </div>
+          <div
+            class="faq-cta"
+            data-aos="zoom-in"
+            data-aos-delay="200"
+            style="text-align: center; margin-top: 40px"
+          >
+            <p>Hangi uygulamanın ne kadar tuttuğunu merak ediyor musunuz?</p>
+            <a href="/izmir-protez-tirnak-fiyatlari" class="btn btn-secondary"
+              >Fiyat Listesini Görün</a
+            >
           </div>
         </div>
       </section>
@@ -2986,6 +3061,7 @@
             <a href="#contact" class="btn btn-secondary">Bize Sorun</a>
           </div>
         </div>
+      </section>
 
       <section
         class="compare"
@@ -3144,7 +3220,7 @@
             </a>
           </div>
           <div class="faq-cta" data-aos="zoom-in" data-aos-delay="200" style="text-align:center;margin-top:40px;">
-            <a href="/blog.html" class="btn btn-secondary">Tüm Blog Yazıları</a>
+            <a href="/blog" class="btn btn-secondary">Tüm Blog Yazıları</a>
           </div>
         </div>
       </section>
@@ -3387,7 +3463,7 @@
             <h4>Hızlı Bağlantılar</h4>
             <nav aria-label="Footer navigasyon">
               <a href="#about" title="Hakkımızda">Hakkımızda</a>
-              <a href="#services" title="Hizmetlerimiz">Hizmetler</a>
+              <a href="/hizmetler" title="Hizmetlerimiz">Hizmetler</a>
               <a href="#gallery" title="Galeri - Çalışmalarımız">Galeri</a>
               <a href="/blog" title="Blog">Blog</a>
               <a href="#faq" title="Sıkça Sorulan Sorular">SSS</a>
@@ -3397,21 +3473,27 @@
           <div class="footer-services">
             <h4>Hizmetlerimiz</h4>
             <nav aria-label="Hizmetler">
-              <a href="#services" title="Kalıcı Oje Hizmeti"
+              <a href="/izmir-kalici-oje" title="İzmir Kalıcı Oje Hizmeti"
                 >
                 <span>Kalıcı Oje</span> </a
-              ><a href="#services" title="Manikür ve Pedikür Hizmeti"
+              ><a href="/izmir-manikur-pedikur" title="İzmir Manikür ve Pedikür Hizmeti"
                 >
-                <span>Manikür & Pedikür</span> </a
-              ><a href="#services" title="Protez Tırnak Hizmeti"
+                <span>Manikür &amp; Pedikür</span> </a
+              ><a href="/izmir-protez-tirnak" title="İzmir Protez Tırnak Hizmeti"
                 >
                 <span>Protez Tırnak</span> </a
-              ><a href="#services" title="Tırnak Bakımı Hizmeti"
+              ><a href="/izmir-rus-manikuru" title="İzmir Rus Manikürü"
                 >
-                <span>Tırnak Bakımı</span> </a
-              ><a href="#services" title="Nail Art Hizmeti"
+                <span>Rus Manikürü</span> </a
+              ><a href="/izmir-gelin-tirnagi" title="İzmir Gelin Tırnağı"
                 >
-                <span>Nail Art</span></a
+                <span>Gelin Tırnağı</span> </a
+              ><a href="/izmir-nail-art" title="İzmir Nail Art Hizmeti"
+                >
+                <span>Nail Art</span> </a
+              ><a href="/izmir-protez-tirnak-fiyatlari" title="Fiyatlandırma"
+                >
+                <span>Fiyatlar</span></a
               >
             </nav>
           </div>
@@ -3427,6 +3509,10 @@
               <a href="/cigli-protez-tirnak" title="Çiğli Protez Tırnak">Çiğli</a>
               <a href="/buca-tirnak" title="Buca Tırnak">Buca</a>
               <a href="/bayrakli-kalici-oje" title="Bayraklı Kalıcı Oje">Bayraklı</a>
+              <a href="/karabaglar-tirnak" title="Karabağlar Protez Tırnak">Karabağlar</a>
+              <a href="/konak-tirnak" title="Konak Tırnak Bakımı">Konak</a>
+              <a href="/gaziemir-kalici-oje" title="Gaziemir Kalıcı Oje">Gaziemir</a>
+              <a href="/urla-kalici-oje" title="Urla Kalıcı Oje">Urla</a>
               <a href="/cesme-kalici-oje" title="Çeşme Kalıcı Oje">Çeşme</a>
               <a href="/alacati-kalici-oje" title="Alaçatı Kalıcı Oje">Alaçatı</a>
             </nav>
@@ -3511,7 +3597,7 @@
       </svg>
     </button>
     <script
-      src="/assets/vendor/aos/aos.js"
+      src="assets/vendor/aos/aos.js"
       defer="defer"
     ></script>
     <script src="script.min.js" defer="defer"></script>

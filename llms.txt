@@ -8,6 +8,7 @@
 - **Hizmet bölgesi:** Tüm İzmir — Narlıdere, Güzelbahçe, Balçova, Konak, Alsancak, Karşıyaka, Bornova, Bayraklı, Çiğli, Buca, Karabağlar ve Çeşme, Alaçatı
 - **Hizmetler:** Kalıcı oje, protez tırnak (jel/akrilik), protez tırnak dolumu, klasik manikür, rus manikürü (kuru manikür), pedikür, nail art, French manikür, gelin tırnağı
 - **Randevu:** Telefon veya WhatsApp ile
+- **Fiyatlandırma:** Sabit liste fiyatı uygulanır (aşağıdaki Fiyat Listesi bölümü). Fiyatlara adresinize ulaşım, ekipman ve tek kullanımlık steril malzeme dahildir
 - **Telefon:** +90 555 890 35 11
 - **WhatsApp:** https://wa.me/905558903511
 - **Instagram:** https://instagram.com/fleuranails
@@ -18,16 +19,60 @@
 - **Kalıcı oje ne kadar dayanır?** Ortalama 2-3 hafta.
 - **Protez tırnak dolumu ne zaman gerekir?** 2-4 haftada bir.
 - **Kalıcı oje uygulaması ne kadar sürer?** 45-60 dakika; protez tırnak 90-150 dakika.
+- **Kalıcı oje ne kadar?** Manikür + kalıcı oje 1.150 TL. Tek başına manikür 650 TL.
+- **Protez tırnak ne kadar?** Manikür + protez tırnak + kalıcı oje 1.500 TL.
 - **Hijyen nasıl sağlanıyor?** Metal aletler otoklavda sterilize edilip kapalı poşetlerde taşınır; törpü ve freze uçları tek kullanımlıktır.
+
+## Fiyat Listesi
+
+Fiyatlara İzmir merkez ilçelerde ulaşım, tüm ekipman ve tek kullanımlık steril malzeme dahildir.
+Kaynak sayfa: https://www.fleura.com.tr/izmir-protez-tirnak-fiyatlari
+
+### Manikür Hizmetleri
+
+- Manikür — 650 TL
+- Manikür + Kalıcı Oje — 1.150 TL
+- Manikür + Jel Güçlendirme + Kalıcı Oje — 1.300 TL
+- Manikür + Protez Tırnak + Kalıcı Oje — 1.500 TL
+
+### Pedikür Hizmetleri
+
+- Pedikür — 850 TL
+- Pedikür + Kalıcı Oje — 1.250 TL
+- Pedikür + Jel Güçlendirme + Kalıcı Oje — 1.500 TL
+
+### Ek Hizmetler
+
+- Tek Tırnak Onarım — 150 TL
+- French / Cat Eye / Ombre — 250 TL
+- Tek Tırnak Nail Art — 50-150 TL
+
+### Çıkarma Hizmetleri
+
+- Kalıcı Oje Çıkarma — 400 TL
+- Protez Tırnak Çıkarma — 500 TL
+
+Not: Çıkarma ücretleri yalnızca **başka bir yerde yapılmış** uygulamalar için geçerlidir.
+Fleura Nails'in uyguladığı protezin sökümü yeni randevuya dahildir.
+Çeşme, Alaçatı ve Urla gibi uzak bölgelerde mesafe fiyata yansıyabilir; randevu öncesi bildirilir.
 
 ## Önemli Sayfalar
 
 - [Ana sayfa](https://www.fleura.com.tr/)
-- [İzmir Protez Tırnak](https://www.fleura.com.tr/izmir-protez-tirnak)
-- [İzmir Kalıcı Oje](https://www.fleura.com.tr/izmir-kalici-oje)
+- [Tüm Hizmetler](https://www.fleura.com.tr/hizmetler)
+- [Fiyatlandırma](https://www.fleura.com.tr/izmir-protez-tirnak-fiyatlari)
 - [Blog](https://www.fleura.com.tr/blog)
 - [İletişim](https://www.fleura.com.tr/iletisim)
 - [Sitemap](https://www.fleura.com.tr/sitemap.xml)
+
+## Hizmet Sayfaları
+
+- [İzmir Protez Tırnak](https://www.fleura.com.tr/izmir-protez-tirnak) — jel/akrilik tırnak uzatma, 90-150 dk
+- [İzmir Kalıcı Oje](https://www.fleura.com.tr/izmir-kalici-oje) — 2-3 hafta dayanıklı, 45-60 dk
+- [İzmir Rus Manikürü](https://www.fleura.com.tr/izmir-rus-manikuru) — frezeli kuru manikür, kesmesiz, 60-75 dk
+- [İzmir Manikür ve Pedikür](https://www.fleura.com.tr/izmir-manikur-pedikur) — manikür 30-45 dk, pedikür 45-60 dk
+- [İzmir Nail Art](https://www.fleura.com.tr/izmir-nail-art) — kişiye özel tasarım, +15-45 dk
+- [İzmir Gelin Tırnağı](https://www.fleura.com.tr/izmir-gelin-tirnagi) — provalı çalışma, düğün günü uygulama
 
 ## Blog Yazıları (21 yazı)
 
@@ -74,13 +119,16 @@
 - [Balçova Protez Tırnak Hizmeti](https://www.fleura.com.tr/balcova-protez-tirnak)
 - [Bayraklı Kalıcı Oje ve Protez Tırnak](https://www.fleura.com.tr/bayrakli-kalici-oje)
 - [Bornova Kalıcı Oje ve Protez Tırnak](https://www.fleura.com.tr/bornova-kalici-oje)
+- [Gaziemir Kalıcı Oje ve Protez Tırnak](https://www.fleura.com.tr/gaziemir-kalici-oje)
 - [Buca Protez Tırnak ve Kalıcı Oje](https://www.fleura.com.tr/buca-tirnak)
 - [Çeşme Kalıcı Oje ve Protez Tırnak](https://www.fleura.com.tr/cesme-kalici-oje)
 - [Çiğli Protez Tırnak ve Kalıcı Oje](https://www.fleura.com.tr/cigli-protez-tirnak)
 - [Güzelbahçe Kalıcı Oje ve Protez Tırnak](https://www.fleura.com.tr/guzelbahce-kalici-oje)
 - [İzmir Kalıcı Oje Hizmeti](https://www.fleura.com.tr/izmir-kalici-oje)
+- [Konak Tırnak Bakımı ve Kalıcı Oje](https://www.fleura.com.tr/konak-tirnak)
 - [Karabağlar Protez Tırnak ve Kalıcı Oje](https://www.fleura.com.tr/karabaglar-tirnak)
 - [Karşıyaka Protez Tırnak ve Kalıcı Oje](https://www.fleura.com.tr/karsiyaka-protez-tirnak)
 - [Narlıdere Tırnak Bakımı](https://www.fleura.com.tr/narlidere-tirnak)
+- [Urla Kalıcı Oje ve Protez Tırnak](https://www.fleura.com.tr/urla-kalici-oje)
 
-Son güncelleme: 2026-08-02
+Son güncelleme: 2026-08-26
