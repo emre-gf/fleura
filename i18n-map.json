@@ -1,0 +1,127 @@
+{
+  "_comment": "Fleura Nails — merkezi çok dilli URL ve fiyat kaynağı. Yeni bir dil sayfası eklerken burayı güncelle; hreflang, language switcher ve sitemap bu haritadan türetilir.",
+  "_note_prices": "Fiyatlar TEK kaynak: izmir-protez-tirnak-fiyatlari.html içindeki tablo. Buradaki değerler o tablodan kopyalanmıştır ve TR/EN/RU sunumunda aynı sayıları kullanır. Fiyat değişirse hem TR sayfasını hem burayı güncelle.",
+
+  "locales": ["tr", "en", "ru"],
+  "defaultLocale": "tr",
+  "domain": "https://www.fleura.com.tr",
+
+  "pages": [
+    {
+      "key": "home",
+      "tr": "/",
+      "en": "/en",
+      "ru": "/ru",
+      "intent_tr": "marka + izmir tırnak hizmetleri (genel)",
+      "intent_en": "mobile nail service izmir, nail salon izmir, nails izmir",
+      "intent_ru": "маникюр измир, маникюр с выездом измир, мастер маникюра измир"
+    },
+    {
+      "key": "extensions",
+      "tr": "/izmir-protez-tirnak",
+      "en": "/en/gel-nail-extensions-izmir",
+      "ru": "/ru/narashchivanie-nogtey-izmir",
+      "intent_tr": "izmir protez tırnak + evde protez tırnak",
+      "intent_en": "gel nails izmir, gel extensions izmir, nail extensions izmir",
+      "intent_ru": "наращивание ногтей измир, гелевое наращивание измир"
+    },
+    {
+      "key": "gelpolish",
+      "tr": "/izmir-kalici-oje",
+      "en": "/en/gel-polish-izmir",
+      "ru": "/ru/gel-lak-izmir",
+      "intent_tr": "izmir kalıcı oje + evde kalıcı oje",
+      "intent_en": "gel polish izmir, shellac izmir, gel manicure izmir",
+      "intent_ru": "гель лак измир, маникюр с гель лаком измир"
+    },
+    {
+      "key": "nailart",
+      "tr": "/izmir-nail-art",
+      "en": "/en/nail-art-izmir",
+      "ru": "/ru/dizayn-nogtey-izmir",
+      "intent_tr": "izmir nail art",
+      "intent_en": "nail art izmir, custom nail design izmir",
+      "intent_ru": "дизайн ногтей измир, нейл арт измир"
+    },
+    {
+      "key": "manipedi",
+      "tr": "/izmir-manikur-pedikur",
+      "en": "/en/manicure-pedicure-izmir",
+      "ru": "/ru/manikyur-pedikyur-izmir",
+      "intent_tr": "izmir manikür, izmir pedikür",
+      "intent_en": "manicure izmir, pedicure izmir, manicure and pedicure izmir",
+      "intent_ru": "маникюр измир, педикюр измир, аппаратный маникюр измир"
+    },
+    {
+      "key": "prices",
+      "tr": "/izmir-protez-tirnak-fiyatlari",
+      "en": "/en/nail-prices-izmir",
+      "ru": "/ru/tseny-izmir",
+      "intent_tr": "fiyat intent (izmir protez tırnak fiyatları)",
+      "intent_en": "nail prices izmir, manicure price izmir, cost",
+      "intent_ru": "цены маникюр измир, сколько стоит наращивание измир"
+    },
+    {
+      "key": "bridal",
+      "tr": "/izmir-gelin-tirnagi",
+      "en": "/en/bridal-nails-izmir",
+      "ru": "/ru/svadebnyy-manikyur-izmir",
+      "intent_tr": "izmir gelin tırnağı",
+      "intent_en": "bridal nails izmir, wedding nails izmir",
+      "intent_ru": "свадебный маникюр измир"
+    }
+  ],
+
+  "prices": {
+    "currency": "TRY",
+    "currencySymbol": "₺",
+    "note_key": "starting_from",
+    "groups": [
+      {
+        "key": "manicure",
+        "items": [
+          { "key": "manicure", "amount": 650 },
+          { "key": "manicure_gelpolish", "amount": 1150 },
+          { "key": "manicure_strength_gelpolish", "amount": 1300 },
+          { "key": "manicure_extensions_gelpolish", "amount": 1500 }
+        ]
+      },
+      {
+        "key": "pedicure",
+        "items": [
+          { "key": "pedicure", "amount": 850 },
+          { "key": "pedicure_gelpolish", "amount": 1250 },
+          { "key": "pedicure_strength_gelpolish", "amount": 1500 }
+        ]
+      },
+      {
+        "key": "extras",
+        "items": [
+          { "key": "single_repair", "amount": 150, "perNail": true },
+          { "key": "french_cateye_ombre", "amount": 250 },
+          { "key": "single_nail_art", "amountMin": 50, "amountMax": 150, "perNail": true }
+        ]
+      },
+      {
+        "key": "removal",
+        "items": [
+          { "key": "gelpolish_removal", "amount": 400 },
+          { "key": "extensions_removal", "amount": 500 }
+        ]
+      }
+    ]
+  },
+
+  "contact": {
+    "phone": "+905558903511",
+    "phoneDisplay": "0555 890 35 11",
+    "email": "info@fleura.com.tr",
+    "instagram": "https://instagram.com/fleuranails"
+  },
+
+  "whatsapp": {
+    "tr": "Merhaba, randevu almak istiyorum.",
+    "en": "Hello! I would like to book a nail appointment in Izmir.",
+    "ru": "Здравствуйте! Хочу записаться на маникюр в Измире."
+  }
+}

@@ -5,6 +5,36 @@
   var KEY = 'fn-cookie-consent';
   var POLICY_URL = '/kvkk-aydinlatma-metni';
 
+  // Sayfa diline göre metin (html lang özniteliğinden okunur)
+  var LANG = (document.documentElement.getAttribute('lang') || 'tr').slice(0, 2);
+  var T = {
+    tr: {
+      title: 'Çerez tercihiniz',
+      body: 'Çerez kullanıyoruz. ',
+      link: 'Detaylar',
+      accept: 'Kabul et',
+      decline: 'Reddet',
+      aria: 'Çerez tercihi'
+    },
+    en: {
+      title: 'Cookie preference',
+      body: 'We use cookies. ',
+      link: 'Details',
+      accept: 'Accept',
+      decline: 'Decline',
+      aria: 'Cookie preference'
+    },
+    ru: {
+      title: 'Использование cookie',
+      body: 'Мы используем cookie. ',
+      link: 'Подробнее',
+      accept: 'Принять',
+      decline: 'Отклонить',
+      aria: 'Настройка cookie'
+    }
+  };
+  var t = T[LANG] || T.tr;
+
   function read() {
     try { return localStorage.getItem(KEY); } catch (e) { return null; }
   }
@@ -46,20 +76,19 @@
     el.className = 'fn-cookie';
     el.id = 'fnCookie';
     el.setAttribute('role', 'region');
-    el.setAttribute('aria-label', 'Çerez tercihi');
+    el.setAttribute('aria-label', t.aria);
     el.innerHTML =
       '<p class="fn-cookie__title">' +
         '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
         'stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
         '<path d="M12 2.6a9.4 9.4 0 1 0 9.4 9.4 3.3 3.3 0 0 1-4.6-3 3.6 3.6 0 0 1-3.6-3.6 3.2 3.2 0 0 1-1.2-2.8z"/>' +
         '<circle cx="9.2" cy="10" r="1"/><circle cx="13" cy="15" r="1"/><circle cx="8" cy="15.4" r="1"/>' +
-        '</svg>Çerez tercihiniz</p>' +
-      '<p class="fn-cookie__text">Sitenin çalışması için zorunlu çerezleri kullanıyoruz. ' +
-        'Dilerseniz ziyaret istatistiklerini ölçen analitik çerezlere de izin verebilirsiniz. ' +
-        'Ayrıntılar: <a href="' + POLICY_URL + '">KVKK Aydınlatma Metni</a>.</p>' +
+        '</svg>' + t.title + '</p>' +
+      '<p class="fn-cookie__text">' + t.body +
+        '<a href="' + POLICY_URL + '">' + t.link + '</a>.</p>' +
       '<div class="fn-cookie__actions">' +
-        '<button type="button" class="fn-cookie__btn fn-cookie__btn--decline" data-fn-cookie="declined">Sadece zorunlu</button>' +
-        '<button type="button" class="fn-cookie__btn fn-cookie__btn--accept" data-fn-cookie="accepted">Kabul et</button>' +
+        '<button type="button" class="fn-cookie__btn fn-cookie__btn--decline" data-fn-cookie="declined">' + t.decline + '</button>' +
+        '<button type="button" class="fn-cookie__btn fn-cookie__btn--accept" data-fn-cookie="accepted">' + t.accept + '</button>' +
       '</div>';
     return el;
   }
@@ -108,9 +137,11 @@
     });
   }
 
+  // Hero animasyonları oynasın, ardından bar sessizce girsin
+  function start() { setTimeout(init, 2200); }
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init, { once: true });
+    document.addEventListener('DOMContentLoaded', start, { once: true });
   } else {
-    init();
+    start();
   }
 })();

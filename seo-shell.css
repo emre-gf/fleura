@@ -299,3 +299,62 @@ main.page-content .btn-secondary { color: #7b293e !important; }
 @media (prefers-reduced-motion: reduce) {
   .seo-site-header *, .seo-site-footer * { scroll-behavior: auto !important; transition: none !important; }
 }
+
+/* ---------- Dil seçici (TR | EN | RU) ---------- */
+/* Sunucu tarafında render edilir; JS ile inject edilmez. */
+.seo-lang {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid var(--shell-line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.seo-lang a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 34px;
+  min-height: 30px;
+  padding: 0 8px;
+  border-radius: 999px;
+  color: var(--shell-cherry-dark);
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.seo-lang a:hover,
+.seo-lang a:focus-visible { background: rgba(143, 24, 51, 0.1); }
+
+.seo-lang a[aria-current="true"] {
+  background: var(--shell-cherry);
+  color: #fff;
+}
+
+@media (max-width: 880px) {
+  /* Hamburger menünün soluna alınır, mobilde de her zaman görünür kalır */
+  .seo-lang { margin-left: auto; }
+  .seo-nav__cta { margin-left: 8px; }
+}
+
+@media (max-width: 560px) {
+  .seo-lang { padding: 2px; }
+  .seo-lang a { min-width: 30px; min-height: 28px; padding: 0 6px; font-size: 0.68rem; }
+}
+
+/* ---------- Rusça sayfalar için Kiril destekli gövde fontu ---------- */
+/* Plus Jakarta Sans yalnızca cyrillic-ext taşır (U+0460-052F); temel Rus
+   alfabesi (U+0400-045F) yoktur ve sistem fontuna düşer. Manrope tam Kiril
+   desteklidir ve yalnızca /ru/ sayfalarında yüklenir; TR/EN sayfalar etkilenmez. */
+html[lang="ru"] body,
+html[lang="ru"] .page-content,
+html[lang="ru"] .seo-site-header,
+html[lang="ru"] .seo-site-footer {
+  font-family: "Manrope", "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+}

@@ -7781,3 +7781,63 @@ svg.footer-social-icon {
   .hero-studio-stamp,
   .hero-color-card { display: none; }
 }
+
+/* ---------- Dil seçici (ana sayfa navigasyonu) ---------- */
+.nav-lang {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: 14px;
+  padding: 3px;
+  border: 1px solid rgba(114, 21, 43, 0.16);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.6);
+}
+.nav-lang a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 33px;
+  min-height: 29px;
+  padding: 0 7px;
+  border-radius: 999px;
+  color: #72152b;
+  font-size: 0.71rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.nav-lang a:hover, .nav-lang a:focus-visible { background: rgba(169, 31, 61, 0.1); }
+.nav-lang a[aria-current="true"] { background: #a91f3d; color: #fff; }
+@media (max-width: 1023px) { .nav-lang { display: none; } }
+
+/* Mobil menü içindeki dil seçici */
+.mm-lang {
+  display: flex;
+  gap: 8px;
+  margin: 18px 0 4px;
+}
+.mm-lang a {
+  flex: 1 1 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  border: 1px solid rgba(114, 21, 43, 0.18);
+  border-radius: 999px;
+  color: #72152b;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.mm-lang a[aria-current="true"] { background: #a91f3d; border-color: #a91f3d; color: #fff; }
+
+/* Koyu zeminli bölümlerde alt başlık (ör. Müşteri Deneyimleri) */
+.section-subtitle.light { color: rgba(255, 255, 255, 0.82); }
+.section-subtitle.light .text-link {
+  color: #f0d5bd;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.section-subtitle.light .text-link:hover { color: #fff; }
