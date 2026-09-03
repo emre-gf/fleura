@@ -120,14 +120,58 @@
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      {"@type": "Question", "name": "Güzelbahçe'nin hangi mahallelerine geliyorsunuz?", "acceptedAnswer": {"@type": "Answer", "text": "Çelebi, Kahramandere, Yelki, Mustafa Kemal Paşa, Atatürk Mahallesi, Yaka, Maltepe ve Siteler dahil tüm Güzelbahçe."}},
-      {"@type": "Question", "name": "Güzelbahçe yazlık sezonunda hizmet veriyor musunuz?", "acceptedAnswer": {"@type": "Answer", "text": "Evet, özellikle yaz aylarında Güzelbahçe yazlıklarına da hizmet sunuyoruz. Tatil dönemi randevuları için 3-4 gün önceden rezervasyon öneririz."}},
-      {"@type": "Question", "name": "Sahil ve denize yakın yaşıyorum, tırnak uygulamamı etkiler mi?", "acceptedAnswer": {"@type": "Answer", "text": "Tuzlu su ve güneş, kalıcı oje ve protez tırnak ömrünü kısaltabilir. Yüzme öncesi koruyucu krem ve sonrasında tatlı su ile durulama önerisiyle ömrü 2-3 hafta seviyesinde tutabilirsiniz."}}
+      {
+        "@type": "Question",
+        "name": "Yazlık eve geliyor musunuz?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Evet — Güzelbahçe yazlıklarına ve daimi adreslere aynı standart hizmeti sunuyoruz."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Düğün öncesi tırnak hazırlığı yapıyor musunuz?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Evet, sahil/marina düğünleri için gelin tırnak paketi sunuyoruz. Tasarım, deneme uygulaması ve düğün günü dahil."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Plaj sonrası protez tırnak ayrılır mı?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Doğru bakımla 3-4 hafta dayanır. Yüzme öncesi koruyucu krem ve sonrasında tatlı su durulama kritik. Detaylı plaj bakım önerilerimizi uygulama sonrası paylaşıyoruz."
+        }
+      }
     ]
   }
   </script>
+  <link rel="stylesheet" href="/seo-shell.css">
+  <script src="/seo-shell.js" defer></script>
 </head>
 <body>
+  <a class="seo-skip-link" href="#main">Ana içeriğe geç</a>
+  <header class="seo-site-header">
+    <nav class="seo-nav" aria-label="Ana menü">
+      <a class="seo-brand" href="/" aria-label="Fleura Nails ana sayfa">
+        <span class="seo-brand__name">Fleura</span>
+        <span class="seo-brand__studio">Nail Atelier · İzmir</span>
+      </a>
+      <ul class="seo-nav__links" id="seoNavLinks">
+        <li><a href="/">Ana Sayfa</a></li>
+        <li><a href="/hizmetler">Hizmetler</a></li>
+        <li><a href="/izmir-protez-tirnak-fiyatlari">Fiyatlar</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/iletisim">İletişim</a></li>
+      </ul>
+      <a class="seo-nav__cta" href="https://wa.me/905558903511?text=Merhaba%2C%20randevu%20almak%20istiyorum" target="_blank" rel="noopener">Randevu Al</a>
+      <button class="seo-menu-toggle" type="button" aria-label="Menüyü aç" aria-expanded="false" aria-controls="seoNavLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
   <div class="preloader" id="preloader" aria-hidden="true" style="position:fixed;inset:0;background:linear-gradient(135deg,#fdf6ef 0%,#faf8f5 100%);z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;transition:opacity .5s ease,visibility .5s ease;">
     <div style="font-family:'Playfair Display',Georgia,serif;font-size:2rem;font-weight:600;color:#2c2c2c;letter-spacing:.05em;">Fleura <span style="color:#c4a484;font-style:italic;">Nails</span></div>
     <div style="display:flex;gap:8px;"><span style="width:8px;height:8px;border-radius:50%;background:#c4a484;display:block;animation:dotP 1.2s ease-in-out infinite;"></span><span style="width:8px;height:8px;border-radius:50%;background:#c4a484;display:block;animation:dotP 1.2s ease-in-out .2s infinite;"></span><span style="width:8px;height:8px;border-radius:50%;background:#c4a484;display:block;animation:dotP 1.2s ease-in-out .4s infinite;"></span></div>
@@ -200,7 +244,8 @@
             İlgili hizmetler:
             <a href="/narlidere-tirnak" class="cta-link">Narlıdere tırnak</a> ·
             <a href="/balcova-protez-tirnak" class="cta-link">Balçova protez tırnak</a> ·
-            <a href="/izmir-kalici-oje" class="cta-link">İzmir kalıcı oje</a>
+            <a href="/izmir-kalici-oje" class="cta-link">İzmir kalıcı oje</a> ·
+            <a href="/izmir-protez-tirnak-fiyatlari" class="cta-link">Fiyatlar</a>
           </p>
         </section>
 
@@ -241,43 +286,54 @@
     </main>
   </div>
 
-  <footer>
-    <p>&copy; 2026 Fleura Nails. Tüm hakları saklıdır.</p>
-    <nav aria-label="Site bağlantıları">
-      <p>
-        <a href="/">Ana Sayfa</a> |
-        <a href="/blog">Blog</a> |
-        <a href="/iletisim">İletişim</a>
-      </p>
-      <p>
-        <a href="/hizmetler">Hizmetler</a> |
-        <a href="/izmir-protez-tirnak">İzmir Protez Tırnak</a> |
-        <a href="/izmir-kalici-oje">İzmir Kalıcı Oje</a> |
-        <a href="/izmir-nail-art">Nail Art</a> |
-        <a href="/izmir-manikur-pedikur">Manikür &amp; Pedikür</a> |
-        <a href="/izmir-rus-manikuru">Rus Manikürü</a> |
-        <a href="/izmir-gelin-tirnagi">Gelin Tırnağı</a> |
-        <a href="/izmir-protez-tirnak-fiyatlari">Fiyatlar</a>
-      </p>
-      <p>
-        <a href="/narlidere-tirnak">Narlıdere</a> |
-        <a href="/guzelbahce-kalici-oje">Güzelbahçe</a> |
-        <a href="/balcova-protez-tirnak">Balçova</a> |
-        <a href="/konak-tirnak">Konak</a> |
-        <a href="/alsancak-nail-art">Alsancak</a> |
-        <a href="/karsiyaka-protez-tirnak">Karşıyaka</a> |
-        <a href="/bornova-kalici-oje">Bornova</a> |
-        <a href="/bayrakli-kalici-oje">Bayraklı</a> |
-        <a href="/cigli-protez-tirnak">Çiğli</a> |
-        <a href="/buca-tirnak">Buca</a> |
-        <a href="/karabaglar-tirnak">Karabağlar</a> |
-        <a href="/gaziemir-kalici-oje">Gaziemir</a> |
-        <a href="/urla-kalici-oje">Urla</a> |
-        <a href="/cesme-kalici-oje">Çeşme</a> |
-        <a href="/alacati-kalici-oje">Alaçatı</a>
-      </p>
-    </nav>
+    <footer class="seo-site-footer" role="contentinfo">
+    <div class="seo-footer__inner">
+      <div class="seo-footer__brand">
+        <a class="seo-footer__logo" href="/" aria-label="Fleura Nails ana sayfa">Fleura Nails</a>
+        <p>İzmir genelinde steril ekipmanla, adresinize gelen profesyonel tırnak bakımı. Kalıcı oje, protez tırnak, manikür ve kişiye özel nail art.</p>
+        <a class="seo-footer__contact" href="tel:+905558903511">0555 890 35 11</a>
+      </div>
+      <section class="seo-footer__column" aria-labelledby="footer-pages-title">
+        <h2 id="footer-pages-title">Fleura</h2>
+        <nav aria-label="Kurumsal bağlantılar">
+          <a href="/">Ana Sayfa</a>
+          <a href="/hizmetler">Tüm Hizmetler</a>
+          <a href="/izmir-protez-tirnak-fiyatlari">Güncel Fiyatlar</a>
+          <a href="/blog">Tırnak Rehberi</a>
+          <a href="/iletisim">İletişim</a>
+        </nav>
+      </section>
+      <section class="seo-footer__column" aria-labelledby="footer-services-title">
+        <h2 id="footer-services-title">Hizmetler</h2>
+        <nav aria-label="Tırnak hizmetleri">
+          <a href="/izmir-protez-tirnak">Protez Tırnak</a>
+          <a href="/izmir-kalici-oje">Kalıcı Oje</a>
+          <a href="/izmir-manikur-pedikur">Manikür &amp; Pedikür</a>
+          <a href="/izmir-rus-manikuru">Rus Manikürü</a>
+          <a href="/izmir-nail-art">Nail Art</a>
+          <a href="/izmir-gelin-tirnagi">Gelin Tırnağı</a>
+        </nav>
+      </section>
+      <section class="seo-footer__column seo-footer__column--regions" aria-labelledby="footer-regions-title">
+        <h2 id="footer-regions-title">Hizmet Bölgeleri</h2>
+        <nav aria-label="Öne çıkan hizmet bölgeleri">
+          <a href="/karsiyaka-protez-tirnak">Karşıyaka</a>
+          <a href="/bornova-kalici-oje">Bornova</a>
+          <a href="/balcova-protez-tirnak">Balçova</a>
+          <a href="/narlidere-tirnak">Narlıdere</a>
+          <a href="/konak-tirnak">Konak</a>
+          <a href="/gaziemir-kalici-oje">Gaziemir</a>
+          <a href="/urla-kalici-oje">Urla</a>
+          <a href="/cesme-kalici-oje">Çeşme</a>
+        </nav>
+      </section>
+    </div>
+    <div class="seo-footer__bottom">
+      <p>&copy; 2026 Fleura Nails. Tüm hakları saklıdır.</p>
+      <a class="seo-footer__home" href="/">Ana sayfaya dön ↑</a>
+    </div>
   </footer>
+
   <script>(function(){var p=document.getElementById('preloader');function h(){if(p)p.classList.add('hidden');}if(document.readyState==='complete'){setTimeout(h,100);}else{window.addEventListener('load',function(){setTimeout(h,100);});setTimeout(h,3000);}})();</script>
 </body>
 </html>
