@@ -1,5 +1,5 @@
-/* Fleura Nails — kompakt çerez rıza çubuğu.
-   Küçük ve dikkat dağıtmayan: sağ altta tek satırlık ince bar.
+/* Fleura Nails — çerez rıza bildirimi.
+   Masaüstünde kompakt, mobilde kolay okunup dokunulan bir alt panel.
    Sol altta WhatsApp (z-index 100), sağ altta scroll-top butonu var. */
 
 .fn-cookie {
@@ -104,21 +104,89 @@ body.fn-cookie-open .scroll-top-btn {
 
 @media (max-width: 620px) {
   .fn-cookie {
-    left: 12px;
-    right: 12px;
+    box-sizing: border-box;
+    left: 8px;
+    right: 8px;
+    bottom: max(8px, env(safe-area-inset-bottom));
     max-width: none;
-    flex-wrap: wrap;
-    gap: 8px;
-    padding: 10px 12px;
-    border-radius: 16px;
+    display: grid;
+    grid-template-columns: 36px minmax(0, 1fr);
+    gap: 4px 10px;
+    padding: 14px;
+    border-color: rgba(114, 21, 43, 0.16);
+    border-radius: 20px;
+    background: rgba(255, 253, 249, 0.98);
+    box-shadow: 0 18px 55px rgba(60, 24, 35, 0.2), 0 2px 8px rgba(60, 24, 35, 0.08);
   }
-  .fn-cookie__text { flex: 1 1 100%; font-size: 0.74rem; }
-  .fn-cookie__actions { flex: 1 1 100%; justify-content: flex-end; }
+  .fn-cookie__title {
+    position: static;
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    width: auto;
+    height: auto;
+    margin: 0 0 3px;
+    padding: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+    color: #321f25;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.08rem;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+  .fn-cookie__title svg {
+    box-sizing: content-box;
+    flex: 0 0 auto;
+    width: 18px;
+    height: 18px;
+    padding: 7px;
+    border-radius: 50%;
+    background: #f9e8e8;
+    color: #a91f3d;
+  }
+  .fn-cookie__text {
+    grid-column: 1 / -1;
+    margin: 2px 0 8px;
+    font-size: 0.82rem;
+    line-height: 1.55;
+    color: #60464d;
+  }
+  .fn-cookie__text a { font-weight: 700; }
+  .fn-cookie__actions {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 8px;
+    width: 100%;
+  }
+  .fn-cookie__btn {
+    width: 100%;
+    min-height: 48px;
+    padding: 0 10px;
+    border-radius: 13px;
+    font-size: 0.78rem;
+    font-weight: 750;
+  }
+  .fn-cookie__btn--decline {
+    border-color: rgba(114, 21, 43, 0.2);
+    background: #fff;
+    padding: 0 8px;
+    text-decoration: none;
+  }
   /* Mobilde bar tam genişlik olduğu için soldaki WhatsApp da yukarı alınır */
   body.fn-cookie-open .whatsapp-float,
   body.fn-cookie-open .scroll-top-btn {
-    bottom: calc(var(--fn-cookie-h, 84px) + 20px) !important;
+    bottom: calc(var(--fn-cookie-h, 184px) + max(18px, env(safe-area-inset-bottom))) !important;
   }
+}
+
+@media (max-width: 350px) {
+  .fn-cookie { padding: 12px; }
+  .fn-cookie__actions { grid-template-columns: 1fr; }
+  .fn-cookie__text { font-size: 0.79rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {

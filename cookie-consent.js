@@ -10,26 +10,26 @@
   var T = {
     tr: {
       title: 'Çerez tercihiniz',
-      body: 'Çerez kullanıyoruz. ',
-      link: 'Detaylar',
-      accept: 'Kabul et',
-      decline: 'Reddet',
+      body: 'Deneyiminizi iyileştirmek ve site kullanımını ölçmek için analitik çerezler kullanıyoruz. ',
+      link: 'Ayrıntıları inceleyin',
+      accept: 'Tümünü kabul et',
+      decline: 'Sadece zorunlu',
       aria: 'Çerez tercihi'
     },
     en: {
       title: 'Cookie preference',
-      body: 'We use cookies. ',
-      link: 'Details',
-      accept: 'Accept',
-      decline: 'Decline',
+      body: 'We use analytics cookies to improve your experience and measure site usage. ',
+      link: 'View details',
+      accept: 'Accept all',
+      decline: 'Necessary only',
       aria: 'Cookie preference'
     },
     ru: {
       title: 'Использование cookie',
-      body: 'Мы используем cookie. ',
+      body: 'Мы используем аналитические cookie, чтобы улучшать сайт и оценивать его использование. ',
       link: 'Подробнее',
-      accept: 'Принять',
-      decline: 'Отклонить',
+      accept: 'Принять все',
+      decline: 'Только необходимые',
       aria: 'Настройка cookie'
     }
   };
