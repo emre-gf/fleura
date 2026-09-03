@@ -6,6 +6,19 @@
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    // KVKK: rıza alınana kadar analitik depolama reddedilir (Consent Mode v2)
+    gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      wait_for_update: 500
+    });
+    try {
+      if (localStorage.getItem('fn-cookie-consent') === 'accepted') {
+        gtag('consent', 'update', { analytics_storage: 'granted' });
+      }
+    } catch (e) {}
     gtag('js', new Date());
     gtag('config', 'G-5MWKVSGTQV');
   </script>
@@ -171,6 +184,8 @@
   </script>
   <link rel="stylesheet" href="/seo-shell.css">
   <script src="/seo-shell.js" defer></script>
+  <link rel="stylesheet" href="/cookie-consent.css">
+  <script src="/cookie-consent.js" defer></script>
 </head>
 <body>
   <a class="seo-skip-link" href="#main">Ana içeriğe geç</a>
@@ -322,6 +337,7 @@
           <a href="/izmir-protez-tirnak-fiyatlari">Güncel Fiyatlar</a>
           <a href="/blog">Tırnak Rehberi</a>
           <a href="/iletisim">İletişim</a>
+          <a href="/kvkk-aydinlatma-metni">KVKK Aydınlatma Metni</a>
         </nav>
       </section>
       <section class="seo-footer__column" aria-labelledby="footer-services-title">

@@ -24,18 +24,39 @@ async function initFirebaseAnalytics() {
   }
 }
 
+// KVKK: Firebase Analytics yalnızca kullanıcı analitik çerezleri kabul ettiğinde başlar.
+let analyticsStarted = false;
+
+function scheduleFirebaseAnalytics() {
+  if (analyticsStarted) return;
+  analyticsStarted = true;
+
+  const run = () => {
+    void initFirebaseAnalytics();
+  };
+
+  if ("requestIdleCallback" in window) {
+    window.requestIdleCallback(run, { timeout: 5000 });
+  } else {
+    window.setTimeout(run, 2000);
+  }
+}
+
+// Çerez bildirimi "Kabul et" seçildiğinde bu fonksiyonu çağırır.
+window.fnStartFirebaseAnalytics = scheduleFirebaseAnalytics;
+
+function hasAnalyticsConsent() {
+  try {
+    return localStorage.getItem("fn-cookie-consent") === "accepted";
+  } catch (error) {
+    return false;
+  }
+}
+
 window.addEventListener(
   "load",
   () => {
-    const scheduleAnalytics = () => {
-      void initFirebaseAnalytics();
-    };
-
-    if ("requestIdleCallback" in window) {
-      window.requestIdleCallback(scheduleAnalytics, { timeout: 5000 });
-    } else {
-      window.setTimeout(scheduleAnalytics, 2000);
-    }
+    if (hasAnalyticsConsent()) scheduleFirebaseAnalytics();
   },
   { once: true }
 );

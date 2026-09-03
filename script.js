@@ -490,7 +490,7 @@ function initContactForm() {
         );
         
         // Create mailto link
-        const mailtoLink = `mailto:zeynepeke16@gmail.com?subject=${subject}&body=${body}`;
+        const mailtoLink = `mailto:info@fleura.com.tr?subject=${subject}&body=${body}`;
         
         // Open email client
         window.location.href = mailtoLink;

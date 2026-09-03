@@ -13,6 +13,19 @@
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    // KVKK: rıza alınana kadar analitik depolama reddedilir (Consent Mode v2)
+    gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      wait_for_update: 500
+    });
+    try {
+      if (localStorage.getItem('fn-cookie-consent') === 'accepted') {
+        gtag('consent', 'update', { analytics_storage: 'granted' });
+      }
+    } catch (e) {}
     gtag('js', new Date());
     gtag('config', 'G-5MWKVSGTQV');
   </script>
@@ -794,7 +807,9 @@
     <link rel="dns-prefetch" href="//www.instagram.com" />
     <link rel="dns-prefetch" href="//wa.me" />
     <script type="module" src="firebase-config.js"></script>
-  </head>
+    <link rel="stylesheet" href="/cookie-consent.css">
+  <script src="/cookie-consent.js" defer></script>
+</head>
   <body>
     <div class="preloader" id="preloader" aria-hidden="true">
       <div class="preloader-logo">Fleura <span>Nails</span></div>
@@ -3512,6 +3527,7 @@
               <a href="/blog" title="Blog">Blog</a>
               <a href="#faq" title="Sıkça Sorulan Sorular">SSS</a>
               <a href="#contact" title="İletişim">İletişim</a>
+              <a href="/kvkk-aydinlatma-metni" title="KVKK Aydınlatma Metni">KVKK</a>
             </nav>
           </div>
           <div class="footer-services">
