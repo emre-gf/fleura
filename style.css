@@ -1292,7 +1292,7 @@ section {
   right: 0;
   width: 100%;
   z-index: 1000;
-  padding: var(--space-md) 0;
+  padding: 0.5rem 0;
   transition: var(--transition-base);
   overflow: hidden;
 }
