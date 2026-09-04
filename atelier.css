@@ -1126,3 +1126,15 @@ body.menu-open .scroll-top-btn {
     transform: none;
   }
 }
+
+/* Mobil hero sadeleştirme: tagline ve studio notes gizlenir, rozet üstten nefes alır. */
+@media (max-width: 767px) {
+  .hero-tagline,
+  .hero-studio-notes {
+    display: none;
+  }
+
+  .hero-badge {
+    margin-top: 4px;
+  }
+}

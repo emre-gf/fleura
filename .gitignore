@@ -2,3 +2,9 @@
 ./node_modules
 .DS_Store
 **/.DS_Store
+
+# yerel gelistirme / test ciktilari
+.playwright-mcp/
+mobil-hero.png
+dev-server.py
+baslat.bat
