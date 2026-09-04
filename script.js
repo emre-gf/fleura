@@ -1077,22 +1077,24 @@ function initCountUp() {
 }
 
 /* ========================================
-   WhatsApp Button Animation
+   WhatsApp Button - Scroll ile Gorunur
    ======================================== */
 window.addEventListener('load', () => {
-    setTimeout(() => {
-        const whatsappBtn = document.querySelector('.whatsapp-float');
-        if (whatsappBtn) {
-            whatsappBtn.style.opacity = '0';
-            whatsappBtn.style.transform = 'scale(0.8)';
-            
-            setTimeout(() => {
-                whatsappBtn.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                whatsappBtn.style.opacity = '1';
-                whatsappBtn.style.transform = 'scale(1)';
-            }, 1500);
-        }
-    }, 0);
+    const whatsappBtn = document.querySelector('.whatsapp-float');
+    if (!whatsappBtn) return;
+
+    const showThreshold = 300; // Bu kadar kaydirinca butonu goster
+    let shown = false;
+
+    function checkScroll() {
+        const should = window.scrollY > showThreshold;
+        if (should === shown) return; // gereksiz DOM yazimini atla
+        shown = should;
+        whatsappBtn.classList.toggle('visible', should);
+    }
+
+    window.addEventListener('scroll', checkScroll, { passive: true });
+    checkScroll();
 });
 
 /* ========================================

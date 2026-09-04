@@ -6,5 +6,7 @@
 # yerel gelistirme / test ciktilari
 .playwright-mcp/
 mobil-hero.png
+wp-1-ustte.png
+wp-2-scroll.png
 dev-server.py
 baslat.bat

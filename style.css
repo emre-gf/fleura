@@ -3436,6 +3436,17 @@ body.lightbox-open {
   text-decoration: none;
   transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   animation: pulseWhatsapp 2s ease-in-out infinite;
+  /* Sayfa acilisinda gizli; cerez banneri ve hero'yu kapatmasin diye
+     yalnizca biraz asagi kaydirinca .visible ile gelir (bkz. script.js). */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px) scale(0.8);
+}
+
+.whatsapp-float.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
 }
 
 .whatsapp-float:hover {
