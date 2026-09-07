@@ -119,7 +119,7 @@
       rel="preload"
       href="assets/gallery/protez-tirnak-1.avif"
       imagesrcset="assets/gallery/protez-tirnak-1-400.avif 400w, assets/gallery/protez-tirnak-1.avif 800w"
-      imagesizes="(max-width: 1024px) 100vw, 48vw"
+      imagesizes="(max-width: 767px) 76vw, (max-width: 1023px) 64vw, (max-width: 1409px) 44vw, 620px"
       as="image"
       type="image/avif"
       fetchpriority="high"
@@ -230,6 +230,8 @@
     />
     <noscript><link rel="stylesheet" href="style.min.css" /></noscript>
     <link rel="stylesheet" href="atelier.min.css" />
+    <link rel="stylesheet" href="hero.min.css" />
+    <script src="hero.min.js" defer></script>
     <link
       href="assets/vendor/aos/aos.css"
       rel="stylesheet"
@@ -864,12 +866,6 @@
   <script src="/cookie-consent.js" defer></script>
 </head>
   <body>
-    <div class="preloader" id="preloader" aria-hidden="true">
-      <div class="preloader-logo">Fleura <span>Nails</span></div>
-      <div class="preloader-dots">
-        <i></i><i></i><i></i>
-      </div>
-    </div>
     <a href="#main" class="skip-link" title="Ana içeriğe geç"
       >Ana içeriğe geç</a
     >
@@ -1047,229 +1043,119 @@
       </div>
     </div>
     <main id="main">
-      <section class="hero hero-refined" id="hero" aria-labelledby="hero-title">
-        <div class="hero-bg">
-          <div class="hero-gradient"></div>
-          <div class="hero-pattern"></div>
-          <div class="hero-polish-strokes" aria-hidden="true">
-            <i></i><i></i><i></i>
-          </div>
-        </div>
-        <div class="hero-content">
-          <div
-            class="hero-badge hero-animate"
-            data-animate-delay="0.1s"
-            data-animate-direction="up"
-          >
-            <span
-              class="badge-icon hero-animate"
-              aria-hidden="true"
-              data-animate-delay="0.15s"
-              data-animate-direction="zoom"
-              >✦</span
-            >
-            <span
-              class="badge-text hero-animate"
-              data-animate-delay="0.2s"
-              data-animate-direction="up"
-              >Fleura Nail Art Studio · İzmir</span
-            >
-          </div>
+      <section class="hero-couture" id="hero" aria-labelledby="hero-title">
+        <div class="fc-copy">
+          <p class="fc-eyebrow"><span aria-hidden="true">✦</span> Fleura Nail Art Studio · İzmir</p>
           <h1 class="hero-title" id="hero-title">
-            <span
-              class="title-line hero-animate"
-              data-animate-delay="0.3s"
-              data-animate-direction="left"
-              >İzmir Protez Tırnak,</span
-            >
-            <span
-              class="title-line accent hero-animate"
-              data-animate-delay="0.5s"
-              data-animate-direction="right"
-              >Kalıcı Oje &amp; Nail Art</span
-            >
+            <span class="fc-title-line">İzmir Protez Tırnak,</span>
+            <span class="fc-title-line"><em>Kalıcı Oje &amp; Nail Art</em></span>
           </h1>
-          <p class="hero-tagline hero-animate" data-animate-delay="0.6s" data-animate-direction="up">
-            Her Dokunuşta Giyilebilir Sanat
-          </p>
+          <p class="fc-tagline">Her Dokunuşta Giyilebilir Sanat</p>
           <p class="hero-subtitle">
-            <span class="hero-mobile-copy">İzmir’de adresine gelen nail art, protez tırnak ve kalıcı oje. Sana özel tasarım, evinin konforunda.</span>
-            <span class="hero-desktop-copy">
-            <span
-              class="subtitle-word hero-animate"
-              data-animate-delay="0.7s"
-              data-animate-direction="left"
-              >Kişiliğinize özel tasarlanan</span
-            >
-            <span
-              class="subtitle-word highlight hero-animate"
-              data-animate-delay="0.75s"
-              data-animate-direction="right"
-              ><strong>nail art, protez tırnak ve kalıcı oje</strong></span
-            >
-            <span
-              class="subtitle-word hero-animate"
-              data-animate-delay="0.8s"
-              data-animate-direction="left"
-              >uygulamalarını İzmir’de adresinize getiriyor, her tırnağı küçük bir sanat eserine dönüştürüyoruz.</span
-            >
-            </span>
+            <span class="fc-mobile-copy">İzmir’de adresine gelen nail art, protez tırnak ve kalıcı oje. Sana özel tasarım, evinin konforunda.</span>
+            <span class="fc-desktop-copy">Kişiliğinize özel tasarlanan <strong>nail art, protez tırnak ve kalıcı oje</strong> uygulamalarını İzmir’de adresinize getiriyor, her tırnağı küçük bir sanat eserine dönüştürüyoruz.</span>
           </p>
-          <div class="hero-studio-notes hero-animate" data-animate-delay="0.82s" role="list" aria-label="Hizmet özellikleri">
+          <div class="fc-notes" role="list" aria-label="Hizmet özellikleri">
             <span role="listitem"><i>01</i> Kişiye özel tasarım</span>
             <span role="listitem"><i>02</i> Steril uygulama</span>
             <span role="listitem"><i>03</i> İzmir'e VIP hizmet</span>
           </div>
-          <div class="hero-ctas">
-            <a
-              href="#randevu-al"
-              class="btn btn-primary hero-animate"
-              title="Hemen Randevu Al"
-              data-animate-delay="0.8s"
-              data-animate-direction="up"
-              ><span>Hemen Randevu Al</span>
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                aria-hidden="true"
-              >
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg> </a
-            ><a
-              href="#services"
-              class="btn btn-secondary hero-animate"
-              title="Hizmetlerimizi Keşfedin"
-              data-animate-delay="0.9s"
-              data-animate-direction="up"
-              ><span>Hizmetleri Keşfet</span></a
-            >
+          <div class="fc-actions">
+            <a class="fc-book" href="#randevu-al" title="Hemen Randevu Al">Hemen Randevu Al
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+            </a>
+            <a class="fc-explore" href="#services" title="Hizmetlerimizi Keşfedin">Hizmetleri Keşfet</a>
           </div>
         </div>
-        <div class="hero-visual hero-animate" data-animate-delay="0.3s">
-          <div class="hero-image-container" data-hero-rotator role="region" aria-roledescription="carousel" aria-label="Fleura Nails çalışma örnekleri">
-            <div class="hero-visual-kicker" aria-hidden="true">
-              <span>Seçilmiş işler</span>
-              <span class="hero-rotator-index"><b>01</b> / 08</span>
-            </div>
-            <span class="hero-studio-stamp" aria-hidden="true">Fleura<br><em>nail atelier</em><br>İzmir</span>
-            <span class="hero-color-card" aria-hidden="true"><i></i><i></i><i></i><b>COLOR MOOD</b></span>
-            <div class="hero-rotator-stage">
-              <div class="hero-rotator-slides">
-              <figure class="hero-image-slide is-active" data-label="Protez Tırnak">
-                <img
-                  src="assets/gallery/protez-tirnak-1.avif" data-fallback-src="assets/gallery/protez-tirnak-1.webp" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
-                  alt="Protez tırnak - badem formda zarif french uygulaması"
-                  class="hero-image"
-                  loading="eager"
-                  fetchpriority="high"
-                  width="800"
-                  height="800"
-                  srcset="assets/gallery/protez-tirnak-1-400.avif 400w, assets/gallery/protez-tirnak-1.avif 800w" data-fallback-srcset="assets/gallery/protez-tirnak-1-400.webp 400w, assets/gallery/protez-tirnak-1.webp 800w" sizes="(max-width: 1024px) 100vw, 48vw"
-                >
-              </figure><figure class="hero-image-slide" data-label="Kalıcı Oje">
-                <img
-                  src="assets/gallery/kalici-oje-2.avif" data-fallback-src="assets/gallery/kalici-oje-2.webp" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
-                  alt="Kalıcı oje - renkli taş süslemeli minimal tasarım"
-                  class="hero-image"
-                  loading="lazy"
-                  decoding="async"
-                  width="800"
-                  height="800"
-                  srcset="assets/gallery/kalici-oje-2-400.avif 400w, assets/gallery/kalici-oje-2.avif 800w" data-fallback-srcset="assets/gallery/kalici-oje-2-400.webp 400w, assets/gallery/kalici-oje-2.webp 800w" sizes="(max-width: 1024px) 100vw, 48vw"
-                >
-              </figure><figure class="hero-image-slide" data-label="Nail Art">
-                <img
-                  src="assets/gallery/nail-art-5.avif" data-fallback-src="assets/gallery/nail-art-5.webp" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
-                  alt="Nail art - kırmızı yıldız ve puantiye desenli sanatsal tasarım"
-                  class="hero-image"
-                  loading="lazy"
-                  decoding="async"
-                  width="800"
-                  height="800"
-                  srcset="assets/gallery/nail-art-5-400.avif 400w, assets/gallery/nail-art-5.avif 800w" data-fallback-srcset="assets/gallery/nail-art-5-400.webp 400w, assets/gallery/nail-art-5.webp 800w" sizes="(max-width: 1024px) 100vw, 48vw"
-                >
-              </figure><figure class="hero-image-slide" data-label="El &amp; Ayak">
-                <img
-                  src="assets/gallery/el-ayak-2.avif" data-fallback-src="assets/gallery/el-ayak-2.webp" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
-                  alt="El ve ayak bakımı - klasik kırmızı manikür ve pedikür"
-                  class="hero-image"
-                  loading="lazy"
-                  decoding="async"
-                  width="800"
-                  height="800"
-                  srcset="assets/gallery/el-ayak-2-400.avif 400w, assets/gallery/el-ayak-2.avif 800w" data-fallback-srcset="assets/gallery/el-ayak-2-400.webp 400w, assets/gallery/el-ayak-2.webp 800w" sizes="(max-width: 1024px) 100vw, 48vw"
-                >
-              </figure><figure class="hero-image-slide" data-label="Protez Tırnak">
-                <img
-                  src="assets/gallery/protez-tirnak-2.avif" data-fallback-src="assets/gallery/protez-tirnak-2.webp" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
-                  alt="Protez tırnak - pembe ombré badem tasarım"
-                  class="hero-image"
-                  loading="lazy"
-                  decoding="async"
-                  width="800"
-                  height="800"
-                  srcset="assets/gallery/protez-tirnak-2-400.avif 400w, assets/gallery/protez-tirnak-2.avif 800w" data-fallback-srcset="assets/gallery/protez-tirnak-2-400.webp 400w, assets/gallery/protez-tirnak-2.webp 800w" sizes="(max-width: 1024px) 100vw, 48vw"
-                >
-              </figure><figure class="hero-image-slide" data-label="Kalıcı Oje">
-                <img
-                  src="assets/gallery/kalici-oje-3.avif" data-fallback-src="assets/gallery/kalici-oje-3.webp" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
-                  alt="Kalıcı oje - zarif french manikür"
-                  class="hero-image"
-                  loading="lazy"
-                  decoding="async"
-                  width="800"
-                  height="800"
-                  srcset="assets/gallery/kalici-oje-3-400.avif 400w, assets/gallery/kalici-oje-3.avif 800w" data-fallback-srcset="assets/gallery/kalici-oje-3-400.webp 400w, assets/gallery/kalici-oje-3.webp 800w" sizes="(max-width: 1024px) 100vw, 48vw"
-                >
-              </figure><figure class="hero-image-slide" data-label="Nail Art">
-                <img
-                  src="assets/gallery/nail-art-2.avif" data-fallback-src="assets/gallery/nail-art-2.webp" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
-                  alt="Nail art - renkli puantiye desenli neşeli tasarım"
-                  class="hero-image"
-                  loading="lazy"
-                  decoding="async"
-                  width="800"
-                  height="800"
-                  srcset="assets/gallery/nail-art-2-400.avif 400w, assets/gallery/nail-art-2.avif 800w" data-fallback-srcset="assets/gallery/nail-art-2-400.webp 400w, assets/gallery/nail-art-2.webp 800w" sizes="(max-width: 1024px) 100vw, 48vw"
-                >
-              </figure><figure class="hero-image-slide" data-label="El &amp; Ayak">
-                <img
-                  src="assets/gallery/el-ayak-3.avif" data-fallback-src="assets/gallery/el-ayak-3.webp" onerror="this.onerror=null;this.src=this.dataset.fallbackSrc;if(this.dataset.fallbackSrcset){this.srcset=this.dataset.fallbackSrcset;}"
-                  alt="El ve ayak bakımı - gold french manikür ve pedikür"
-                  class="hero-image"
-                  loading="lazy"
-                  decoding="async"
-                  width="800"
-                  height="800"
-                  srcset="assets/gallery/el-ayak-3-400.avif 400w, assets/gallery/el-ayak-3.avif 800w" data-fallback-srcset="assets/gallery/el-ayak-3-400.webp 400w, assets/gallery/el-ayak-3.webp 800w" sizes="(max-width: 1024px) 100vw, 48vw"
-                >
+        <div class="fc-gallery" data-fc-gallery role="region" aria-roledescription="carousel" aria-label="Fleura Nails çalışma örnekleri">
+          <div class="fc-gallery-heading"><span>Seçilmiş işler</span></div>
+          <div class="fc-window" tabindex="0" aria-label="Tırnak görselleri. Kaydırarak veya sağ ve sol ok tuşlarıyla gezinin.">
+            <div class="fc-track">
+              <figure class="fc-slide" data-label="Nail Art" data-clone aria-hidden="true">
+                <picture>
+                  <source type="image/avif" srcset="assets/gallery/nail-art-2-400.avif 400w, assets/gallery/nail-art-2.avif 800w" sizes="(max-width: 767px) 76vw, (max-width: 1023px) 64vw, (max-width: 1409px) 44vw, 620px">
+                  <img src="assets/gallery/nail-art-2.webp" srcset="assets/gallery/nail-art-2-400.webp 400w, assets/gallery/nail-art-2.webp 800w" sizes="(max-width: 767px) 76vw, (max-width: 1023px) 64vw, (max-width: 1409px) 44vw, 620px" width="800" height="800" loading="lazy" decoding="async" draggable="false" alt="">
+                </picture>
               </figure>
-              </div>
-              <div class="hero-rotator-veil" aria-hidden="true"></div>
-              <div class="hero-sparkles" aria-hidden="true">
-                <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-              </div>
-              <span class="hero-rotator-caption" aria-live="polite">Protez Tırnak</span>
-              <div class="hero-rotator-dots">
-                <button type="button" class="hero-rotator-dot is-active" aria-label="Görsel 1" aria-current="true"></button>
-                <button type="button" class="hero-rotator-dot" aria-label="Görsel 2"></button>
-                <button type="button" class="hero-rotator-dot" aria-label="Görsel 3"></button>
-                <button type="button" class="hero-rotator-dot" aria-label="Görsel 4"></button>
-                <button type="button" class="hero-rotator-dot" aria-label="Görsel 5"></button>
-                <button type="button" class="hero-rotator-dot" aria-label="Görsel 6"></button>
-                <button type="button" class="hero-rotator-dot" aria-label="Görsel 7"></button>
-                <button type="button" class="hero-rotator-dot" aria-label="Görsel 8"></button>
-              </div>
+              <figure class="fc-slide" data-label="El &amp; Ayak" data-clone aria-hidden="true">
+                <picture>
+                  <source type="image/avif" srcset="assets/gallery/el-ayak-3-400.avif 400w, assets/gallery/el-ayak-3.avif 800w" sizes="(max-width: 767px) 76vw, (max-width: 1023px) 64vw, (max-width: 1409px) 44vw, 620px">
+                  <img src="assets/gallery/el-ayak-3.webp" srcset="assets/gallery/el-ayak-3-400.webp 400w, assets/gallery/el-ayak-3.webp 800w" sizes="(max-width: 767px) 76vw, (max-width: 1023px) 64vw, (max-width: 1409px) 44vw, 620px" width="800" height="800" loading="eager" decoding="async" draggable="false" alt="">
+                </picture>
+              </figure>
+              <figure class="fc-slide" data-label="Protez Tırnak" role="group" aria-roledescription="slayt" aria-label="1 / 8: Protez Tırnak">
+                <picture>
+                  <source type="image/avif" srcset="assets/gallery/protez-tirnak-1-400.avif 400w, assets/gallery/protez-tirnak-1.avif 800w" sizes="(max-width: 767px) 76vw, (max-width: 1023px) 64vw, (max-width: 1409px) 44vw, 620px">
+                  <img src="assets/gallery/protez-tirnak-1.webp" srcset="assets/gallery/protez-tirnak-1-400.webp 400w, assets/gallery/protez-tirnak-1.webp 800w" sizes="(max-width: 767px) 76vw, (max-width: 1023px) 64vw, (max-width: 1409px) 44vw, 620px" width="800" height="800" loading="eager" decoding="async" fetchpriority="high" draggable="false" alt="Protez tırnak - badem formda zarif french uygulaması">
+                </picture>
+              </figure>
+              <figure class="fc-slide" data-label="Kalıcı Oje" role="group" aria-roledescription="slayt" aria-label="2 / 8: Kalıcı Oje">
+                <picture>
+                  <source type="image/avif" srcset="assets/gallery/kalici-oje-2-400.avif 400w, assets/gallery/kalici-oje-2.avif 800w" sizes="(max-width: 767px) 76vw, (max-width: 1023px) 64vw, (max-width: 1409px) 44vw, 620px">
+                  <img src="assets/gallery/kalici-oje-2.webp" srcset="assets/gallery/kalici-oje-2-400.webp 400w, assets/gallery/kalici-oje-2.webp 800w" sizes="(max-width: 767px) 76vw, (max-width: 1023px) 64vw, (max-width: 1409px) 44vw, 620px" width="800" height="800" loading="eager" decoding="async" draggable="false" alt="Kalıcı oje - renkli taş süslemeli minimal tasarım">
+                </picture>
+              </figure>
+              <figure class="fc-slide" data-label="Nail Art" role="group" aria-roledescription="slayt" aria-label="3 / 8: Nail Art">
+                <picture>
+                  <source type="image/avif" srcset="assets/gallery/nail-art-5-400.avif 400w, assets/gallery/nail-art-5.avif 800w" sizes="(max-width: 767px) 76vw, (max-width: 1023px) 64vw, (max-width: 1409px) 44vw, 620px">
+                  <img src="assets/gallery/nail-art-5.webp" srcset="assets/gallery/nail-art-5-400.webp 400w, assets/gallery/nail-art-5.webp 800w" sizes="(max-width: 767px) 76vw, (max-width: 1023px) 64vw, (max-width: 1409px) 44vw, 620px" width="800" height="800" loading="lazy" decoding="async" draggable="false" alt="Nail art - kırmızı yıldız ve puantiye desenli sanatsal tasarım">
+                </picture>
+              </figure>
+              <figure class="fc-slide" data-label="El &amp; Ayak" role="group" aria-roledescription="slayt" aria-label="4 / 8: El &amp; Ayak">
+                <picture>
+                  <source type="image/avif" srcset="assets/gallery/el-ayak-2-400.avif 400w, assets/gallery/el-ayak-2.avif 800w" sizes="(max-width: 767px) 76vw, (max-width: 1023px) 64vw, (max-width: 1409px) 44vw, 620px">
+                  <img src="assets/gallery/el-ayak-2.webp" srcset="assets/gallery/el-ayak-2-400.webp 400w, assets/gallery/el-ayak-2.webp 800w" sizes="(max-width: 767px) 76vw, (max-width: 1023px) 64vw, (max-width: 1409px) 44vw, 620px" width="800" height="800" loading="lazy" decoding="async" draggable="false" alt="El ve ayak bakımı - klasik kırmızı manikür ve pedikür">
+                </picture>
+              </figure>
+              <figure class="fc-slide" data-label="Protez Tırnak" role="group" aria-roledescription="slayt" aria-label="5 / 8: Protez Tırnak">
+                <picture>
+                  <source type="image/avif" srcset="assets/gallery/protez-tirnak-2-400.avif 400w, assets/gallery/protez-tirnak-2.avif 800w" sizes="(max-width: 767px) 76vw, (max-width: 1023px) 64vw, (max-width: 1409px) 44vw, 620px">
+                  <img src="assets/gallery/protez-tirnak-2.webp" srcset="assets/gallery/protez-tirnak-2-400.webp 400w, assets/gallery/protez-tirnak-2.webp 800w" sizes="(max-width: 767px) 76vw, (max-width: 1023px) 64vw, (max-width: 1409px) 44vw, 620px" width="800" height="800" loading="lazy" decoding="async" draggable="false" alt="Protez tırnak - pembe ombré badem tasarım">
+                </picture>
+              </figure>
+              <figure class="fc-slide" data-label="Kalıcı Oje" role="group" aria-roledescription="slayt" aria-label="6 / 8: Kalıcı Oje">
+                <picture>
+                  <source type="image/avif" srcset="assets/gallery/kalici-oje-3-400.avif 400w, assets/gallery/kalici-oje-3.avif 800w" sizes="(max-width: 767px) 76vw, (max-width: 1023px) 64vw, (max-width: 1409px) 44vw, 620px">
+                  <img src="assets/gallery/kalici-oje-3.webp" srcset="assets/gallery/kalici-oje-3-400.webp 400w, assets/gallery/kalici-oje-3.webp 800w" sizes="(max-width: 767px) 76vw, (max-width: 1023px) 64vw, (max-width: 1409px) 44vw, 620px" width="800" height="800" loading="lazy" decoding="async" draggable="false" alt="Kalıcı oje - zarif french manikür">
+                </picture>
+              </figure>
+              <figure class="fc-slide" data-label="Nail Art" role="group" aria-roledescription="slayt" aria-label="7 / 8: Nail Art">
+                <picture>
+                  <source type="image/avif" srcset="assets/gallery/nail-art-2-400.avif 400w, assets/gallery/nail-art-2.avif 800w" sizes="(max-width: 767px) 76vw, (max-width: 1023px) 64vw, (max-width: 1409px) 44vw, 620px">
+                  <img src="assets/gallery/nail-art-2.webp" srcset="assets/gallery/nail-art-2-400.webp 400w, assets/gallery/nail-art-2.webp 800w" sizes="(max-width: 767px) 76vw, (max-width: 1023px) 64vw, (max-width: 1409px) 44vw, 620px" width="800" height="800" loading="lazy" decoding="async" draggable="false" alt="Nail art - renkli puantiye desenli neşeli tasarım">
+                </picture>
+              </figure>
+              <figure class="fc-slide" data-label="El &amp; Ayak" role="group" aria-roledescription="slayt" aria-label="8 / 8: El &amp; Ayak">
+                <picture>
+                  <source type="image/avif" srcset="assets/gallery/el-ayak-3-400.avif 400w, assets/gallery/el-ayak-3.avif 800w" sizes="(max-width: 767px) 76vw, (max-width: 1023px) 64vw, (max-width: 1409px) 44vw, 620px">
+                  <img src="assets/gallery/el-ayak-3.webp" srcset="assets/gallery/el-ayak-3-400.webp 400w, assets/gallery/el-ayak-3.webp 800w" sizes="(max-width: 767px) 76vw, (max-width: 1023px) 64vw, (max-width: 1409px) 44vw, 620px" width="800" height="800" loading="eager" decoding="async" draggable="false" alt="El ve ayak bakımı - gold french manikür ve pedikür">
+                </picture>
+              </figure>
+              <figure class="fc-slide" data-label="Protez Tırnak" data-clone aria-hidden="true">
+                <picture>
+                  <source type="image/avif" srcset="assets/gallery/protez-tirnak-1-400.avif 400w, assets/gallery/protez-tirnak-1.avif 800w" sizes="(max-width: 767px) 76vw, (max-width: 1023px) 64vw, (max-width: 1409px) 44vw, 620px">
+                  <img src="assets/gallery/protez-tirnak-1.webp" srcset="assets/gallery/protez-tirnak-1-400.webp 400w, assets/gallery/protez-tirnak-1.webp 800w" sizes="(max-width: 767px) 76vw, (max-width: 1023px) 64vw, (max-width: 1409px) 44vw, 620px" width="800" height="800" loading="eager" decoding="async" draggable="false" alt="">
+                </picture>
+              </figure>
+              <figure class="fc-slide" data-label="Kalıcı Oje" data-clone aria-hidden="true">
+                <picture>
+                  <source type="image/avif" srcset="assets/gallery/kalici-oje-2-400.avif 400w, assets/gallery/kalici-oje-2.avif 800w" sizes="(max-width: 767px) 76vw, (max-width: 1023px) 64vw, (max-width: 1409px) 44vw, 620px">
+                  <img src="assets/gallery/kalici-oje-2.webp" srcset="assets/gallery/kalici-oje-2-400.webp 400w, assets/gallery/kalici-oje-2.webp 800w" sizes="(max-width: 767px) 76vw, (max-width: 1023px) 64vw, (max-width: 1409px) 44vw, 620px" width="800" height="800" loading="eager" decoding="async" draggable="false" alt="">
+                </picture>
+              </figure>
             </div>
           </div>
-        </div>
-        <div class="scroll-indicator" aria-hidden="true">
-          <span>Keşfet</span>
-          <div class="scroll-line"></div>
+          <div class="fc-controls">
+            <div class="fc-caption"><span class="fc-count"><b data-fc-index>01</b> / 08</span><span data-fc-caption aria-live="off" aria-atomic="true">Protez Tırnak</span></div>
+            <div class="fc-control-buttons">
+              <button class="fc-control" type="button" data-fc-prev aria-label="Önceki görsel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6"/></svg></button>
+              <button class="fc-control" type="button" data-fc-pause data-label-play="Otomatik kaydırmayı başlat" data-label-pause="Otomatik kaydırmayı durdur" data-label-off="Azaltılmış hareket tercihi nedeniyle otomatik kaydırma kapalı" aria-label="Otomatik kaydırmayı durdur" aria-pressed="false">
+                <svg class="fc-pause-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 5v14M15 5v14"/></svg>
+                <svg class="fc-play-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m9 5 10 7-10 7Z"/></svg>
+              </button>
+              <button class="fc-control" type="button" data-fc-next aria-label="Sonraki görsel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+            </div>
+          </div>
         </div>
       </section>
       <section
