@@ -14,7 +14,7 @@
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   let position = 2, step = 0, center = 0;
   let timer, settleTimer;
-  let moving = false, dragging = null, inView = false;
+  let moving = false, dragging = null, pending = null, inView = false;
   let hovered = false, focused = false, paused = false;
   const logicalIndex = () => ((position - 2) % count + count) % count;
 
@@ -54,13 +54,15 @@
     else settleTimer = setTimeout(settle, 560);
   }
   function move(direction, manual = true) {
-    if (moving || dragging) return;
+    if (dragging) return;
+    if (moving) settle();
     stopTimer();
     position += direction;
     update(manual);
     animate();
   }
   function measure() {
+    pending = null;
     if (dragging) {
       const id = dragging.id;
       dragging = null;
@@ -97,34 +99,52 @@
     event.preventDefault();
     move(event.key === 'ArrowRight' ? 1 : -1);
   });
-  viewport.addEventListener('pointerdown', event => {
-    if (!event.isPrimary || event.button !== 0 || moving) return;
+  function beginDrag() {
+    dragging = { id: pending.id, x: pending.x, delta: 0, start: pending.start, mouse: pending.mouse };
+    pending = null;
     stopTimer();
-    dragging = { id: event.pointerId, x: event.clientX, delta: 0, start: performance.now() };
-    viewport.setPointerCapture(event.pointerId);
+    // Touch pointers are already implicitly captured; asking again makes the browser drop that
+    // capture and fire lostpointercapture mid-swipe, which would kill the gesture on its first pixels.
+    if (dragging.mouse) { try { viewport.setPointerCapture(dragging.id); } catch { /* best effort */ } }
     viewport.classList.add('is-dragging');
+  }
+  viewport.addEventListener('pointerdown', event => {
+    if (!event.isPrimary || event.button !== 0) return;
+    // A touch mid-transition must not be swallowed; snap the pending slide into place first.
+    if (moving) settle();
+    pending = { id: event.pointerId, x: event.clientX, y: event.clientY, start: performance.now(), mouse: event.pointerType === 'mouse' };
+    if (pending.mouse) beginDrag();
   });
   viewport.addEventListener('pointermove', event => {
+    if (pending && pending.id === event.pointerId) {
+      const dx = event.clientX - pending.x, dy = event.clientY - pending.y;
+      // Axis lock: a vertical intent belongs to the page, never to the carousel.
+      if (Math.abs(dy) > Math.abs(dx)) { if (Math.abs(dy) > 6) pending = null; return; }
+      if (Math.abs(dx) < 8) return;
+      beginDrag();
+    }
     if (!dragging || dragging.id !== event.pointerId) return;
     dragging.delta = Math.max(-step, Math.min(step, event.clientX - dragging.x));
     paint(dragging.delta);
   });
   function endDrag(event, cancelled = false) {
+    if (pending && pending.id === event.pointerId) pending = null;
     if (!dragging || dragging.id !== event.pointerId) return;
     const { id, delta, start } = dragging;
     dragging = null;
     viewport.classList.remove('is-dragging');
     if (viewport.hasPointerCapture(id)) viewport.releasePointerCapture(id);
     const speed = Math.abs(delta) / Math.max(1, performance.now() - start);
-    if (!cancelled && (Math.abs(delta) > step * .14 || (Math.abs(delta) > 25 && speed > .35))) {
+    if (!cancelled && (Math.abs(delta) > step * .14 || (Math.abs(delta) > 22 && speed > .3))) {
       position += delta < 0 ? 1 : -1;
       update(true);
-    }
-    animate();
+      animate();
+    } else if (delta) animate();
+    else settle();
   }
   viewport.addEventListener('pointerup', event => endDrag(event));
   viewport.addEventListener('pointercancel', event => endDrag(event, true));
-  viewport.addEventListener('lostpointercapture', event => endDrag(event, true));
+  viewport.addEventListener('lostpointercapture', event => { if (event.pointerType === 'mouse') endDrag(event, true); });
   viewport.addEventListener('dragstart', event => event.preventDefault());
   let wheelDelta = 0, wheelTimer;
   viewport.addEventListener('wheel', event => {
@@ -132,7 +152,7 @@
     event.preventDefault();
     clearTimeout(wheelTimer);
     wheelTimer = setTimeout(() => { wheelDelta = 0; }, 200);
-    if (moving || dragging) return;
+    if (dragging) return;
     if (wheelDelta && Math.sign(event.deltaX) !== Math.sign(wheelDelta)) wheelDelta = 0;
     wheelDelta += event.deltaX;
     if (Math.abs(wheelDelta) < 40) return;
