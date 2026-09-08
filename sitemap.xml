@@ -4,764 +4,590 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.fleura.com.tr/</loc>
-    <lastmod>2026-09-05</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.fleura.com.tr/en"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://www.fleura.com.tr/ru"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fleura.com.tr/"/>
+  </url>
+  <url>
+    <loc>https://www.fleura.com.tr/hakkimizda</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
     <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/protez-tirnak-1.avif</image:loc>
-      <image:title>Protez tırnak - badem formda zarif french uygulaması</image:title>
+      <image:loc>https://www.fleura.com.tr/assets/gallery/protez-tirnak-1.webp</image:loc>
     </image:image>
+  </url>
+  <url>
+    <loc>https://www.fleura.com.tr/izmir-evde-tirnak-hizmeti</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/izmir-evde-tirnak-hizmeti"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fleura.com.tr/en/mobile-nail-artist-izmir"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fleura.com.tr/izmir-evde-tirnak-hizmeti"/>
     <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/kalici-oje-2.avif</image:loc>
-      <image:title>Kalıcı oje - renkli taş süslemeli minimal tasarım</image:title>
+      <image:loc>https://www.fleura.com.tr/assets/gallery/el-ayak-3.webp</image:loc>
     </image:image>
-    <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/nail-art-5.avif</image:loc>
-      <image:title>Nail art - kırmızı yıldız ve puantiye desenli sanatsal tasarım</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/el-ayak-2.avif</image:loc>
-      <image:title>El ve ayak bakımı - klasik kırmızı manikür ve pedikür</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/protez-tirnak-2.avif</image:loc>
-      <image:title>Protez tırnak - pembe ombré badem tasarım</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/kalici-oje-3.avif</image:loc>
-      <image:title>Kalıcı oje - zarif french manikür</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/nail-art-2.avif</image:loc>
-      <image:title>Nail art - renkli puantiye desenli neşeli tasarım</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/el-ayak-3.avif</image:loc>
-      <image:title>El ve ayak bakımı - gold french manikür ve pedikür</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/protez-tirnak-1-400.webp</image:loc>
-      <image:title>Protez tırnak uygulaması - 1</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/protez-tirnak-2-400.webp</image:loc>
-      <image:title>Protez tırnak uygulaması - 2</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/protez-tirnak-3-400.webp</image:loc>
-      <image:title>Protez tırnak uygulaması - 3</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/protez-tirnak-4-400.webp</image:loc>
-      <image:title>Protez tırnak uygulaması - 4</image:title>
-    </image:image>
+  </url>
+  <url>
+    <loc>https://www.fleura.com.tr/izmir-gelin-tirnagi</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/izmir-gelin-tirnagi"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fleura.com.tr/en/bridal-nails-izmir"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.fleura.com.tr/ru/svadebnyy-manikyur-izmir"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fleura.com.tr/izmir-gelin-tirnagi"/>
+  </url>
+  <url>
+    <loc>https://www.fleura.com.tr/izmir-kalici-oje</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/izmir-kalici-oje"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fleura.com.tr/en/gel-polish-izmir"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.fleura.com.tr/ru/gel-lak-izmir"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fleura.com.tr/izmir-kalici-oje"/>
+  </url>
+  <url>
+    <loc>https://www.fleura.com.tr/izmir-manikur-pedikur</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/izmir-manikur-pedikur"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fleura.com.tr/en/manicure-pedicure-izmir"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.fleura.com.tr/ru/manikyur-pedikyur-izmir"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fleura.com.tr/izmir-manikur-pedikur"/>
+  </url>
+  <url>
+    <loc>https://www.fleura.com.tr/izmir-nail-art</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/izmir-nail-art"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fleura.com.tr/en/nail-art-izmir"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.fleura.com.tr/ru/dizayn-nogtey-izmir"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fleura.com.tr/izmir-nail-art"/>
+  </url>
+  <url>
+    <loc>https://www.fleura.com.tr/izmir-protez-tirnak</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/izmir-protez-tirnak"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fleura.com.tr/en/gel-nail-extensions-izmir"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.fleura.com.tr/ru/narashchivanie-nogtey-izmir"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fleura.com.tr/izmir-protez-tirnak"/>
+  </url>
+  <url>
+    <loc>https://www.fleura.com.tr/izmir-protez-tirnak-fiyatlari</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/izmir-protez-tirnak-fiyatlari"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fleura.com.tr/en/nail-prices-izmir"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.fleura.com.tr/ru/tseny-izmir"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fleura.com.tr/izmir-protez-tirnak-fiyatlari"/>
+  </url>
+  <url>
+    <loc>https://www.fleura.com.tr/izmir-rus-manikuru</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.fleura.com.tr/alacati-kalici-oje</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/alacati-kalici-oje"/>
-    <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/nail-art-8.avif</image:loc>
-      <image:title>Alaçatı kalıcı oje ve nail art — Fleura Nails İzmir</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://www.fleura.com.tr/alsancak-nail-art</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/alsancak-nail-art"/>
-    <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/nail-art-6.avif</image:loc>
-      <image:title>Alsancak nail art tasarımı — Fleura Nails İzmir</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://www.fleura.com.tr/balcova-protez-tirnak</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/balcova-protez-tirnak"/>
-    <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/protez-tirnak-2.avif</image:loc>
-      <image:title>Balçova protez tırnak uygulaması — Fleura Nails İzmir</image:title>
-    </image:image>
   </url>
   <url>
     <loc>https://www.fleura.com.tr/bayrakli-kalici-oje</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/bayrakli-kalici-oje"/>
-    <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/nail-art-3.avif</image:loc>
-      <image:title>Bayraklı kalıcı oje ve nail art — Fleura Nails İzmir</image:title>
-    </image:image>
+  </url>
+  <url>
+    <loc>https://www.fleura.com.tr/bornova-kalici-oje</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.fleura.com.tr/buca-tirnak</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.fleura.com.tr/cesme-kalici-oje</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.fleura.com.tr/cigli-protez-tirnak</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.fleura.com.tr/en</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fleura.com.tr/en"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.fleura.com.tr/ru"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fleura.com.tr/"/>
+  </url>
+  <url>
+    <loc>https://www.fleura.com.tr/gaziemir-kalici-oje</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.fleura.com.tr/guzelbahce-kalici-oje</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.fleura.com.tr/hizmetler</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.fleura.com.tr/karabaglar-tirnak</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.fleura.com.tr/karsiyaka-protez-tirnak</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.fleura.com.tr/konak-tirnak</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.fleura.com.tr/narlidere-tirnak</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.fleura.com.tr/ru</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fleura.com.tr/en"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.fleura.com.tr/ru"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fleura.com.tr/"/>
+  </url>
+  <url>
+    <loc>https://www.fleura.com.tr/urla-kalici-oje</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.fleura.com.tr/blog</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/blog"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.fleura.com.tr/en/bridal-nails-izmir</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/izmir-gelin-tirnagi"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fleura.com.tr/en/bridal-nails-izmir"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.fleura.com.tr/ru/svadebnyy-manikyur-izmir"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fleura.com.tr/izmir-gelin-tirnagi"/>
+  </url>
+  <url>
+    <loc>https://www.fleura.com.tr/en/gel-nail-extensions-izmir</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/izmir-protez-tirnak"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fleura.com.tr/en/gel-nail-extensions-izmir"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.fleura.com.tr/ru/narashchivanie-nogtey-izmir"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fleura.com.tr/izmir-protez-tirnak"/>
+  </url>
+  <url>
+    <loc>https://www.fleura.com.tr/en/gel-polish-izmir</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/izmir-kalici-oje"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fleura.com.tr/en/gel-polish-izmir"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.fleura.com.tr/ru/gel-lak-izmir"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fleura.com.tr/izmir-kalici-oje"/>
+  </url>
+  <url>
+    <loc>https://www.fleura.com.tr/en/manicure-pedicure-izmir</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/izmir-manikur-pedikur"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fleura.com.tr/en/manicure-pedicure-izmir"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.fleura.com.tr/ru/manikyur-pedikyur-izmir"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fleura.com.tr/izmir-manikur-pedikur"/>
+  </url>
+  <url>
+    <loc>https://www.fleura.com.tr/en/mobile-nail-artist-izmir</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/izmir-evde-tirnak-hizmeti"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fleura.com.tr/en/mobile-nail-artist-izmir"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fleura.com.tr/izmir-evde-tirnak-hizmeti"/>
     <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/kalici-oje-2.avif</image:loc>
-      <image:title>Kalıcı oje uygulaması ve bakımı - İzmir Fleura Nails</image:title>
+      <image:loc>https://www.fleura.com.tr/assets/gallery/el-ayak-3.webp</image:loc>
     </image:image>
+  </url>
+  <url>
+    <loc>https://www.fleura.com.tr/en/nail-art-izmir</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/izmir-nail-art"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fleura.com.tr/en/nail-art-izmir"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.fleura.com.tr/ru/dizayn-nogtey-izmir"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fleura.com.tr/izmir-nail-art"/>
+  </url>
+  <url>
+    <loc>https://www.fleura.com.tr/en/nail-prices-izmir</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/izmir-protez-tirnak-fiyatlari"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fleura.com.tr/en/nail-prices-izmir"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.fleura.com.tr/ru/tseny-izmir"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fleura.com.tr/izmir-protez-tirnak-fiyatlari"/>
+  </url>
+  <url>
+    <loc>https://www.fleura.com.tr/ru/dizayn-nogtey-izmir</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/izmir-nail-art"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fleura.com.tr/en/nail-art-izmir"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.fleura.com.tr/ru/dizayn-nogtey-izmir"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fleura.com.tr/izmir-nail-art"/>
+  </url>
+  <url>
+    <loc>https://www.fleura.com.tr/ru/gel-lak-izmir</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/izmir-kalici-oje"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fleura.com.tr/en/gel-polish-izmir"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.fleura.com.tr/ru/gel-lak-izmir"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fleura.com.tr/izmir-kalici-oje"/>
+  </url>
+  <url>
+    <loc>https://www.fleura.com.tr/ru/manikyur-pedikyur-izmir</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/izmir-manikur-pedikur"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fleura.com.tr/en/manicure-pedicure-izmir"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.fleura.com.tr/ru/manikyur-pedikyur-izmir"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fleura.com.tr/izmir-manikur-pedikur"/>
+  </url>
+  <url>
+    <loc>https://www.fleura.com.tr/ru/narashchivanie-nogtey-izmir</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/izmir-protez-tirnak"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fleura.com.tr/en/gel-nail-extensions-izmir"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.fleura.com.tr/ru/narashchivanie-nogtey-izmir"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fleura.com.tr/izmir-protez-tirnak"/>
+  </url>
+  <url>
+    <loc>https://www.fleura.com.tr/ru/svadebnyy-manikyur-izmir</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/izmir-gelin-tirnagi"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fleura.com.tr/en/bridal-nails-izmir"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.fleura.com.tr/ru/svadebnyy-manikyur-izmir"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fleura.com.tr/izmir-gelin-tirnagi"/>
+  </url>
+  <url>
+    <loc>https://www.fleura.com.tr/ru/tseny-izmir</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/izmir-protez-tirnak-fiyatlari"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.fleura.com.tr/en/nail-prices-izmir"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.fleura.com.tr/ru/tseny-izmir"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fleura.com.tr/izmir-protez-tirnak-fiyatlari"/>
+  </url>
+  <url>
+    <loc>https://www.fleura.com.tr/blog/cesme-villaya-gelen-nail-artist-rehberi</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
     <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/el-ayak-3.avif</image:loc>
-      <image:title>Manikür ve pedikür hizmeti - İzmir Fleura Nails</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/protez-tirnak-2.avif</image:loc>
-      <image:title>Protez tırnak uygulaması - İzmir Fleura Nails</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/nail-art-12.avif</image:loc>
-      <image:title>Nail art tasarımları - İzmir Fleura Nails</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/el-ayak-5.avif</image:loc>
-      <image:title>Tırnak sağlığı ve bakımı - İzmir Fleura Nails</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/el-ayak-7.avif</image:loc>
-      <image:title>French manikür uygulaması - İzmir Fleura Nails</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/protez-tirnak-8.avif</image:loc>
-      <image:title>Tırnak uzatma teknikleri - İzmir Fleura Nails</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/kalici-oje-3.avif</image:loc>
-      <image:title>Tırnak bakım rutini - İzmir Fleura Nails</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/nail-art-2.avif</image:loc>
-      <image:title>Mevsimsel nail art tasarımları - İzmir Fleura Nails</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/el-ayak-6.avif</image:loc>
-      <image:title>Tırnak mantarı ve çözümleri - İzmir Fleura Nails</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/nail-art-10.avif</image:loc>
-      <image:title>Evde tırnak bakımı ipuçları - İzmir Fleura Nails</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/protez-tirnak-5.avif</image:loc>
-      <image:title>Tırnak şekilleri rehberi - İzmir Fleura Nails</image:title>
+      <image:loc>https://www.fleura.com.tr/assets/gallery/el-ayak-3.webp</image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://www.fleura.com.tr/blog/evde-tirnak-bakimi</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/blog/evde-tirnak-bakimi"/>
+    <priority>0.6</priority>
     <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/nail-art-10.avif</image:loc>
-      <image:title>Evde tırnak bakımı ipuçları - İzmir Fleura Nails</image:title>
+      <image:loc>https://www.fleura.com.tr/assets/gallery/nail-art-10.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.fleura.com.tr/blog/eve-gelen-nail-artist-icin-evde-hazirlik</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.fleura.com.tr/assets/gallery/el-ayak-2.webp</image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://www.fleura.com.tr/blog/eve-gelen-tirnak-hizmeti</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/blog/eve-gelen-tirnak-hizmeti"/>
+    <priority>0.6</priority>
     <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/el-ayak-4.avif</image:loc>
-      <image:title>Eve gelen tırnak hizmeti ve mobil manikür - İzmir Fleura Nails</image:title>
+      <image:loc>https://www.fleura.com.tr/assets/gallery/el-ayak-4.webp</image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://www.fleura.com.tr/blog/french-manikur-rehberi</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/blog/french-manikur-rehberi"/>
+    <priority>0.6</priority>
     <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/el-ayak-7.avif</image:loc>
-      <image:title>French manikür uygulaması - İzmir Fleura Nails</image:title>
+      <image:loc>https://www.fleura.com.tr/assets/gallery/el-ayak-7.webp</image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://www.fleura.com.tr/blog/gelin-tirnaklari</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/blog/gelin-tirnaklari"/>
+    <priority>0.6</priority>
     <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/nail-art-1.avif</image:loc>
-      <image:title>Gelin tırnağı tasarımı ve düğün manikürü - İzmir Fleura Nails</image:title>
+      <image:loc>https://www.fleura.com.tr/assets/gallery/nail-art-1.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.fleura.com.tr/blog/izmir-evde-kalici-oje-nasil-yapilir</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.fleura.com.tr/assets/gallery/kalici-oje-4.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.fleura.com.tr/blog/izmir-evde-protez-tirnak-rehberi</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.fleura.com.tr/assets/gallery/protez-tirnak-3.webp</image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://www.fleura.com.tr/blog/kalici-oje-bakimi</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/blog/kalici-oje-bakimi"/>
+    <priority>0.6</priority>
     <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/kalici-oje-2.avif</image:loc>
-      <image:title>Kalıcı oje uygulaması ve bakımı - İzmir Fleura Nails</image:title>
+      <image:loc>https://www.fleura.com.tr/assets/gallery/kalici-oje-2.webp</image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://www.fleura.com.tr/blog/kalici-oje-mi-protez-tirnak-mi</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/blog/kalici-oje-mi-protez-tirnak-mi"/>
+    <priority>0.6</priority>
     <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/protez-tirnak-1.avif</image:loc>
-      <image:title>Kalıcı oje ve protez tırnak karşılaştırması - İzmir Fleura Nails</image:title>
+      <image:loc>https://www.fleura.com.tr/assets/gallery/protez-tirnak-1.webp</image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://www.fleura.com.tr/blog/kalici-oje-nasil-cikarilir</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/blog/kalici-oje-nasil-cikarilir"/>
+    <priority>0.6</priority>
     <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/kalici-oje-1.avif</image:loc>
-      <image:title>Kalıcı oje söküm işlemi ve tırnak bakımı - İzmir Fleura Nails</image:title>
+      <image:loc>https://www.fleura.com.tr/assets/gallery/kalici-oje-1.webp</image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://www.fleura.com.tr/blog/manikur-pedikur-rehberi</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/blog/manikur-pedikur-rehberi"/>
+    <priority>0.6</priority>
     <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/el-ayak-3.avif</image:loc>
-      <image:title>Manikür ve pedikür hizmeti - İzmir Fleura Nails</image:title>
+      <image:loc>https://www.fleura.com.tr/assets/gallery/el-ayak-3.webp</image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://www.fleura.com.tr/blog/mevsimsel-nail-art</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/blog/mevsimsel-nail-art"/>
+    <priority>0.6</priority>
     <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/nail-art-2.avif</image:loc>
-      <image:title>Mevsimsel nail art tasarımları - İzmir Fleura Nails</image:title>
+      <image:loc>https://www.fleura.com.tr/assets/gallery/nail-art-2.webp</image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://www.fleura.com.tr/blog/nail-art-trendleri</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/blog/nail-art-trendleri"/>
+    <priority>0.6</priority>
     <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/nail-art-12.avif</image:loc>
-      <image:title>Nail art tasarımları - İzmir Fleura Nails</image:title>
+      <image:loc>https://www.fleura.com.tr/assets/gallery/nail-art-12.webp</image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://www.fleura.com.tr/blog/ozel-gunler-nail-art</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/blog/ozel-gunler-nail-art"/>
+    <priority>0.6</priority>
     <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/protez-tirnak-9.avif</image:loc>
-      <image:title>Özel günler için nail art - İzmir Fleura Nails</image:title>
+      <image:loc>https://www.fleura.com.tr/assets/gallery/protez-tirnak-9.webp</image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://www.fleura.com.tr/blog/protez-tirnak-dolumu</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/blog/protez-tirnak-dolumu"/>
+    <priority>0.6</priority>
     <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/protez-tirnak-4.avif</image:loc>
-      <image:title>Protez tırnak dolum uygulaması - İzmir Fleura Nails</image:title>
+      <image:loc>https://www.fleura.com.tr/assets/gallery/protez-tirnak-4.webp</image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://www.fleura.com.tr/blog/protez-tirnak-rehberi</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/blog/protez-tirnak-rehberi"/>
+    <priority>0.6</priority>
     <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/protez-tirnak-2.avif</image:loc>
-      <image:title>Protez tırnak uygulaması - İzmir Fleura Nails</image:title>
+      <image:loc>https://www.fleura.com.tr/assets/gallery/protez-tirnak-2.webp</image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://www.fleura.com.tr/blog/rus-manikuru-nedir</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/blog/rus-manikuru-nedir"/>
+    <priority>0.6</priority>
     <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/nail-art-3.avif</image:loc>
-      <image:title>Rus manikürü kuru manikür uygulaması - İzmir Fleura Nails</image:title>
+      <image:loc>https://www.fleura.com.tr/assets/gallery/nail-art-3.webp</image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://www.fleura.com.tr/blog/tirnak-bakim-hatalari</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/blog/tirnak-bakim-hatalari"/>
+    <priority>0.6</priority>
     <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/kalici-oje-4.avif</image:loc>
-      <image:title>Tırnak bakımında yapılan hatalar - İzmir Fleura Nails</image:title>
+      <image:loc>https://www.fleura.com.tr/assets/gallery/kalici-oje-4.webp</image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://www.fleura.com.tr/blog/tirnak-bakim-rutini</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/blog/tirnak-bakim-rutini"/>
+    <priority>0.6</priority>
     <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/kalici-oje-3.avif</image:loc>
-      <image:title>Tırnak bakım rutini - İzmir Fleura Nails</image:title>
+      <image:loc>https://www.fleura.com.tr/assets/gallery/kalici-oje-3.webp</image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://www.fleura.com.tr/blog/tirnak-guclendirme</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/blog/tirnak-guclendirme"/>
+    <priority>0.6</priority>
     <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/protez-tirnak-7.avif</image:loc>
-      <image:title>Tırnak güçlendirme yöntemleri - İzmir Fleura Nails</image:title>
+      <image:loc>https://www.fleura.com.tr/assets/gallery/protez-tirnak-7.webp</image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://www.fleura.com.tr/blog/tirnak-mantari</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/blog/tirnak-mantari"/>
+    <priority>0.6</priority>
     <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/el-ayak-6.avif</image:loc>
-      <image:title>Tırnak mantarı ve çözümleri - İzmir Fleura Nails</image:title>
+      <image:loc>https://www.fleura.com.tr/assets/gallery/el-ayak-6.webp</image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://www.fleura.com.tr/blog/tirnak-sagligi</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/blog/tirnak-sagligi"/>
+    <priority>0.6</priority>
     <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/el-ayak-5.avif</image:loc>
-      <image:title>Tırnak sağlığı ve bakımı - İzmir Fleura Nails</image:title>
+      <image:loc>https://www.fleura.com.tr/assets/gallery/el-ayak-5.webp</image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://www.fleura.com.tr/blog/tirnak-sekilleri</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/blog/tirnak-sekilleri"/>
+    <priority>0.6</priority>
     <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/protez-tirnak-5.avif</image:loc>
-      <image:title>Tırnak şekilleri rehberi - İzmir Fleura Nails</image:title>
+      <image:loc>https://www.fleura.com.tr/assets/gallery/protez-tirnak-5.webp</image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://www.fleura.com.tr/blog/tirnak-uzatma-teknikleri</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/blog/tirnak-uzatma-teknikleri"/>
+    <priority>0.6</priority>
     <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/protez-tirnak-8.avif</image:loc>
-      <image:title>Tırnak uzatma teknikleri - İzmir Fleura Nails</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.fleura.com.tr/bornova-kalici-oje</loc>
-    <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/bornova-kalici-oje"/>
-    <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/kalici-oje-6.avif</image:loc>
-      <image:title>Bornova kalıcı oje uygulaması — Fleura Nails İzmir</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.fleura.com.tr/buca-tirnak</loc>
-    <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/buca-tirnak"/>
-    <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/nail-art-4.avif</image:loc>
-      <image:title>Buca tırnak bakımı ve nail art — Fleura Nails İzmir</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.fleura.com.tr/cesme-kalici-oje</loc>
-    <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/cesme-kalici-oje"/>
-    <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/nail-art-7.avif</image:loc>
-      <image:title>Çeşme kalıcı oje ve nail art — Fleura Nails İzmir</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.fleura.com.tr/cigli-protez-tirnak</loc>
-    <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/cigli-protez-tirnak"/>
-    <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/protez-tirnak-6.avif</image:loc>
-      <image:title>Çiğli protez tırnak uygulaması — Fleura Nails İzmir</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.fleura.com.tr/gaziemir-kalici-oje</loc>
-    <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/gaziemir-kalici-oje"/>
-    <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/kalici-oje-3.avif</image:loc>
-      <image:title>Gaziemir'de kalıcı oje ve protez tırnak — Fleura Nails İzmir</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.fleura.com.tr/guzelbahce-kalici-oje</loc>
-    <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/guzelbahce-kalici-oje"/>
-    <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/kalici-oje-5.avif</image:loc>
-      <image:title>Güzelbahçe kalıcı oje uygulaması — Fleura Nails İzmir</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.fleura.com.tr/hizmetler</loc>
-    <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/hizmetler"/>
-    <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/el-ayak-1.avif</image:loc>
-      <image:title>Fleura Nails İzmir manikür uygulaması — bakımlı el ve tırnaklar</image:title>
+      <image:loc>https://www.fleura.com.tr/assets/gallery/protez-tirnak-8.webp</image:loc>
     </image:image>
   </url>
   <url>
     <loc>https://www.fleura.com.tr/iletisim</loc>
-    <lastmod>2026-09-03</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/iletisim"/>
-  </url>
-  <url>
-    <loc>https://www.fleura.com.tr/izmir-gelin-tirnagi</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/izmir-gelin-tirnagi"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.fleura.com.tr/en/bridal-nails-izmir"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.fleura.com.tr/ru/svadebnyy-manikyur-izmir"/>
-    <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/nail-art-5.avif</image:loc>
-      <image:title>İzmir gelin tırnağı tasarımı — Fleura Nails düğün manikürü</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.fleura.com.tr/izmir-kalici-oje</loc>
-    <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/izmir-kalici-oje"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.fleura.com.tr/en/gel-polish-izmir"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.fleura.com.tr/ru/gel-lak-izmir"/>
-    <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/kalici-oje-4.avif</image:loc>
-      <image:title>İzmir kalıcı oje uygulaması — Fleura Nails</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.fleura.com.tr/izmir-manikur-pedikur</loc>
-    <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/izmir-manikur-pedikur"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.fleura.com.tr/en/manicure-pedicure-izmir"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.fleura.com.tr/ru/manikyur-pedikyur-izmir"/>
-    <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/el-ayak-3.avif</image:loc>
-      <image:title>İzmir manikür ve pedikür uygulaması — Fleura Nails el ve ayak bakımı</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.fleura.com.tr/izmir-nail-art</loc>
-    <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/izmir-nail-art"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.fleura.com.tr/en/nail-art-izmir"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.fleura.com.tr/ru/dizayn-nogtey-izmir"/>
-    <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/nail-art-1.avif</image:loc>
-      <image:title>İzmir nail art tasarımı — Fleura Nails kişiye özel tırnak uygulaması</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.fleura.com.tr/izmir-protez-tirnak</loc>
-    <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/izmir-protez-tirnak"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.fleura.com.tr/en/gel-nail-extensions-izmir"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.fleura.com.tr/ru/narashchivanie-nogtey-izmir"/>
-    <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/protez-tirnak-1.avif</image:loc>
-      <image:title>İzmir protez tırnak uygulaması — Fleura Nails jel tırnak</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.fleura.com.tr/izmir-protez-tirnak-fiyatlari</loc>
-    <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/izmir-protez-tirnak-fiyatlari"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.fleura.com.tr/en/nail-prices-izmir"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.fleura.com.tr/ru/tseny-izmir"/>
-    <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/prices.avif</image:loc>
-      <image:title>Fleura Nails İzmir fiyat listesi — manikür, pedikür, kalıcı oje ve protez tırnak fiyatları</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.fleura.com.tr/izmir-rus-manikuru</loc>
-    <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/izmir-rus-manikuru"/>
-    <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/el-ayak-7.avif</image:loc>
-      <image:title>İzmir rus manikürü — Fleura Nails frezeli kuru manikür uygulaması</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.fleura.com.tr/karabaglar-tirnak</loc>
-    <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/karabaglar-tirnak"/>
-    <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/protez-tirnak-9.avif</image:loc>
-      <image:title>Karabağlar protez tırnak uygulaması — Fleura Nails İzmir</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.fleura.com.tr/karsiyaka-protez-tirnak</loc>
-    <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/karsiyaka-protez-tirnak"/>
-    <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/protez-tirnak-3.avif</image:loc>
-      <image:title>Karşıyaka protez tırnak uygulaması — Fleura Nails İzmir</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.fleura.com.tr/konak-tirnak</loc>
-    <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/konak-tirnak"/>
-    <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/kalici-oje-1.avif</image:loc>
-      <image:title>Konak'ta kalıcı oje uygulaması — Fleura Nails İzmir</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.fleura.com.tr/narlidere-tirnak</loc>
-    <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/narlidere-tirnak"/>
-    <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/el-ayak-2.avif</image:loc>
-      <image:title>Narlıdere tırnak bakımı ve manikür — Fleura Nails İzmir</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.fleura.com.tr/urla-kalici-oje</loc>
-    <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/urla-kalici-oje"/>
-    <image:image>
-      <image:loc>https://www.fleura.com.tr/assets/gallery/nail-art-2.avif</image:loc>
-      <image:title>Urla'da kalıcı oje ve nail art uygulaması — Fleura Nails İzmir</image:title>
-    </image:image>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.fleura.com.tr/kvkk-aydinlatma-metni</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  <url>
-    <loc>https://www.fleura.com.tr/en</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.fleura.com.tr/en"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.fleura.com.tr/ru"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fleura.com.tr/"/>
-  </url>
-  <url>
-    <loc>https://www.fleura.com.tr/ru</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.fleura.com.tr/en"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.fleura.com.tr/ru"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fleura.com.tr/"/>
-  </url>
-  <url>
-    <loc>https://www.fleura.com.tr/en/gel-nail-extensions-izmir</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/izmir-protez-tirnak"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.fleura.com.tr/en/gel-nail-extensions-izmir"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.fleura.com.tr/ru/narashchivanie-nogtey-izmir"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fleura.com.tr/"/>
-  </url>
-  <url>
-    <loc>https://www.fleura.com.tr/ru/narashchivanie-nogtey-izmir</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/izmir-protez-tirnak"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.fleura.com.tr/en/gel-nail-extensions-izmir"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.fleura.com.tr/ru/narashchivanie-nogtey-izmir"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fleura.com.tr/"/>
-  </url>
-  <url>
-    <loc>https://www.fleura.com.tr/en/gel-polish-izmir</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/izmir-kalici-oje"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.fleura.com.tr/en/gel-polish-izmir"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.fleura.com.tr/ru/gel-lak-izmir"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fleura.com.tr/"/>
-  </url>
-  <url>
-    <loc>https://www.fleura.com.tr/ru/gel-lak-izmir</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/izmir-kalici-oje"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.fleura.com.tr/en/gel-polish-izmir"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.fleura.com.tr/ru/gel-lak-izmir"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fleura.com.tr/"/>
-  </url>
-  <url>
-    <loc>https://www.fleura.com.tr/en/nail-art-izmir</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/izmir-nail-art"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.fleura.com.tr/en/nail-art-izmir"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.fleura.com.tr/ru/dizayn-nogtey-izmir"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fleura.com.tr/"/>
-  </url>
-  <url>
-    <loc>https://www.fleura.com.tr/ru/dizayn-nogtey-izmir</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/izmir-nail-art"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.fleura.com.tr/en/nail-art-izmir"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.fleura.com.tr/ru/dizayn-nogtey-izmir"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fleura.com.tr/"/>
-  </url>
-  <url>
-    <loc>https://www.fleura.com.tr/en/manicure-pedicure-izmir</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/izmir-manikur-pedikur"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.fleura.com.tr/en/manicure-pedicure-izmir"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.fleura.com.tr/ru/manikyur-pedikyur-izmir"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fleura.com.tr/"/>
-  </url>
-  <url>
-    <loc>https://www.fleura.com.tr/ru/manikyur-pedikyur-izmir</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/izmir-manikur-pedikur"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.fleura.com.tr/en/manicure-pedicure-izmir"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.fleura.com.tr/ru/manikyur-pedikyur-izmir"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fleura.com.tr/"/>
-  </url>
-  <url>
-    <loc>https://www.fleura.com.tr/en/nail-prices-izmir</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/izmir-protez-tirnak-fiyatlari"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.fleura.com.tr/en/nail-prices-izmir"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.fleura.com.tr/ru/tseny-izmir"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fleura.com.tr/"/>
-  </url>
-  <url>
-    <loc>https://www.fleura.com.tr/ru/tseny-izmir</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/izmir-protez-tirnak-fiyatlari"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.fleura.com.tr/en/nail-prices-izmir"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.fleura.com.tr/ru/tseny-izmir"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fleura.com.tr/"/>
-  </url>
-  <url>
-    <loc>https://www.fleura.com.tr/en/bridal-nails-izmir</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/izmir-gelin-tirnagi"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.fleura.com.tr/en/bridal-nails-izmir"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.fleura.com.tr/ru/svadebnyy-manikyur-izmir"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fleura.com.tr/"/>
-  </url>
-  <url>
-    <loc>https://www.fleura.com.tr/ru/svadebnyy-manikyur-izmir</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/izmir-gelin-tirnagi"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.fleura.com.tr/en/bridal-nails-izmir"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.fleura.com.tr/ru/svadebnyy-manikyur-izmir"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fleura.com.tr/"/>
+    <priority>0.3</priority>
   </url>
 </urlset>

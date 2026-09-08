@@ -10,3 +10,8 @@ wp-1-ustte.png
 wp-2-scroll.png
 dev-server.py
 baslat.bat
+
+# ortam degiskenleri
+.env
+.env.*
+!.env.example

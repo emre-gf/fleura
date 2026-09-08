@@ -1,0 +1,18 @@
+{
+  "name": "fleura-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Fleura Nails — İzmir evde/adrese gelen nail artist hizmeti. Statik site (Vercel + Firebase Hosting) ve SEO araçları.",
+  "scripts": {
+    "seo:sitemap": "node tools/build-sitemap.js",
+    "seo:check": "node tools/seo-check.js",
+    "seo:indexnow": "node tools/indexnow.js submit",
+    "seo:indexnow:keyfile": "node tools/indexnow.js keyfile",
+    "test": "node tools/seo-check.js",
+    "seo:verify-meta": "node tools/verification-meta.js",
+    "seo:verify-meta:check": "node tools/verification-meta.js --check"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

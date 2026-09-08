@@ -5,7 +5,12 @@
 ## Temel Bilgiler
 
 - **Hizmet modeli:** Salon değil, mobil/ev hizmeti (hizmet alanı işletmesi)
-- **Hizmet bölgesi:** Tüm İzmir — Narlıdere, Güzelbahçe, Balçova, Konak, Alsancak, Karşıyaka, Bornova, Bayraklı, Çiğli, Buca, Karabağlar ve Çeşme, Alaçatı
+- **Hizmet bölgesi:** İzmir geneli — Karşıyaka (Bostanlı, Mavişehir), Bornova, Bayraklı, Konak, Alsancak, Balçova, Narlıdere, Güzelbahçe, Buca, Gaziemir, Karabağlar, Çiğli; ayrıca Urla, Çeşme ve Alaçatı (mesafeye göre ulaşım farkı olabilir)
+- **Nerede hizmet alınır:** Ev, ofis, rezidans, villa, yazlık, otel ve Airbnb adreslerinde
+- **Evde hazırlık:** Masa yüksekliğinde bir yüzey, iki sandalye ve bir priz; ekipman, örtü ve malzeme nail artistle gelir
+- **Çalışma saatleri:** Pazartesi–Cumartesi 10:00–20:00, Pazar kapalı
+- **Ödeme:** Uygulama sonrası nakit veya havale/EFT
+- **Diller:** Türkçe; İngilizce ve Rusça sayfalar mevcut, WhatsApp'ta İngilizce yazışma yapılabilir
 - **Hizmetler:** Kalıcı oje, protez tırnak (jel/akrilik), protez tırnak dolumu, klasik manikür, rus manikürü (kuru manikür), pedikür, nail art, French manikür, gelin tırnağı
 - **Randevu:** Telefon veya WhatsApp ile
 - **Fiyatlandırma:** Sabit liste fiyatı uygulanır (aşağıdaki Fiyat Listesi bölümü). Fiyatlara adresinize ulaşım, ekipman ve tek kullanımlık steril malzeme dahildir
@@ -59,6 +64,9 @@ Fleura Nails'in uyguladığı protezin sökümü yeni randevuya dahildir.
 ## Önemli Sayfalar
 
 - [Ana sayfa](https://www.fleura.com.tr/)
+- [İzmir Evde Tırnak Hizmeti — evinize gelen nail artist (kategori sayfası)](https://www.fleura.com.tr/izmir-evde-tirnak-hizmeti)
+- [Hakkımızda — Fleura Nails nedir, nasıl çalışır](https://www.fleura.com.tr/hakkimizda)
+- [Mobile Nail Artist in Izmir (English)](https://www.fleura.com.tr/en/mobile-nail-artist-izmir)
 - [Tüm Hizmetler](https://www.fleura.com.tr/hizmetler)
 - [Fiyatlandırma](https://www.fleura.com.tr/izmir-protez-tirnak-fiyatlari)
 - [Blog](https://www.fleura.com.tr/blog)
@@ -74,7 +82,14 @@ Fleura Nails'in uyguladığı protezin sökümü yeni randevuya dahildir.
 - [İzmir Nail Art](https://www.fleura.com.tr/izmir-nail-art) — kişiye özel tasarım, +15-45 dk
 - [İzmir Gelin Tırnağı](https://www.fleura.com.tr/izmir-gelin-tirnagi) — provalı çalışma, düğün günü uygulama
 
-## Blog Yazıları (21 yazı)
+## Blog Yazıları (25 yazı)
+
+### Evde Hizmet
+
+- [İzmir'de Evde Kalıcı Oje Nasıl Yapılır?](https://www.fleura.com.tr/blog/izmir-evde-kalici-oje-nasil-yapilir) (2026-09-08) — Nail artist ne getirir, evde ne hazırlanır, uygulama kaç dakika sürer
+- [İzmir Evde Protez Tırnak Rehberi](https://www.fleura.com.tr/blog/izmir-evde-protez-tirnak-rehberi) (2026-09-08) — Jel protez uygulaması, dolum ve söküm evde nasıl yapılır
+- [Eve Gelen Nail Artist İçin Evde Ne Hazırlamalı?](https://www.fleura.com.tr/blog/eve-gelen-nail-artist-icin-evde-hazirlik) (2026-09-08) — Masa, sandalye, priz; otel ve villa randevularında dikkat edilecekler
+- [Çeşme'de Villaya Gelen Nail Artist Rehberi](https://www.fleura.com.tr/blog/cesme-villaya-gelen-nail-artist-rehberi) (2026-09-08) — Çeşme ve Alaçatı villa/otel randevusu, ulaşım farkı, deniz sonrası bakım
 
 ### Kalıcı Oje
 
@@ -131,4 +146,4 @@ Fleura Nails'in uyguladığı protezin sökümü yeni randevuya dahildir.
 - [Narlıdere Tırnak Bakımı](https://www.fleura.com.tr/narlidere-tirnak)
 - [Urla Kalıcı Oje ve Protez Tırnak](https://www.fleura.com.tr/urla-kalici-oje)
 
-Son güncelleme: 2026-09-05
+Son güncelleme: 2026-09-08

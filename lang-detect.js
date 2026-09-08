@@ -60,6 +60,8 @@
     // Not: Bu harita i18n-map.json ile aynı; yeni sayfa eklerken ikisini de güncelle.
     var MAP = {
       '/': { en: '/en', ru: '/ru' },
+      '/izmir-evde-tirnak-hizmeti': { en: '/en/mobile-nail-artist-izmir', ru: '/ru' },
+      '/hakkimizda': { en: '/en', ru: '/ru' },
       '/izmir-protez-tirnak': { en: '/en/gel-nail-extensions-izmir', ru: '/ru/narashchivanie-nogtey-izmir' },
       '/izmir-kalici-oje': { en: '/en/gel-polish-izmir', ru: '/ru/gel-lak-izmir' },
       '/izmir-nail-art': { en: '/en/nail-art-izmir', ru: '/ru/dizayn-nogtey-izmir' },

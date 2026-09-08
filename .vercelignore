@@ -7,3 +7,8 @@ convert-to-webp.py
 assets/valentines_day.mp4
 dev-server.py
 baslat.bat
+tools
+package.json
+package-lock.json
+.env
+.env.*

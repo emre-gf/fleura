@@ -66,6 +66,7 @@ User-agent: YouBot
 Allow: /
 
 # LLM'ler için site özeti: https://www.fleura.com.tr/llms.txt
+# IndexNow anahtar dosyası: https://www.fleura.com.tr/17254ddf-7b5a-488e-af07-7c6eac0eb3ba.txt
 
 Sitemap: https://www.fleura.com.tr/sitemap.xml
 Host: https://www.fleura.com.tr

@@ -1,11 +1,13 @@
 {
   "_comment": "Fleura Nails — merkezi çok dilli URL ve fiyat kaynağı. Yeni bir dil sayfası eklerken burayı güncelle; hreflang, language switcher ve sitemap bu haritadan türetilir.",
   "_note_prices": "Fiyatlar TEK kaynak: izmir-protez-tirnak-fiyatlari.html içindeki tablo. Buradaki değerler o tablodan kopyalanmıştır ve TR/EN/RU sunumunda aynı sayıları kullanır. Fiyat değişirse hem TR sayfasını hem burayı güncelle.",
-
-  "locales": ["tr", "en", "ru"],
+  "locales": [
+    "tr",
+    "en",
+    "ru"
+  ],
   "defaultLocale": "tr",
   "domain": "https://www.fleura.com.tr",
-
   "pages": [
     {
       "key": "home",
@@ -69,9 +71,26 @@
       "intent_tr": "izmir gelin tırnağı",
       "intent_en": "bridal nails izmir, wedding nails izmir",
       "intent_ru": "свадебный маникюр измир"
+    },
+    {
+      "key": "athome",
+      "tr": "/izmir-evde-tirnak-hizmeti",
+      "en": "/en/mobile-nail-artist-izmir",
+      "ru": null,
+      "intent_tr": "izmir evde tırnak, eve gelen nail artist izmir, izmir evde kalıcı oje/protez tırnak (kategori sayfası)",
+      "intent_en": "mobile nail artist izmir, at home manicure izmir, nail artist for villa in cesme/alacati, nail artist at hotel izmir",
+      "intent_ru": "(henüz yok) выездной мастер маникюра измир"
+    },
+    {
+      "key": "about",
+      "tr": "/hakkimizda",
+      "en": null,
+      "ru": null,
+      "intent_tr": "fleura nails nedir / hakkında (entity sayfası)",
+      "intent_en": "",
+      "intent_ru": ""
     }
   ],
-
   "prices": {
     "currency": "TRY",
     "currencySymbol": "₺",
@@ -80,45 +99,82 @@
       {
         "key": "manicure",
         "items": [
-          { "key": "manicure", "amount": 650 },
-          { "key": "manicure_gelpolish", "amount": 1150 },
-          { "key": "manicure_strength_gelpolish", "amount": 1300 },
-          { "key": "manicure_extensions_gelpolish", "amount": 1500 }
+          {
+            "key": "manicure",
+            "amount": 650
+          },
+          {
+            "key": "manicure_gelpolish",
+            "amount": 1150
+          },
+          {
+            "key": "manicure_strength_gelpolish",
+            "amount": 1300
+          },
+          {
+            "key": "manicure_extensions_gelpolish",
+            "amount": 1500
+          }
         ]
       },
       {
         "key": "pedicure",
         "items": [
-          { "key": "pedicure", "amount": 850 },
-          { "key": "pedicure_gelpolish", "amount": 1250 },
-          { "key": "pedicure_strength_gelpolish", "amount": 1500 }
+          {
+            "key": "pedicure",
+            "amount": 850
+          },
+          {
+            "key": "pedicure_gelpolish",
+            "amount": 1250
+          },
+          {
+            "key": "pedicure_strength_gelpolish",
+            "amount": 1500
+          }
         ]
       },
       {
         "key": "extras",
         "items": [
-          { "key": "single_repair", "amount": 150, "perNail": true },
-          { "key": "french_cateye_ombre", "amount": 250 },
-          { "key": "single_nail_art", "amountMin": 50, "amountMax": 150, "perNail": true }
+          {
+            "key": "single_repair",
+            "amount": 150,
+            "perNail": true
+          },
+          {
+            "key": "french_cateye_ombre",
+            "amount": 250
+          },
+          {
+            "key": "single_nail_art",
+            "amountMin": 50,
+            "amountMax": 150,
+            "perNail": true
+          }
         ]
       },
       {
         "key": "removal",
         "items": [
-          { "key": "gelpolish_removal", "amount": 400 },
-          { "key": "extensions_removal", "amount": 500 }
+          {
+            "key": "gelpolish_removal",
+            "amount": 400
+          },
+          {
+            "key": "extensions_removal",
+            "amount": 500
+          }
         ]
       }
     ]
   },
-
   "contact": {
     "phone": "+905558903511",
     "phoneDisplay": "0555 890 35 11",
     "email": "info@fleura.com.tr",
     "instagram": "https://instagram.com/fleuranails"
   },
-
   "whatsapp": {
     "tr": "Merhaba, randevu almak istiyorum.",
     "en": "Hello! I would like to book a nail appointment in Izmir.",
