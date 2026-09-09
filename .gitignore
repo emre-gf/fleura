@@ -13,3 +13,8 @@ baslat.bat
 
 # sertifika ham dosyalari (kimlik bilgisi icerir - deploy edilmez)
 assets/sertifikalar/_ham/
+
+# ortam degiskenleri
+.env
+.env.*
+!.env.example

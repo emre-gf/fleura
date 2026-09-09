@@ -73,7 +73,11 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**",
-      "README.md"
+      "README.md",
+      "tools/**",
+      "package.json",
+      "package-lock.json",
+      ".env*"
     ],
     "errorDocument": "404.html",
     "headers": [

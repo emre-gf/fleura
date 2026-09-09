@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
+    <meta name="msvalidate.01" content="6F3E5D645D5F2856E58A1CD8E60EE8C9" />
 <script>(function(){function r(e){var a=e.target.closest('.seo-lang a, .nav-lang a, .mm-lang a');if(!a)return;var l=(a.getAttribute('hreflang')||'').slice(0,2);if(!l)return;try{localStorage.setItem('fn-lang-choice',l);sessionStorage.setItem('fn-lang-redirected','1')}catch(x){}}document.addEventListener('click',r,true)})();</script>
     <meta
       name="viewport"
@@ -216,6 +217,11 @@
         max-width: 100%;
         height: auto;
       }
+      /* Kritik: style.min.css asenkron yüklenir; ilk boyamada header'ın akışta yer kaplamasını (CLS) engeller.
+         Değerler style.css'teki .navbar/.nav-container/.logo-img kurallarıyla aynıdır. */
+      header .navbar { position: fixed; top: 0; left: 0; right: 0; width: 100%; z-index: 1000; padding: 0.5rem 0; }
+      .nav-container { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between; }
+      .logo-img { width: auto; height: 40px; object-fit: cover; }
       .hero {
         min-height: 100vh;
         min-height: 100dvh;
@@ -429,7 +435,7 @@
         "name": "Fleura Nails",
         "alternateName": ["Fleura Nails İzmir", "Fleuranails"],
         "url": "https://www.fleura.com.tr",
-        "description": "Tüm İzmir bölgesine VIP ev hizmeti veren profesyonel tırnak bakımı hizmetleri",
+        "description": "Fleura Nails is a mobile nail service in Izmir: the nail artist comes to your home, residence, villa or hotel for gel polish, gel extensions, manicure, pedicure and nail art.",
         "inLanguage": "en",
         "publisher": {
           "@type": "Organization",
@@ -446,7 +452,7 @@
         "url": "https://www.fleura.com.tr",
         "logo": "https://www.fleura.com.tr/assets/logo.webp",
         "image": "https://www.fleura.com.tr/assets/og-image.jpg",
-        "description": "Tüm İzmir bölgesine VIP ev hizmeti veren profesyonel tırnak bakımı hizmetleri",
+        "description": "Fleura Nails is a mobile nail service in Izmir: the nail artist comes to your home, residence, villa or hotel for gel polish, gel extensions, manicure, pedicure and nail art.",
         "foundingDate": "2026",
         "founders": [{ "@type": "Person", "name": "Zeynep" }],
         "contactPoint": {
@@ -489,7 +495,7 @@
         ],
         "name": "Fleura Nails",
         "alternateName": "Fleuranails",
-        "description": "Tüm İzmir bölgesine VIP ev hizmeti veren Fleura Nails, kalıcı oje, manikür, pedikür, protez tırnak ve nail art alanında uzmanlaşmıştır. Narlıdere, Güzelbahçe, Konak, Karşıyaka, Bornova, Çiğli, Buca ve İzmir'in tüm ilçelerine hizmet veriyoruz. Profesyonel hizmet, steril ortam ve premium ürünlerle yanınızdayız.",
+        "description": "Fleura Nails is a mobile nail service in Izmir with no walk-in salon: gel polish, gel extensions, manicure, pedicure and nail art are done by appointment at your home, residence, villa or hotel, with the lamp, sterilised tools and materials brought by the nail artist. We cover Karşıyaka, Bornova, Bayraklı, Konak, Alsancak, Balçova, Narlıdere, Güzelbahçe, Buca, Gaziemir, Karabağlar and Çiğli, plus Urla, Çeşme and Alaçatı.",
         "url": "https://www.fleura.com.tr",
         "telephone": "+905558903511",
         "image": [
@@ -526,7 +532,7 @@
             "@type": "OpeningHoursSpecification",
             "dayOfWeek": "Saturday",
             "opens": "10:00",
-            "closes": "19:00"
+            "closes": "20:00"
           }
         ],
         "priceRange": "₺₺",
@@ -565,7 +571,7 @@
               "itemOffered": {
                 "@type": "Service",
                 "name": "Gel Polish",
-                "description": "2-3 hafta dayanıklı kalıcı oje uygulaması"
+                "description": "Gel polish lasting 2–3 weeks, applied at your address"
               }
             },
             {
@@ -573,7 +579,7 @@
               "itemOffered": {
                 "@type": "Service",
                 "name": "Manicure & Pedicure",
-                "description": "Profesyonel el ve ayak bakımı"
+                "description": "Professional hand and foot care"
               }
             },
             {
@@ -581,7 +587,7 @@
               "itemOffered": {
                 "@type": "Service",
                 "name": "Gel Extensions",
-                "description": "Jel tırnak uygulaması"
+                "description": "Gel nail extensions and infills"
               }
             },
             {
@@ -589,7 +595,7 @@
               "itemOffered": {
                 "@type": "Service",
                 "name": "Nail Art",
-                "description": "Özel tasarım tırnak süslemeleri"
+                "description": "Custom nail art designs"
               }
             }
           ]
@@ -711,7 +717,7 @@
         "@context": "https://schema.org",
         "@type": "HowTo",
         "name": "Fleura Nails'te Tırnak Bakım Süreci",
-        "description": "Randevu almaktan kusursuz tırnaklara, Fleura Nails'in 4 adımlı VIP hizmet süreci.",
+        "description": "From booking to finished nails: Fleura Nails' four-step mobile service process.",
         "image": "https://www.fleura.com.tr/assets/og-image.jpg",
         "totalTime": "PT2H",
         "step": [
@@ -751,7 +757,7 @@
         "@context": "https://schema.org",
         "@type": "ImageGallery",
         "name": "Fleura Nails Tırnak Tasarımları Galerisi",
-        "description": "İzmir'de Fleura Nails tarafından uygulanan protez tırnak, kalıcı oje ve nail art örnekleri.",
+        "description": "Examples of gel extensions, gel polish and nail art by Fleura Nails in Izmir.",
         "url": "https://www.fleura.com.tr/#gallery",
         "image": [
           "https://www.fleura.com.tr/assets/gallery/protez-tirnak-1.avif",
@@ -766,7 +772,7 @@
         "@context": "https://schema.org",
         "@type": "ItemList",
         "name": "Fleura Nails Hizmet Bölgeleri - İzmir",
-        "description": "Fleura Nails'in İzmir'de hizmet verdiği semtler.",
+        "description": "Districts of Izmir served by Fleura Nails (pages in Turkish).",
         "itemListElement": [
           {"@type": "ListItem", "position": 1, "name": "Balçova", "url": "https://www.fleura.com.tr/balcova-protez-tirnak"},
           {"@type": "ListItem", "position": 2, "name": "Karşıyaka", "url": "https://www.fleura.com.tr/karsiyaka-protez-tirnak"},
@@ -790,28 +796,28 @@
             "@type": "Service",
             "position": 1,
             "name": "Gel Polish Application",
-            "description": "2-3 hafta boyunca parlak ve dayanıklı tırnaklar için profesyonel kalıcı oje uygulaması. Geniş renk yelpazesi mevcut.",
+            "description": "Professional gel polish for glossy, long-wear nails lasting 2–3 weeks. Wide colour range.",
             "provider": { "@id": "https://www.fleura.com.tr/#business" }
           },
           {
             "@type": "Service",
             "position": 2,
             "name": "Manikür ve Pedikür",
-            "description": "El ve ayak bakımı, tırnak şekillendirme, tırnak eti bakımı, peeling ve rahatlatıcı masaj içeren kapsamlı bakım paketi.",
+            "description": "Complete hand and foot care: shaping, cuticle work, exfoliation and a relaxing massage.",
             "provider": { "@id": "https://www.fleura.com.tr/#business" }
           },
           {
             "@type": "Service",
             "position": 3,
             "name": "Gel Extensions",
-            "description": "Jel tırnak uygulaması ile hayalinizdeki uzunluk ve şekilde mükemmel tırnaklar. Doğal görünüm garantisi.",
+            "description": "Gel nail extensions in the length and shape you want, with a natural look — applied at your address in Izmir.",
             "provider": { "@id": "https://www.fleura.com.tr/#business" }
           },
           {
             "@type": "Service",
             "position": 4,
             "name": "Tırnak Bakımı ve Onarımı",
-            "description": "Kırılgan, hasarlı veya zayıf tırnaklar için güçlendirici tedaviler, besleyici maskeler ve onarıcı bakım uygulamaları.",
+            "description": "Strengthening treatments, nourishing masks and repair care for brittle, damaged or weak nails.",
             "provider": { "@id": "https://www.fleura.com.tr/#business" }
           }
         ]
@@ -822,6 +828,7 @@
     <script type="module" src="/firebase-config.js"></script>
     <link rel="stylesheet" href="/cookie-consent.css">
   <script src="/cookie-consent.js" defer></script>
+  <script src="../fn-events.js" defer></script>
 </head>
   <body>
     <div class="preloader" id="preloader" aria-hidden="true">
