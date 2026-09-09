@@ -468,6 +468,25 @@
     </image:image>
   </url>
   <url>
+    <loc>https://www.fleura.com.tr/belgelerimiz</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/belgelerimiz"/>
+    <image:image>
+      <image:loc>https://www.fleura.com.tr/assets/sertifikalar/meb-protez-tirnak-sertifikasi.webp</image:loc>
+      <image:title>T.C. Millî Eğitim Bakanlığı Protez Tırnak kurs bitirme belgesi (92 saat) — Fleura Nails İzmir</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.fleura.com.tr/assets/sertifikalar/meb-hijyen-sertifikasi.webp</image:loc>
+      <image:title>T.C. Millî Eğitim Bakanlığı hijyen eğitimi kurs bitirme belgesi — Fleura Nails İzmir</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.fleura.com.tr/assets/sertifikalar/xbeauty-nail-tour-izmir.webp</image:loc>
+      <image:title>XBeauty Professional Nail Tour İzmir profesyonel tırnak eğitimi sertifikası — Fleura Nails</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://www.fleura.com.tr/iletisim</loc>
     <lastmod>2026-09-03</lastmod>
     <changefreq>yearly</changefreq>
