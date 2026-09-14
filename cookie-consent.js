@@ -44,7 +44,12 @@
 
   function grantAnalytics() {
     if (typeof window.gtag === 'function') {
-      window.gtag('consent', 'update', { analytics_storage: 'granted' });
+      window.gtag('consent', 'update', {
+        analytics_storage: 'granted',
+        ad_storage: 'granted',
+        ad_user_data: 'granted',
+        ad_personalization: 'granted'
+      });
     }
     // Ana sayfada Firebase Analytics rızayı bekliyorsa şimdi başlat
     if (typeof window.fnStartFirebaseAnalytics === 'function') {
@@ -54,7 +59,12 @@
 
   function denyAnalytics() {
     if (typeof window.gtag === 'function') {
-      window.gtag('consent', 'update', { analytics_storage: 'denied' });
+      window.gtag('consent', 'update', {
+        analytics_storage: 'denied',
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied'
+      });
     }
   }
 

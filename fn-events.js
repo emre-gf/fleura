@@ -14,6 +14,23 @@
     try { window.gtag('event', name, params || {}); } catch (e) { /* sessiz */ }
   }
 
+  /* Google Ads dönüşümleri — etiket kimlikleri Ads hesabından alındı */
+  var AW = {
+    whatsapp: 'AW-10868274290/FzsFCMvl8PccEPLosr4o',
+    phone:    'AW-10868274290/_VwpCNHl8PccEPLosr4o',
+    booking:  'AW-10868274290/XHvaCM7l8PccEPLosr4o'
+  };
+  function conv(key, value) {
+    if (typeof window.gtag !== 'function' || !AW[key]) return;
+    try {
+      window.gtag('event', 'conversion', {
+        send_to: AW[key],
+        value: value || 0,
+        currency: 'TRY'
+      });
+    } catch (e) { /* sessiz */ }
+  }
+
   function ctaLocation(el) {
     var box = el.closest('section[id], header, footer, nav, article, aside, .cta-section, .post-cta');
     if (!box) return 'page';
@@ -39,9 +56,11 @@
       p = base(a); p.link_url = href.split('?')[0]; p.has_context = href.indexOf('text=') > -1;
       send('whatsapp_click', p);
       send('generate_lead', { method: 'whatsapp', cta_location: p.cta_location, page_path: p.page_path });
+      conv('whatsapp', 250);
     } else if (/^tel:/i.test(href)) {
       p = base(a); p.link_url = href;
       send('phone_click', p);
+      conv('phone', 250);
     } else if (href === '#randevu-al' || a.classList.contains('fc-book') || a.classList.contains('nav-cta') || a.classList.contains('mm-cta')) {
       send('booking_start', base(a));
     } else if (/instagram\.com/i.test(href)) {
@@ -64,6 +83,7 @@
   if (confirmBtn) {
     confirmBtn.addEventListener('click', function () {
       send('booking_complete', { method: 'whatsapp', cta_location: 'appointment_widget', page_path: location.pathname });
+      conv('booking', 400);
     }, true);
   }
 
@@ -73,6 +93,7 @@
     form.addEventListener('submit', function () {
       var svc = form.querySelector('select[name="service"]');
       send('booking_complete', { method: 'email_form', service: svc ? svc.value : '', page_path: location.pathname });
+      conv('booking', 400);
     }, true);
   }
 })();

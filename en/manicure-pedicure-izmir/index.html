@@ -16,11 +16,17 @@
     });
     try {
       if (localStorage.getItem('fn-cookie-consent') === 'accepted') {
-        gtag('consent', 'update', { analytics_storage: 'granted' });
+        gtag('consent', 'update', {
+          analytics_storage: 'granted',
+          ad_storage: 'granted',
+          ad_user_data: 'granted',
+          ad_personalization: 'granted'
+        });
       }
     } catch (e) {}
     gtag('js', new Date());
     gtag('config', 'G-5MWKVSGTQV');
+    gtag('config', 'AW-10868274290');
   </script>
   <meta charset="UTF-8">
   <meta name="msvalidate.01" content="6F3E5D645D5F2856E58A1CD8E60EE8C9" />

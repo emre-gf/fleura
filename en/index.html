@@ -25,11 +25,17 @@
     });
     try {
       if (localStorage.getItem('fn-cookie-consent') === 'accepted') {
-        gtag('consent', 'update', { analytics_storage: 'granted' });
+        gtag('consent', 'update', {
+          analytics_storage: 'granted',
+          ad_storage: 'granted',
+          ad_user_data: 'granted',
+          ad_personalization: 'granted'
+        });
       }
     } catch (e) {}
     gtag('js', new Date());
     gtag('config', 'G-5MWKVSGTQV');
+    gtag('config', 'AW-10868274290');
   </script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Mobile Nail Services in Izmir | Fleura Nails</title>
