@@ -828,34 +828,42 @@ function initCarousels() {
             else if (e.key === 'ArrowLeft') { e.preventDefault(); track.scrollBy({ left: -scrollAmount(), behavior: 'smooth' }); }
         });
 
-        // Pointer drag-to-scroll (mouse); native touch scroll handles mobile
+        // Pointer drag-to-scroll (mouse); native touch scroll handles mobile.
+        // NOTE: no setPointerCapture here — capturing on the track retargets the
+        // compatibility mouseup/click to the track itself, which swallows the
+        // clicks the slides need to open the lightbox. Document-level listeners
+        // keep the drag alive outside the track without stealing the click.
         let isDown = false, startX = 0, startScroll = 0, moved = false;
-        track.addEventListener('pointerdown', (e) => {
-            if (e.pointerType === 'touch') return; // let native touch scroll work
-            isDown = true; moved = false;
-            startX = e.clientX;
-            startScroll = track.scrollLeft;
-            track.classList.add('is-dragging');
-            track.setPointerCapture(e.pointerId);
-        });
-        track.addEventListener('pointermove', (e) => {
+        const onDragMove = (e) => {
             if (!isDown) return;
             const dx = e.clientX - startX;
             if (Math.abs(dx) > 4) moved = true;
             track.scrollLeft = startScroll - dx;
-        });
-        const endDrag = (e) => {
+        };
+        const endDrag = () => {
             if (!isDown) return;
             isDown = false;
             track.classList.remove('is-dragging');
-            try { track.releasePointerCapture(e.pointerId); } catch (_) {}
+            document.removeEventListener('pointermove', onDragMove);
+            document.removeEventListener('pointerup', endDrag);
+            document.removeEventListener('pointercancel', endDrag);
         };
-        track.addEventListener('pointerup', endDrag);
-        track.addEventListener('pointercancel', endDrag);
-        track.addEventListener('pointerleave', endDrag);
-        // Prevent click navigation right after a drag
+        track.addEventListener('pointerdown', (e) => {
+            if (e.pointerType === 'touch') return; // let native touch scroll work
+            if (e.button !== 0) return;            // primary button only
+            isDown = true; moved = false;
+            startX = e.clientX;
+            startScroll = track.scrollLeft;
+            track.classList.add('is-dragging');
+            document.addEventListener('pointermove', onDragMove);
+            document.addEventListener('pointerup', endDrag);
+            document.addEventListener('pointercancel', endDrag);
+        });
+        // Native image drag would otherwise hijack the scroll gesture
+        track.addEventListener('dragstart', (e) => e.preventDefault());
+        // Swallow the click that follows a drag so it does not open the lightbox
         track.addEventListener('click', (e) => {
-            if (moved) { e.preventDefault(); }
+            if (moved) { e.preventDefault(); e.stopPropagation(); moved = false; }
         }, true);
 
         track.addEventListener('scroll', () => {

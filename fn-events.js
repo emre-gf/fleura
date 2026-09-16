@@ -31,6 +31,115 @@
     } catch (e) { /* sessiz */ }
   }
 
+
+  /* ---------------------------------------------------------------
+   * Trafik kaynağı ilişkilendirme (ilk dokunuş, oturum boyunca sabit)
+   * LLM/arama/sosyal kaynakları sınıflandırır; kişisel veri saklamaz.
+   * Yalnızca yönlendiren alan adı + UTM etiketleri kullanılır.
+   * ------------------------------------------------------------- */
+  var SRC_MAP = [
+    [/(^|\.)chatgpt\.com$|(^|\.)chat\.openai\.com$|(^|\.)openai\.com$/, 'chatgpt'],
+    [/(^|\.)perplexity\.ai$/,                'perplexity'],
+    [/(^|\.)claude\.ai$/,                    'claude'],
+    [/(^|\.)gemini\.google\.com$|(^|\.)bard\.google\.com$/, 'gemini'],
+    [/(^|\.)copilot\.microsoft\.com$/,       'copilot'],
+    [/(^|\.)you\.com$|(^|\.)phind\.com$/,    'ai_other'],
+    [/(^|\.)google\./,                       'google'],
+    [/(^|\.)bing\.com$/,                     'bing'],
+    [/(^|\.)yandex\./,                       'yandex'],
+    [/(^|\.)duckduckgo\.com$/,               'duckduckgo'],
+    [/(^|\.)instagram\.com$/,                'instagram'],
+    [/(^|\.)facebook\.com$|(^|\.)fb\.com$/,  'facebook'],
+    [/(^|\.)tiktok\.com$/,                   'tiktok'],
+    [/(^|\.)youtube\.com$/,                  'youtube']
+  ];
+  var AI_SOURCES = { chatgpt: 1, perplexity: 1, claude: 1, gemini: 1, copilot: 1, ai_other: 1 };
+
+  function classify(host) {
+    if (!host) return '';
+    host = host.toLowerCase();
+    for (var i = 0; i < SRC_MAP.length; i++) {
+      if (SRC_MAP[i][0].test(host)) return SRC_MAP[i][1];
+    }
+    return host.replace(/^www\./, '');
+  }
+
+  function store(key, val) { try { sessionStorage.setItem(key, val); } catch (e) {} }
+  function read(key) { try { return sessionStorage.getItem(key) || ''; } catch (e) { return ''; } }
+
+  function detectSource() {
+    var existing = read('fn_src');
+    if (existing) return existing;
+
+    var q = new URLSearchParams(location.search);
+    var utm = (q.get('utm_source') || '').toLowerCase();
+    var src = '';
+
+    if (q.get('gclid')) src = 'google_ads';
+    else if (utm) src = classify(utm) || utm;               /* chatgpt.com utm_source ekliyor */
+    else if (document.referrer) {
+      var rh = '';
+      try { rh = new URL(document.referrer).hostname; } catch (e) {}
+      if (rh && rh !== location.hostname) src = classify(rh);
+    }
+    if (!src) src = 'direct';
+
+    store('fn_src', src);
+    store('fn_src_landing', location.pathname);
+    store('fn_src_medium', q.get('utm_medium') || '');
+    store('fn_src_campaign', q.get('utm_campaign') || '');
+    return src;
+  }
+
+  var SOURCE = detectSource();
+  var LANDING = read('fn_src_landing') || location.pathname;
+
+  /* Oturumda bir kez: kaynağı GA4'e bildir + tüm olaylara iliştir */
+  if (typeof window.gtag === 'function') {
+    try {
+      window.gtag('set', {
+        traffic_source: SOURCE,
+        is_ai_source: AI_SOURCES[SOURCE] ? 'yes' : 'no',
+        landing_page: LANDING
+      });
+    } catch (e) {}
+  }
+  if (!read('fn_src_sent')) {
+    store('fn_src_sent', '1');
+    send('traffic_source', {
+      source: SOURCE,
+      is_ai_source: AI_SOURCES[SOURCE] ? 'yes' : 'no',
+      landing_page: LANDING,
+      medium: read('fn_src_medium'),
+      campaign: read('fn_src_campaign')
+    });
+  }
+
+  /* WhatsApp mesajına kaynak notu ekle — Emre gelen mesajda nereden
+     geldiğini doğrudan görsün diye. Kişisel veri içermez. */
+  var SRC_LABEL = {
+    chatgpt: 'ChatGPT', perplexity: 'Perplexity', claude: 'Claude',
+    gemini: 'Gemini', copilot: 'Copilot', ai_other: 'AI asistan',
+    google: 'Google', google_ads: 'Google Reklam', bing: 'Bing',
+    yandex: 'Yandex', duckduckgo: 'DuckDuckGo', instagram: 'Instagram',
+    facebook: 'Facebook', tiktok: 'TikTok', youtube: 'YouTube',
+    direct: 'Doğrudan'
+  };
+  function tagWhatsApp(a) {
+    if (a.dataset && a.dataset.fnSrcTagged) return;
+    var href = a.getAttribute('href') || '';
+    if (!/wa\.me|api\.whatsapp\.com/i.test(href)) return;
+    var label = SRC_LABEL[SOURCE] || SOURCE;
+    var note = '\n\n— ' + label + ' · ' + LANDING;
+    try {
+      var u = new URL(href, location.origin);
+      var t = u.searchParams.get('text') || '';
+      if (t.indexOf('\n\n— ') === -1) u.searchParams.set('text', t + note);
+      a.setAttribute('href', u.toString().replace(/\+/g, '%20'));
+      if (a.dataset) a.dataset.fnSrcTagged = '1';
+    } catch (e) {}
+  }
+
   function ctaLocation(el) {
     var box = el.closest('section[id], header, footer, nav, article, aside, .cta-section, .post-cta');
     if (!box) return 'page';
@@ -42,7 +151,9 @@
       page_path: location.pathname,
       page_language: document.documentElement.getAttribute('lang') || '',
       cta_location: ctaLocation(el),
-      link_text: (el.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 80)
+      link_text: (el.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 80),
+      traffic_source: SOURCE,
+      is_ai_source: AI_SOURCES[SOURCE] ? 'yes' : 'no'
     };
   }
 
@@ -53,6 +164,8 @@
     var p;
 
     if (/wa\.me|api\.whatsapp\.com|whatsapp:/i.test(href)) {
+      tagWhatsApp(a);
+      href = a.getAttribute('href') || href;
       p = base(a); p.link_url = href.split('?')[0]; p.has_context = href.indexOf('text=') > -1;
       send('whatsapp_click', p);
       send('generate_lead', { method: 'whatsapp', cta_location: p.cta_location, page_path: p.page_path });
