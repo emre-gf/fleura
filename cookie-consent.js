@@ -55,6 +55,9 @@
     if (typeof window.fnStartFirebaseAnalytics === 'function') {
       window.fnStartFirebaseAnalytics();
     }
+    if (typeof window.clarity === 'function') {
+      window.clarity('consent', true);
+    }
   }
 
   function denyAnalytics() {
@@ -65,6 +68,9 @@
         ad_user_data: 'denied',
         ad_personalization: 'denied'
       });
+    }
+    if (typeof window.clarity === 'function') {
+      window.clarity('consent', false);
     }
   }
 
