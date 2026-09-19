@@ -5,13 +5,16 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const SITE = process.env.SITE_URL || 'https://www.fleura.com.tr';
 const SKIP_DIRS = new Set(['node_modules', '.git', '.firebase', 'tools', 'assets', '.claude', '.playwright-mcp']);
+// Arama motoru doğrulama dosyaları (Yandex, Google) birer sayfa değildir: canonical/title
+// taşımazlar ve indekslenmemelidirler. Denetim, sitemap ve meta yazımı dışında tutulur.
+const VERIFY_FILE = /^(yandex_[0-9a-z]+|google[0-9a-f]{8,})\.html$/i;
 
 function listHtml(dir = ROOT, out = []) {
   for (const name of fs.readdirSync(dir)) {
     const full = path.join(dir, name);
     const st = fs.statSync(full);
     if (st.isDirectory()) { if (!SKIP_DIRS.has(name)) listHtml(full, out); }
-    else if (name.endsWith('.html')) out.push(path.relative(ROOT, full));
+    else if (name.endsWith('.html') && !VERIFY_FILE.test(name)) out.push(path.relative(ROOT, full));
   }
   return out.sort();
 }
@@ -69,4 +72,4 @@ function fileToUrl(file) {
   return `${SITE}/${p}`;
 }
 
-module.exports = { ROOT, SITE, listHtml, readPage, urlToFile, fileToUrl, attr };
+module.exports = { ROOT, SITE, VERIFY_FILE, listHtml, readPage, urlToFile, fileToUrl, attr };

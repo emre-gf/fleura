@@ -2,7 +2,8 @@
 /**
  * Fleura Nails — arama motoru doğrulama meta etiketleri
  *
- * Google (google-site-verification) ve Bing (msvalidate.01) doğrulama etiketlerini
+ * Google (google-site-verification), Bing (msvalidate.01) ve Yandex (yandex-verification)
+ * doğrulama etiketlerini
  * .env dosyasındaki değerlerden okuyup TÜM indekslenebilir HTML sayfalarının <head>
  * bölümüne yazar. Değer değişirse mevcut etiket güncellenir, çoğaltılmaz.
  *
@@ -30,15 +31,17 @@ loadEnv();
 
 const GOOGLE = process.env.GOOGLE_SITE_VERIFICATION || 'pCyczzQFiQl4oXr1X1qkzBT-nM8sS0an9gPdZPX7sS0';
 const BING = process.env.BING_SITE_VERIFICATION || '';
+const YANDEX = process.env.YANDEX_SITE_VERIFICATION || '';
 const checkOnly = process.argv.includes('--check');
 
 const TAGS = [
   { name: 'google-site-verification', value: GOOGLE },
-  { name: 'msvalidate.01', value: BING }
+  { name: 'msvalidate.01', value: BING },
+  { name: 'yandex-verification', value: YANDEX }
 ].filter(t => t.value);
 
 if (!TAGS.length) {
-  console.error('✖ Doğrulama değeri yok. .env içine BING_SITE_VERIFICATION (ve gerekiyorsa GOOGLE_SITE_VERIFICATION) yazın.');
+  console.error('✖ Doğrulama değeri yok. .env içine BING_SITE_VERIFICATION / YANDEX_SITE_VERIFICATION (ve gerekiyorsa GOOGLE_SITE_VERIFICATION) yazın.');
   process.exit(1);
 }
 
