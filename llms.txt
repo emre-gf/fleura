@@ -2,12 +2,12 @@
 
 > İzmir genelinde VIP ev hizmeti veren profesyonel tırnak bakımı markası. Kalıcı oje, protez tırnak, manikür, pedikür ve nail art uygulamalarını müşterinin kendi adresinde gerçekleştirir.
 
-**Son güncelleme:** 2026-09-15
+**Son güncelleme:** 2026-09-19
 
 ## Temel Bilgiler
 
 - **Hizmet modeli:** Salon değil, mobil/ev hizmeti (hizmet alanı işletmesi)
-- **Hizmet bölgesi:** İzmir geneli — Karşıyaka (Bostanlı, Mavişehir), Bornova, Bayraklı, Konak, Alsancak, Balçova, Narlıdere, Güzelbahçe, Buca, Gaziemir, Karabağlar, Çiğli; ayrıca Urla, Çeşme ve Alaçatı (mesafeye göre ulaşım farkı olabilir)
+- **Hizmet bölgesi:** İzmir geneli — Karşıyaka (Bostanlı, Mavişehir/Mavibahçe), Bornova, Bayraklı, Konak (Güzelyalı), Alsancak, Balçova, Narlıdere, Güzelbahçe, Buca, Gaziemir, Karabağlar (Yeşilyurt), Çiğli; ayrıca Urla, Seferihisar, Çeşme ve Alaçatı (mesafeye göre ulaşım farkı olabilir)
 - **Nerede hizmet alınır:** Ev, ofis, rezidans, villa, yazlık, otel ve Airbnb adreslerinde
 - **Evde hazırlık:** Masa yüksekliğinde bir yüzey, iki sandalye ve bir priz; ekipman, örtü ve malzeme nail artistle gelir
 - **Çalışma saatleri:** Pazartesi–Cumartesi 10:00–20:00, Pazar kapalı
@@ -61,7 +61,7 @@ Kaynak sayfa: https://www.fleura.com.tr/izmir-protez-tirnak-fiyatlari
 
 Not: Çıkarma ücretleri yalnızca **başka bir yerde yapılmış** uygulamalar için geçerlidir.
 Fleura Nails'in uyguladığı protezin sökümü yeni randevuya dahildir.
-Çeşme, Alaçatı ve Urla gibi uzak bölgelerde mesafe fiyata yansıyabilir; randevu öncesi bildirilir.
+Çeşme, Alaçatı, Urla ve Seferihisar gibi uzak bölgelerde mesafe fiyata yansıyabilir; randevu öncesi bildirilir.
 
 ## Önemli Sayfalar
 
@@ -136,16 +136,21 @@ Fleura Nails'in uyguladığı protezin sökümü yeni randevuya dahildir.
 - [Balçova Protez Tırnak Hizmeti](https://www.fleura.com.tr/balcova-protez-tirnak)
 - [Bayraklı Kalıcı Oje ve Protez Tırnak](https://www.fleura.com.tr/bayrakli-kalici-oje)
 - [Bornova Kalıcı Oje ve Protez Tırnak](https://www.fleura.com.tr/bornova-kalici-oje)
+- [Bostanlı Protez Tırnak ve Kalıcı Oje (Karşıyaka semti)](https://www.fleura.com.tr/bostanli-protez-tirnak)
 - [Gaziemir Kalıcı Oje ve Protez Tırnak](https://www.fleura.com.tr/gaziemir-kalici-oje)
 - [Buca Protez Tırnak ve Kalıcı Oje](https://www.fleura.com.tr/buca-tirnak)
 - [Çeşme Kalıcı Oje ve Protez Tırnak](https://www.fleura.com.tr/cesme-kalici-oje)
 - [Çiğli Protez Tırnak ve Kalıcı Oje](https://www.fleura.com.tr/cigli-protez-tirnak)
 - [Güzelbahçe Kalıcı Oje ve Protez Tırnak](https://www.fleura.com.tr/guzelbahce-kalici-oje)
+- [Güzelyalı Kalıcı Oje ve Protez Tırnak (Konak semti)](https://www.fleura.com.tr/guzelyali-kalici-oje)
 - [İzmir Kalıcı Oje Hizmeti](https://www.fleura.com.tr/izmir-kalici-oje)
 - [Konak Tırnak Bakımı ve Kalıcı Oje](https://www.fleura.com.tr/konak-tirnak)
 - [Karabağlar Protez Tırnak ve Kalıcı Oje](https://www.fleura.com.tr/karabaglar-tirnak)
 - [Karşıyaka Protez Tırnak ve Kalıcı Oje](https://www.fleura.com.tr/karsiyaka-protez-tirnak)
+- [Mavibahçe ve Mavişehir Tırnak Hizmeti (Karşıyaka semti)](https://www.fleura.com.tr/mavibahce-tirnak)
 - [Narlıdere Tırnak Bakımı](https://www.fleura.com.tr/narlidere-tirnak)
+- [Seferihisar Kalıcı Oje ve Protez Tırnak](https://www.fleura.com.tr/seferihisar-kalici-oje)
 - [Urla Kalıcı Oje ve Protez Tırnak](https://www.fleura.com.tr/urla-kalici-oje)
+- [Yeşilyurt Kalıcı Oje ve Protez Tırnak (Karabağlar mahallesi)](https://www.fleura.com.tr/yesilyurt-kalici-oje)
 
-Son güncelleme: 2026-09-15
+Son güncelleme: 2026-09-19
