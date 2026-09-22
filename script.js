@@ -1522,7 +1522,7 @@ function initAppointmentBooking() {
     // Generate time slots (9:00 - 21:00)
     function generateTimeSlots() {
         timeSlots.innerHTML = '';
-        for (let hour = 9; hour <= 21; hour++) {
+        for (let hour = 10; hour <= 22; hour++) {
             const timeSlot = document.createElement('button');
             timeSlot.type = 'button';
             timeSlot.className = 'time-slot';
