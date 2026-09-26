@@ -233,6 +233,10 @@
         min-height: 100vh;
         min-height: 100dvh;
       }
+          /* Hero fiyat butonu (vurgulu) */
+      .hero-couture .fc-actions .fc-price{background:#f7e6df;color:var(--fc-wine,#7a1d3a);border:1.5px solid var(--fc-wine,#7a1d3a);font-weight:700;box-shadow:0 6px 18px rgba(122,29,58,.18);gap:10px}
+      .hero-couture .fc-actions .fc-price:hover{background:#efd3c8;color:var(--fc-wine,#7a1d3a)}
+      .fc-price-tag{display:inline-block;background:var(--fc-wine,#7a1d3a);color:#fff;border-radius:999px;padding:3px 9px;font-size:10px;font-weight:700;letter-spacing:.02em;white-space:nowrap}
     </style>
     <link
       rel="preload"
@@ -1118,7 +1122,7 @@
             <a class="fc-book" href="#randevu-al" title="Book an appointment">Book an Appointment
               <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
             </a>
-            <a class="fc-explore" href="#services" title="Explore our services">Explore Our Services</a>
+            <a class="fc-explore fc-price" href="/en/nail-prices-izmir" title="See our price list">See Prices <span class="fc-price-tag">from 650 ₺</span></a>
           </div>
         </div>
         <div class="fc-gallery" data-fc-gallery role="region" aria-roledescription="carousel" aria-label="Examples of Fleura Nails work">
