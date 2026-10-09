@@ -35,7 +35,7 @@
     gtag('config', 'AW-10868274290');
   </script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
+
     <!-- Primary Meta Tags -->
     <title>Fleura Nails Blog | Tırnak Bakımı Rehberleri ve Trendler</title>
     <meta name="title" content="Fleura Nails Blog | Tırnak Bakımı Rehberleri ve Trendler">
@@ -43,18 +43,18 @@
     <meta name="author" content="Fleura Nails">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="format-detection" content="telephone=yes">
-    
+
     <!-- Geo Tags -->
     <meta name="geo.region" content="TR-35">
     <meta name="geo.placename" content="İzmir">
     <meta name="geo.position" content="38.3890;27.0400">
     <meta name="ICBM" content="38.3890, 27.0400">
-    
+
     <!-- Canonical & Alternate URLs -->
     <link rel="canonical" href="https://www.fleura.com.tr/blog">
     <link rel="alternate" hreflang="tr" href="https://www.fleura.com.tr/blog">
     <link rel="alternate" hreflang="x-default" href="https://www.fleura.com.tr/blog">
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.fleura.com.tr/blog">
@@ -67,7 +67,7 @@
     <meta property="og:image:alt" content="Fleura Nails Blog tırnak bakımı rehberleri">
     <meta property="og:locale" content="tr_TR">
     <meta property="og:site_name" content="Fleura Nails">
-    
+
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://www.fleura.com.tr/blog">
@@ -77,7 +77,7 @@
     <meta name="twitter:image:alt" content="Fleura Nails Blog tırnak bakımı rehberleri">
     <meta name="twitter:creator" content="@fleuranails">
     <meta name="twitter:site" content="@fleuranails">
-    
+
     <!-- Favicon & App Icons -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -85,26 +85,26 @@
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
     <meta name="theme-color" content="#c4a484">
-    
+
     <!-- Preconnect for Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
+
     <!-- Preload Critical Resources -->
     <link rel="preload" href="assets/gallery/kalici-oje-2.avif" as="image" type="image/avif" fetchpriority="high">
-    
+
     <!-- Fonts - Non-blocking Load -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet"></noscript>
-    
+
     <!-- Styles - Non-blocking Load -->
     <link rel="preload" href="style.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="style.min.css"></noscript>
-    
+
     <!-- AOS - Animate On Scroll Library -->
     <link href="assets/vendor/aos/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="assets/vendor/aos/aos.css" rel="stylesheet"></noscript>
-    
+
     <!-- Schema.org - Blog -->
     <script type="application/ld+json">
 {
@@ -326,7 +326,7 @@
   "dateModified": "2026-09-22"
 }
 </script>
-    
+
     <!-- Schema.org - Organization -->
     <script type="application/ld+json">
     {
@@ -372,12 +372,12 @@
         ]
     }
     </script>
-    
+
     <!-- DNS Prefetch -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
   <link rel="stylesheet" href="/cookie-consent.css">
   <script src="/cookie-consent.js" defer></script>
-  <script src="fn-events.js" defer></script>
+  <script src="fn-events.js?v=20261009" defer></script>
   <!-- Microsoft Clarity -->
   <script>
     (function(c,l,a,r,i,t,y){
@@ -969,7 +969,7 @@
                 </div>
             </div>
         </section>
-    
+
       <p class="fn-page-updated" style="margin:var(--space-lg) 0 0;font-size:.8125rem;opacity:.65">Son güncelleme: <time datetime="2026-09-22">22 Eylül 2026</time></p>
     </main>
 
@@ -1058,7 +1058,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             const isMobile = window.innerWidth <= 768;
             const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-            
+
             AOS.init({
                 duration: isMobile ? 600 : 800,        // Faster on mobile
                 easing: 'ease-out-cubic',               // Smooth easing
@@ -1072,18 +1072,18 @@
                 disableMutationObserver: false,         // Enable mutation observer
                 debounceDelay: isMobile ? 50 : 50,      // Debounce delay
                 throttleDelay: isMobile ? 99 : 99,     // Throttle delay
-                
+
                 // Mobile-specific optimizations
                 mirror: false,                          // Don't animate on scroll up
                 anchorPlacement: 'top-bottom'           // Trigger when top of element hits bottom of viewport
             });
-            
+
             // Force refresh on iOS for better compatibility
             if (isIOS) {
                 setTimeout(() => {
                     AOS.refresh();
                 }, 100);
-                
+
                 // Refresh on orientation change
                 window.addEventListener('orientationchange', () => {
                     setTimeout(() => {
@@ -1091,7 +1091,7 @@
                     }, 100);
                 });
             }
-            
+
             // Refresh on window resize
             let resizeTimer;
             window.addEventListener('resize', () => {
@@ -1100,12 +1100,12 @@
                     AOS.refresh();
                 }, 150);
             });
-            
+
             // Blog-specific JavaScript
             // Category Filter
             const filterBtns = document.querySelectorAll('.filter-btn, .sidebar-categories a');
             const blogPosts = document.querySelectorAll('.blog-post');
-            
+
             function filterPosts(category) {
                 blogPosts.forEach(post => {
                     if (category === 'all' || post.dataset.category === category) {
@@ -1123,21 +1123,21 @@
                     }
                 });
             }
-            
+
             filterBtns.forEach(btn => {
                 btn.addEventListener('click', (e) => {
                     e.preventDefault();
                     const category = btn.dataset.category || 'all';
-                    
+
                     // Update active state
                     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
                     if (btn.classList.contains('filter-btn')) {
                         btn.classList.add('active');
                     }
-                    
+
                     // Filter posts
                     filterPosts(category);
-                    
+
                     // Scroll to top of posts
                     document.getElementById('blogPosts').scrollIntoView({ behavior: 'smooth', block: 'start' });
                 });

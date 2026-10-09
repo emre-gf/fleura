@@ -1,5 +1,5 @@
 /* Fleura Nails — dönüşüm olayları (GA4)
- * whatsapp_click · phone_click · booking_start · booking_complete · social_click
+ * whatsapp_click · phone_click · booking_start · booking_request · social_click
  *
  * Gizlilik: gtag tanımlı değilse hiçbir şey yapmaz. Consent Mode v2 (head'deki
  * gtag bloğu) analitik depolamayı rıza alınana kadar reddeder; olaylar Google'ın
@@ -20,15 +20,21 @@
     phone:    'AW-10868274290/_VwpCNHl8PccEPLosr4o',
     booking:  'AW-10868274290/XHvaCM7l8PccEPLosr4o'
   };
-  function conv(key, value) {
-    if (typeof window.gtag !== 'function' || !AW[key]) return;
+  function conv(key, callback) {
+    if (typeof window.gtag !== 'function' || !AW[key]) {
+      if (callback) callback();
+      return;
+    }
     try {
       window.gtag('event', 'conversion', {
         send_to: AW[key],
-        value: value || 0,
-        currency: 'TRY'
+        // İletişim tıklaması gelir değildir; tahmini satış değeri göndermeyin.
+        value: 0,
+        currency: 'TRY',
+        event_callback: callback,
+        event_timeout: 800
       });
-    } catch (e) { /* sessiz */ }
+    } catch (e) { if (callback) callback(); }
   }
 
 
@@ -75,7 +81,7 @@
     var utm = (q.get('utm_source') || '').toLowerCase();
     var src = '';
 
-    if (q.get('gclid')) src = 'google_ads';
+    if (q.get('gclid') || q.get('gbraid') || q.get('wbraid')) src = 'google_ads';
     else if (utm) src = classify(utm) || utm;               /* chatgpt.com utm_source ekliyor */
     else if (document.referrer) {
       var rh = '';
@@ -157,6 +163,36 @@
     };
   }
 
+  // Yalnızca aynı sekmede çıkışta etikete kısa bir gönderim aralığı tanı.
+  // Etiket engellense bile yedek zamanlayıcı bağlantıyı açar.
+  function trackContact(key, a, ev) {
+    if (ev.defaultPrevented || ev.ctrlKey || ev.metaKey || ev.shiftKey || ev.altKey ||
+        ev.button > 0 || (a.target && a.target !== '_self') || a.hasAttribute('download')) {
+      conv(key);
+      return;
+    }
+    ev.preventDefault();
+    var href = a.href;
+    var navigated = false;
+    function go() {
+      if (navigated) return;
+      navigated = true;
+      window.location.assign(href);
+    }
+    setTimeout(go, 900);
+    conv(key, go);
+  }
+
+  // Form doğrulamasından SONRA çağrılır. WhatsApp'a hazırlanan talebi ölçer;
+  // mesajın gönderildiğini veya randevunun kesinleştiğini iddia etmez.
+  window.fnTrackBookingRequest = function (method, service) {
+    var params = { method: method, page_path: location.pathname };
+    var allowed = ['kalici-oje', 'manikur-pedikur', 'protez-tirnak', 'tirnak-bakimi', 'nail-art', 'diger'];
+    if (allowed.indexOf(service) !== -1) params.service = service;
+    send('booking_request', params);
+    conv('booking');
+  };
+
   document.addEventListener('click', function (ev) {
     var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
     if (!a) return;
@@ -165,15 +201,16 @@
 
     if (/wa\.me|api\.whatsapp\.com|whatsapp:/i.test(href)) {
       tagWhatsApp(a);
+      if (a.hasAttribute('data-fn-booking-request')) return;
       href = a.getAttribute('href') || href;
       p = base(a); p.link_url = href.split('?')[0]; p.has_context = href.indexOf('text=') > -1;
       send('whatsapp_click', p);
       send('generate_lead', { method: 'whatsapp', cta_location: p.cta_location, page_path: p.page_path });
-      conv('whatsapp', 250);
+      trackContact('whatsapp', a, ev);
     } else if (/^tel:/i.test(href)) {
       p = base(a); p.link_url = href;
       send('phone_click', p);
-      conv('phone', 250);
+      trackContact('phone', a, ev);
     } else if (href === '#randevu-al' || a.classList.contains('fc-book') || a.classList.contains('nav-cta') || a.classList.contains('mm-cta')) {
       send('booking_start', base(a));
     } else if (/instagram\.com/i.test(href)) {
@@ -192,21 +229,6 @@
       send('booking_start', { cta_location: 'appointment_calendar', page_path: location.pathname });
     }, true);
   }
-  var confirmBtn = document.getElementById('confirmAppointmentBtn');
-  if (confirmBtn) {
-    confirmBtn.addEventListener('click', function () {
-      send('booking_complete', { method: 'whatsapp', cta_location: 'appointment_widget', page_path: location.pathname });
-      conv('booking', 400);
-    }, true);
-  }
-
-  /* İletişim formu (mailto tabanlı) */
-  var form = document.getElementById('contactForm');
-  if (form) {
-    form.addEventListener('submit', function () {
-      var svc = form.querySelector('select[name="service"]');
-      send('booking_complete', { method: 'email_form', service: svc ? svc.value : '', page_path: location.pathname });
-      conv('booking', 400);
-    }, true);
-  }
+  // Form/takvim ham click veya submit olayında sayılmaz: doğrulanmış
+  // WhatsApp talebini script.js içindeki işlem kaydeder.
 })();

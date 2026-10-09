@@ -21,6 +21,13 @@
 
     // --- 2) Bu oturumda karar verildiyse tekrar karışma ---
     var KEY = 'fn-lang-redirected';
+    // Reklamın seçtiği açılış sayfasını koru; dil değişimini kullanıcı seçsin.
+    var query = new URLSearchParams(location.search);
+    if (query.has('gclid') || query.has('gbraid') || query.has('wbraid') ||
+        /^(cpc|ppc|paidsearch)$/i.test(query.get('utm_medium') || '')) {
+      sessionStorage.setItem(KEY, '1');
+      return;
+    }
     if (sessionStorage.getItem(KEY)) return;
 
     // --- 3) Kullanıcı daha önce dil seçtiyse ona saygı duy (kalıcı) ---

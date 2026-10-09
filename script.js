@@ -457,17 +457,6 @@ function initContactForm() {
         // Validate form
         if (!validateForm(data)) return;
         
-        // Show loading state
-        const submitBtn = form.querySelector('button[type="submit"]');
-        const btnText = submitBtn.querySelector('.btn-text');
-        const btnLoader = submitBtn.querySelector('.btn-loader');
-        const originalText = btnText ? btnText.textContent : 'Gönder';
-        
-        if (btnText) btnText.textContent = 'Gönderiliyor...';
-        if (btnLoader) btnLoader.style.display = 'inline-block';
-        submitBtn.disabled = true;
-        
-        // Prepare email content
         const serviceNames = {
             'kalici-oje': 'Kalıcı Oje',
             'manikur-pedikur': 'Manikür & Pedikür',
@@ -476,35 +465,23 @@ function initContactForm() {
             'nail-art': 'Nail Art & Özel Tasarım',
             'diger': 'Diğer / Bilgi Almak İstiyorum'
         };
-        
-        const serviceName = serviceNames[data.service] || data.service;
-        
-        const subject = encodeURIComponent(`Yeni Randevu Talebi - ${data.name}`);
-        const body = encodeURIComponent(
-            `Yeni Randevu Talebi\n\n` +
-            `Ad Soyad: ${data.name}\n` +
-            `Telefon: ${data.phone}\n` +
-            `Hizmet: ${serviceName}\n` +
-            (data.message ? `Mesaj: ${data.message}\n` : '') +
-            `\n---\nBu mesaj Fleura Nails web sitesinden gönderilmiştir.`
-        );
-        
-        // Create mailto link
-        const mailtoLink = `mailto:info@fleura.com.tr?subject=${subject}&body=${body}`;
-        
-        // Open email client
-        window.location.href = mailtoLink;
-        
-        // Show success message after a short delay
-        setTimeout(() => {
-            showFormSuccess();
-            
-            // Reset form
-            form.reset();
-            if (btnText) btnText.textContent = originalText;
-            if (btnLoader) btnLoader.style.display = 'none';
-            submitBtn.disabled = false;
-        }, 500);
+        const message = `Merhaba, randevu talebim var.\n\n` +
+            `Ad Soyad: ${data.name}\nTelefon: ${data.phone}\n` +
+            `Hizmet: ${serviceNames[data.service] || data.service}\n` +
+            (data.message ? `Mesaj: ${data.message}\n` : '');
+        const link = document.createElement('a');
+        link.href = `https://wa.me/905558903511?text=${encodeURIComponent(message)}`;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.setAttribute('data-fn-booking-request', '');
+        document.body.appendChild(link);
+        if (typeof window.fnTrackBookingRequest === 'function') {
+            window.fnTrackBookingRequest('whatsapp_form', data.service);
+        }
+        link.click();
+        link.remove();
+        showFormSuccess();
+        // Mesaj gönderilmeden formu temizlemeyin: kullanıcı yeniden deneyebilsin.
     });
     
     // Real-time validation
@@ -645,12 +622,18 @@ function showFormSuccess() {
     success.className = 'form-success';
     success.setAttribute('role', 'alert');
     success.setAttribute('aria-live', 'polite');
+    const lang = (document.documentElement.lang || 'tr').slice(0, 2);
+    const copy = {
+        tr: ['WhatsApp’ta devam edin', 'Mesajınızı WhatsApp’ta göndererek talebinizi iletin.', 'Randevunuz, müsaitlik kontrolünden sonra bizimle kesinleşir.'],
+        en: ['Continue on WhatsApp', 'Send the prepared message in WhatsApp to request an appointment.', 'Your appointment is confirmed with us after availability is checked.'],
+        ru: ['Продолжите в WhatsApp', 'Отправьте подготовленное сообщение в WhatsApp.', 'Запись подтверждается после проверки доступного времени.']
+    }[lang] || ['WhatsApp’ta devam edin', 'Mesajınızı WhatsApp’ta göndererek talebinizi iletin.', 'Randevunuz, müsaitlik kontrolünden sonra bizimle kesinleşir.'];
     success.innerHTML = `
         <div style="text-align: center; padding: 2rem;">
             <div style="font-size: 4rem; margin-bottom: 1rem; color: #25D366;">✓</div>
-            <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; margin-bottom: 0.5rem; color: #1a1614;">Teşekkürler!</h3>
-            <p style="color: #6b6360; margin-bottom: 1rem;">Talebiniz başarıyla alındı.</p>
-            <p style="color: #6b6360; font-size: 0.9rem;">En kısa sürede sizinle iletişime geçeceğiz.</p>
+            <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; margin-bottom: 0.5rem; color: #1a1614;">${copy[0]}</h3>
+            <p style="color: #6b6360; margin-bottom: 1rem;">${copy[1]}</p>
+            <p style="color: #6b6360; font-size: 0.9rem;">${copy[2]}</p>
         </div>
     `;
     success.style.cssText = `
@@ -1607,6 +1590,7 @@ function initAppointmentBooking() {
     confirmBtn.addEventListener('click', (e) => {
         e.preventDefault();
         
+        if (!selectedDate || !selectedTime) return;
         const dateObj = new Date(selectedDate);
         const formattedDate = dateObj.toLocaleDateString('tr-TR', {
             day: 'numeric',
@@ -1618,7 +1602,17 @@ function initAppointmentBooking() {
         const phoneNumber = '905558903511';
         const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
         
-        window.open(whatsappUrl, '_blank');
+        if (typeof window.fnTrackBookingRequest === 'function') {
+            window.fnTrackBookingRequest('whatsapp_calendar');
+        }
+        const link = document.createElement('a');
+        link.href = whatsappUrl;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.setAttribute('data-fn-booking-request', '');
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
     });
 }
 

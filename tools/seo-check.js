@@ -86,7 +86,9 @@ for (const [file, p] of pages) {
   for (const m of p.html.matchAll(/\ssrc\s*=\s*"([^"]+)"/g)) {
     const h = m[1];
     if (/^(https?:|data:|\/\/)/i.test(h)) continue;
-    const target = h.startsWith('/') ? h.slice(1) : path.posix.normalize(path.posix.join(base === '.' ? '' : base, h));
+    // Önbellek sürümü ve fragment dosya adının parçası değildir.
+    const assetPath = h.split(/[?#]/)[0];
+    const target = assetPath.startsWith('/') ? assetPath.slice(1) : path.posix.normalize(path.posix.join(base === '.' ? '' : base, assetPath));
     if (!fs.existsSync(path.join(ROOT, target))) err(file, `kaynak bulunamadı: ${h}`);
   }
   // görseller
