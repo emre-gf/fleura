@@ -20,6 +20,7 @@
     phone:    'AW-10868274290/_VwpCNHl8PccEPLosr4o',
     booking:  'AW-10868274290/XHvaCM7l8PccEPLosr4o'
   };
+  var AW_VALUE = { whatsapp: 250, phone: 250, booking: 400 };
   function conv(key, callback) {
     if (typeof window.gtag !== 'function' || !AW[key]) {
       if (callback) callback();
@@ -28,8 +29,9 @@
     try {
       window.gtag('event', 'conversion', {
         send_to: AW[key],
-        // İletişim tıklaması gelir değildir; tahmini satış değeri göndermeyin.
-        value: 0,
+        // Ads'teki dönüşüm işlemi değerleriyle aynı (WhatsApp/Telefon 250 ₺, Randevu 400 ₺).
+        // 0 göndermek bu değerleri ezer ve değer bazlı teklif stratejilerini bozar.
+        value: AW_VALUE[key] || 0,
         currency: 'TRY',
         event_callback: callback,
         event_timeout: 800

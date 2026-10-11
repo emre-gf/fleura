@@ -1,0 +1,983 @@
+From cbd1f2aa2970ed47b3eb4a243fe3d031cd93b120 Mon Sep 17 00:00:00 2001
+From: Claude <noreply@anthropic.com>
+Date: Sun, 11 Oct 2026 19:48:15 +0300
+Subject: [PATCH] Ads acilis sayfalari hizlandirma, donusum degeri, ilce meta,
+ akrilik temizligi
+
+- gtag.js ve Clarity sayfa yuklendikten / ilk etkilesimden sonra yukleniyor
+- seo-shell.css ve cookie-consent.css satir icine alindi
+- Ads donusumleri 250/250/400 TL degerle gonderiliyor
+- 8 ilce sayfasinda title/description yenilendi
+- Sitedeki ve Ads dosyalarindaki tum akrilik ifadeleri kaldirildi
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_01PPF2fCn2PC2ZVgXXPvygDq
+---
+ alsancak-nail-art/index.html                  | 12 ++++-----
+ balcova-protez-tirnak/index.html              | 12 ++++-----
+ bayrakli-kalici-oje/index.html                | 12 ++++-----
+ blog.html                                     |  3 +--
+ blog/kalici-oje-mi-protez-tirnak-mi.html      |  2 +-
+ blog/kalici-oje-nasil-cikarilir.html          |  2 +-
+ blog/protez-tirnak-dolumu.html                |  4 +--
+ blog/protez-tirnak-rehberi.html               |  8 +++---
+ blog/tirnak-uzatma-teknikleri.html            | 10 ++++----
+ bornova-kalici-oje/index.html                 | 12 ++++-----
+ cigli-protez-tirnak/index.html                | 12 ++++-----
+ en/gel-nail-extensions-izmir/index.html       |  6 ++---
+ en/index.html                                 |  3 +--
+ fn-events.js                                  |  6 +++--
+ google-ads/02-anahtar-kelimeler.csv           |  1 -
+ google-ads/04-reklamlar-rsa.csv               |  2 +-
+ .../web-yukleme/03-anahtar-kelimeler.csv      |  1 -
+ google-ads/web-yukleme/05-reklamlar-rsa.csv   |  2 +-
+ hizmetler.html                                |  2 +-
+ index.html                                    |  3 +--
+ izmir-evde-tirnak-hizmeti.html                |  9 +++----
+ izmir-kalici-oje/index.html                   |  9 +++----
+ izmir-manikur-pedikur.html                    |  9 +++----
+ izmir-protez-tirnak-fiyatlari.html            |  9 +++----
+ izmir-protez-tirnak.html                      | 25 +++++++++----------
+ izmir-rus-manikuru.html                       |  9 +++----
+ karabaglar-tirnak/index.html                  |  2 +-
+ karsiyaka-protez-tirnak/index.html            | 12 ++++-----
+ llms.txt                                      |  4 +--
+ narlidere-tirnak/index.html                   | 12 ++++-----
+ ru/index.html                                 |  3 +--
+ ru/narashchivanie-nogtey-izmir/index.html     |  6 ++---
+ urla-kalici-oje.html                          | 12 ++++-----
+ 33 files changed, 111 insertions(+), 125 deletions(-)
+
+diff --git a/alsancak-nail-art/index.html b/alsancak-nail-art/index.html
+index f2ee60b..aa857af 100644
+--- a/alsancak-nail-art/index.html
++++ b/alsancak-nail-art/index.html
+@@ -34,8 +34,8 @@
+   <meta name="google-site-verification" content="pCyczzQFiQl4oXr1X1qkzBT-nM8sS0an9gPdZPX7sS0" />
+   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+-  <title>Alsancak Evde Nail Art ve Kalıcı Oje | Fleura Nails İzmir</title>
+-  <meta name="description" content="Alsancak'ta nail art, kalıcı oje ve protez tırnak: Fleura Nails adresinize geliyor. Trend tasarımlar, premium ürün ve steril uygulama. 0555 890 35 11.">
++  <title>Alsancak Nail Art &amp; Tırnakçı – Evinize Gelir | Fleura Nails</title>
++  <meta name="description" content="Alsancak'a evinize gelen tırnakçı: nail art, kalıcı oje 1.150 ₺'den, protez tırnak 1.500 ₺'den. Malzeme ve ekipman bizde. WhatsApp'tan gün seçin: 0555 890 35 11.">
+   <meta name="keywords" content="alsancak nail art, alsancak kalıcı oje, konak protez tırnak, alsancak jel tırnak, kıbrıs şehitleri kalıcı oje, alsancak tırnak tasarımı">
+   <meta name="author" content="Fleura Nails">
+   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+@@ -48,8 +48,8 @@
+   <link rel="alternate" hreflang="x-default" href="https://www.fleura.com.tr/alsancak-nail-art">
+   <meta property="og:type" content="website">
+   <meta property="og:url" content="https://www.fleura.com.tr/alsancak-nail-art">
+-  <meta property="og:title" content="Alsancak Evde Nail Art ve Kalıcı Oje | Fleura Nails İzmir">
+-  <meta property="og:description" content="Alsancak'ta trend nail art tasarımları, kalıcı oje ve protez tırnak — VIP ev hizmeti.">
++  <meta property="og:title" content="Alsancak Nail Art &amp; Tırnakçı – Evinize Gelir | Fleura Nails">
++  <meta property="og:description" content="Alsancak'a evinize gelen tırnakçı: nail art, kalıcı oje 1.150 ₺'den, protez tırnak 1.500 ₺'den. Malzeme ve ekipman bizde. WhatsApp'tan gün seçin: 0555 890 35 11.">
+   <meta property="og:image" content="https://www.fleura.com.tr/assets/og-image.jpg">
+   <meta property="og:image:width" content="1200">
+   <meta property="og:image:height" content="630">
+@@ -57,8 +57,8 @@
+   <meta property="og:locale" content="tr_TR">
+   <meta property="og:site_name" content="Fleura Nails">
+   <meta name="twitter:card" content="summary_large_image">
+-  <meta name="twitter:title" content="Alsancak Evde Nail Art ve Kalıcı Oje | Fleura Nails İzmir">
+-  <meta name="twitter:description" content="Alsancak'ta trend nail art tasarımları için Fleura Nails — VIP ev hizmeti.">
++  <meta name="twitter:title" content="Alsancak Nail Art &amp; Tırnakçı – Evinize Gelir | Fleura Nails">
++  <meta name="twitter:description" content="Alsancak'a evinize gelen tırnakçı: nail art, kalıcı oje 1.150 ₺'den, protez tırnak 1.500 ₺'den. Malzeme ve ekipman bizde. WhatsApp'tan gün seçin: 0555 890 35 11.">
+   <meta name="twitter:image" content="https://www.fleura.com.tr/assets/og-image.jpg">
+   <meta name="theme-color" content="#c4a484">
+   <link rel="icon" type="image/x-icon" href="../favicon.ico">
+diff --git a/balcova-protez-tirnak/index.html b/balcova-protez-tirnak/index.html
+index ecd8e88..4621a08 100644
+--- a/balcova-protez-tirnak/index.html
++++ b/balcova-protez-tirnak/index.html
+@@ -34,9 +34,9 @@
+   <meta name="google-site-verification" content="pCyczzQFiQl4oXr1X1qkzBT-nM8sS0an9gPdZPX7sS0" />
+   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+-  <title>Balçova Evde Protez Tırnak ve Jel Dolgu | Fleura Nails</title>
++  <title>Balçova Protez Tırnak – Evinize Gelen Tırnakçı | Fleura Nails</title>
+   <meta name="title" content="Balçova Evde Protez Tırnak ve Jel Dolgu | Fleura Nails">
+-  <meta name="description" content="Balçova protez tırnak hizmetinde Fleura Nails ile doğal görünümlü jel tırnak, dolgu ve bakım uygulamaları. Hijyenik süreç, premium ürünler, profesyonel sonuç.">
++  <meta name="description" content="Balçova'ya evinize gelen tırnakçı: protez tırnak ve jel dolgu 1.500 ₺'den, kalıcı oje 1.150 ₺'den. Malzeme bizde. WhatsApp'tan gün seçin: 0555 890 35 11.">
+   <meta name="author" content="Fleura Nails">
+   <meta name="keywords" content="balçova protez tırnak, balcova protez tırnak, balçova jel tırnak, balçova tırnak dolgusu, izmir protez tırnak">
+   <meta name="robots" content="index, follow, max-image-preview:large">
+@@ -48,8 +48,8 @@
+   <link rel="alternate" hreflang="x-default" href="https://www.fleura.com.tr/balcova-protez-tirnak">
+   <meta property="og:type" content="website">
+   <meta property="og:url" content="https://www.fleura.com.tr/balcova-protez-tirnak">
+-  <meta property="og:title" content="Balçova Evde Protez Tırnak ve Jel Dolgu | Fleura Nails">
+-  <meta property="og:description" content="Balçova'da protez tırnak ve jel tırnak hizmeti için Fleura Nails. Hijyenik uygulama ve uzun ömürlü sonuçlar.">
++  <meta property="og:title" content="Balçova Protez Tırnak – Evinize Gelen Tırnakçı | Fleura Nails">
++  <meta property="og:description" content="Balçova'ya evinize gelen tırnakçı: protez tırnak ve jel dolgu 1.500 ₺'den, kalıcı oje 1.150 ₺'den. Malzeme bizde. WhatsApp'tan gün seçin: 0555 890 35 11.">
+   <meta property="og:image" content="https://www.fleura.com.tr/assets/og-image.jpg">
+   <meta property="og:image:width" content="1200">
+   <meta property="og:image:height" content="630">
+@@ -57,8 +57,8 @@
+   <meta property="og:locale" content="tr_TR">
+   <meta property="og:site_name" content="Fleura Nails">
+   <meta name="twitter:card" content="summary_large_image">
+-  <meta name="twitter:title" content="Balçova Evde Protez Tırnak ve Jel Dolgu | Fleura Nails">
+-  <meta name="twitter:description" content="Balçova protez tırnak randevusu için Fleura Nails. Jel tırnak, dolgu ve bakım uygulamaları.">
++  <meta name="twitter:title" content="Balçova Protez Tırnak – Evinize Gelen Tırnakçı | Fleura Nails">
++  <meta name="twitter:description" content="Balçova'ya evinize gelen tırnakçı: protez tırnak ve jel dolgu 1.500 ₺'den, kalıcı oje 1.150 ₺'den. Malzeme bizde. WhatsApp'tan gün seçin: 0555 890 35 11.">
+   <meta name="twitter:image" content="https://www.fleura.com.tr/assets/og-image.jpg">
+   <meta name="theme-color" content="#c4a484">
+   <link rel="icon" type="image/x-icon" href="../favicon.ico">
+diff --git a/bayrakli-kalici-oje/index.html b/bayrakli-kalici-oje/index.html
+index 5ff0adf..19c9047 100644
+--- a/bayrakli-kalici-oje/index.html
++++ b/bayrakli-kalici-oje/index.html
+@@ -34,8 +34,8 @@
+   <meta name="google-site-verification" content="pCyczzQFiQl4oXr1X1qkzBT-nM8sS0an9gPdZPX7sS0" />
+   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+-  <title>Bayraklı Evde Kalıcı Oje ve Protez Tırnak | Fleura Nails</title>
+-  <meta name="description" content="Bayraklı kalıcı oje, protez tırnak ve nail art için Fleura Nails. Mansuroğlu, Manavkuyu, Adalet dahil tüm Bayraklı'ya VIP ev hizmeti. 0555 890 35 11.">
++  <title>Bayraklı Kalıcı Oje &amp; Protez Tırnak – Evinize Gelir | Fleura</title>
++  <meta name="description" content="Bayraklı'ya evinize gelen tırnakçı: kalıcı oje 1.150 ₺'den, protez tırnak 1.500 ₺'den. Mansuroğlu, Manavkuyu dahil. WhatsApp'tan gün seçin: 0555 890 35 11.">
+   <meta name="keywords" content="bayraklı kalıcı oje, bayraklı protez tırnak, mansuroğlu kalıcı oje, manavkuyu tırnak, adalet kalıcı oje, bayraklı nail art">
+   <meta name="author" content="Fleura Nails">
+   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+@@ -48,8 +48,8 @@
+   <link rel="alternate" hreflang="x-default" href="https://www.fleura.com.tr/bayrakli-kalici-oje">
+   <meta property="og:type" content="website">
+   <meta property="og:url" content="https://www.fleura.com.tr/bayrakli-kalici-oje">
+-  <meta property="og:title" content="Bayraklı Evde Kalıcı Oje ve Protez Tırnak | Fleura Nails">
+-  <meta property="og:description" content="Bayraklı'da VIP ev hizmeti — kalıcı oje, protez tırnak ve nail art.">
++  <meta property="og:title" content="Bayraklı Kalıcı Oje &amp; Protez Tırnak – Evinize Gelir | Fleura">
++  <meta property="og:description" content="Bayraklı'ya evinize gelen tırnakçı: kalıcı oje 1.150 ₺'den, protez tırnak 1.500 ₺'den. Mansuroğlu, Manavkuyu dahil. WhatsApp'tan gün seçin: 0555 890 35 11.">
+   <meta property="og:image" content="https://www.fleura.com.tr/assets/og-image.jpg">
+   <meta property="og:image:width" content="1200">
+   <meta property="og:image:height" content="630">
+@@ -57,8 +57,8 @@
+   <meta property="og:locale" content="tr_TR">
+   <meta property="og:site_name" content="Fleura Nails">
+   <meta name="twitter:card" content="summary_large_image">
+-  <meta name="twitter:title" content="Bayraklı Kalıcı Oje | Fleura Nails">
+-  <meta name="twitter:description" content="Bayraklı'da VIP ev hizmeti — kalıcı oje ve protez tırnak.">
++  <meta name="twitter:title" content="Bayraklı Kalıcı Oje &amp; Protez Tırnak – Evinize Gelir | Fleura">
++  <meta name="twitter:description" content="Bayraklı'ya evinize gelen tırnakçı: kalıcı oje 1.150 ₺'den, protez tırnak 1.500 ₺'den. Mansuroğlu, Manavkuyu dahil. WhatsApp'tan gün seçin: 0555 890 35 11.">
+   <meta name="twitter:image" content="https://www.fleura.com.tr/assets/og-image.jpg">
+   <meta name="theme-color" content="#c4a484">
+   <link rel="icon" type="image/x-icon" href="../favicon.ico">
+diff --git a/blog.html b/blog.html
+index fbc1282..bc025b7 100644
+--- a/blog.html
++++ b/blog.html
+@@ -337,8 +337,7 @@
+         "logo": "https://www.fleura.com.tr/assets/logo.webp",
+         "knowsAbout": [
+                 "protez tırnak",
+-                "jel tırnak",
+-                "akrilik tırnak",
++                "jel tırnak",
+                 "kalıcı oje",
+                 "manikür",
+                 "pedikür",
+diff --git a/blog/kalici-oje-mi-protez-tirnak-mi.html b/blog/kalici-oje-mi-protez-tirnak-mi.html
+index bd98e7a..b938c76 100644
+--- a/blog/kalici-oje-mi-protez-tirnak-mi.html
++++ b/blog/kalici-oje-mi-protez-tirnak-mi.html
+@@ -331,7 +331,7 @@
+                                         </ul>
+ 
+                                         <h3>Protez Tırnak Nedir, Ne Sağlar?</h3>
+-                                        <p>Protez tırnak, jel veya akrilik malzemeyle doğal tırnağın üzerine bir yapı inşa edilmesidir. Tipsiz (kalıpla) veya tip kullanılarak uygulanabilir. Kısa, kırık, şekilsiz ya da tırnak yeme alışkanlığı nedeniyle deforme olmuş tırnaklarda tercih edilir.</p>
++                                        <p>Protez tırnak, jel veya polygel malzemeyle doğal tırnağın üzerine bir yapı inşa edilmesidir. Tipsiz (kalıpla) veya tip kullanılarak uygulanabilir. Kısa, kırık, şekilsiz ya da tırnak yeme alışkanlığı nedeniyle deforme olmuş tırnaklarda tercih edilir.</p>
+                                         <ul>
+                                             <li>Dolumla birlikte <strong>aylarca</strong> kullanılabilir</li>
+                                             <li>Uygulama süresi <strong>90-150 dakika</strong></li>
+diff --git a/blog/kalici-oje-nasil-cikarilir.html b/blog/kalici-oje-nasil-cikarilir.html
+index b5b0fc1..2c1b62f 100644
+--- a/blog/kalici-oje-nasil-cikarilir.html
++++ b/blog/kalici-oje-nasil-cikarilir.html
+@@ -361,7 +361,7 @@
+                                         <p>Aşağıdaki durumlarda evde söküm denemek yerine uzman desteği almak daha güvenlidir:</p>
+                                         <ul>
+                                             <li>Tırnaklarınız zaten ince, esnek veya kolay kırılıyorsa</li>
+-                                            <li>Üzerinde protez tırnak, jel veya akrilik uzatma varsa</li>
++                                            <li>Üzerinde protez tırnak, jel veya polygel uzatma varsa</li>
+                                             <li>Oje birden fazla kez üst üste yenilendiyse (çok katmanlı yapı)</li>
+                                             <li>Tırnak yatağında kabarma, boşluk veya renk değişimi varsa</li>
+                                             <li>Aynı gün yeni uygulama planlıyorsanız</li>
+diff --git a/blog/protez-tirnak-dolumu.html b/blog/protez-tirnak-dolumu.html
+index 114bc94..e7179b1 100644
+--- a/blog/protez-tirnak-dolumu.html
++++ b/blog/protez-tirnak-dolumu.html
+@@ -319,7 +319,7 @@
+ 
+                                         <h3>Protez Tırnak Dolumu Nedir?</h3>
+                                         <p><strong>Protez tırnak dolumu</strong>, uygulamadan sonra doğal tırnak uzadıkça tırnak dibinde oluşan boşluğun yeni malzemeyle tamamlanmasıdır. Doğal tırnak ayda ortalama 3 milimetre uzar; bu uzama, protez yapı ile kütikül arasında görünür bir basamak oluşturur.</p>
+-                                        <p>Dolumda protez tamamen sökülmez. Kalkmış bölgeler ve parlak üst katman inceltilir, boşluk yeni jel veya akrilikle doldurulur ve tırnağın form dengesi yeniden kurulur. Bu yaklaşım hem daha ekonomiktir hem de doğal tırnağı tam sökümün yıpratıcı etkisinden korur.</p>
++                                        <p>Dolumda protez tamamen sökülmez. Kalkmış bölgeler ve parlak üst katman inceltilir, boşluk yeni jel veya polygel ile doldurulur ve tırnağın form dengesi yeniden kurulur. Bu yaklaşım hem daha ekonomiktir hem de doğal tırnağı tam sökümün yıpratıcı etkisinden korur.</p>
+ 
+                                         <h3>Dolum Zamanı Geldiğinin İşaretleri</h3>
+                                         <ul>
+@@ -356,7 +356,7 @@
+                                             <li><strong>Kalkan bölgelerin alınması:</strong> Yapışması bozulmuş kısımlar freze ile temizlenir. Bu adım atlanırsa dolum uzun ömürlü olmaz.</li>
+                                             <li><strong>Üst katmanın inceltilmesi:</strong> Parlak üst kat matlaştırılır, yapı kalınlığı dengelenir.</li>
+                                             <li><strong>Kütikül bölgesi hazırlığı:</strong> Tırnak dibi temizlenir, yeni malzemenin oturacağı yüzey pürüzsüzleştirilir.</li>
+-                                            <li><strong>Boşluğun doldurulması:</strong> Uzayan alan jel veya akrilikle doldurulur, apeks (yük noktası) yeniden konumlandırılır.</li>
++                                            <li><strong>Boşluğun doldurulması:</strong> Uzayan alan jel veya polygel ile doldurulur, apeks (yük noktası) yeniden konumlandırılır.</li>
+                                             <li><strong>Sertleştirme:</strong> Jel uygulamalarda UV/LED lamba altında polimerizasyon tamamlanır.</li>
+                                             <li><strong>Form ve yüzey düzeltme:</strong> Tırnak formu yeniden şekillendirilir, yüzey düzleştirilir.</li>
+                                             <li><strong>Renk ve bitiş:</strong> İstenirse kalıcı oje uygulanır, üst kat ve kütikül yağı ile tamamlanır.</li>
+diff --git a/blog/protez-tirnak-rehberi.html b/blog/protez-tirnak-rehberi.html
+index 99431c1..deaa7b5 100644
+--- a/blog/protez-tirnak-rehberi.html
++++ b/blog/protez-tirnak-rehberi.html
+@@ -170,10 +170,10 @@
+         "mainEntity": [
+                 {
+                         "@type": "Question",
+-                        "name": "Jel tırnak ile akrilik tırnak arasındaki fark nedir?",
++                        "name": "Jel tırnak ile polygel arasındaki fark nedir?",
+                         "acceptedAnswer": {
+                                 "@type": "Answer",
+-                                "text": "Jel daha esnek ve doğal görünümlüdür, uygulama sırasında koku yaymaz ve UV/LED lamba ile sertleşir. Akrilik daha sert ve dayanıklıdır, havayla temas ederek kurur ve belirgin bir kokusu vardır."
++                                "text": "Jel daha esnek ve doğal görünümlüdür ve UV/LED lamba ile sertleşir. Polygel daha yoğun kıvamlıdır, kolay şekillenir, yine UV/LED lambada sertleşir ve hafif ama dayanıklı bir yapı sunar."
+                         }
+                 },
+                 {
+@@ -335,8 +335,8 @@
+                                             <li>Profesyonel çıkarma yöntemi kullanın</li>
+                                         </ul>
+                                         <h3>Sıkça Sorulan Sorular</h3>
+-                                        <h4>Jel tırnak ile akrilik tırnak arasındaki fark nedir?</h4>
+-                                        <p>Jel daha esnek ve doğal görünümlüdür, uygulama sırasında koku yaymaz ve UV/LED lamba ile sertleşir. Akrilik daha sert ve dayanıklıdır, havayla temas ederek kurur ve belirgin bir kokusu vardır.</p>
++                                        <h4>Jel tırnak ile polygel arasındaki fark nedir?</h4>
++                                        <p>Jel daha esnek ve doğal görünümlüdür ve UV/LED lamba ile sertleşir. Polygel daha yoğun kıvamlıdır, kolay şekillenir, yine UV/LED lambada sertleşir ve hafif ama dayanıklı bir yapı sunar.</p>
+                                         <h4>Jel tırnak ne kadar dayanır?</h4>
+                                         <p>Düzenli dolum yapıldığı sürece aylarca kullanılabilir. Yapının kendisi sökülmez; 2-4 haftada bir uzayan bölge doldurulur.</p>
+                                         <h4>Jel tırnak uygulaması acı verir mi?</h4>
+diff --git a/blog/tirnak-uzatma-teknikleri.html b/blog/tirnak-uzatma-teknikleri.html
+index 0e688b1..f90b158 100644
+--- a/blog/tirnak-uzatma-teknikleri.html
++++ b/blog/tirnak-uzatma-teknikleri.html
+@@ -38,7 +38,7 @@
+     <!-- Primary Meta Tags -->
+     <title>Tırnak Uzatma Teknikleri: Profesyonel Rehber | Fleura</title>
+     <meta name="title" content="Tırnak Uzatma Teknikleri: Profesyonel Rehber | Fleura">
+-    <meta name="description" content="Jel, akrilik ve tip ile tırnak uzatma teknikleri karşılaştırması. Hangisi kime uygun, ne kadar dayanır? Fleura Nails'ten profesyonel rehber.">
++    <meta name="description" content="Jel, polygel ve tip ile tırnak uzatma teknikleri karşılaştırması. Hangisi kime uygun, ne kadar dayanır? Fleura Nails'ten profesyonel rehber.">
+     <meta name="author" content="Fleura Nails">
+     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+     <meta name="format-detection" content="telephone=yes">
+@@ -58,7 +58,7 @@
+     <meta property="og:type" content="article">
+     <meta property="og:url" content="https://www.fleura.com.tr/blog/tirnak-uzatma-teknikleri">
+     <meta property="og:title" content="Tırnak Uzatma Teknikleri: Profesyonel Rehber">
+-    <meta property="og:description" content="Jel, akrilik ve tip ile tırnak uzatma teknikleri karşılaştırması. Hangisi kime uygun, ne kadar dayanır? Fleura Nails'ten profesyonel rehber.">
++    <meta property="og:description" content="Jel, polygel ve tip ile tırnak uzatma teknikleri karşılaştırması. Hangisi kime uygun, ne kadar dayanır? Fleura Nails'ten profesyonel rehber.">
+     <meta property="og:image" content="https://www.fleura.com.tr/assets/gallery/protez-tirnak-8.webp">
+     <meta property="og:locale" content="tr_TR">
+     <meta property="og:site_name" content="Fleura Nails">
+@@ -71,7 +71,7 @@
+     <meta name="twitter:card" content="summary_large_image">
+     <meta name="twitter:url" content="https://www.fleura.com.tr/blog/tirnak-uzatma-teknikleri">
+     <meta name="twitter:title" content="Tırnak Uzatma Teknikleri: Profesyonel Rehber">
+-    <meta name="twitter:description" content="Jel, akrilik ve tip ile tırnak uzatma teknikleri karşılaştırması. Hangisi kime uygun, ne kadar dayanır? Fleura Nails'ten profesyonel rehber.">
++    <meta name="twitter:description" content="Jel, polygel ve tip ile tırnak uzatma teknikleri karşılaştırması. Hangisi kime uygun, ne kadar dayanır? Fleura Nails'ten profesyonel rehber.">
+     <meta name="twitter:image" content="https://www.fleura.com.tr/assets/gallery/protez-tirnak-8.webp">
+     <meta name="twitter:creator" content="@fleuranails">
+     <meta name="twitter:site" content="@fleuranails">
+@@ -173,7 +173,7 @@
+                         "name": "Tırnak uzatma teknikleri nelerdir?",
+                         "acceptedAnswer": {
+                                 "@type": "Answer",
+-                                "text": "Başlıca iki yöntem vardır: hazır tip yapıştırılarak yapılan uzatma ve kalıp kullanılarak sıfırdan inşa edilen tipsiz uzatma. Her ikisinde de jel veya akrilik malzeme kullanılabilir."
++                                "text": "Başlıca iki yöntem vardır: hazır tip yapıştırılarak yapılan uzatma ve kalıp kullanılarak sıfırdan inşa edilen tipsiz uzatma. Her ikisinde de jel veya polygel malzeme kullanılabilir."
+                         }
+                 },
+                 {
+@@ -332,7 +332,7 @@
+                                         <p><strong>Tırnak uzatma</strong> sonrası 2-3 haftada bir yenileme yapılması önerilir. Düzenli bakım ile tırnaklarınız uzun süre sağlıklı ve güzel kalır.</p>
+                                         <h3>Sıkça Sorulan Sorular</h3>
+                                         <h4>Tırnak uzatma teknikleri nelerdir?</h4>
+-                                        <p>Başlıca iki yöntem vardır: hazır tip yapıştırılarak yapılan uzatma ve kalıp kullanılarak sıfırdan inşa edilen tipsiz uzatma. Her ikisinde de jel veya akrilik malzeme kullanılabilir.</p>
++                                        <p>Başlıca iki yöntem vardır: hazır tip yapıştırılarak yapılan uzatma ve kalıp kullanılarak sıfırdan inşa edilen tipsiz uzatma. Her ikisinde de jel veya polygel malzeme kullanılabilir.</p>
+                                         <h4>Hangi teknik daha doğal görünür?</h4>
+                                         <p>Kalıpla yapılan tipsiz uzatma daha doğal sonuç verir çünkü tırnak dibinde tip kalınlığından kaynaklanan basamak oluşmaz ve geçiş görünmez.</p>
+                                         <h4>Tırnak uzatma ne kadar sürer?</h4>
+diff --git a/bornova-kalici-oje/index.html b/bornova-kalici-oje/index.html
+index c70efa3..05b4ee5 100644
+--- a/bornova-kalici-oje/index.html
++++ b/bornova-kalici-oje/index.html
+@@ -34,8 +34,8 @@
+   <meta name="google-site-verification" content="pCyczzQFiQl4oXr1X1qkzBT-nM8sS0an9gPdZPX7sS0" />
+   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+-  <title>Bornova Evde Kalıcı Oje ve Protez Tırnak | Fleura Nails</title>
+-  <meta name="description" content="Bornova kalıcı oje, protez tırnak ve nail art için Fleura Nails. Erzene, Kazımdirik, Evka, Ege Üniversitesi çevresine VIP ev hizmeti. 0555 890 35 11.">
++  <title>Bornova Kalıcı Oje &amp; Protez Tırnak – Evinize Gelir | Fleura</title>
++  <meta name="description" content="Bornova'ya evinize gelen tırnakçı: kalıcı oje 1.150 ₺'den, protez tırnak 1.500 ₺'den. Erzene, Kazımdirik, Evka dahil. WhatsApp'tan gün seçin: 0555 890 35 11.">
+   <meta name="keywords" content="bornova kalıcı oje, bornova protez tırnak, erzene kalıcı oje, kazımdirik nail art, ege üniversitesi kalıcı oje, bornova jel tırnak">
+   <meta name="author" content="Fleura Nails">
+   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+@@ -48,8 +48,8 @@
+   <link rel="alternate" hreflang="x-default" href="https://www.fleura.com.tr/bornova-kalici-oje">
+   <meta property="og:type" content="website">
+   <meta property="og:url" content="https://www.fleura.com.tr/bornova-kalici-oje">
+-  <meta property="og:title" content="Bornova Evde Kalıcı Oje ve Protez Tırnak | Fleura Nails">
+-  <meta property="og:description" content="Bornova ve çevresine VIP ev hizmeti — kalıcı oje, protez tırnak, nail art. Erzene, Kazımdirik, Evka dahil.">
++  <meta property="og:title" content="Bornova Kalıcı Oje &amp; Protez Tırnak – Evinize Gelir | Fleura">
++  <meta property="og:description" content="Bornova'ya evinize gelen tırnakçı: kalıcı oje 1.150 ₺'den, protez tırnak 1.500 ₺'den. Erzene, Kazımdirik, Evka dahil. WhatsApp'tan gün seçin: 0555 890 35 11.">
+   <meta property="og:image" content="https://www.fleura.com.tr/assets/og-image.jpg">
+   <meta property="og:image:width" content="1200">
+   <meta property="og:image:height" content="630">
+@@ -57,8 +57,8 @@
+   <meta property="og:locale" content="tr_TR">
+   <meta property="og:site_name" content="Fleura Nails">
+   <meta name="twitter:card" content="summary_large_image">
+-  <meta name="twitter:title" content="Bornova Evde Kalıcı Oje ve Protez Tırnak | Fleura Nails">
+-  <meta name="twitter:description" content="Bornova'da öğrenci ve çalışan dostu fiyatlarla VIP kalıcı oje hizmeti.">
++  <meta name="twitter:title" content="Bornova Kalıcı Oje &amp; Protez Tırnak – Evinize Gelir | Fleura">
++  <meta name="twitter:description" content="Bornova'ya evinize gelen tırnakçı: kalıcı oje 1.150 ₺'den, protez tırnak 1.500 ₺'den. Erzene, Kazımdirik, Evka dahil. WhatsApp'tan gün seçin: 0555 890 35 11.">
+   <meta name="twitter:image" content="https://www.fleura.com.tr/assets/og-image.jpg">
+   <meta name="theme-color" content="#c4a484">
+   <link rel="icon" type="image/x-icon" href="../favicon.ico">
+diff --git a/cigli-protez-tirnak/index.html b/cigli-protez-tirnak/index.html
+index 5fdea09..c1f0227 100644
+--- a/cigli-protez-tirnak/index.html
++++ b/cigli-protez-tirnak/index.html
+@@ -34,8 +34,8 @@
+   <meta name="google-site-verification" content="pCyczzQFiQl4oXr1X1qkzBT-nM8sS0an9gPdZPX7sS0" />
+   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+-  <title>Çiğli Evde Protez Tırnak ve Kalıcı Oje | Fleura Nails</title>
+-  <meta name="description" content="Çiğli protez tırnak, kalıcı oje ve manikür için Fleura Nails. Ataşehir, Egekent, Yakakent dahil tüm Çiğli'ye VIP ev hizmeti. 0555 890 35 11.">
++  <title>Çiğli Protez Tırnak – Evinize Gelen Tırnakçı | Fleura Nails</title>
++  <meta name="description" content="Çiğli'ye evinize gelen tırnakçı: protez tırnak 1.500 ₺'den, kalıcı oje 1.150 ₺'den. Egekent, Ataşehir, Yakakent dahil. WhatsApp'tan gün seçin: 0555 890 35 11.">
+   <meta name="keywords" content="çiğli protez tırnak, çiğli kalıcı oje, ataşehir tırnak, egekent kalıcı oje, yakakent nail art, çiğli manikür">
+   <meta name="author" content="Fleura Nails">
+   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+@@ -48,8 +48,8 @@
+   <link rel="alternate" hreflang="x-default" href="https://www.fleura.com.tr/cigli-protez-tirnak">
+   <meta property="og:type" content="website">
+   <meta property="og:url" content="https://www.fleura.com.tr/cigli-protez-tirnak">
+-  <meta property="og:title" content="Çiğli Evde Protez Tırnak ve Kalıcı Oje | Fleura Nails">
+-  <meta property="og:description" content="Çiğli'de VIP ev hizmeti — protez tırnak, kalıcı oje ve manikür.">
++  <meta property="og:title" content="Çiğli Protez Tırnak – Evinize Gelen Tırnakçı | Fleura Nails">
++  <meta property="og:description" content="Çiğli'ye evinize gelen tırnakçı: protez tırnak 1.500 ₺'den, kalıcı oje 1.150 ₺'den. Egekent, Ataşehir, Yakakent dahil. WhatsApp'tan gün seçin: 0555 890 35 11.">
+   <meta property="og:image" content="https://www.fleura.com.tr/assets/og-image.jpg">
+   <meta property="og:image:width" content="1200">
+   <meta property="og:image:height" content="630">
+@@ -57,8 +57,8 @@
+   <meta property="og:locale" content="tr_TR">
+   <meta property="og:site_name" content="Fleura Nails">
+   <meta name="twitter:card" content="summary_large_image">
+-  <meta name="twitter:title" content="Çiğli Evde Protez Tırnak ve Kalıcı Oje | Fleura Nails">
+-  <meta name="twitter:description" content="Çiğli'de VIP ev hizmeti — protez tırnak, kalıcı oje ve manikür.">
++  <meta name="twitter:title" content="Çiğli Protez Tırnak – Evinize Gelen Tırnakçı | Fleura Nails">
++  <meta name="twitter:description" content="Çiğli'ye evinize gelen tırnakçı: protez tırnak 1.500 ₺'den, kalıcı oje 1.150 ₺'den. Egekent, Ataşehir, Yakakent dahil. WhatsApp'tan gün seçin: 0555 890 35 11.">
+   <meta name="twitter:image" content="https://www.fleura.com.tr/assets/og-image.jpg">
+   <meta name="theme-color" content="#c4a484">
+   <link rel="icon" type="image/x-icon" href="../favicon.ico">
+diff --git a/en/gel-nail-extensions-izmir/index.html b/en/gel-nail-extensions-izmir/index.html
+index 8a09fde..1b338b0 100644
+--- a/en/gel-nail-extensions-izmir/index.html
++++ b/en/gel-nail-extensions-izmir/index.html
+@@ -249,10 +249,8 @@ document.addEventListener('click',r,true)})();</script>
+           <li><strong>Repair:</strong> single broken nail rebuilt without redoing the whole set.</li>
+         </ul>
+ 
+-        <h2>Gel, Acrylic or Polygel?</h2>
+-        <p>Gel gives a naturally flexible, glossy result and is the most requested option for everyday wear. Acrylic
+-        is harder and more rigid, which suits very long or dramatic sets. Polygel sits between the two: lighter than
+-        acrylic but sturdier than soft gel. We decide together based on your nail plate and how you use your hands.</p>
++        <h2>Gel or Polygel?</h2>
++        <p>Gel gives a naturally flexible, glossy result and is the most requested option for everyday wear. Polygel is lighter but sturdier than soft gel and holds longer shapes well. We decide together based on your nail plate and how you use your hands.</p>
+ 
+         <h2>Which One Do You Actually Need?</h2>
+         <p>Extensions are not always the right answer. If you only want colour that lasts, choose
+diff --git a/en/index.html b/en/index.html
+index 1107fe4..d9769ca 100644
+--- a/en/index.html
++++ b/en/index.html
+@@ -499,8 +499,7 @@
+   "@id": "https://www.fleura.com.tr/#business",
+   "knowsAbout": [
+     "protez tırnak",
+-    "jel tırnak",
+-    "akrilik tırnak",
++    "jel tırnak",
+     "kalıcı oje",
+     "manikür",
+     "pedikür",
+diff --git a/fn-events.js b/fn-events.js
+index d5d02f1..6ad9bd6 100644
+--- a/fn-events.js
++++ b/fn-events.js
+@@ -20,6 +20,7 @@
+     phone:    'AW-10868274290/_VwpCNHl8PccEPLosr4o',
+     booking:  'AW-10868274290/XHvaCM7l8PccEPLosr4o'
+   };
++  var AW_VALUE = { whatsapp: 250, phone: 250, booking: 400 };
+   function conv(key, callback) {
+     if (typeof window.gtag !== 'function' || !AW[key]) {
+       if (callback) callback();
+@@ -28,8 +29,9 @@
+     try {
+       window.gtag('event', 'conversion', {
+         send_to: AW[key],
+-        // İletişim tıklaması gelir değildir; tahmini satış değeri göndermeyin.
+-        value: 0,
++        // Ads'teki dönüşüm işlemi değerleriyle aynı (WhatsApp/Telefon 250 ₺, Randevu 400 ₺).
++        // 0 göndermek bu değerleri ezer ve değer bazlı teklif stratejilerini bozar.
++        value: AW_VALUE[key] || 0,
+         currency: 'TRY',
+         event_callback: callback,
+         event_timeout: 800
+diff --git a/google-ads/02-anahtar-kelimeler.csv b/google-ads/02-anahtar-kelimeler.csv
+index 10f7ec6..667a1c7 100644
+--- a/google-ads/02-anahtar-kelimeler.csv
++++ b/google-ads/02-anahtar-kelimeler.csv
+@@ -10,7 +10,6 @@ Izmir Cekirdek - Arama,Protez Tirnak,izmir jel tırnak,Phrase,Enabled
+ Izmir Cekirdek - Arama,Protez Tirnak,evde jel tırnak izmir,Phrase,Enabled
+ Izmir Cekirdek - Arama,Protez Tirnak,izmir protez tırnak dolumu,Phrase,Enabled
+ Izmir Cekirdek - Arama,Protez Tirnak,protez tırnak dolumu izmir,Phrase,Enabled
+-Izmir Cekirdek - Arama,Protez Tirnak,izmir akrilik tırnak,Phrase,Enabled
+ Izmir Cekirdek - Arama,Protez Tirnak,izmir tırnak uzatma,Phrase,Enabled
+ Izmir Cekirdek - Arama,Kalici Oje,izmir kalıcı oje,Exact,Enabled
+ Izmir Cekirdek - Arama,Kalici Oje,kalıcı oje izmir,Exact,Enabled
+diff --git a/google-ads/04-reklamlar-rsa.csv b/google-ads/04-reklamlar-rsa.csv
+index 1426933..eff769c 100644
+--- a/google-ads/04-reklamlar-rsa.csv
++++ b/google-ads/04-reklamlar-rsa.csv
+@@ -1,5 +1,5 @@
+ ﻿Campaign,Ad Group,Ad Type,Final URL,Path 1,Path 2,Headline 1,Headline 2,Headline 3,Headline 4,Headline 5,Headline 6,Headline 7,Headline 8,Headline 9,Headline 10,Headline 11,Headline 12,Headline 13,Headline 14,Headline 15,Description 1,Description 2,Description 3,Description 4,Status
+-Izmir Cekirdek - Arama,Protez Tirnak,Responsive search ad,https://www.fleura.com.tr/izmir-protez-tirnak,izmir,protez-tirnak,İzmir Evde Protez Tırnak,Evinize Gelen Nail Artist,Protez Tırnak 1.500 ₺'den,Tüm Ekipman Bizimle Gelir,Tek Kullanımlık Steril Set,WhatsApp'tan Randevu Alın,Salona Gitmeden Protez Tırnak,Uygulama 90-150 Dakika,Belgeli Nail Artist,Rezidans ve Otele Geliyoruz,Cumartesi de Randevu Var,Evde Protez Tırnak Dolumu,Jel ve Akrilik Uygulama,Otoklavda Steril Aletler,{KeyWord:İzmir Protez Tırnak},"İzmir'de evinize, ofisinize veya otelinize gelen nail artist. Ekipman ve malzeme bizde.",Jel/akrilik protez tırnak ve dolum. Uygulama 90-150 dakika. WhatsApp'tan randevu alın.,"Metal aletler otoklavda sterilize edilir, törpü ve freze uçları tek kullanımlıktır.",Manikür + protez tırnak + kalıcı oje 1.500 ₺. Ulaşım ve malzeme fiyata dahildir.,Enabled
++Izmir Cekirdek - Arama,Protez Tirnak,Responsive search ad,https://www.fleura.com.tr/izmir-protez-tirnak,izmir,protez-tirnak,İzmir Evde Protez Tırnak,Evinize Gelen Nail Artist,Protez Tırnak 1.500 ₺'den,Tüm Ekipman Bizimle Gelir,Tek Kullanımlık Steril Set,WhatsApp'tan Randevu Alın,Salona Gitmeden Protez Tırnak,Uygulama 90-150 Dakika,Belgeli Nail Artist,Rezidans ve Otele Geliyoruz,Cumartesi de Randevu Var,Evde Protez Tırnak Dolumu,Jel ve Polygel Uygulama,Otoklavda Steril Aletler,{KeyWord:İzmir Protez Tırnak},"İzmir'de evinize, ofisinize veya otelinize gelen nail artist. Ekipman ve malzeme bizde.",Jel/polygel protez tırnak ve dolum. Uygulama 90-150 dakika. WhatsApp'tan randevu alın.,"Metal aletler otoklavda sterilize edilir, törpü ve freze uçları tek kullanımlıktır.",Manikür + protez tırnak + kalıcı oje 1.500 ₺. Ulaşım ve malzeme fiyata dahildir.,Enabled
+ Izmir Cekirdek - Arama,Kalici Oje,Responsive search ad,https://www.fleura.com.tr/izmir-kalici-oje,izmir,kalici-oje,İzmir Evde Kalıcı Oje,Evinize Gelen Nail Artist,Manikür + Kalıcı Oje 1.150 ₺,Tüm Ekipman Bizimle Gelir,Tek Kullanımlık Steril Set,WhatsApp'tan Randevu Alın,Salona Gitmeden Kalıcı Oje,2-3 Hafta Kalıcı Parlaklık,Belgeli Nail Artist,Rezidans ve Otele Geliyoruz,Cumartesi de Randevu Var,Uygulama 45-60 Dakika,Evde Kalıcı Oje Çıkarma,Otoklavda Steril Aletler,{KeyWord:İzmir Kalıcı Oje},"İzmir'de evinize, ofisinize veya otelinize gelen nail artist. Ekipman ve malzeme bizde.","Manikür + kalıcı oje 1.150 ₺. Uygulama 45-60 dakika, kalıcılık ortalama 2-3 hafta.","Metal aletler otoklavda sterilize edilir, törpü ve freze uçları tek kullanımlıktır.",Başka yerde yapılan kalıcı ojenin sökümü 400 ₺. Fiyatlara ulaşım dahildir.,Enabled
+ Izmir Cekirdek - Arama,Eve Gelen Nail Artist,Responsive search ad,https://www.fleura.com.tr/izmir-evde-tirnak-hizmeti,izmir,evde-hizmet,Eve Gelen Nail Artist,İzmir'de Evinize Geliyoruz,Salona Gitmeye Gerek Yok,Tüm Ekipman Bizimle Gelir,Tek Kullanımlık Steril Set,WhatsApp'tan Randevu Alın,Evde Tırnak Bakımı Hizmeti,"Kalıcı Oje, Protez, Manikür",Belgeli Nail Artist,Otel ve Villaya Geliyoruz,Cumartesi de Randevu Var,Fiyatlar 650 ₺'den Başlar,"Masa, Sandalye, Priz Yeter",Otoklavda Steril Aletler,{KeyWord:Eve Gelen Nail Artist},"İzmir'de evinize, ofisinize, otelinize veya yazlığınıza gelen profesyonel nail artist.","Kalıcı oje, protez tırnak, manikür, pedikür ve nail art. WhatsApp'tan randevu alın.","Evde masa yüksekliğinde bir yüzey, iki sandalye ve bir priz yeterli. Gerisi bizde.",Pazartesi-Cumartesi 10:00-20:00. Fiyatlara ulaşım ve steril malzeme dahildir.,Enabled
+ Izmir Cekirdek - Arama,Manikur Pedikur,Responsive search ad,https://www.fleura.com.tr/izmir-manikur-pedikur,izmir,manikur-pedikur,İzmir Evde Manikür Pedikür,Evinize Gelen Nail Artist,Manikür 650 ₺ · Pedikür 850 ₺,Tüm Ekipman Bizimle Gelir,Tek Kullanımlık Steril Set,WhatsApp'tan Randevu Alın,Salona Gitmeden Manikür,Evde Pedikür Hizmeti,Belgeli Nail Artist,Rezidans ve Otele Geliyoruz,Cumartesi de Randevu Var,Rus Manikürü de Yapıyoruz,Pedikür + Kalıcı Oje 1.250 ₺,Otoklavda Steril Aletler,{KeyWord:İzmir Manikür Pedikür},"İzmir'de evinize, ofisinize veya otelinize gelen nail artist. Ekipman ve malzeme bizde.","Manikür 650 ₺, pedikür 850 ₺. Manikür 30-45, pedikür 45-60 dakika sürer.","Metal aletler otoklavda sterilize edilir, törpü ve freze uçları tek kullanımlıktır.",Pazartesi-Cumartesi 10:00-20:00. Fiyatlara ulaşım ve steril malzeme dahildir.,Paused
+diff --git a/google-ads/web-yukleme/03-anahtar-kelimeler.csv b/google-ads/web-yukleme/03-anahtar-kelimeler.csv
+index b57ffa7..713d90a 100644
+--- a/google-ads/web-yukleme/03-anahtar-kelimeler.csv
++++ b/google-ads/web-yukleme/03-anahtar-kelimeler.csv
+@@ -10,7 +10,6 @@ Keyword,Add,Enabled,Izmir Cekirdek - Arama,Protez Tirnak,izmir jel tırnak,Phras
+ Keyword,Add,Enabled,Izmir Cekirdek - Arama,Protez Tirnak,evde jel tırnak izmir,Phrase match
+ Keyword,Add,Enabled,Izmir Cekirdek - Arama,Protez Tirnak,izmir protez tırnak dolumu,Phrase match
+ Keyword,Add,Enabled,Izmir Cekirdek - Arama,Protez Tirnak,protez tırnak dolumu izmir,Phrase match
+-Keyword,Add,Enabled,Izmir Cekirdek - Arama,Protez Tirnak,izmir akrilik tırnak,Phrase match
+ Keyword,Add,Enabled,Izmir Cekirdek - Arama,Protez Tirnak,izmir tırnak uzatma,Phrase match
+ Keyword,Add,Enabled,Izmir Cekirdek - Arama,Kalici Oje,izmir kalıcı oje,Exact match
+ Keyword,Add,Enabled,Izmir Cekirdek - Arama,Kalici Oje,kalıcı oje izmir,Exact match
+diff --git a/google-ads/web-yukleme/05-reklamlar-rsa.csv b/google-ads/web-yukleme/05-reklamlar-rsa.csv
+index 178468c..b1f798c 100644
+--- a/google-ads/web-yukleme/05-reklamlar-rsa.csv
++++ b/google-ads/web-yukleme/05-reklamlar-rsa.csv
+@@ -1,5 +1,5 @@
+ ﻿Row Type,Action,Ad status,Campaign,Ad group,Ad type,Headline 1,Headline 2,Headline 3,Headline 4,Headline 5,Headline 6,Headline 7,Headline 8,Headline 9,Headline 10,Headline 11,Headline 12,Headline 13,Headline 14,Headline 15,Description 1,Description 2,Description 3,Description 4,Headline 1 position,Path 1,Path 2,Final URL
+-Ad,Add,Enabled,Izmir Cekirdek - Arama,Protez Tirnak,Responsive search ad,İzmir Evde Protez Tırnak,Evinize Gelen Nail Artist,Protez Tırnak 1.500 ₺'den,Tüm Ekipman Bizimle Gelir,Tek Kullanımlık Steril Set,WhatsApp'tan Randevu Alın,Salona Gitmeden Protez Tırnak,Uygulama 90-150 Dakika,Belgeli Nail Artist,Rezidans ve Otele Geliyoruz,Cumartesi de Randevu Var,Evde Protez Tırnak Dolumu,Jel ve Akrilik Uygulama,Otoklavda Steril Aletler,{KeyWord:İzmir Protez Tırnak},"İzmir'de evinize, ofisinize veya otelinize gelen nail artist. Ekipman ve malzeme bizde.",Jel/akrilik protez tırnak ve dolum. Uygulama 90-150 dakika. WhatsApp'tan randevu alın.,"Metal aletler otoklavda sterilize edilir, törpü ve freze uçları tek kullanımlıktır.",Manikür + protez tırnak + kalıcı oje 1.500 ₺. Ulaşım ve malzeme fiyata dahildir.,1,izmir,protez-tirnak,https://www.fleura.com.tr/izmir-protez-tirnak
++Ad,Add,Enabled,Izmir Cekirdek - Arama,Protez Tirnak,Responsive search ad,İzmir Evde Protez Tırnak,Evinize Gelen Nail Artist,Protez Tırnak 1.500 ₺'den,Tüm Ekipman Bizimle Gelir,Tek Kullanımlık Steril Set,WhatsApp'tan Randevu Alın,Salona Gitmeden Protez Tırnak,Uygulama 90-150 Dakika,Belgeli Nail Artist,Rezidans ve Otele Geliyoruz,Cumartesi de Randevu Var,Evde Protez Tırnak Dolumu,Jel ve Polygel Uygulama,Otoklavda Steril Aletler,{KeyWord:İzmir Protez Tırnak},"İzmir'de evinize, ofisinize veya otelinize gelen nail artist. Ekipman ve malzeme bizde.",Jel/polygel protez tırnak ve dolum. Uygulama 90-150 dakika. WhatsApp'tan randevu alın.,"Metal aletler otoklavda sterilize edilir, törpü ve freze uçları tek kullanımlıktır.",Manikür + protez tırnak + kalıcı oje 1.500 ₺. Ulaşım ve malzeme fiyata dahildir.,1,izmir,protez-tirnak,https://www.fleura.com.tr/izmir-protez-tirnak
+ Ad,Add,Enabled,Izmir Cekirdek - Arama,Kalici Oje,Responsive search ad,İzmir Evde Kalıcı Oje,Evinize Gelen Nail Artist,Manikür + Kalıcı Oje 1.150 ₺,Tüm Ekipman Bizimle Gelir,Tek Kullanımlık Steril Set,WhatsApp'tan Randevu Alın,Salona Gitmeden Kalıcı Oje,2-3 Hafta Kalıcı Parlaklık,Belgeli Nail Artist,Rezidans ve Otele Geliyoruz,Cumartesi de Randevu Var,Uygulama 45-60 Dakika,Evde Kalıcı Oje Çıkarma,Otoklavda Steril Aletler,{KeyWord:İzmir Kalıcı Oje},"İzmir'de evinize, ofisinize veya otelinize gelen nail artist. Ekipman ve malzeme bizde.","Manikür + kalıcı oje 1.150 ₺. Uygulama 45-60 dakika, kalıcılık ortalama 2-3 hafta.","Metal aletler otoklavda sterilize edilir, törpü ve freze uçları tek kullanımlıktır.",Başka yerde yapılan kalıcı ojenin sökümü 400 ₺. Fiyatlara ulaşım dahildir.,1,izmir,kalici-oje,https://www.fleura.com.tr/izmir-kalici-oje
+ Ad,Add,Enabled,Izmir Cekirdek - Arama,Eve Gelen Nail Artist,Responsive search ad,Eve Gelen Nail Artist,İzmir'de Evinize Geliyoruz,Salona Gitmeye Gerek Yok,Tüm Ekipman Bizimle Gelir,Tek Kullanımlık Steril Set,WhatsApp'tan Randevu Alın,Evde Tırnak Bakımı Hizmeti,"Kalıcı Oje, Protez, Manikür",Belgeli Nail Artist,Otel ve Villaya Geliyoruz,Cumartesi de Randevu Var,Fiyatlar 650 ₺'den Başlar,"Masa, Sandalye, Priz Yeter",Otoklavda Steril Aletler,{KeyWord:Eve Gelen Nail Artist},"İzmir'de evinize, ofisinize, otelinize veya yazlığınıza gelen profesyonel nail artist.","Kalıcı oje, protez tırnak, manikür, pedikür ve nail art. WhatsApp'tan randevu alın.","Evde masa yüksekliğinde bir yüzey, iki sandalye ve bir priz yeterli. Gerisi bizde.",Pazartesi-Cumartesi 10:00-20:00. Fiyatlara ulaşım ve steril malzeme dahildir.,1,izmir,evde-hizmet,https://www.fleura.com.tr/izmir-evde-tirnak-hizmeti
+ Ad,Add,Paused,Izmir Cekirdek - Arama,Manikur Pedikur,Responsive search ad,İzmir Evde Manikür Pedikür,Evinize Gelen Nail Artist,Manikür 650 ₺ · Pedikür 850 ₺,Tüm Ekipman Bizimle Gelir,Tek Kullanımlık Steril Set,WhatsApp'tan Randevu Alın,Salona Gitmeden Manikür,Evde Pedikür Hizmeti,Belgeli Nail Artist,Rezidans ve Otele Geliyoruz,Cumartesi de Randevu Var,Rus Manikürü de Yapıyoruz,Pedikür + Kalıcı Oje 1.250 ₺,Otoklavda Steril Aletler,{KeyWord:İzmir Manikür Pedikür},"İzmir'de evinize, ofisinize veya otelinize gelen nail artist. Ekipman ve malzeme bizde.","Manikür 650 ₺, pedikür 850 ₺. Manikür 30-45, pedikür 45-60 dakika sürer.","Metal aletler otoklavda sterilize edilir, törpü ve freze uçları tek kullanımlıktır.",Pazartesi-Cumartesi 10:00-20:00. Fiyatlara ulaşım ve steril malzeme dahildir.,1,izmir,manikur-pedikur,https://www.fleura.com.tr/izmir-manikur-pedikur
+diff --git a/hizmetler.html b/hizmetler.html
+index 5914f19..b63f5c1 100644
+--- a/hizmetler.html
++++ b/hizmetler.html
+@@ -301,7 +301,7 @@
+         "itemOffered": {
+           "@type": "Service",
+           "name": "Protez Tırnak",
+-          "description": "Jel ve akrilik ile tırnak uzatma"
++          "description": "Jel ve polygel ile tırnak uzatma"
+         }
+       },
+       {
+diff --git a/index.html b/index.html
+index 22adc6a..3d7c811 100644
+--- a/index.html
++++ b/index.html
+@@ -465,8 +465,7 @@
+       "@id": "https://www.fleura.com.tr/#business",
+       "knowsAbout": [
+         "protez tırnak",
+-        "jel tırnak",
+-        "akrilik tırnak",
++        "jel tırnak",
+         "kalıcı oje",
+         "manikür",
+         "pedikür",
+diff --git a/izmir-evde-tirnak-hizmeti.html b/izmir-evde-tirnak-hizmeti.html
+index acc8635..6319bb0 100644
+--- a/izmir-evde-tirnak-hizmeti.html
++++ b/izmir-evde-tirnak-hizmeti.html
+@@ -9,7 +9,6 @@
+   <script>!function(){try{var e=navigator.userAgent||"";if(/bot|crawl|spider|slurp|bingpreview|facebookexternalhit|embedly|quora|pinterest|vkShare|W3C_Validator|Chrome-Lighthouse|PageSpeed|GTmetrix|HeadlessChrome/i.test(e))return;var q=new URLSearchParams(location.search);if(q.has("gclid")||q.has("gbraid")||q.has("wbraid")||/^(cpc|ppc|paidsearch)$/i.test(q.get("utm_medium")||""))return void sessionStorage.setItem("fn-lang-redirected","1");var r="fn-lang-redirected";if(sessionStorage.getItem(r))return;var i=null;try{i=localStorage.getItem("fn-lang-choice")}catch(e){}if(i)return void sessionStorage.setItem(r,"1");if(document.referrer)try{if(new URL(document.referrer).origin===location.origin)return void sessionStorage.setItem(r,"1")}catch(e){}var n=location.pathname;if(/^\/(en|ru)(\/|$)/.test(n))return void sessionStorage.setItem(r,"1");var t=navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||""],a=String(t[0]||"").toLowerCase();if(0===a.indexOf("tr"))return void sessionStorage.setItem(r,"1");var o=0===a.indexOf("ru")?"ru":"en",s=n.replace(/\/index\.html$/,"/").replace(/\.html$/,"");s.length>1&&(s=s.replace(/\/$/,"")),""===s&&(s="/");var l={"/":{en:"/en",ru:"/ru"},"/izmir-evde-tirnak-hizmeti":{en:"/en/mobile-nail-artist-izmir",ru:"/ru"},"/hakkimizda":{en:"/en",ru:"/ru"},"/izmir-protez-tirnak":{en:"/en/gel-nail-extensions-izmir",ru:"/ru/narashchivanie-nogtey-izmir"},"/izmir-kalici-oje":{en:"/en/gel-polish-izmir",ru:"/ru/gel-lak-izmir"},"/izmir-nail-art":{en:"/en/nail-art-izmir",ru:"/ru/dizayn-nogtey-izmir"},"/izmir-manikur-pedikur":{en:"/en/manicure-pedicure-izmir",ru:"/ru/manikyur-pedikyur-izmir"},"/izmir-protez-tirnak-fiyatlari":{en:"/en/nail-prices-izmir",ru:"/ru/tseny-izmir"},"/izmir-gelin-tirnagi":{en:"/en/bridal-nails-izmir",ru:"/ru/svadebnyy-manikyur-izmir"}}[s],g=l?l[o]:"/"+o;g&&g!==n?(sessionStorage.setItem(r,"1"),location.replace(g+location.search+location.hash)):sessionStorage.setItem(r,"1")}catch(e){}}(),function(){function e(e){var r=e.target.closest(".seo-lang a, .nav-lang a, .mm-lang a");if(r){var i=(r.getAttribute("hreflang")||"").slice(0,2);if(i)try{localStorage.setItem("fn-lang-choice",i),sessionStorage.setItem("fn-lang-redirected","1")}catch(e){}}}"loading"===document.readyState?document.addEventListener("DOMContentLoaded",function(){document.addEventListener("click",e,!0)},{once:!0}):document.addEventListener("click",e,!0)}();</script>
+ 
+   <!-- Google tag (gtag.js) -->
+-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5MWKVSGTQV"></script>
+   <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+@@ -35,6 +34,7 @@
+     gtag('config', 'G-5MWKVSGTQV');
+     gtag('config', 'AW-10868274290');
+   </script>
++  <script>(function(){var d=0;function l(){if(d)return;d=1;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-5MWKVSGTQV';document.head.appendChild(s);if(window.fnLoadClarity)window.fnLoadClarity();}['pointerdown','touchstart','keydown','scroll'].forEach(function(e){addEventListener(e,l,{once:true,passive:true});});if(document.readyState==='complete')setTimeout(l,800);else addEventListener('load',function(){setTimeout(l,800);});})();</script>
+   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <title>İzmir Evde Tırnak Hizmeti | Evinize Gelen Nail Artist | Fleura Nails</title>
+@@ -821,17 +821,16 @@
+   ]
+ }
+   </script>
+-  <link rel="stylesheet" href="seo-shell.css?v=20261009">
++  <style id="seo-shell-css">:root{--shell-cherry: #8f1833;--shell-cherry-dark: #54101f;--shell-ink: #24171b;--shell-powder: #fff7f3;--shell-blush: #f3cfd3;--shell-lime: #dce879;--shell-line: rgba(84, 16, 31, 0.14);}.page-header:has(.landing-booking){padding: 48px 20px 40px;background: var(--shell-powder);color: var(--shell-cherry-dark);}.landing-booking{max-width: 640px;margin: 24px auto 0;}.landing-booking p{margin: 0;}.landing-booking__service{font-size: 1rem;font-weight: 650;}.landing-booking .landing-booking__price{margin-top: 6px;font-family: 'Playfair Display', Georgia, serif;font-size: clamp(2rem, 6vw, 2.8rem);font-weight: 600;line-height: 1.2;}.landing-booking__detail{margin-top: 8px !important;font-size: .875rem;}.landing-booking__actions{display: flex;flex-wrap: wrap;justify-content: center;align-items: center;gap: 16px;margin: 20px 0 12px;}.landing-booking__cta{display: inline-flex;align-items: center;justify-content: center;gap: 16px;min-height: 50px;padding: 10px 24px;border-radius: 12px;background: var(--shell-cherry);color: #fff;font-weight: 700;text-decoration: none;}.landing-booking__cta:hover{background: var(--shell-cherry-dark);}.landing-booking__phone{padding: 10px 0;color: var(--shell-cherry-dark);text-underline-offset: 4px;}.landing-booking__note{font-size: .8125rem;line-height: 1.6;color: #67434d;}.landing-booking a:focus-visible{outline: 3px solid var(--shell-cherry);outline-offset: 4px;}@media (max-width: 600px){.page-header:has(.landing-booking){padding: 32px 20px;}.page-header:has(.landing-booking) .page-title{font-size: 1.75rem;line-height: 1.25;}.landing-booking__actions{gap: 4px;}.landing-booking__cta{width: 100%;}}.seo-skip-link{position: fixed;top: 12px;left: 12px;z-index: 10002;padding: 10px 16px;border-radius: 999px;background: #fff;color: var(--shell-cherry-dark);font-weight: 700;text-decoration: none;transform: translateY(-160%);transition: transform 0.2s ease;}.seo-skip-link:focus{transform: translateY(0);}.seo-site-header{position: sticky;top: 0;z-index: 1000;width: 100%;border-bottom: 1px solid var(--shell-line);background: rgba(255, 247, 243, 0.94);box-shadow: 0 8px 30px rgba(62, 17, 29, 0.06);color: var(--shell-ink);backdrop-filter: blur(18px);-webkit-backdrop-filter: blur(18px);}main.page-content :is(h2, h3, strong){color: #7b293e !important;}main.page-content a:not(.btn){color: #7b293e !important;text-decoration-line: underline;text-decoration-color: rgba(123, 41, 62, 0.38);text-underline-offset: 0.18em;}main.page-content .btn:not(.btn-secondary){background: var(--shell-cherry) !important;color: #fff !important;}main.page-content .btn-secondary{color: #7b293e !important;}.seo-nav{box-sizing: border-box;display: flex;align-items: center;gap: 28px;width: min(1180px, calc(100% - 40px));min-height: 72px;margin: 0 auto;}.seo-brand{display: inline-flex;flex: 0 0 auto;align-items: baseline;gap: 7px;color: var(--shell-cherry-dark);text-decoration: none;}.seo-brand__name{font-family: "Playfair Display", Georgia, serif;font-size: 1.65rem;font-weight: 700;letter-spacing: -0.04em;}.seo-brand__studio{color: var(--shell-cherry);font-size: 0.58rem;font-weight: 800;letter-spacing: 0.16em;text-transform: uppercase;}.seo-nav__links{display: flex;align-items: center;justify-content: center;gap: 24px;margin: 0 0 0 auto;padding: 0;list-style: none;}.seo-nav__links a{position: relative;color: var(--shell-ink);font-size: 0.87rem;font-weight: 650;text-decoration: none;}.seo-nav__links a::after{content: "";position: absolute;right: 0;bottom: -7px;left: 0;height: 2px;border-radius: 999px;background: var(--shell-cherry);transform: scaleX(0);transition: transform 0.2s ease;}.seo-nav__links a:hover::after, .seo-nav__links a:focus-visible::after{transform: scaleX(1);}.seo-nav__cta{display: inline-flex;flex: 0 0 auto;align-items: center;justify-content: center;min-height: 42px;padding: 0 19px;border-radius: 999px;background: var(--shell-cherry);box-shadow: 0 8px 20px rgba(143, 24, 51, 0.18);color: #fff;font-size: 0.82rem;font-weight: 750;text-decoration: none;transition: transform 0.2s ease, background 0.2s ease;}.seo-nav__cta:hover, .seo-nav__cta:focus-visible{background: var(--shell-cherry-dark);transform: translateY(-1px);}.seo-menu-toggle{display: none;width: 44px;height: 44px;margin-left: auto;padding: 0;border: 1px solid var(--shell-line);border-radius: 50%;background: #fff;color: var(--shell-cherry-dark);cursor: pointer;}.seo-menu-toggle span{display: block;width: 18px;height: 2px;margin: 4px auto;border-radius: 9px;background: currentColor;transition: transform 0.2s ease, opacity 0.2s ease;}.seo-menu-toggle[aria-expanded="true"] span:nth-child(1){transform: translateY(6px) rotate(45deg);}.seo-menu-toggle[aria-expanded="true"] span:nth-child(2){opacity: 0;}.seo-menu-toggle[aria-expanded="true"] span:nth-child(3){transform: translateY(-6px) rotate(-45deg);}.seo-site-footer{padding: 0 !important;background: var(--shell-ink) !important;color: rgba(255, 255, 255, 0.78) !important;text-align: left !important;}.seo-footer__inner{display: grid;grid-template-columns: minmax(240px, 1.4fr) repeat(3, minmax(150px, 1fr));gap: 44px;width: min(1180px, calc(100% - 40px));margin: 0 auto;padding: 64px 0 44px;}.seo-footer__brand{max-width: 330px;}.seo-footer__logo{display: inline-block;margin-bottom: 15px;color: #fff !important;font-family: "Playfair Display", Georgia, serif;font-size: 2rem;font-weight: 700;letter-spacing: -0.04em;text-decoration: none;}.seo-footer__brand p{margin: 0;color: rgba(255, 255, 255, 0.63) !important;font-size: 0.92rem;line-height: 1.75;}.seo-footer__column h2{margin: 0 0 18px !important;color: var(--shell-lime) !important;font-family: inherit !important;font-size: 0.7rem !important;font-weight: 800;letter-spacing: 0.15em;text-transform: uppercase;}.seo-footer__column nav{display: grid;gap: 10px;}.seo-site-footer a{color: rgba(255, 255, 255, 0.8) !important;}.seo-footer__column a{width: fit-content;font-size: 0.9rem;line-height: 1.45;text-decoration: none;}.seo-footer__column a:hover, .seo-footer__column a:focus-visible{color: #fff !important;text-decoration: underline;}.seo-footer__contact{display: inline-flex;margin-top: 18px;padding: 10px 14px;border: 1px solid rgba(220, 232, 121, 0.35);border-radius: 999px;color: var(--shell-lime) !important;font-weight: 700;text-decoration: none;}.seo-footer__bottom{display: flex;align-items: center;justify-content: space-between;gap: 20px;width: min(1180px, calc(100% - 40px));margin: 0 auto;padding: 22px 0 28px;border-top: 1px solid rgba(255, 255, 255, 0.1);color: rgba(255, 255, 255, 0.46);font-size: 0.78rem;}.seo-footer__bottom p{margin: 0;color: inherit !important;}.seo-footer__home{color: var(--shell-lime) !important;font-weight: 700;text-decoration: none;}@media (max-width: 880px){.seo-nav{min-height: 64px;}.seo-menu-toggle{display: block;}.seo-nav__cta{margin-left: auto;}.seo-nav__links{position: absolute;top: calc(100% + 1px);right: 0;left: 0;display: none;align-items: stretch;gap: 0;padding: 12px 20px 18px;border-bottom: 1px solid var(--shell-line);background: var(--shell-powder);box-shadow: 0 18px 30px rgba(62, 17, 29, 0.1);}.seo-nav__links.is-open{display: grid;}.seo-nav__links a{display: block;padding: 11px 4px;font-size: 0.95rem;}.seo-nav__links a::after{display: none;}.seo-footer__inner{grid-template-columns: repeat(2, minmax(0, 1fr));}}@media (max-width: 560px){.seo-nav{width: min(100% - 28px, 1180px);gap: 10px;}.seo-brand__name{font-size: 1.45rem;}.seo-brand__studio{display: none;}.seo-nav__cta{min-height: 38px;padding: 0 13px;font-size: 0.74rem;}.seo-footer__inner{grid-template-columns: 1fr 1fr;gap: 34px 24px;width: min(100% - 36px, 1180px);padding-top: 48px;}.seo-footer__brand{grid-column: 1 / -1;}.seo-footer__column--regions{grid-column: 1 / -1;}.seo-footer__column--regions nav{grid-template-columns: 1fr 1fr;}.seo-footer__bottom{align-items: flex-start;flex-direction: column;width: min(100% - 36px, 1180px);}}@media (prefers-reduced-motion: reduce){.seo-site-header *, .seo-site-footer *{scroll-behavior: auto !important;transition: none !important;}}.seo-lang{display: inline-flex;flex: 0 0 auto;align-items: center;gap: 2px;padding: 3px;border: 1px solid var(--shell-line);border-radius: 999px;background: rgba(255, 255, 255, 0.7);}.seo-lang a{display: inline-flex;align-items: center;justify-content: center;min-width: 34px;min-height: 30px;padding: 0 8px;border-radius: 999px;color: var(--shell-cherry-dark);font-size: 0.72rem;font-weight: 750;letter-spacing: 0.03em;text-decoration: none;transition: background 0.2s ease, color 0.2s ease;}.seo-lang a:hover, .seo-lang a:focus-visible{background: rgba(143, 24, 51, 0.1);}.seo-lang a[aria-current="true"]{background: var(--shell-cherry);color: #fff;}@media (max-width: 880px){.seo-lang{margin-left: auto;}.seo-nav__cta{margin-left: 8px;}}@media (max-width: 560px){.seo-lang{padding: 2px;}.seo-lang a{min-width: 30px;min-height: 28px;padding: 0 6px;font-size: 0.68rem;}}html[lang="ru"] body, html[lang="ru"] .page-content, html[lang="ru"] .seo-site-header, html[lang="ru"] .seo-site-footer{font-family: "Manrope", "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;}</style>
+   <script src="seo-shell.js" defer></script>
+-  <link rel="stylesheet" href="cookie-consent.css">
++  <style id="cookie-consent-css">.fn-cookie{position: fixed;z-index: 200;right: 12px;bottom: 12px;left: auto;display: flex;align-items: center;gap: 10px;max-width: min(430px, calc(100vw - 24px));padding: 9px 10px 9px 13px;border-radius: 999px;background: rgba(255, 253, 249, 0.94);-webkit-backdrop-filter: blur(12px) saturate(1.3);backdrop-filter: blur(12px) saturate(1.3);border: 1px solid rgba(196, 164, 132, 0.34);box-shadow: 0 8px 26px rgba(36, 29, 23, 0.13);font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;color: #2c2c2c;opacity: 0;transform: translateY(10px);transition: opacity 0.35s ease, transform 0.35s ease;}html[lang="ru"] .fn-cookie{font-family: "Manrope", "Plus Jakarta Sans", system-ui, sans-serif;}.fn-cookie[hidden]{display: none !important;}.fn-cookie.is-in{opacity: 1;transform: translateY(0);}.fn-cookie__title{position: absolute;width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden;clip: rect(0 0 0 0);white-space: nowrap;border: 0;}.fn-cookie__text{flex: 1 1 auto;margin: 0;font-size: 0.76rem;line-height: 1.4;color: #5f4149;}.fn-cookie__text a{color: #a91f3d;text-decoration: underline;text-underline-offset: 2px;white-space: nowrap;}.fn-cookie__text a:hover{color: #72152b;}.fn-cookie__actions{display: flex;flex: none;align-items: center;gap: 6px;}.fn-cookie__btn{flex: none;min-height: 32px;padding: 0 13px;border-radius: 999px;border: 1px solid transparent;font: inherit;font-size: 0.75rem;font-weight: 650;white-space: nowrap;cursor: pointer;transition: background-color 0.2s ease, color 0.2s ease;}.fn-cookie__btn:focus-visible{outline: 2px solid #a91f3d;outline-offset: 2px;}.fn-cookie__btn--accept{background: #a91f3d;color: #fff;}.fn-cookie__btn--accept:hover{background: #8d1932;}.fn-cookie__btn--decline{background: transparent;color: #72152b;padding: 0 8px;text-decoration: underline;text-underline-offset: 2px;}.fn-cookie__btn--decline:hover{background: rgba(143, 24, 51, 0.08);}body.fn-cookie-open .scroll-top-btn{bottom: calc(var(--fn-cookie-h, 50px) + 24px) !important;}@media (max-width: 620px){.fn-cookie{box-sizing: border-box;left: 8px;right: 8px;bottom: max(8px, env(safe-area-inset-bottom));max-width: none;display: grid;grid-template-columns: 36px minmax(0, 1fr);gap: 4px 10px;padding: 14px;border-color: rgba(114, 21, 43, 0.16);border-radius: 20px;background: rgba(255, 253, 249, 0.98);box-shadow: 0 18px 55px rgba(60, 24, 35, 0.2), 0 2px 8px rgba(60, 24, 35, 0.08);}.fn-cookie__title{position: static;grid-column: 1 / -1;display: flex;align-items: center;gap: 9px;width: auto;height: auto;margin: 0 0 3px;padding: 0;overflow: visible;clip: auto;white-space: normal;color: #321f25;font-family: "Playfair Display", Georgia, serif;font-size: 1.08rem;font-weight: 600;line-height: 1.25;}.fn-cookie__title svg{box-sizing: content-box;flex: 0 0 auto;width: 18px;height: 18px;padding: 7px;border-radius: 50%;background: #f9e8e8;color: #a91f3d;}.fn-cookie__text{grid-column: 1 / -1;margin: 2px 0 8px;font-size: 0.82rem;line-height: 1.55;color: #60464d;}.fn-cookie__text a{font-weight: 700;}.fn-cookie__actions{grid-column: 1 / -1;display: grid;grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);gap: 8px;width: 100%;}.fn-cookie__btn{width: 100%;min-height: 48px;padding: 0 10px;border-radius: 13px;font-size: 0.78rem;font-weight: 750;}.fn-cookie__btn--decline{border-color: rgba(114, 21, 43, 0.2);background: #fff;padding: 0 8px;text-decoration: none;}body.fn-cookie-open .whatsapp-float, body.fn-cookie-open .scroll-top-btn{bottom: calc(var(--fn-cookie-h, 184px) + max(18px, env(safe-area-inset-bottom))) !important;}}@media (max-width: 350px){.fn-cookie{padding: 12px;}.fn-cookie__actions{grid-template-columns: 1fr;}.fn-cookie__text{font-size: 0.79rem;}}@media (prefers-reduced-motion: reduce){.fn-cookie{transition: opacity 0.2s ease;transform: none;}.fn-cookie.is-in{transform: none;}}</style>
+   <script src="cookie-consent.js" defer></script>
+   <script src="fn-events.js?v=20261009" defer></script>
+   <!-- Microsoft Clarity -->
+   <script>
+     (function(c,l,a,r,i,t,y){
+         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
++        c.fnLoadClarity=function(){if(c.__cl)return;c.__cl=1;t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);};
+     })(window, document, "clarity", "script", "ykf9z66yqx");
+     // KVKK: Clarity izni yalnızca kullanıcı çerezleri kabul ettiyse verilir
+     try {
+diff --git a/izmir-kalici-oje/index.html b/izmir-kalici-oje/index.html
+index e87e661..f2f72f9 100644
+--- a/izmir-kalici-oje/index.html
++++ b/izmir-kalici-oje/index.html
+@@ -2,7 +2,6 @@
+ <html lang="tr" dir="ltr">
+ <head>
+   <!-- Google tag (gtag.js) -->
+-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5MWKVSGTQV"></script>
+   <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+@@ -28,6 +27,7 @@
+     gtag('config', 'G-5MWKVSGTQV');
+     gtag('config', 'AW-10868274290');
+   </script>
++  <script>(function(){var d=0;function l(){if(d)return;d=1;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-5MWKVSGTQV';document.head.appendChild(s);if(window.fnLoadClarity)window.fnLoadClarity();}['pointerdown','touchstart','keydown','scroll'].forEach(function(e){addEventListener(e,l,{once:true,passive:true});});if(document.readyState==='complete')setTimeout(l,800);else addEventListener('load',function(){setTimeout(l,800);});})();</script>
+   <meta charset="UTF-8">
+   <meta name="yandex-verification" content="9ffe10edd91ffbbc" />
+   <meta name="msvalidate.01" content="6F3E5D645D5F2856E58A1CD8E60EE8C9" />
+@@ -674,17 +674,16 @@
+     ]
+   }
+   </script>
+-  <link rel="stylesheet" href="/seo-shell.css?v=20261009">
++  <style id="seo-shell-css">:root{--shell-cherry: #8f1833;--shell-cherry-dark: #54101f;--shell-ink: #24171b;--shell-powder: #fff7f3;--shell-blush: #f3cfd3;--shell-lime: #dce879;--shell-line: rgba(84, 16, 31, 0.14);}.page-header:has(.landing-booking){padding: 48px 20px 40px;background: var(--shell-powder);color: var(--shell-cherry-dark);}.landing-booking{max-width: 640px;margin: 24px auto 0;}.landing-booking p{margin: 0;}.landing-booking__service{font-size: 1rem;font-weight: 650;}.landing-booking .landing-booking__price{margin-top: 6px;font-family: 'Playfair Display', Georgia, serif;font-size: clamp(2rem, 6vw, 2.8rem);font-weight: 600;line-height: 1.2;}.landing-booking__detail{margin-top: 8px !important;font-size: .875rem;}.landing-booking__actions{display: flex;flex-wrap: wrap;justify-content: center;align-items: center;gap: 16px;margin: 20px 0 12px;}.landing-booking__cta{display: inline-flex;align-items: center;justify-content: center;gap: 16px;min-height: 50px;padding: 10px 24px;border-radius: 12px;background: var(--shell-cherry);color: #fff;font-weight: 700;text-decoration: none;}.landing-booking__cta:hover{background: var(--shell-cherry-dark);}.landing-booking__phone{padding: 10px 0;color: var(--shell-cherry-dark);text-underline-offset: 4px;}.landing-booking__note{font-size: .8125rem;line-height: 1.6;color: #67434d;}.landing-booking a:focus-visible{outline: 3px solid var(--shell-cherry);outline-offset: 4px;}@media (max-width: 600px){.page-header:has(.landing-booking){padding: 32px 20px;}.page-header:has(.landing-booking) .page-title{font-size: 1.75rem;line-height: 1.25;}.landing-booking__actions{gap: 4px;}.landing-booking__cta{width: 100%;}}.seo-skip-link{position: fixed;top: 12px;left: 12px;z-index: 10002;padding: 10px 16px;border-radius: 999px;background: #fff;color: var(--shell-cherry-dark);font-weight: 700;text-decoration: none;transform: translateY(-160%);transition: transform 0.2s ease;}.seo-skip-link:focus{transform: translateY(0);}.seo-site-header{position: sticky;top: 0;z-index: 1000;width: 100%;border-bottom: 1px solid var(--shell-line);background: rgba(255, 247, 243, 0.94);box-shadow: 0 8px 30px rgba(62, 17, 29, 0.06);color: var(--shell-ink);backdrop-filter: blur(18px);-webkit-backdrop-filter: blur(18px);}main.page-content :is(h2, h3, strong){color: #7b293e !important;}main.page-content a:not(.btn){color: #7b293e !important;text-decoration-line: underline;text-decoration-color: rgba(123, 41, 62, 0.38);text-underline-offset: 0.18em;}main.page-content .btn:not(.btn-secondary){background: var(--shell-cherry) !important;color: #fff !important;}main.page-content .btn-secondary{color: #7b293e !important;}.seo-nav{box-sizing: border-box;display: flex;align-items: center;gap: 28px;width: min(1180px, calc(100% - 40px));min-height: 72px;margin: 0 auto;}.seo-brand{display: inline-flex;flex: 0 0 auto;align-items: baseline;gap: 7px;color: var(--shell-cherry-dark);text-decoration: none;}.seo-brand__name{font-family: "Playfair Display", Georgia, serif;font-size: 1.65rem;font-weight: 700;letter-spacing: -0.04em;}.seo-brand__studio{color: var(--shell-cherry);font-size: 0.58rem;font-weight: 800;letter-spacing: 0.16em;text-transform: uppercase;}.seo-nav__links{display: flex;align-items: center;justify-content: center;gap: 24px;margin: 0 0 0 auto;padding: 0;list-style: none;}.seo-nav__links a{position: relative;color: var(--shell-ink);font-size: 0.87rem;font-weight: 650;text-decoration: none;}.seo-nav__links a::after{content: "";position: absolute;right: 0;bottom: -7px;left: 0;height: 2px;border-radius: 999px;background: var(--shell-cherry);transform: scaleX(0);transition: transform 0.2s ease;}.seo-nav__links a:hover::after, .seo-nav__links a:focus-visible::after{transform: scaleX(1);}.seo-nav__cta{display: inline-flex;flex: 0 0 auto;align-items: center;justify-content: center;min-height: 42px;padding: 0 19px;border-radius: 999px;background: var(--shell-cherry);box-shadow: 0 8px 20px rgba(143, 24, 51, 0.18);color: #fff;font-size: 0.82rem;font-weight: 750;text-decoration: none;transition: transform 0.2s ease, background 0.2s ease;}.seo-nav__cta:hover, .seo-nav__cta:focus-visible{background: var(--shell-cherry-dark);transform: translateY(-1px);}.seo-menu-toggle{display: none;width: 44px;height: 44px;margin-left: auto;padding: 0;border: 1px solid var(--shell-line);border-radius: 50%;background: #fff;color: var(--shell-cherry-dark);cursor: pointer;}.seo-menu-toggle span{display: block;width: 18px;height: 2px;margin: 4px auto;border-radius: 9px;background: currentColor;transition: transform 0.2s ease, opacity 0.2s ease;}.seo-menu-toggle[aria-expanded="true"] span:nth-child(1){transform: translateY(6px) rotate(45deg);}.seo-menu-toggle[aria-expanded="true"] span:nth-child(2){opacity: 0;}.seo-menu-toggle[aria-expanded="true"] span:nth-child(3){transform: translateY(-6px) rotate(-45deg);}.seo-site-footer{padding: 0 !important;background: var(--shell-ink) !important;color: rgba(255, 255, 255, 0.78) !important;text-align: left !important;}.seo-footer__inner{display: grid;grid-template-columns: minmax(240px, 1.4fr) repeat(3, minmax(150px, 1fr));gap: 44px;width: min(1180px, calc(100% - 40px));margin: 0 auto;padding: 64px 0 44px;}.seo-footer__brand{max-width: 330px;}.seo-footer__logo{display: inline-block;margin-bottom: 15px;color: #fff !important;font-family: "Playfair Display", Georgia, serif;font-size: 2rem;font-weight: 700;letter-spacing: -0.04em;text-decoration: none;}.seo-footer__brand p{margin: 0;color: rgba(255, 255, 255, 0.63) !important;font-size: 0.92rem;line-height: 1.75;}.seo-footer__column h2{margin: 0 0 18px !important;color: var(--shell-lime) !important;font-family: inherit !important;font-size: 0.7rem !important;font-weight: 800;letter-spacing: 0.15em;text-transform: uppercase;}.seo-footer__column nav{display: grid;gap: 10px;}.seo-site-footer a{color: rgba(255, 255, 255, 0.8) !important;}.seo-footer__column a{width: fit-content;font-size: 0.9rem;line-height: 1.45;text-decoration: none;}.seo-footer__column a:hover, .seo-footer__column a:focus-visible{color: #fff !important;text-decoration: underline;}.seo-footer__contact{display: inline-flex;margin-top: 18px;padding: 10px 14px;border: 1px solid rgba(220, 232, 121, 0.35);border-radius: 999px;color: var(--shell-lime) !important;font-weight: 700;text-decoration: none;}.seo-footer__bottom{display: flex;align-items: center;justify-content: space-between;gap: 20px;width: min(1180px, calc(100% - 40px));margin: 0 auto;padding: 22px 0 28px;border-top: 1px solid rgba(255, 255, 255, 0.1);color: rgba(255, 255, 255, 0.46);font-size: 0.78rem;}.seo-footer__bottom p{margin: 0;color: inherit !important;}.seo-footer__home{color: var(--shell-lime) !important;font-weight: 700;text-decoration: none;}@media (max-width: 880px){.seo-nav{min-height: 64px;}.seo-menu-toggle{display: block;}.seo-nav__cta{margin-left: auto;}.seo-nav__links{position: absolute;top: calc(100% + 1px);right: 0;left: 0;display: none;align-items: stretch;gap: 0;padding: 12px 20px 18px;border-bottom: 1px solid var(--shell-line);background: var(--shell-powder);box-shadow: 0 18px 30px rgba(62, 17, 29, 0.1);}.seo-nav__links.is-open{display: grid;}.seo-nav__links a{display: block;padding: 11px 4px;font-size: 0.95rem;}.seo-nav__links a::after{display: none;}.seo-footer__inner{grid-template-columns: repeat(2, minmax(0, 1fr));}}@media (max-width: 560px){.seo-nav{width: min(100% - 28px, 1180px);gap: 10px;}.seo-brand__name{font-size: 1.45rem;}.seo-brand__studio{display: none;}.seo-nav__cta{min-height: 38px;padding: 0 13px;font-size: 0.74rem;}.seo-footer__inner{grid-template-columns: 1fr 1fr;gap: 34px 24px;width: min(100% - 36px, 1180px);padding-top: 48px;}.seo-footer__brand{grid-column: 1 / -1;}.seo-footer__column--regions{grid-column: 1 / -1;}.seo-footer__column--regions nav{grid-template-columns: 1fr 1fr;}.seo-footer__bottom{align-items: flex-start;flex-direction: column;width: min(100% - 36px, 1180px);}}@media (prefers-reduced-motion: reduce){.seo-site-header *, .seo-site-footer *{scroll-behavior: auto !important;transition: none !important;}}.seo-lang{display: inline-flex;flex: 0 0 auto;align-items: center;gap: 2px;padding: 3px;border: 1px solid var(--shell-line);border-radius: 999px;background: rgba(255, 255, 255, 0.7);}.seo-lang a{display: inline-flex;align-items: center;justify-content: center;min-width: 34px;min-height: 30px;padding: 0 8px;border-radius: 999px;color: var(--shell-cherry-dark);font-size: 0.72rem;font-weight: 750;letter-spacing: 0.03em;text-decoration: none;transition: background 0.2s ease, color 0.2s ease;}.seo-lang a:hover, .seo-lang a:focus-visible{background: rgba(143, 24, 51, 0.1);}.seo-lang a[aria-current="true"]{background: var(--shell-cherry);color: #fff;}@media (max-width: 880px){.seo-lang{margin-left: auto;}.seo-nav__cta{margin-left: 8px;}}@media (max-width: 560px){.seo-lang{padding: 2px;}.seo-lang a{min-width: 30px;min-height: 28px;padding: 0 6px;font-size: 0.68rem;}}html[lang="ru"] body, html[lang="ru"] .page-content, html[lang="ru"] .seo-site-header, html[lang="ru"] .seo-site-footer{font-family: "Manrope", "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;}</style>
+   <script src="/seo-shell.js" defer></script>
+-  <link rel="stylesheet" href="/cookie-consent.css">
++  <style id="cookie-consent-css">.fn-cookie{position: fixed;z-index: 200;right: 12px;bottom: 12px;left: auto;display: flex;align-items: center;gap: 10px;max-width: min(430px, calc(100vw - 24px));padding: 9px 10px 9px 13px;border-radius: 999px;background: rgba(255, 253, 249, 0.94);-webkit-backdrop-filter: blur(12px) saturate(1.3);backdrop-filter: blur(12px) saturate(1.3);border: 1px solid rgba(196, 164, 132, 0.34);box-shadow: 0 8px 26px rgba(36, 29, 23, 0.13);font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;color: #2c2c2c;opacity: 0;transform: translateY(10px);transition: opacity 0.35s ease, transform 0.35s ease;}html[lang="ru"] .fn-cookie{font-family: "Manrope", "Plus Jakarta Sans", system-ui, sans-serif;}.fn-cookie[hidden]{display: none !important;}.fn-cookie.is-in{opacity: 1;transform: translateY(0);}.fn-cookie__title{position: absolute;width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden;clip: rect(0 0 0 0);white-space: nowrap;border: 0;}.fn-cookie__text{flex: 1 1 auto;margin: 0;font-size: 0.76rem;line-height: 1.4;color: #5f4149;}.fn-cookie__text a{color: #a91f3d;text-decoration: underline;text-underline-offset: 2px;white-space: nowrap;}.fn-cookie__text a:hover{color: #72152b;}.fn-cookie__actions{display: flex;flex: none;align-items: center;gap: 6px;}.fn-cookie__btn{flex: none;min-height: 32px;padding: 0 13px;border-radius: 999px;border: 1px solid transparent;font: inherit;font-size: 0.75rem;font-weight: 650;white-space: nowrap;cursor: pointer;transition: background-color 0.2s ease, color 0.2s ease;}.fn-cookie__btn:focus-visible{outline: 2px solid #a91f3d;outline-offset: 2px;}.fn-cookie__btn--accept{background: #a91f3d;color: #fff;}.fn-cookie__btn--accept:hover{background: #8d1932;}.fn-cookie__btn--decline{background: transparent;color: #72152b;padding: 0 8px;text-decoration: underline;text-underline-offset: 2px;}.fn-cookie__btn--decline:hover{background: rgba(143, 24, 51, 0.08);}body.fn-cookie-open .scroll-top-btn{bottom: calc(var(--fn-cookie-h, 50px) + 24px) !important;}@media (max-width: 620px){.fn-cookie{box-sizing: border-box;left: 8px;right: 8px;bottom: max(8px, env(safe-area-inset-bottom));max-width: none;display: grid;grid-template-columns: 36px minmax(0, 1fr);gap: 4px 10px;padding: 14px;border-color: rgba(114, 21, 43, 0.16);border-radius: 20px;background: rgba(255, 253, 249, 0.98);box-shadow: 0 18px 55px rgba(60, 24, 35, 0.2), 0 2px 8px rgba(60, 24, 35, 0.08);}.fn-cookie__title{position: static;grid-column: 1 / -1;display: flex;align-items: center;gap: 9px;width: auto;height: auto;margin: 0 0 3px;padding: 0;overflow: visible;clip: auto;white-space: normal;color: #321f25;font-family: "Playfair Display", Georgia, serif;font-size: 1.08rem;font-weight: 600;line-height: 1.25;}.fn-cookie__title svg{box-sizing: content-box;flex: 0 0 auto;width: 18px;height: 18px;padding: 7px;border-radius: 50%;background: #f9e8e8;color: #a91f3d;}.fn-cookie__text{grid-column: 1 / -1;margin: 2px 0 8px;font-size: 0.82rem;line-height: 1.55;color: #60464d;}.fn-cookie__text a{font-weight: 700;}.fn-cookie__actions{grid-column: 1 / -1;display: grid;grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);gap: 8px;width: 100%;}.fn-cookie__btn{width: 100%;min-height: 48px;padding: 0 10px;border-radius: 13px;font-size: 0.78rem;font-weight: 750;}.fn-cookie__btn--decline{border-color: rgba(114, 21, 43, 0.2);background: #fff;padding: 0 8px;text-decoration: none;}body.fn-cookie-open .whatsapp-float, body.fn-cookie-open .scroll-top-btn{bottom: calc(var(--fn-cookie-h, 184px) + max(18px, env(safe-area-inset-bottom))) !important;}}@media (max-width: 350px){.fn-cookie{padding: 12px;}.fn-cookie__actions{grid-template-columns: 1fr;}.fn-cookie__text{font-size: 0.79rem;}}@media (prefers-reduced-motion: reduce){.fn-cookie{transition: opacity 0.2s ease;transform: none;}.fn-cookie.is-in{transform: none;}}</style>
+   <script src="/cookie-consent.js" defer></script>
+   <script src="../fn-events.js?v=20261009" defer></script>
+   <!-- Microsoft Clarity -->
+   <script>
+     (function(c,l,a,r,i,t,y){
+         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
++        c.fnLoadClarity=function(){if(c.__cl)return;c.__cl=1;t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);};
+     })(window, document, "clarity", "script", "ykf9z66yqx");
+     // KVKK: Clarity izni yalnızca kullanıcı çerezleri kabul ettiyse verilir
+     try {
+diff --git a/izmir-manikur-pedikur.html b/izmir-manikur-pedikur.html
+index d61f3e1..4e4a86f 100644
+--- a/izmir-manikur-pedikur.html
++++ b/izmir-manikur-pedikur.html
+@@ -2,7 +2,6 @@
+ <html lang="tr" dir="ltr">
+ <head>
+   <!-- Google tag (gtag.js) -->
+-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5MWKVSGTQV"></script>
+   <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+@@ -28,6 +27,7 @@
+     gtag('config', 'G-5MWKVSGTQV');
+     gtag('config', 'AW-10868274290');
+   </script>
++  <script>(function(){var d=0;function l(){if(d)return;d=1;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-5MWKVSGTQV';document.head.appendChild(s);if(window.fnLoadClarity)window.fnLoadClarity();}['pointerdown','touchstart','keydown','scroll'].forEach(function(e){addEventListener(e,l,{once:true,passive:true});});if(document.readyState==='complete')setTimeout(l,800);else addEventListener('load',function(){setTimeout(l,800);});})();</script>
+   <meta charset="UTF-8">
+   <meta name="yandex-verification" content="9ffe10edd91ffbbc" />
+   <meta name="msvalidate.01" content="6F3E5D645D5F2856E58A1CD8E60EE8C9" />
+@@ -390,17 +390,16 @@
+   ]
+ }
+ </script>
+-  <link rel="stylesheet" href="/seo-shell.css">
++  <style id="seo-shell-css">:root{--shell-cherry: #8f1833;--shell-cherry-dark: #54101f;--shell-ink: #24171b;--shell-powder: #fff7f3;--shell-blush: #f3cfd3;--shell-lime: #dce879;--shell-line: rgba(84, 16, 31, 0.14);}.page-header:has(.landing-booking){padding: 48px 20px 40px;background: var(--shell-powder);color: var(--shell-cherry-dark);}.landing-booking{max-width: 640px;margin: 24px auto 0;}.landing-booking p{margin: 0;}.landing-booking__service{font-size: 1rem;font-weight: 650;}.landing-booking .landing-booking__price{margin-top: 6px;font-family: 'Playfair Display', Georgia, serif;font-size: clamp(2rem, 6vw, 2.8rem);font-weight: 600;line-height: 1.2;}.landing-booking__detail{margin-top: 8px !important;font-size: .875rem;}.landing-booking__actions{display: flex;flex-wrap: wrap;justify-content: center;align-items: center;gap: 16px;margin: 20px 0 12px;}.landing-booking__cta{display: inline-flex;align-items: center;justify-content: center;gap: 16px;min-height: 50px;padding: 10px 24px;border-radius: 12px;background: var(--shell-cherry);color: #fff;font-weight: 700;text-decoration: none;}.landing-booking__cta:hover{background: var(--shell-cherry-dark);}.landing-booking__phone{padding: 10px 0;color: var(--shell-cherry-dark);text-underline-offset: 4px;}.landing-booking__note{font-size: .8125rem;line-height: 1.6;color: #67434d;}.landing-booking a:focus-visible{outline: 3px solid var(--shell-cherry);outline-offset: 4px;}@media (max-width: 600px){.page-header:has(.landing-booking){padding: 32px 20px;}.page-header:has(.landing-booking) .page-title{font-size: 1.75rem;line-height: 1.25;}.landing-booking__actions{gap: 4px;}.landing-booking__cta{width: 100%;}}.seo-skip-link{position: fixed;top: 12px;left: 12px;z-index: 10002;padding: 10px 16px;border-radius: 999px;background: #fff;color: var(--shell-cherry-dark);font-weight: 700;text-decoration: none;transform: translateY(-160%);transition: transform 0.2s ease;}.seo-skip-link:focus{transform: translateY(0);}.seo-site-header{position: sticky;top: 0;z-index: 1000;width: 100%;border-bottom: 1px solid var(--shell-line);background: rgba(255, 247, 243, 0.94);box-shadow: 0 8px 30px rgba(62, 17, 29, 0.06);color: var(--shell-ink);backdrop-filter: blur(18px);-webkit-backdrop-filter: blur(18px);}main.page-content :is(h2, h3, strong){color: #7b293e !important;}main.page-content a:not(.btn){color: #7b293e !important;text-decoration-line: underline;text-decoration-color: rgba(123, 41, 62, 0.38);text-underline-offset: 0.18em;}main.page-content .btn:not(.btn-secondary){background: var(--shell-cherry) !important;color: #fff !important;}main.page-content .btn-secondary{color: #7b293e !important;}.seo-nav{box-sizing: border-box;display: flex;align-items: center;gap: 28px;width: min(1180px, calc(100% - 40px));min-height: 72px;margin: 0 auto;}.seo-brand{display: inline-flex;flex: 0 0 auto;align-items: baseline;gap: 7px;color: var(--shell-cherry-dark);text-decoration: none;}.seo-brand__name{font-family: "Playfair Display", Georgia, serif;font-size: 1.65rem;font-weight: 700;letter-spacing: -0.04em;}.seo-brand__studio{color: var(--shell-cherry);font-size: 0.58rem;font-weight: 800;letter-spacing: 0.16em;text-transform: uppercase;}.seo-nav__links{display: flex;align-items: center;justify-content: center;gap: 24px;margin: 0 0 0 auto;padding: 0;list-style: none;}.seo-nav__links a{position: relative;color: var(--shell-ink);font-size: 0.87rem;font-weight: 650;text-decoration: none;}.seo-nav__links a::after{content: "";position: absolute;right: 0;bottom: -7px;left: 0;height: 2px;border-radius: 999px;background: var(--shell-cherry);transform: scaleX(0);transition: transform 0.2s ease;}.seo-nav__links a:hover::after, .seo-nav__links a:focus-visible::after{transform: scaleX(1);}.seo-nav__cta{display: inline-flex;flex: 0 0 auto;align-items: center;justify-content: center;min-height: 42px;padding: 0 19px;border-radius: 999px;background: var(--shell-cherry);box-shadow: 0 8px 20px rgba(143, 24, 51, 0.18);color: #fff;font-size: 0.82rem;font-weight: 750;text-decoration: none;transition: transform 0.2s ease, background 0.2s ease;}.seo-nav__cta:hover, .seo-nav__cta:focus-visible{background: var(--shell-cherry-dark);transform: translateY(-1px);}.seo-menu-toggle{display: none;width: 44px;height: 44px;margin-left: auto;padding: 0;border: 1px solid var(--shell-line);border-radius: 50%;background: #fff;color: var(--shell-cherry-dark);cursor: pointer;}.seo-menu-toggle span{display: block;width: 18px;height: 2px;margin: 4px auto;border-radius: 9px;background: currentColor;transition: transform 0.2s ease, opacity 0.2s ease;}.seo-menu-toggle[aria-expanded="true"] span:nth-child(1){transform: translateY(6px) rotate(45deg);}.seo-menu-toggle[aria-expanded="true"] span:nth-child(2){opacity: 0;}.seo-menu-toggle[aria-expanded="true"] span:nth-child(3){transform: translateY(-6px) rotate(-45deg);}.seo-site-footer{padding: 0 !important;background: var(--shell-ink) !important;color: rgba(255, 255, 255, 0.78) !important;text-align: left !important;}.seo-footer__inner{display: grid;grid-template-columns: minmax(240px, 1.4fr) repeat(3, minmax(150px, 1fr));gap: 44px;width: min(1180px, calc(100% - 40px));margin: 0 auto;padding: 64px 0 44px;}.seo-footer__brand{max-width: 330px;}.seo-footer__logo{display: inline-block;margin-bottom: 15px;color: #fff !important;font-family: "Playfair Display", Georgia, serif;font-size: 2rem;font-weight: 700;letter-spacing: -0.04em;text-decoration: none;}.seo-footer__brand p{margin: 0;color: rgba(255, 255, 255, 0.63) !important;font-size: 0.92rem;line-height: 1.75;}.seo-footer__column h2{margin: 0 0 18px !important;color: var(--shell-lime) !important;font-family: inherit !important;font-size: 0.7rem !important;font-weight: 800;letter-spacing: 0.15em;text-transform: uppercase;}.seo-footer__column nav{display: grid;gap: 10px;}.seo-site-footer a{color: rgba(255, 255, 255, 0.8) !important;}.seo-footer__column a{width: fit-content;font-size: 0.9rem;line-height: 1.45;text-decoration: none;}.seo-footer__column a:hover, .seo-footer__column a:focus-visible{color: #fff !important;text-decoration: underline;}.seo-footer__contact{display: inline-flex;margin-top: 18px;padding: 10px 14px;border: 1px solid rgba(220, 232, 121, 0.35);border-radius: 999px;color: var(--shell-lime) !important;font-weight: 700;text-decoration: none;}.seo-footer__bottom{display: flex;align-items: center;justify-content: space-between;gap: 20px;width: min(1180px, calc(100% - 40px));margin: 0 auto;padding: 22px 0 28px;border-top: 1px solid rgba(255, 255, 255, 0.1);color: rgba(255, 255, 255, 0.46);font-size: 0.78rem;}.seo-footer__bottom p{margin: 0;color: inherit !important;}.seo-footer__home{color: var(--shell-lime) !important;font-weight: 700;text-decoration: none;}@media (max-width: 880px){.seo-nav{min-height: 64px;}.seo-menu-toggle{display: block;}.seo-nav__cta{margin-left: auto;}.seo-nav__links{position: absolute;top: calc(100% + 1px);right: 0;left: 0;display: none;align-items: stretch;gap: 0;padding: 12px 20px 18px;border-bottom: 1px solid var(--shell-line);background: var(--shell-powder);box-shadow: 0 18px 30px rgba(62, 17, 29, 0.1);}.seo-nav__links.is-open{display: grid;}.seo-nav__links a{display: block;padding: 11px 4px;font-size: 0.95rem;}.seo-nav__links a::after{display: none;}.seo-footer__inner{grid-template-columns: repeat(2, minmax(0, 1fr));}}@media (max-width: 560px){.seo-nav{width: min(100% - 28px, 1180px);gap: 10px;}.seo-brand__name{font-size: 1.45rem;}.seo-brand__studio{display: none;}.seo-nav__cta{min-height: 38px;padding: 0 13px;font-size: 0.74rem;}.seo-footer__inner{grid-template-columns: 1fr 1fr;gap: 34px 24px;width: min(100% - 36px, 1180px);padding-top: 48px;}.seo-footer__brand{grid-column: 1 / -1;}.seo-footer__column--regions{grid-column: 1 / -1;}.seo-footer__column--regions nav{grid-template-columns: 1fr 1fr;}.seo-footer__bottom{align-items: flex-start;flex-direction: column;width: min(100% - 36px, 1180px);}}@media (prefers-reduced-motion: reduce){.seo-site-header *, .seo-site-footer *{scroll-behavior: auto !important;transition: none !important;}}.seo-lang{display: inline-flex;flex: 0 0 auto;align-items: center;gap: 2px;padding: 3px;border: 1px solid var(--shell-line);border-radius: 999px;background: rgba(255, 255, 255, 0.7);}.seo-lang a{display: inline-flex;align-items: center;justify-content: center;min-width: 34px;min-height: 30px;padding: 0 8px;border-radius: 999px;color: var(--shell-cherry-dark);font-size: 0.72rem;font-weight: 750;letter-spacing: 0.03em;text-decoration: none;transition: background 0.2s ease, color 0.2s ease;}.seo-lang a:hover, .seo-lang a:focus-visible{background: rgba(143, 24, 51, 0.1);}.seo-lang a[aria-current="true"]{background: var(--shell-cherry);color: #fff;}@media (max-width: 880px){.seo-lang{margin-left: auto;}.seo-nav__cta{margin-left: 8px;}}@media (max-width: 560px){.seo-lang{padding: 2px;}.seo-lang a{min-width: 30px;min-height: 28px;padding: 0 6px;font-size: 0.68rem;}}html[lang="ru"] body, html[lang="ru"] .page-content, html[lang="ru"] .seo-site-header, html[lang="ru"] .seo-site-footer{font-family: "Manrope", "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;}</style>
+   <script src="/seo-shell.js" defer></script>
+-  <link rel="stylesheet" href="/cookie-consent.css">
++  <style id="cookie-consent-css">.fn-cookie{position: fixed;z-index: 200;right: 12px;bottom: 12px;left: auto;display: flex;align-items: center;gap: 10px;max-width: min(430px, calc(100vw - 24px));padding: 9px 10px 9px 13px;border-radius: 999px;background: rgba(255, 253, 249, 0.94);-webkit-backdrop-filter: blur(12px) saturate(1.3);backdrop-filter: blur(12px) saturate(1.3);border: 1px solid rgba(196, 164, 132, 0.34);box-shadow: 0 8px 26px rgba(36, 29, 23, 0.13);font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;color: #2c2c2c;opacity: 0;transform: translateY(10px);transition: opacity 0.35s ease, transform 0.35s ease;}html[lang="ru"] .fn-cookie{font-family: "Manrope", "Plus Jakarta Sans", system-ui, sans-serif;}.fn-cookie[hidden]{display: none !important;}.fn-cookie.is-in{opacity: 1;transform: translateY(0);}.fn-cookie__title{position: absolute;width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden;clip: rect(0 0 0 0);white-space: nowrap;border: 0;}.fn-cookie__text{flex: 1 1 auto;margin: 0;font-size: 0.76rem;line-height: 1.4;color: #5f4149;}.fn-cookie__text a{color: #a91f3d;text-decoration: underline;text-underline-offset: 2px;white-space: nowrap;}.fn-cookie__text a:hover{color: #72152b;}.fn-cookie__actions{display: flex;flex: none;align-items: center;gap: 6px;}.fn-cookie__btn{flex: none;min-height: 32px;padding: 0 13px;border-radius: 999px;border: 1px solid transparent;font: inherit;font-size: 0.75rem;font-weight: 650;white-space: nowrap;cursor: pointer;transition: background-color 0.2s ease, color 0.2s ease;}.fn-cookie__btn:focus-visible{outline: 2px solid #a91f3d;outline-offset: 2px;}.fn-cookie__btn--accept{background: #a91f3d;color: #fff;}.fn-cookie__btn--accept:hover{background: #8d1932;}.fn-cookie__btn--decline{background: transparent;color: #72152b;padding: 0 8px;text-decoration: underline;text-underline-offset: 2px;}.fn-cookie__btn--decline:hover{background: rgba(143, 24, 51, 0.08);}body.fn-cookie-open .scroll-top-btn{bottom: calc(var(--fn-cookie-h, 50px) + 24px) !important;}@media (max-width: 620px){.fn-cookie{box-sizing: border-box;left: 8px;right: 8px;bottom: max(8px, env(safe-area-inset-bottom));max-width: none;display: grid;grid-template-columns: 36px minmax(0, 1fr);gap: 4px 10px;padding: 14px;border-color: rgba(114, 21, 43, 0.16);border-radius: 20px;background: rgba(255, 253, 249, 0.98);box-shadow: 0 18px 55px rgba(60, 24, 35, 0.2), 0 2px 8px rgba(60, 24, 35, 0.08);}.fn-cookie__title{position: static;grid-column: 1 / -1;display: flex;align-items: center;gap: 9px;width: auto;height: auto;margin: 0 0 3px;padding: 0;overflow: visible;clip: auto;white-space: normal;color: #321f25;font-family: "Playfair Display", Georgia, serif;font-size: 1.08rem;font-weight: 600;line-height: 1.25;}.fn-cookie__title svg{box-sizing: content-box;flex: 0 0 auto;width: 18px;height: 18px;padding: 7px;border-radius: 50%;background: #f9e8e8;color: #a91f3d;}.fn-cookie__text{grid-column: 1 / -1;margin: 2px 0 8px;font-size: 0.82rem;line-height: 1.55;color: #60464d;}.fn-cookie__text a{font-weight: 700;}.fn-cookie__actions{grid-column: 1 / -1;display: grid;grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);gap: 8px;width: 100%;}.fn-cookie__btn{width: 100%;min-height: 48px;padding: 0 10px;border-radius: 13px;font-size: 0.78rem;font-weight: 750;}.fn-cookie__btn--decline{border-color: rgba(114, 21, 43, 0.2);background: #fff;padding: 0 8px;text-decoration: none;}body.fn-cookie-open .whatsapp-float, body.fn-cookie-open .scroll-top-btn{bottom: calc(var(--fn-cookie-h, 184px) + max(18px, env(safe-area-inset-bottom))) !important;}}@media (max-width: 350px){.fn-cookie{padding: 12px;}.fn-cookie__actions{grid-template-columns: 1fr;}.fn-cookie__text{font-size: 0.79rem;}}@media (prefers-reduced-motion: reduce){.fn-cookie{transition: opacity 0.2s ease;transform: none;}.fn-cookie.is-in{transform: none;}}</style>
+   <script src="/cookie-consent.js" defer></script>
+   <script src="fn-events.js?v=20261009" defer></script>
+   <!-- Microsoft Clarity -->
+   <script>
+     (function(c,l,a,r,i,t,y){
+         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
++        c.fnLoadClarity=function(){if(c.__cl)return;c.__cl=1;t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);};
+     })(window, document, "clarity", "script", "ykf9z66yqx");
+     // KVKK: Clarity izni yalnızca kullanıcı çerezleri kabul ettiyse verilir
+     try {
+diff --git a/izmir-protez-tirnak-fiyatlari.html b/izmir-protez-tirnak-fiyatlari.html
+index a441564..ccb4910 100644
+--- a/izmir-protez-tirnak-fiyatlari.html
++++ b/izmir-protez-tirnak-fiyatlari.html
+@@ -2,7 +2,6 @@
+ <html lang="tr" dir="ltr">
+ <head>
+   <!-- Google tag (gtag.js) -->
+-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5MWKVSGTQV"></script>
+   <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+@@ -28,6 +27,7 @@
+     gtag('config', 'G-5MWKVSGTQV');
+     gtag('config', 'AW-10868274290');
+   </script>
++  <script>(function(){var d=0;function l(){if(d)return;d=1;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-5MWKVSGTQV';document.head.appendChild(s);if(window.fnLoadClarity)window.fnLoadClarity();}['pointerdown','touchstart','keydown','scroll'].forEach(function(e){addEventListener(e,l,{once:true,passive:true});});if(document.readyState==='complete')setTimeout(l,800);else addEventListener('load',function(){setTimeout(l,800);});})();</script>
+   <meta charset="UTF-8">
+   <meta name="yandex-verification" content="9ffe10edd91ffbbc" />
+   <meta name="msvalidate.01" content="6F3E5D645D5F2856E58A1CD8E60EE8C9" />
+@@ -910,17 +910,16 @@
+     ]
+   }
+   </script>
+-  <link rel="stylesheet" href="/seo-shell.css">
++  <style id="seo-shell-css">:root{--shell-cherry: #8f1833;--shell-cherry-dark: #54101f;--shell-ink: #24171b;--shell-powder: #fff7f3;--shell-blush: #f3cfd3;--shell-lime: #dce879;--shell-line: rgba(84, 16, 31, 0.14);}.page-header:has(.landing-booking){padding: 48px 20px 40px;background: var(--shell-powder);color: var(--shell-cherry-dark);}.landing-booking{max-width: 640px;margin: 24px auto 0;}.landing-booking p{margin: 0;}.landing-booking__service{font-size: 1rem;font-weight: 650;}.landing-booking .landing-booking__price{margin-top: 6px;font-family: 'Playfair Display', Georgia, serif;font-size: clamp(2rem, 6vw, 2.8rem);font-weight: 600;line-height: 1.2;}.landing-booking__detail{margin-top: 8px !important;font-size: .875rem;}.landing-booking__actions{display: flex;flex-wrap: wrap;justify-content: center;align-items: center;gap: 16px;margin: 20px 0 12px;}.landing-booking__cta{display: inline-flex;align-items: center;justify-content: center;gap: 16px;min-height: 50px;padding: 10px 24px;border-radius: 12px;background: var(--shell-cherry);color: #fff;font-weight: 700;text-decoration: none;}.landing-booking__cta:hover{background: var(--shell-cherry-dark);}.landing-booking__phone{padding: 10px 0;color: var(--shell-cherry-dark);text-underline-offset: 4px;}.landing-booking__note{font-size: .8125rem;line-height: 1.6;color: #67434d;}.landing-booking a:focus-visible{outline: 3px solid var(--shell-cherry);outline-offset: 4px;}@media (max-width: 600px){.page-header:has(.landing-booking){padding: 32px 20px;}.page-header:has(.landing-booking) .page-title{font-size: 1.75rem;line-height: 1.25;}.landing-booking__actions{gap: 4px;}.landing-booking__cta{width: 100%;}}.seo-skip-link{position: fixed;top: 12px;left: 12px;z-index: 10002;padding: 10px 16px;border-radius: 999px;background: #fff;color: var(--shell-cherry-dark);font-weight: 700;text-decoration: none;transform: translateY(-160%);transition: transform 0.2s ease;}.seo-skip-link:focus{transform: translateY(0);}.seo-site-header{position: sticky;top: 0;z-index: 1000;width: 100%;border-bottom: 1px solid var(--shell-line);background: rgba(255, 247, 243, 0.94);box-shadow: 0 8px 30px rgba(62, 17, 29, 0.06);color: var(--shell-ink);backdrop-filter: blur(18px);-webkit-backdrop-filter: blur(18px);}main.page-content :is(h2, h3, strong){color: #7b293e !important;}main.page-content a:not(.btn){color: #7b293e !important;text-decoration-line: underline;text-decoration-color: rgba(123, 41, 62, 0.38);text-underline-offset: 0.18em;}main.page-content .btn:not(.btn-secondary){background: var(--shell-cherry) !important;color: #fff !important;}main.page-content .btn-secondary{color: #7b293e !important;}.seo-nav{box-sizing: border-box;display: flex;align-items: center;gap: 28px;width: min(1180px, calc(100% - 40px));min-height: 72px;margin: 0 auto;}.seo-brand{display: inline-flex;flex: 0 0 auto;align-items: baseline;gap: 7px;color: var(--shell-cherry-dark);text-decoration: none;}.seo-brand__name{font-family: "Playfair Display", Georgia, serif;font-size: 1.65rem;font-weight: 700;letter-spacing: -0.04em;}.seo-brand__studio{color: var(--shell-cherry);font-size: 0.58rem;font-weight: 800;letter-spacing: 0.16em;text-transform: uppercase;}.seo-nav__links{display: flex;align-items: center;justify-content: center;gap: 24px;margin: 0 0 0 auto;padding: 0;list-style: none;}.seo-nav__links a{position: relative;color: var(--shell-ink);font-size: 0.87rem;font-weight: 650;text-decoration: none;}.seo-nav__links a::after{content: "";position: absolute;right: 0;bottom: -7px;left: 0;height: 2px;border-radius: 999px;background: var(--shell-cherry);transform: scaleX(0);transition: transform 0.2s ease;}.seo-nav__links a:hover::after, .seo-nav__links a:focus-visible::after{transform: scaleX(1);}.seo-nav__cta{display: inline-flex;flex: 0 0 auto;align-items: center;justify-content: center;min-height: 42px;padding: 0 19px;border-radius: 999px;background: var(--shell-cherry);box-shadow: 0 8px 20px rgba(143, 24, 51, 0.18);color: #fff;font-size: 0.82rem;font-weight: 750;text-decoration: none;transition: transform 0.2s ease, background 0.2s ease;}.seo-nav__cta:hover, .seo-nav__cta:focus-visible{background: var(--shell-cherry-dark);transform: translateY(-1px);}.seo-menu-toggle{display: none;width: 44px;height: 44px;margin-left: auto;padding: 0;border: 1px solid var(--shell-line);border-radius: 50%;background: #fff;color: var(--shell-cherry-dark);cursor: pointer;}.seo-menu-toggle span{display: block;width: 18px;height: 2px;margin: 4px auto;border-radius: 9px;background: currentColor;transition: transform 0.2s ease, opacity 0.2s ease;}.seo-menu-toggle[aria-expanded="true"] span:nth-child(1){transform: translateY(6px) rotate(45deg);}.seo-menu-toggle[aria-expanded="true"] span:nth-child(2){opacity: 0;}.seo-menu-toggle[aria-expanded="true"] span:nth-child(3){transform: translateY(-6px) rotate(-45deg);}.seo-site-footer{padding: 0 !important;background: var(--shell-ink) !important;color: rgba(255, 255, 255, 0.78) !important;text-align: left !important;}.seo-footer__inner{display: grid;grid-template-columns: minmax(240px, 1.4fr) repeat(3, minmax(150px, 1fr));gap: 44px;width: min(1180px, calc(100% - 40px));margin: 0 auto;padding: 64px 0 44px;}.seo-footer__brand{max-width: 330px;}.seo-footer__logo{display: inline-block;margin-bottom: 15px;color: #fff !important;font-family: "Playfair Display", Georgia, serif;font-size: 2rem;font-weight: 700;letter-spacing: -0.04em;text-decoration: none;}.seo-footer__brand p{margin: 0;color: rgba(255, 255, 255, 0.63) !important;font-size: 0.92rem;line-height: 1.75;}.seo-footer__column h2{margin: 0 0 18px !important;color: var(--shell-lime) !important;font-family: inherit !important;font-size: 0.7rem !important;font-weight: 800;letter-spacing: 0.15em;text-transform: uppercase;}.seo-footer__column nav{display: grid;gap: 10px;}.seo-site-footer a{color: rgba(255, 255, 255, 0.8) !important;}.seo-footer__column a{width: fit-content;font-size: 0.9rem;line-height: 1.45;text-decoration: none;}.seo-footer__column a:hover, .seo-footer__column a:focus-visible{color: #fff !important;text-decoration: underline;}.seo-footer__contact{display: inline-flex;margin-top: 18px;padding: 10px 14px;border: 1px solid rgba(220, 232, 121, 0.35);border-radius: 999px;color: var(--shell-lime) !important;font-weight: 700;text-decoration: none;}.seo-footer__bottom{display: flex;align-items: center;justify-content: space-between;gap: 20px;width: min(1180px, calc(100% - 40px));margin: 0 auto;padding: 22px 0 28px;border-top: 1px solid rgba(255, 255, 255, 0.1);color: rgba(255, 255, 255, 0.46);font-size: 0.78rem;}.seo-footer__bottom p{margin: 0;color: inherit !important;}.seo-footer__home{color: var(--shell-lime) !important;font-weight: 700;text-decoration: none;}@media (max-width: 880px){.seo-nav{min-height: 64px;}.seo-menu-toggle{display: block;}.seo-nav__cta{margin-left: auto;}.seo-nav__links{position: absolute;top: calc(100% + 1px);right: 0;left: 0;display: none;align-items: stretch;gap: 0;padding: 12px 20px 18px;border-bottom: 1px solid var(--shell-line);background: var(--shell-powder);box-shadow: 0 18px 30px rgba(62, 17, 29, 0.1);}.seo-nav__links.is-open{display: grid;}.seo-nav__links a{display: block;padding: 11px 4px;font-size: 0.95rem;}.seo-nav__links a::after{display: none;}.seo-footer__inner{grid-template-columns: repeat(2, minmax(0, 1fr));}}@media (max-width: 560px){.seo-nav{width: min(100% - 28px, 1180px);gap: 10px;}.seo-brand__name{font-size: 1.45rem;}.seo-brand__studio{display: none;}.seo-nav__cta{min-height: 38px;padding: 0 13px;font-size: 0.74rem;}.seo-footer__inner{grid-template-columns: 1fr 1fr;gap: 34px 24px;width: min(100% - 36px, 1180px);padding-top: 48px;}.seo-footer__brand{grid-column: 1 / -1;}.seo-footer__column--regions{grid-column: 1 / -1;}.seo-footer__column--regions nav{grid-template-columns: 1fr 1fr;}.seo-footer__bottom{align-items: flex-start;flex-direction: column;width: min(100% - 36px, 1180px);}}@media (prefers-reduced-motion: reduce){.seo-site-header *, .seo-site-footer *{scroll-behavior: auto !important;transition: none !important;}}.seo-lang{display: inline-flex;flex: 0 0 auto;align-items: center;gap: 2px;padding: 3px;border: 1px solid var(--shell-line);border-radius: 999px;background: rgba(255, 255, 255, 0.7);}.seo-lang a{display: inline-flex;align-items: center;justify-content: center;min-width: 34px;min-height: 30px;padding: 0 8px;border-radius: 999px;color: var(--shell-cherry-dark);font-size: 0.72rem;font-weight: 750;letter-spacing: 0.03em;text-decoration: none;transition: background 0.2s ease, color 0.2s ease;}.seo-lang a:hover, .seo-lang a:focus-visible{background: rgba(143, 24, 51, 0.1);}.seo-lang a[aria-current="true"]{background: var(--shell-cherry);color: #fff;}@media (max-width: 880px){.seo-lang{margin-left: auto;}.seo-nav__cta{margin-left: 8px;}}@media (max-width: 560px){.seo-lang{padding: 2px;}.seo-lang a{min-width: 30px;min-height: 28px;padding: 0 6px;font-size: 0.68rem;}}html[lang="ru"] body, html[lang="ru"] .page-content, html[lang="ru"] .seo-site-header, html[lang="ru"] .seo-site-footer{font-family: "Manrope", "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;}</style>
+   <script src="/seo-shell.js" defer></script>
+-  <link rel="stylesheet" href="/cookie-consent.css">
++  <style id="cookie-consent-css">.fn-cookie{position: fixed;z-index: 200;right: 12px;bottom: 12px;left: auto;display: flex;align-items: center;gap: 10px;max-width: min(430px, calc(100vw - 24px));padding: 9px 10px 9px 13px;border-radius: 999px;background: rgba(255, 253, 249, 0.94);-webkit-backdrop-filter: blur(12px) saturate(1.3);backdrop-filter: blur(12px) saturate(1.3);border: 1px solid rgba(196, 164, 132, 0.34);box-shadow: 0 8px 26px rgba(36, 29, 23, 0.13);font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;color: #2c2c2c;opacity: 0;transform: translateY(10px);transition: opacity 0.35s ease, transform 0.35s ease;}html[lang="ru"] .fn-cookie{font-family: "Manrope", "Plus Jakarta Sans", system-ui, sans-serif;}.fn-cookie[hidden]{display: none !important;}.fn-cookie.is-in{opacity: 1;transform: translateY(0);}.fn-cookie__title{position: absolute;width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden;clip: rect(0 0 0 0);white-space: nowrap;border: 0;}.fn-cookie__text{flex: 1 1 auto;margin: 0;font-size: 0.76rem;line-height: 1.4;color: #5f4149;}.fn-cookie__text a{color: #a91f3d;text-decoration: underline;text-underline-offset: 2px;white-space: nowrap;}.fn-cookie__text a:hover{color: #72152b;}.fn-cookie__actions{display: flex;flex: none;align-items: center;gap: 6px;}.fn-cookie__btn{flex: none;min-height: 32px;padding: 0 13px;border-radius: 999px;border: 1px solid transparent;font: inherit;font-size: 0.75rem;font-weight: 650;white-space: nowrap;cursor: pointer;transition: background-color 0.2s ease, color 0.2s ease;}.fn-cookie__btn:focus-visible{outline: 2px solid #a91f3d;outline-offset: 2px;}.fn-cookie__btn--accept{background: #a91f3d;color: #fff;}.fn-cookie__btn--accept:hover{background: #8d1932;}.fn-cookie__btn--decline{background: transparent;color: #72152b;padding: 0 8px;text-decoration: underline;text-underline-offset: 2px;}.fn-cookie__btn--decline:hover{background: rgba(143, 24, 51, 0.08);}body.fn-cookie-open .scroll-top-btn{bottom: calc(var(--fn-cookie-h, 50px) + 24px) !important;}@media (max-width: 620px){.fn-cookie{box-sizing: border-box;left: 8px;right: 8px;bottom: max(8px, env(safe-area-inset-bottom));max-width: none;display: grid;grid-template-columns: 36px minmax(0, 1fr);gap: 4px 10px;padding: 14px;border-color: rgba(114, 21, 43, 0.16);border-radius: 20px;background: rgba(255, 253, 249, 0.98);box-shadow: 0 18px 55px rgba(60, 24, 35, 0.2), 0 2px 8px rgba(60, 24, 35, 0.08);}.fn-cookie__title{position: static;grid-column: 1 / -1;display: flex;align-items: center;gap: 9px;width: auto;height: auto;margin: 0 0 3px;padding: 0;overflow: visible;clip: auto;white-space: normal;color: #321f25;font-family: "Playfair Display", Georgia, serif;font-size: 1.08rem;font-weight: 600;line-height: 1.25;}.fn-cookie__title svg{box-sizing: content-box;flex: 0 0 auto;width: 18px;height: 18px;padding: 7px;border-radius: 50%;background: #f9e8e8;color: #a91f3d;}.fn-cookie__text{grid-column: 1 / -1;margin: 2px 0 8px;font-size: 0.82rem;line-height: 1.55;color: #60464d;}.fn-cookie__text a{font-weight: 700;}.fn-cookie__actions{grid-column: 1 / -1;display: grid;grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);gap: 8px;width: 100%;}.fn-cookie__btn{width: 100%;min-height: 48px;padding: 0 10px;border-radius: 13px;font-size: 0.78rem;font-weight: 750;}.fn-cookie__btn--decline{border-color: rgba(114, 21, 43, 0.2);background: #fff;padding: 0 8px;text-decoration: none;}body.fn-cookie-open .whatsapp-float, body.fn-cookie-open .scroll-top-btn{bottom: calc(var(--fn-cookie-h, 184px) + max(18px, env(safe-area-inset-bottom))) !important;}}@media (max-width: 350px){.fn-cookie{padding: 12px;}.fn-cookie__actions{grid-template-columns: 1fr;}.fn-cookie__text{font-size: 0.79rem;}}@media (prefers-reduced-motion: reduce){.fn-cookie{transition: opacity 0.2s ease;transform: none;}.fn-cookie.is-in{transform: none;}}</style>
+   <script src="/cookie-consent.js" defer></script>
+   <script src="fn-events.js?v=20261009" defer></script>
+   <!-- Microsoft Clarity -->
+   <script>
+     (function(c,l,a,r,i,t,y){
+         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
++        c.fnLoadClarity=function(){if(c.__cl)return;c.__cl=1;t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);};
+     })(window, document, "clarity", "script", "ykf9z66yqx");
+     // KVKK: Clarity izni yalnızca kullanıcı çerezleri kabul ettiyse verilir
+     try {
+diff --git a/izmir-protez-tirnak.html b/izmir-protez-tirnak.html
+index a9bb71a..27a9083 100644
+--- a/izmir-protez-tirnak.html
++++ b/izmir-protez-tirnak.html
+@@ -10,7 +10,6 @@
+ 
+     <meta name="google-site-verification" content="pCyczzQFiQl4oXr1X1qkzBT-nM8sS0an9gPdZPX7sS0" />
+   <!-- Google tag (gtag.js) -->
+-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5MWKVSGTQV"></script>
+   <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+@@ -36,6 +35,7 @@
+     gtag('config', 'G-5MWKVSGTQV');
+     gtag('config', 'AW-10868274290');
+   </script>
++  <script>(function(){var d=0;function l(){if(d)return;d=1;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-5MWKVSGTQV';document.head.appendChild(s);if(window.fnLoadClarity)window.fnLoadClarity();}['pointerdown','touchstart','keydown','scroll'].forEach(function(e){addEventListener(e,l,{once:true,passive:true});});if(document.readyState==='complete')setTimeout(l,800);else addEventListener('load',function(){setTimeout(l,800);});})();</script>
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <title>İzmir Protez Tırnak – Evinize Gelen Jel Tırnak Uygulaması | Fleura Nails</title>
+   <meta name="description" content="İzmir'de profesyonel protez tırnak ve jel tırnak uygulaması. Fleura Nails ile doğal görünümlü sonuç, steril ekipman ve adresinizde VIP hizmet.">
+@@ -420,10 +420,10 @@
+       },
+       {
+         "@type": "Question",
+-        "name": "Jel tırnak mı akrilik mi daha iyi?",
++        "name": "Jel tırnak mı polygel mi daha iyi?",
+         "acceptedAnswer": {
+           "@type": "Answer",
+-          "text": "İkisinin de avantajları farklıdır. Jel daha doğal ve esnek bir görünüm sunarken, akrilik daha sert ve dayanıklıdır. Tırnak yapınıza ve beklentinize göre uzman ekibimizle birlikte en uygun seçeneği belirliyoruz."
++          "text": "İkisinin de avantajları farklıdır. Jel daha doğal ve esnek bir görünüm sunarken, polygel daha hafif ve dayanıklı bir yapı sağlar. Tırnak yapınıza ve beklentinize göre uzman ekibimizle birlikte en uygun seçeneği belirliyoruz."
+         }
+       },
+       {
+@@ -515,9 +515,9 @@
+     .hero-figure{margin:0 0 30px;}
+     .hero-figure img{width:100%;height:auto;display:block;border-radius:18px;border:1px solid rgba(196,164,132,.25);box-shadow:0 10px 34px rgba(36,29,23,.10);}
+   </style>
+-  <link rel="stylesheet" href="/seo-shell.css?v=20261009">
++  <style id="seo-shell-css">:root{--shell-cherry: #8f1833;--shell-cherry-dark: #54101f;--shell-ink: #24171b;--shell-powder: #fff7f3;--shell-blush: #f3cfd3;--shell-lime: #dce879;--shell-line: rgba(84, 16, 31, 0.14);}.page-header:has(.landing-booking){padding: 48px 20px 40px;background: var(--shell-powder);color: var(--shell-cherry-dark);}.landing-booking{max-width: 640px;margin: 24px auto 0;}.landing-booking p{margin: 0;}.landing-booking__service{font-size: 1rem;font-weight: 650;}.landing-booking .landing-booking__price{margin-top: 6px;font-family: 'Playfair Display', Georgia, serif;font-size: clamp(2rem, 6vw, 2.8rem);font-weight: 600;line-height: 1.2;}.landing-booking__detail{margin-top: 8px !important;font-size: .875rem;}.landing-booking__actions{display: flex;flex-wrap: wrap;justify-content: center;align-items: center;gap: 16px;margin: 20px 0 12px;}.landing-booking__cta{display: inline-flex;align-items: center;justify-content: center;gap: 16px;min-height: 50px;padding: 10px 24px;border-radius: 12px;background: var(--shell-cherry);color: #fff;font-weight: 700;text-decoration: none;}.landing-booking__cta:hover{background: var(--shell-cherry-dark);}.landing-booking__phone{padding: 10px 0;color: var(--shell-cherry-dark);text-underline-offset: 4px;}.landing-booking__note{font-size: .8125rem;line-height: 1.6;color: #67434d;}.landing-booking a:focus-visible{outline: 3px solid var(--shell-cherry);outline-offset: 4px;}@media (max-width: 600px){.page-header:has(.landing-booking){padding: 32px 20px;}.page-header:has(.landing-booking) .page-title{font-size: 1.75rem;line-height: 1.25;}.landing-booking__actions{gap: 4px;}.landing-booking__cta{width: 100%;}}.seo-skip-link{position: fixed;top: 12px;left: 12px;z-index: 10002;padding: 10px 16px;border-radius: 999px;background: #fff;color: var(--shell-cherry-dark);font-weight: 700;text-decoration: none;transform: translateY(-160%);transition: transform 0.2s ease;}.seo-skip-link:focus{transform: translateY(0);}.seo-site-header{position: sticky;top: 0;z-index: 1000;width: 100%;border-bottom: 1px solid var(--shell-line);background: rgba(255, 247, 243, 0.94);box-shadow: 0 8px 30px rgba(62, 17, 29, 0.06);color: var(--shell-ink);backdrop-filter: blur(18px);-webkit-backdrop-filter: blur(18px);}main.page-content :is(h2, h3, strong){color: #7b293e !important;}main.page-content a:not(.btn){color: #7b293e !important;text-decoration-line: underline;text-decoration-color: rgba(123, 41, 62, 0.38);text-underline-offset: 0.18em;}main.page-content .btn:not(.btn-secondary){background: var(--shell-cherry) !important;color: #fff !important;}main.page-content .btn-secondary{color: #7b293e !important;}.seo-nav{box-sizing: border-box;display: flex;align-items: center;gap: 28px;width: min(1180px, calc(100% - 40px));min-height: 72px;margin: 0 auto;}.seo-brand{display: inline-flex;flex: 0 0 auto;align-items: baseline;gap: 7px;color: var(--shell-cherry-dark);text-decoration: none;}.seo-brand__name{font-family: "Playfair Display", Georgia, serif;font-size: 1.65rem;font-weight: 700;letter-spacing: -0.04em;}.seo-brand__studio{color: var(--shell-cherry);font-size: 0.58rem;font-weight: 800;letter-spacing: 0.16em;text-transform: uppercase;}.seo-nav__links{display: flex;align-items: center;justify-content: center;gap: 24px;margin: 0 0 0 auto;padding: 0;list-style: none;}.seo-nav__links a{position: relative;color: var(--shell-ink);font-size: 0.87rem;font-weight: 650;text-decoration: none;}.seo-nav__links a::after{content: "";position: absolute;right: 0;bottom: -7px;left: 0;height: 2px;border-radius: 999px;background: var(--shell-cherry);transform: scaleX(0);transition: transform 0.2s ease;}.seo-nav__links a:hover::after, .seo-nav__links a:focus-visible::after{transform: scaleX(1);}.seo-nav__cta{display: inline-flex;flex: 0 0 auto;align-items: center;justify-content: center;min-height: 42px;padding: 0 19px;border-radius: 999px;background: var(--shell-cherry);box-shadow: 0 8px 20px rgba(143, 24, 51, 0.18);color: #fff;font-size: 0.82rem;font-weight: 750;text-decoration: none;transition: transform 0.2s ease, background 0.2s ease;}.seo-nav__cta:hover, .seo-nav__cta:focus-visible{background: var(--shell-cherry-dark);transform: translateY(-1px);}.seo-menu-toggle{display: none;width: 44px;height: 44px;margin-left: auto;padding: 0;border: 1px solid var(--shell-line);border-radius: 50%;background: #fff;color: var(--shell-cherry-dark);cursor: pointer;}.seo-menu-toggle span{display: block;width: 18px;height: 2px;margin: 4px auto;border-radius: 9px;background: currentColor;transition: transform 0.2s ease, opacity 0.2s ease;}.seo-menu-toggle[aria-expanded="true"] span:nth-child(1){transform: translateY(6px) rotate(45deg);}.seo-menu-toggle[aria-expanded="true"] span:nth-child(2){opacity: 0;}.seo-menu-toggle[aria-expanded="true"] span:nth-child(3){transform: translateY(-6px) rotate(-45deg);}.seo-site-footer{padding: 0 !important;background: var(--shell-ink) !important;color: rgba(255, 255, 255, 0.78) !important;text-align: left !important;}.seo-footer__inner{display: grid;grid-template-columns: minmax(240px, 1.4fr) repeat(3, minmax(150px, 1fr));gap: 44px;width: min(1180px, calc(100% - 40px));margin: 0 auto;padding: 64px 0 44px;}.seo-footer__brand{max-width: 330px;}.seo-footer__logo{display: inline-block;margin-bottom: 15px;color: #fff !important;font-family: "Playfair Display", Georgia, serif;font-size: 2rem;font-weight: 700;letter-spacing: -0.04em;text-decoration: none;}.seo-footer__brand p{margin: 0;color: rgba(255, 255, 255, 0.63) !important;font-size: 0.92rem;line-height: 1.75;}.seo-footer__column h2{margin: 0 0 18px !important;color: var(--shell-lime) !important;font-family: inherit !important;font-size: 0.7rem !important;font-weight: 800;letter-spacing: 0.15em;text-transform: uppercase;}.seo-footer__column nav{display: grid;gap: 10px;}.seo-site-footer a{color: rgba(255, 255, 255, 0.8) !important;}.seo-footer__column a{width: fit-content;font-size: 0.9rem;line-height: 1.45;text-decoration: none;}.seo-footer__column a:hover, .seo-footer__column a:focus-visible{color: #fff !important;text-decoration: underline;}.seo-footer__contact{display: inline-flex;margin-top: 18px;padding: 10px 14px;border: 1px solid rgba(220, 232, 121, 0.35);border-radius: 999px;color: var(--shell-lime) !important;font-weight: 700;text-decoration: none;}.seo-footer__bottom{display: flex;align-items: center;justify-content: space-between;gap: 20px;width: min(1180px, calc(100% - 40px));margin: 0 auto;padding: 22px 0 28px;border-top: 1px solid rgba(255, 255, 255, 0.1);color: rgba(255, 255, 255, 0.46);font-size: 0.78rem;}.seo-footer__bottom p{margin: 0;color: inherit !important;}.seo-footer__home{color: var(--shell-lime) !important;font-weight: 700;text-decoration: none;}@media (max-width: 880px){.seo-nav{min-height: 64px;}.seo-menu-toggle{display: block;}.seo-nav__cta{margin-left: auto;}.seo-nav__links{position: absolute;top: calc(100% + 1px);right: 0;left: 0;display: none;align-items: stretch;gap: 0;padding: 12px 20px 18px;border-bottom: 1px solid var(--shell-line);background: var(--shell-powder);box-shadow: 0 18px 30px rgba(62, 17, 29, 0.1);}.seo-nav__links.is-open{display: grid;}.seo-nav__links a{display: block;padding: 11px 4px;font-size: 0.95rem;}.seo-nav__links a::after{display: none;}.seo-footer__inner{grid-template-columns: repeat(2, minmax(0, 1fr));}}@media (max-width: 560px){.seo-nav{width: min(100% - 28px, 1180px);gap: 10px;}.seo-brand__name{font-size: 1.45rem;}.seo-brand__studio{display: none;}.seo-nav__cta{min-height: 38px;padding: 0 13px;font-size: 0.74rem;}.seo-footer__inner{grid-template-columns: 1fr 1fr;gap: 34px 24px;width: min(100% - 36px, 1180px);padding-top: 48px;}.seo-footer__brand{grid-column: 1 / -1;}.seo-footer__column--regions{grid-column: 1 / -1;}.seo-footer__column--regions nav{grid-template-columns: 1fr 1fr;}.seo-footer__bottom{align-items: flex-start;flex-direction: column;width: min(100% - 36px, 1180px);}}@media (prefers-reduced-motion: reduce){.seo-site-header *, .seo-site-footer *{scroll-behavior: auto !important;transition: none !important;}}.seo-lang{display: inline-flex;flex: 0 0 auto;align-items: center;gap: 2px;padding: 3px;border: 1px solid var(--shell-line);border-radius: 999px;background: rgba(255, 255, 255, 0.7);}.seo-lang a{display: inline-flex;align-items: center;justify-content: center;min-width: 34px;min-height: 30px;padding: 0 8px;border-radius: 999px;color: var(--shell-cherry-dark);font-size: 0.72rem;font-weight: 750;letter-spacing: 0.03em;text-decoration: none;transition: background 0.2s ease, color 0.2s ease;}.seo-lang a:hover, .seo-lang a:focus-visible{background: rgba(143, 24, 51, 0.1);}.seo-lang a[aria-current="true"]{background: var(--shell-cherry);color: #fff;}@media (max-width: 880px){.seo-lang{margin-left: auto;}.seo-nav__cta{margin-left: 8px;}}@media (max-width: 560px){.seo-lang{padding: 2px;}.seo-lang a{min-width: 30px;min-height: 28px;padding: 0 6px;font-size: 0.68rem;}}html[lang="ru"] body, html[lang="ru"] .page-content, html[lang="ru"] .seo-site-header, html[lang="ru"] .seo-site-footer{font-family: "Manrope", "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;}</style>
+   <script src="/seo-shell.js" defer></script>
+-  <link rel="stylesheet" href="/cookie-consent.css">
++  <style id="cookie-consent-css">.fn-cookie{position: fixed;z-index: 200;right: 12px;bottom: 12px;left: auto;display: flex;align-items: center;gap: 10px;max-width: min(430px, calc(100vw - 24px));padding: 9px 10px 9px 13px;border-radius: 999px;background: rgba(255, 253, 249, 0.94);-webkit-backdrop-filter: blur(12px) saturate(1.3);backdrop-filter: blur(12px) saturate(1.3);border: 1px solid rgba(196, 164, 132, 0.34);box-shadow: 0 8px 26px rgba(36, 29, 23, 0.13);font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;color: #2c2c2c;opacity: 0;transform: translateY(10px);transition: opacity 0.35s ease, transform 0.35s ease;}html[lang="ru"] .fn-cookie{font-family: "Manrope", "Plus Jakarta Sans", system-ui, sans-serif;}.fn-cookie[hidden]{display: none !important;}.fn-cookie.is-in{opacity: 1;transform: translateY(0);}.fn-cookie__title{position: absolute;width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden;clip: rect(0 0 0 0);white-space: nowrap;border: 0;}.fn-cookie__text{flex: 1 1 auto;margin: 0;font-size: 0.76rem;line-height: 1.4;color: #5f4149;}.fn-cookie__text a{color: #a91f3d;text-decoration: underline;text-underline-offset: 2px;white-space: nowrap;}.fn-cookie__text a:hover{color: #72152b;}.fn-cookie__actions{display: flex;flex: none;align-items: center;gap: 6px;}.fn-cookie__btn{flex: none;min-height: 32px;padding: 0 13px;border-radius: 999px;border: 1px solid transparent;font: inherit;font-size: 0.75rem;font-weight: 650;white-space: nowrap;cursor: pointer;transition: background-color 0.2s ease, color 0.2s ease;}.fn-cookie__btn:focus-visible{outline: 2px solid #a91f3d;outline-offset: 2px;}.fn-cookie__btn--accept{background: #a91f3d;color: #fff;}.fn-cookie__btn--accept:hover{background: #8d1932;}.fn-cookie__btn--decline{background: transparent;color: #72152b;padding: 0 8px;text-decoration: underline;text-underline-offset: 2px;}.fn-cookie__btn--decline:hover{background: rgba(143, 24, 51, 0.08);}body.fn-cookie-open .scroll-top-btn{bottom: calc(var(--fn-cookie-h, 50px) + 24px) !important;}@media (max-width: 620px){.fn-cookie{box-sizing: border-box;left: 8px;right: 8px;bottom: max(8px, env(safe-area-inset-bottom));max-width: none;display: grid;grid-template-columns: 36px minmax(0, 1fr);gap: 4px 10px;padding: 14px;border-color: rgba(114, 21, 43, 0.16);border-radius: 20px;background: rgba(255, 253, 249, 0.98);box-shadow: 0 18px 55px rgba(60, 24, 35, 0.2), 0 2px 8px rgba(60, 24, 35, 0.08);}.fn-cookie__title{position: static;grid-column: 1 / -1;display: flex;align-items: center;gap: 9px;width: auto;height: auto;margin: 0 0 3px;padding: 0;overflow: visible;clip: auto;white-space: normal;color: #321f25;font-family: "Playfair Display", Georgia, serif;font-size: 1.08rem;font-weight: 600;line-height: 1.25;}.fn-cookie__title svg{box-sizing: content-box;flex: 0 0 auto;width: 18px;height: 18px;padding: 7px;border-radius: 50%;background: #f9e8e8;color: #a91f3d;}.fn-cookie__text{grid-column: 1 / -1;margin: 2px 0 8px;font-size: 0.82rem;line-height: 1.55;color: #60464d;}.fn-cookie__text a{font-weight: 700;}.fn-cookie__actions{grid-column: 1 / -1;display: grid;grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);gap: 8px;width: 100%;}.fn-cookie__btn{width: 100%;min-height: 48px;padding: 0 10px;border-radius: 13px;font-size: 0.78rem;font-weight: 750;}.fn-cookie__btn--decline{border-color: rgba(114, 21, 43, 0.2);background: #fff;padding: 0 8px;text-decoration: none;}body.fn-cookie-open .whatsapp-float, body.fn-cookie-open .scroll-top-btn{bottom: calc(var(--fn-cookie-h, 184px) + max(18px, env(safe-area-inset-bottom))) !important;}}@media (max-width: 350px){.fn-cookie{padding: 12px;}.fn-cookie__actions{grid-template-columns: 1fr;}.fn-cookie__text{font-size: 0.79rem;}}@media (prefers-reduced-motion: reduce){.fn-cookie{transition: opacity 0.2s ease;transform: none;}.fn-cookie.is-in{transform: none;}}</style>
+   <script src="/cookie-consent.js" defer></script>
+   <script src="fn-events.js?v=20261009" defer></script>
+ <script type="application/ld+json">
+@@ -536,8 +536,7 @@
+   <script>
+     (function(c,l,a,r,i,t,y){
+         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
++        c.fnLoadClarity=function(){if(c.__cl)return;c.__cl=1;t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);};
+     })(window, document, "clarity", "script", "ykf9z66yqx");
+     // KVKK: Clarity izni yalnızca kullanıcı çerezleri kabul ettiyse verilir
+     try {
+@@ -632,8 +631,8 @@
+       <h3>Uygulama ne kadar sürüyor?</h3>
+       <p>Yeni bir protez tırnak uygulaması ortalama 2-2,5 saat, dolgu randevusu ise daha kısa sürüyor. Bu süre boyunca kendi evinizde olduğunuz için kahvenizi içebilir, dizinizi açabilir veya sohbet edebilirsiniz. Aynı adreste birden fazla kişi varsa arka arkaya planlıyoruz; anne-kız ve arkadaş grubu randevuları bu yüzden sık tercih ediliyor.</p>
+ 
+-      <h2>Protez Tırnak Çeşitleri: Jel, Akrilik ve Polygel</h2>
+-      <p>Protez tırnak uygulamasında en sık tercih edilen üç yöntem bulunur ve her biri farklı ihtiyaçlara yanıt verir. <strong>Jel tırnak</strong>, doğal görünümü ve esnek yapısı sayesinde günlük kullanımda en çok tercih edilen seçenektir; ince ve parlak bir sonuç sunar. <strong>Akrilik tırnak</strong> ise daha sert ve dayanıklı bir yapıya sahiptir, uzun ve belirgin tırnak isteyenler için idealdir. <strong>Polygel</strong>, jel ve akriliğin avantajlarını birleştiren yeni nesil bir üründür: hem hafif hem de dayanıklıdır, kokusuzdur ve tırnağa daha az yük bindirir.</p>
++      <h2>Protez Tırnak Çeşitleri: Jel ve Polygel</h2>
++      <p>Protez tırnak uygulamasında en sık tercih edilen iki yöntem bulunur ve her biri farklı ihtiyaçlara yanıt verir. <strong>Jel tırnak</strong>, doğal görünümü ve esnek yapısı sayesinde günlük kullanımda en çok tercih edilen seçenektir; ince ve parlak bir sonuç sunar. <strong>Polygel</strong> ise yeni nesil bir üründür: hem hafif hem de dayanıklıdır, kokusuzdur ve tırnağa daha az yük bindirir.</p>
+       <p>İzmir'de protez tırnak yaptırırken hangi yöntemin size uygun olduğuna, tırnak yapınıza ve beklentinize göre uzman ekibimizle birlikte karar veriyoruz. <a href="/blog/tirnak-uzatma-teknikleri" style="color: #c4a484;">Tırnak uzatma teknikleri</a> hakkındaki yazımızda bu yöntemleri daha ayrıntılı karşılaştırabilirsiniz.</p>
+ 
+       <h2>İzmir Jel Tırnak: Hangi Uygulamayı Arıyorsunuz?</h2>
+@@ -649,7 +648,7 @@
+       <ol>
+         <li><strong>Tırnak Hazırlığı:</strong> Doğal tırnak temizlenir, şekillendirilir ve yüzey uygulamaya hazır hale getirilir.</li>
+         <li><strong>Form Yerleştirme:</strong> İstenen uzunluk ve şekle göre tırnak formu veya tips yerleştirilir.</li>
+-        <li><strong>Jel/Akrilik Uygulama:</strong> Seçilen ürün kat kat ve dengeli biçimde uygulanır.</li>
++        <li><strong>Jel/Polygel Uygulama:</strong> Seçilen ürün kat kat ve dengeli biçimde uygulanır.</li>
+         <li><strong>UV/LED Kürleme:</strong> Her kat özel lamba altında sertleştirilir; bu adım kalıcılığın temelidir.</li>
+         <li><strong>Şekillendirme ve Törpüleme:</strong> Tırnak, tercih ettiğiniz şekle (badem, kare, coffin, stiletto) getirilir.</li>
+         <li><strong>Parlatma ve Bitirme:</strong> Son kat ile parlak veya mat bir finiş verilir, dilerseniz nail art eklenir.</li>
+@@ -674,7 +673,7 @@
+       <p>Protez tırnak fiyatı tek bir rakamla ifade edilemez; çünkü uygulama kişiye özeldir. Fiyatı belirleyen başlıca faktörler şunlardır:</p>
+       <ul>
+         <li><strong>Tırnak Uzunluğu ve Şekli:</strong> Uzun ve belirgin şekiller daha fazla malzeme ve işçilik gerektirir.</li>
+-        <li><strong>Uygulama Türü:</strong> Jel, akrilik veya polygel tercihi maliyeti etkiler.</li>
++        <li><strong>Uygulama Türü:</strong> Jel veya polygel tercihi maliyeti etkiler.</li>
+         <li><strong>Nail Art ve Tasarım:</strong> Taş, desen, ombre gibi özel tasarımlar ek süre ve emek ister.</li>
+         <li><strong>Yeni Uygulama mı Dolgu mu:</strong> Dolgu işlemleri genellikle ilk uygulamadan daha uygundur.</li>
+       </ul>
+@@ -704,8 +703,8 @@
+       <p><strong>Protez tırnak dolgusu ne sıklıkla yapılmalı?</strong><br>
+       Doğal tırnağınız uzadıkça dip kısımda boşluk oluşacağından 2-3 haftada bir dolgu yaptırmanızı öneririz. Düzenli dolgu, görünümü ve dayanıklılığı korur.</p>
+ 
+-      <p><strong>Jel tırnak mı akrilik mi daha iyi?</strong><br>
+-      İkisinin de avantajları farklıdır. Jel daha doğal ve esnek bir görünüm sunarken, akrilik daha sert ve dayanıklıdır. Tırnak yapınıza ve beklentinize göre uzman ekibimizle birlikte en uygun seçeneği belirliyoruz.</p>
++      <p><strong>Jel tırnak mı polygel mi daha iyi?</strong><br>
++      İkisinin de avantajları farklıdır. Jel daha doğal ve esnek bir görünüm sunarken, polygel daha hafif ve dayanıklı bir yapı sağlar. Tırnak yapınıza ve beklentinize göre uzman ekibimizle birlikte en uygun seçeneği belirliyoruz.</p>
+ 
+       <p><strong>Protez tırnak ne kadar sürer?</strong><br>
+       İlk uygulama ortalama 2-2,5 saat sürüyor; dolgu randevusu bundan daha kısa. Nail art veya detaylı tasarım eklendiğinde süre bir miktar uzayabilir. Adresinize geldiğimiz için bu sürenin tamamını kendi evinizde geçiriyorsunuz.</p>
+diff --git a/izmir-rus-manikuru.html b/izmir-rus-manikuru.html
+index 21a69d3..c5fa23d 100644
+--- a/izmir-rus-manikuru.html
++++ b/izmir-rus-manikuru.html
+@@ -2,7 +2,6 @@
+ <html lang="tr" dir="ltr">
+ <head>
+   <!-- Google tag (gtag.js) -->
+-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5MWKVSGTQV"></script>
+   <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+@@ -28,6 +27,7 @@
+     gtag('config', 'G-5MWKVSGTQV');
+     gtag('config', 'AW-10868274290');
+   </script>
++  <script>(function(){var d=0;function l(){if(d)return;d=1;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-5MWKVSGTQV';document.head.appendChild(s);if(window.fnLoadClarity)window.fnLoadClarity();}['pointerdown','touchstart','keydown','scroll'].forEach(function(e){addEventListener(e,l,{once:true,passive:true});});if(document.readyState==='complete')setTimeout(l,800);else addEventListener('load',function(){setTimeout(l,800);});})();</script>
+   <meta charset="UTF-8">
+   <meta name="yandex-verification" content="9ffe10edd91ffbbc" />
+   <meta name="msvalidate.01" content="6F3E5D645D5F2856E58A1CD8E60EE8C9" />
+@@ -378,17 +378,16 @@
+   ]
+ }
+ </script>
+-  <link rel="stylesheet" href="/seo-shell.css">
++  <style id="seo-shell-css">:root{--shell-cherry: #8f1833;--shell-cherry-dark: #54101f;--shell-ink: #24171b;--shell-powder: #fff7f3;--shell-blush: #f3cfd3;--shell-lime: #dce879;--shell-line: rgba(84, 16, 31, 0.14);}.page-header:has(.landing-booking){padding: 48px 20px 40px;background: var(--shell-powder);color: var(--shell-cherry-dark);}.landing-booking{max-width: 640px;margin: 24px auto 0;}.landing-booking p{margin: 0;}.landing-booking__service{font-size: 1rem;font-weight: 650;}.landing-booking .landing-booking__price{margin-top: 6px;font-family: 'Playfair Display', Georgia, serif;font-size: clamp(2rem, 6vw, 2.8rem);font-weight: 600;line-height: 1.2;}.landing-booking__detail{margin-top: 8px !important;font-size: .875rem;}.landing-booking__actions{display: flex;flex-wrap: wrap;justify-content: center;align-items: center;gap: 16px;margin: 20px 0 12px;}.landing-booking__cta{display: inline-flex;align-items: center;justify-content: center;gap: 16px;min-height: 50px;padding: 10px 24px;border-radius: 12px;background: var(--shell-cherry);color: #fff;font-weight: 700;text-decoration: none;}.landing-booking__cta:hover{background: var(--shell-cherry-dark);}.landing-booking__phone{padding: 10px 0;color: var(--shell-cherry-dark);text-underline-offset: 4px;}.landing-booking__note{font-size: .8125rem;line-height: 1.6;color: #67434d;}.landing-booking a:focus-visible{outline: 3px solid var(--shell-cherry);outline-offset: 4px;}@media (max-width: 600px){.page-header:has(.landing-booking){padding: 32px 20px;}.page-header:has(.landing-booking) .page-title{font-size: 1.75rem;line-height: 1.25;}.landing-booking__actions{gap: 4px;}.landing-booking__cta{width: 100%;}}.seo-skip-link{position: fixed;top: 12px;left: 12px;z-index: 10002;padding: 10px 16px;border-radius: 999px;background: #fff;color: var(--shell-cherry-dark);font-weight: 700;text-decoration: none;transform: translateY(-160%);transition: transform 0.2s ease;}.seo-skip-link:focus{transform: translateY(0);}.seo-site-header{position: sticky;top: 0;z-index: 1000;width: 100%;border-bottom: 1px solid var(--shell-line);background: rgba(255, 247, 243, 0.94);box-shadow: 0 8px 30px rgba(62, 17, 29, 0.06);color: var(--shell-ink);backdrop-filter: blur(18px);-webkit-backdrop-filter: blur(18px);}main.page-content :is(h2, h3, strong){color: #7b293e !important;}main.page-content a:not(.btn){color: #7b293e !important;text-decoration-line: underline;text-decoration-color: rgba(123, 41, 62, 0.38);text-underline-offset: 0.18em;}main.page-content .btn:not(.btn-secondary){background: var(--shell-cherry) !important;color: #fff !important;}main.page-content .btn-secondary{color: #7b293e !important;}.seo-nav{box-sizing: border-box;display: flex;align-items: center;gap: 28px;width: min(1180px, calc(100% - 40px));min-height: 72px;margin: 0 auto;}.seo-brand{display: inline-flex;flex: 0 0 auto;align-items: baseline;gap: 7px;color: var(--shell-cherry-dark);text-decoration: none;}.seo-brand__name{font-family: "Playfair Display", Georgia, serif;font-size: 1.65rem;font-weight: 700;letter-spacing: -0.04em;}.seo-brand__studio{color: var(--shell-cherry);font-size: 0.58rem;font-weight: 800;letter-spacing: 0.16em;text-transform: uppercase;}.seo-nav__links{display: flex;align-items: center;justify-content: center;gap: 24px;margin: 0 0 0 auto;padding: 0;list-style: none;}.seo-nav__links a{position: relative;color: var(--shell-ink);font-size: 0.87rem;font-weight: 650;text-decoration: none;}.seo-nav__links a::after{content: "";position: absolute;right: 0;bottom: -7px;left: 0;height: 2px;border-radius: 999px;background: var(--shell-cherry);transform: scaleX(0);transition: transform 0.2s ease;}.seo-nav__links a:hover::after, .seo-nav__links a:focus-visible::after{transform: scaleX(1);}.seo-nav__cta{display: inline-flex;flex: 0 0 auto;align-items: center;justify-content: center;min-height: 42px;padding: 0 19px;border-radius: 999px;background: var(--shell-cherry);box-shadow: 0 8px 20px rgba(143, 24, 51, 0.18);color: #fff;font-size: 0.82rem;font-weight: 750;text-decoration: none;transition: transform 0.2s ease, background 0.2s ease;}.seo-nav__cta:hover, .seo-nav__cta:focus-visible{background: var(--shell-cherry-dark);transform: translateY(-1px);}.seo-menu-toggle{display: none;width: 44px;height: 44px;margin-left: auto;padding: 0;border: 1px solid var(--shell-line);border-radius: 50%;background: #fff;color: var(--shell-cherry-dark);cursor: pointer;}.seo-menu-toggle span{display: block;width: 18px;height: 2px;margin: 4px auto;border-radius: 9px;background: currentColor;transition: transform 0.2s ease, opacity 0.2s ease;}.seo-menu-toggle[aria-expanded="true"] span:nth-child(1){transform: translateY(6px) rotate(45deg);}.seo-menu-toggle[aria-expanded="true"] span:nth-child(2){opacity: 0;}.seo-menu-toggle[aria-expanded="true"] span:nth-child(3){transform: translateY(-6px) rotate(-45deg);}.seo-site-footer{padding: 0 !important;background: var(--shell-ink) !important;color: rgba(255, 255, 255, 0.78) !important;text-align: left !important;}.seo-footer__inner{display: grid;grid-template-columns: minmax(240px, 1.4fr) repeat(3, minmax(150px, 1fr));gap: 44px;width: min(1180px, calc(100% - 40px));margin: 0 auto;padding: 64px 0 44px;}.seo-footer__brand{max-width: 330px;}.seo-footer__logo{display: inline-block;margin-bottom: 15px;color: #fff !important;font-family: "Playfair Display", Georgia, serif;font-size: 2rem;font-weight: 700;letter-spacing: -0.04em;text-decoration: none;}.seo-footer__brand p{margin: 0;color: rgba(255, 255, 255, 0.63) !important;font-size: 0.92rem;line-height: 1.75;}.seo-footer__column h2{margin: 0 0 18px !important;color: var(--shell-lime) !important;font-family: inherit !important;font-size: 0.7rem !important;font-weight: 800;letter-spacing: 0.15em;text-transform: uppercase;}.seo-footer__column nav{display: grid;gap: 10px;}.seo-site-footer a{color: rgba(255, 255, 255, 0.8) !important;}.seo-footer__column a{width: fit-content;font-size: 0.9rem;line-height: 1.45;text-decoration: none;}.seo-footer__column a:hover, .seo-footer__column a:focus-visible{color: #fff !important;text-decoration: underline;}.seo-footer__contact{display: inline-flex;margin-top: 18px;padding: 10px 14px;border: 1px solid rgba(220, 232, 121, 0.35);border-radius: 999px;color: var(--shell-lime) !important;font-weight: 700;text-decoration: none;}.seo-footer__bottom{display: flex;align-items: center;justify-content: space-between;gap: 20px;width: min(1180px, calc(100% - 40px));margin: 0 auto;padding: 22px 0 28px;border-top: 1px solid rgba(255, 255, 255, 0.1);color: rgba(255, 255, 255, 0.46);font-size: 0.78rem;}.seo-footer__bottom p{margin: 0;color: inherit !important;}.seo-footer__home{color: var(--shell-lime) !important;font-weight: 700;text-decoration: none;}@media (max-width: 880px){.seo-nav{min-height: 64px;}.seo-menu-toggle{display: block;}.seo-nav__cta{margin-left: auto;}.seo-nav__links{position: absolute;top: calc(100% + 1px);right: 0;left: 0;display: none;align-items: stretch;gap: 0;padding: 12px 20px 18px;border-bottom: 1px solid var(--shell-line);background: var(--shell-powder);box-shadow: 0 18px 30px rgba(62, 17, 29, 0.1);}.seo-nav__links.is-open{display: grid;}.seo-nav__links a{display: block;padding: 11px 4px;font-size: 0.95rem;}.seo-nav__links a::after{display: none;}.seo-footer__inner{grid-template-columns: repeat(2, minmax(0, 1fr));}}@media (max-width: 560px){.seo-nav{width: min(100% - 28px, 1180px);gap: 10px;}.seo-brand__name{font-size: 1.45rem;}.seo-brand__studio{display: none;}.seo-nav__cta{min-height: 38px;padding: 0 13px;font-size: 0.74rem;}.seo-footer__inner{grid-template-columns: 1fr 1fr;gap: 34px 24px;width: min(100% - 36px, 1180px);padding-top: 48px;}.seo-footer__brand{grid-column: 1 / -1;}.seo-footer__column--regions{grid-column: 1 / -1;}.seo-footer__column--regions nav{grid-template-columns: 1fr 1fr;}.seo-footer__bottom{align-items: flex-start;flex-direction: column;width: min(100% - 36px, 1180px);}}@media (prefers-reduced-motion: reduce){.seo-site-header *, .seo-site-footer *{scroll-behavior: auto !important;transition: none !important;}}.seo-lang{display: inline-flex;flex: 0 0 auto;align-items: center;gap: 2px;padding: 3px;border: 1px solid var(--shell-line);border-radius: 999px;background: rgba(255, 255, 255, 0.7);}.seo-lang a{display: inline-flex;align-items: center;justify-content: center;min-width: 34px;min-height: 30px;padding: 0 8px;border-radius: 999px;color: var(--shell-cherry-dark);font-size: 0.72rem;font-weight: 750;letter-spacing: 0.03em;text-decoration: none;transition: background 0.2s ease, color 0.2s ease;}.seo-lang a:hover, .seo-lang a:focus-visible{background: rgba(143, 24, 51, 0.1);}.seo-lang a[aria-current="true"]{background: var(--shell-cherry);color: #fff;}@media (max-width: 880px){.seo-lang{margin-left: auto;}.seo-nav__cta{margin-left: 8px;}}@media (max-width: 560px){.seo-lang{padding: 2px;}.seo-lang a{min-width: 30px;min-height: 28px;padding: 0 6px;font-size: 0.68rem;}}html[lang="ru"] body, html[lang="ru"] .page-content, html[lang="ru"] .seo-site-header, html[lang="ru"] .seo-site-footer{font-family: "Manrope", "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;}</style>
+   <script src="/seo-shell.js" defer></script>
+-  <link rel="stylesheet" href="/cookie-consent.css">
++  <style id="cookie-consent-css">.fn-cookie{position: fixed;z-index: 200;right: 12px;bottom: 12px;left: auto;display: flex;align-items: center;gap: 10px;max-width: min(430px, calc(100vw - 24px));padding: 9px 10px 9px 13px;border-radius: 999px;background: rgba(255, 253, 249, 0.94);-webkit-backdrop-filter: blur(12px) saturate(1.3);backdrop-filter: blur(12px) saturate(1.3);border: 1px solid rgba(196, 164, 132, 0.34);box-shadow: 0 8px 26px rgba(36, 29, 23, 0.13);font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;color: #2c2c2c;opacity: 0;transform: translateY(10px);transition: opacity 0.35s ease, transform 0.35s ease;}html[lang="ru"] .fn-cookie{font-family: "Manrope", "Plus Jakarta Sans", system-ui, sans-serif;}.fn-cookie[hidden]{display: none !important;}.fn-cookie.is-in{opacity: 1;transform: translateY(0);}.fn-cookie__title{position: absolute;width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden;clip: rect(0 0 0 0);white-space: nowrap;border: 0;}.fn-cookie__text{flex: 1 1 auto;margin: 0;font-size: 0.76rem;line-height: 1.4;color: #5f4149;}.fn-cookie__text a{color: #a91f3d;text-decoration: underline;text-underline-offset: 2px;white-space: nowrap;}.fn-cookie__text a:hover{color: #72152b;}.fn-cookie__actions{display: flex;flex: none;align-items: center;gap: 6px;}.fn-cookie__btn{flex: none;min-height: 32px;padding: 0 13px;border-radius: 999px;border: 1px solid transparent;font: inherit;font-size: 0.75rem;font-weight: 650;white-space: nowrap;cursor: pointer;transition: background-color 0.2s ease, color 0.2s ease;}.fn-cookie__btn:focus-visible{outline: 2px solid #a91f3d;outline-offset: 2px;}.fn-cookie__btn--accept{background: #a91f3d;color: #fff;}.fn-cookie__btn--accept:hover{background: #8d1932;}.fn-cookie__btn--decline{background: transparent;color: #72152b;padding: 0 8px;text-decoration: underline;text-underline-offset: 2px;}.fn-cookie__btn--decline:hover{background: rgba(143, 24, 51, 0.08);}body.fn-cookie-open .scroll-top-btn{bottom: calc(var(--fn-cookie-h, 50px) + 24px) !important;}@media (max-width: 620px){.fn-cookie{box-sizing: border-box;left: 8px;right: 8px;bottom: max(8px, env(safe-area-inset-bottom));max-width: none;display: grid;grid-template-columns: 36px minmax(0, 1fr);gap: 4px 10px;padding: 14px;border-color: rgba(114, 21, 43, 0.16);border-radius: 20px;background: rgba(255, 253, 249, 0.98);box-shadow: 0 18px 55px rgba(60, 24, 35, 0.2), 0 2px 8px rgba(60, 24, 35, 0.08);}.fn-cookie__title{position: static;grid-column: 1 / -1;display: flex;align-items: center;gap: 9px;width: auto;height: auto;margin: 0 0 3px;padding: 0;overflow: visible;clip: auto;white-space: normal;color: #321f25;font-family: "Playfair Display", Georgia, serif;font-size: 1.08rem;font-weight: 600;line-height: 1.25;}.fn-cookie__title svg{box-sizing: content-box;flex: 0 0 auto;width: 18px;height: 18px;padding: 7px;border-radius: 50%;background: #f9e8e8;color: #a91f3d;}.fn-cookie__text{grid-column: 1 / -1;margin: 2px 0 8px;font-size: 0.82rem;line-height: 1.55;color: #60464d;}.fn-cookie__text a{font-weight: 700;}.fn-cookie__actions{grid-column: 1 / -1;display: grid;grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);gap: 8px;width: 100%;}.fn-cookie__btn{width: 100%;min-height: 48px;padding: 0 10px;border-radius: 13px;font-size: 0.78rem;font-weight: 750;}.fn-cookie__btn--decline{border-color: rgba(114, 21, 43, 0.2);background: #fff;padding: 0 8px;text-decoration: none;}body.fn-cookie-open .whatsapp-float, body.fn-cookie-open .scroll-top-btn{bottom: calc(var(--fn-cookie-h, 184px) + max(18px, env(safe-area-inset-bottom))) !important;}}@media (max-width: 350px){.fn-cookie{padding: 12px;}.fn-cookie__actions{grid-template-columns: 1fr;}.fn-cookie__text{font-size: 0.79rem;}}@media (prefers-reduced-motion: reduce){.fn-cookie{transition: opacity 0.2s ease;transform: none;}.fn-cookie.is-in{transform: none;}}</style>
+   <script src="/cookie-consent.js" defer></script>
+   <script src="fn-events.js?v=20261009" defer></script>
+   <!-- Microsoft Clarity -->
+   <script>
+     (function(c,l,a,r,i,t,y){
+         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
++        c.fnLoadClarity=function(){if(c.__cl)return;c.__cl=1;t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);};
+     })(window, document, "clarity", "script", "ykf9z66yqx");
+     // KVKK: Clarity izni yalnızca kullanıcı çerezleri kabul ettiyse verilir
+     try {
+diff --git a/karabaglar-tirnak/index.html b/karabaglar-tirnak/index.html
+index 1d349a8..7e12d33 100644
+--- a/karabaglar-tirnak/index.html
++++ b/karabaglar-tirnak/index.html
+@@ -348,7 +348,7 @@
+ 
+         <h2>Karabağlar'da Sunduğumuz Hizmetler</h2>
+         <ul>
+-          <li><strong>Protez Tırnak:</strong> Akrilik, jel ve fiber glass seçenekleriyle uzun ömürlü tırnak uzatma.</li>
++          <li><strong>Protez Tırnak:</strong> Jel, polygel ve fiber glass seçenekleriyle uzun ömürlü tırnak uzatma.</li>
+           <li><strong>Kalıcı Oje:</strong> 3-4 hafta dayanıklı, yüzlerce renk seçeneğiyle profesyonel uygulama.</li>
+           <li><strong>Nail Art:</strong> Çiçek, geometrik, ombre ve özel tasarımlar.</li>
+           <li><strong>Manikür:</strong> Tırnak bakımı, şekillendirme ve cilalama.</li>
+diff --git a/karsiyaka-protez-tirnak/index.html b/karsiyaka-protez-tirnak/index.html
+index 3e78549..b4b72cd 100644
+--- a/karsiyaka-protez-tirnak/index.html
++++ b/karsiyaka-protez-tirnak/index.html
+@@ -34,8 +34,8 @@
+   <meta name="google-site-verification" content="pCyczzQFiQl4oXr1X1qkzBT-nM8sS0an9gPdZPX7sS0" />
+   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+-  <title>Karşıyaka Evde Protez Tırnak ve Kalıcı Oje | Fleura Nails</title>
+-  <meta name="description" content="Karşıyaka protez tırnak, jel tırnak ve kalıcı oje uygulaması için Fleura Nails. Bostanlı, Mavişehir, Atakent dahil tüm Karşıyaka'ya VIP ev hizmeti.">
++  <title>Karşıyaka Protez Tırnak – Evinize Gelen Tırnakçı | Fleura</title>
++  <meta name="description" content="Karşıyaka'ya evinize gelen tırnakçı: protez tırnak 1.500 ₺'den, kalıcı oje 1.150 ₺'den. Bostanlı, Mavişehir dahil. WhatsApp'tan gün seçin: 0555 890 35 11.">
+   <meta name="keywords" content="karşıyaka protez tırnak, karşıyaka kalıcı oje, bostanlı protez tırnak, mavişehir kalıcı oje, karşıyaka jel tırnak, karşıyaka nail art">
+   <meta name="author" content="Fleura Nails">
+   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+@@ -48,8 +48,8 @@
+   <link rel="alternate" hreflang="x-default" href="https://www.fleura.com.tr/karsiyaka-protez-tirnak">
+   <meta property="og:type" content="website">
+   <meta property="og:url" content="https://www.fleura.com.tr/karsiyaka-protez-tirnak">
+-  <meta property="og:title" content="Karşıyaka Evde Protez Tırnak ve Kalıcı Oje | Fleura Nails">
+-  <meta property="og:description" content="Karşıyaka'da VIP ev hizmeti — protez tırnak, jel tırnak, kalıcı oje. Bostanlı, Mavişehir, Atakent dahil.">
++  <meta property="og:title" content="Karşıyaka Protez Tırnak – Evinize Gelen Tırnakçı | Fleura">
++  <meta property="og:description" content="Karşıyaka'ya evinize gelen tırnakçı: protez tırnak 1.500 ₺'den, kalıcı oje 1.150 ₺'den. Bostanlı, Mavişehir dahil. WhatsApp'tan gün seçin: 0555 890 35 11.">
+   <meta property="og:image" content="https://www.fleura.com.tr/assets/og-image.jpg">
+   <meta property="og:image:width" content="1200">
+   <meta property="og:image:height" content="630">
+@@ -57,8 +57,8 @@
+   <meta property="og:locale" content="tr_TR">
+   <meta property="og:site_name" content="Fleura Nails">
+   <meta name="twitter:card" content="summary_large_image">
+-  <meta name="twitter:title" content="Karşıyaka Evde Protez Tırnak ve Kalıcı Oje | Fleura Nails">
+-  <meta name="twitter:description" content="Karşıyaka'da VIP ev hizmeti — protez tırnak ve kalıcı oje için Fleura Nails.">
++  <meta name="twitter:title" content="Karşıyaka Protez Tırnak – Evinize Gelen Tırnakçı | Fleura">
++  <meta name="twitter:description" content="Karşıyaka'ya evinize gelen tırnakçı: protez tırnak 1.500 ₺'den, kalıcı oje 1.150 ₺'den. Bostanlı, Mavişehir dahil. WhatsApp'tan gün seçin: 0555 890 35 11.">
+   <meta name="twitter:image" content="https://www.fleura.com.tr/assets/og-image.jpg">
+   <meta name="theme-color" content="#c4a484">
+   <link rel="icon" type="image/x-icon" href="../favicon.ico">
+diff --git a/llms.txt b/llms.txt
+index c182b84..172a5b8 100644
+--- a/llms.txt
++++ b/llms.txt
+@@ -13,7 +13,7 @@
+ - **Çalışma saatleri:** Her gün (Pazartesi–Pazar) 10:00–23:00. Pazar günleri de açığız; akşam ve gece randevuları için son başlangıç saati 22:00.
+ - **Ödeme:** Uygulama sonrası nakit veya havale/EFT
+ - **Diller:** Türkçe; İngilizce ve Rusça sayfalar mevcut, WhatsApp'ta İngilizce yazışma yapılabilir
+-- **Hizmetler:** Kalıcı oje, protez tırnak (jel/akrilik), protez tırnak dolumu, klasik manikür, rus manikürü (kuru manikür), pedikür, nail art, French manikür, gelin tırnağı
++- **Hizmetler:** Kalıcı oje, protez tırnak (jel/polygel), protez tırnak dolumu, klasik manikür, rus manikürü (kuru manikür), pedikür, nail art, French manikür, gelin tırnağı
+ - **Randevu:** Telefon veya WhatsApp ile
+ - **Fiyatlandırma:** Sabit liste fiyatı uygulanır (aşağıdaki Fiyat Listesi bölümü). Fiyatlara adresinize ulaşım, ekipman ve tek kullanımlık steril malzeme dahildir
+ - **Telefon:** +90 555 890 35 11
+@@ -96,7 +96,7 @@ Fleura Nails'in uyguladığı protezin sökümü yeni randevuya dahildir.
+ 
+ ## Hizmet Sayfaları
+ 
+-- [İzmir Protez Tırnak](https://www.fleura.com.tr/izmir-protez-tirnak) — jel/akrilik tırnak uzatma, 90-150 dk
++- [İzmir Protez Tırnak](https://www.fleura.com.tr/izmir-protez-tirnak) — jel/polygel tırnak uzatma, 90-150 dk
+ - [İzmir Kalıcı Oje](https://www.fleura.com.tr/izmir-kalici-oje) — 2-3 hafta dayanıklı, 45-60 dk
+ - [İzmir Rus Manikürü](https://www.fleura.com.tr/izmir-rus-manikuru) — frezeli kuru manikür, kesmesiz, 60-75 dk
+ - [İzmir Manikür ve Pedikür](https://www.fleura.com.tr/izmir-manikur-pedikur) — manikür 30-45 dk, pedikür 45-60 dk
+diff --git a/narlidere-tirnak/index.html b/narlidere-tirnak/index.html
+index 93cb239..5e71f32 100644
+--- a/narlidere-tirnak/index.html
++++ b/narlidere-tirnak/index.html
+@@ -34,8 +34,8 @@
+   <meta name="google-site-verification" content="pCyczzQFiQl4oXr1X1qkzBT-nM8sS0an9gPdZPX7sS0" />
+   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+-  <title>Narlıdere Evde Kalıcı Oje ve Protez Tırnak | Fleura Nails</title>
+-  <meta name="description" content="Narlıdere'de kalıcı oje, protez tırnak ve manikür için Fleura Nails. İlica, Limanreis, Yenikale dahil tüm Narlıdere'ye VIP ev hizmeti. 0555 890 35 11.">
++  <title>Narlıdere Tırnakçı – Evde Kalıcı Oje &amp; Protez Tırnak | Fleura</title>
++  <meta name="description" content="Narlıdere'ye evinize gelen tırnakçı: kalıcı oje 1.150 ₺'den, protez tırnak 1.500 ₺'den. Ilıca, Limanreis dahil. WhatsApp'tan gün seçin: 0555 890 35 11.">
+   <meta name="keywords" content="narlıdere tırnak, narlıdere kalıcı oje, narlıdere protez tırnak, ilica kalıcı oje, limanreis tırnak, narlıdere manikür, narlıdere nail art">
+   <meta name="author" content="Fleura Nails">
+   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+@@ -48,8 +48,8 @@
+   <link rel="alternate" hreflang="x-default" href="https://www.fleura.com.tr/narlidere-tirnak">
+   <meta property="og:type" content="website">
+   <meta property="og:url" content="https://www.fleura.com.tr/narlidere-tirnak">
+-  <meta property="og:title" content="Narlıdere Evde Kalıcı Oje ve Protez Tırnak | Fleura Nails">
+-  <meta property="og:description" content="Narlıdere'de VIP ev hizmeti — kalıcı oje, protez tırnak, manikür, pedikür ve nail art.">
++  <meta property="og:title" content="Narlıdere Tırnakçı – Evde Kalıcı Oje &amp; Protez Tırnak | Fleura">
++  <meta property="og:description" content="Narlıdere'ye evinize gelen tırnakçı: kalıcı oje 1.150 ₺'den, protez tırnak 1.500 ₺'den. Ilıca, Limanreis dahil. WhatsApp'tan gün seçin: 0555 890 35 11.">
+   <meta property="og:image" content="https://www.fleura.com.tr/assets/og-image.jpg">
+   <meta property="og:image:width" content="1200">
+   <meta property="og:image:height" content="630">
+@@ -57,8 +57,8 @@
+   <meta property="og:locale" content="tr_TR">
+   <meta property="og:site_name" content="Fleura Nails">
+   <meta name="twitter:card" content="summary_large_image">
+-  <meta name="twitter:title" content="Narlıdere Tırnak Bakımı | Fleura Nails">
+-  <meta name="twitter:description" content="Narlıdere'de VIP ev hizmeti — kalıcı oje, protez tırnak ve manikür.">
++  <meta name="twitter:title" content="Narlıdere Tırnakçı – Evde Kalıcı Oje &amp; Protez Tırnak | Fleura">
++  <meta name="twitter:description" content="Narlıdere'ye evinize gelen tırnakçı: kalıcı oje 1.150 ₺'den, protez tırnak 1.500 ₺'den. Ilıca, Limanreis dahil. WhatsApp'tan gün seçin: 0555 890 35 11.">
+   <meta name="twitter:image" content="https://www.fleura.com.tr/assets/og-image.jpg">
+   <meta name="theme-color" content="#c4a484">
+   <link rel="icon" type="image/x-icon" href="../favicon.ico">
+diff --git a/ru/index.html b/ru/index.html
+index 9951f41..0b35716 100644
+--- a/ru/index.html
++++ b/ru/index.html
+@@ -499,8 +499,7 @@
+   "@id": "https://www.fleura.com.tr/#business",
+   "knowsAbout": [
+     "protez tırnak",
+-    "jel tırnak",
+-    "akrilik tırnak",
++    "jel tırnak",
+     "kalıcı oje",
+     "manikür",
+     "pedikür",
+diff --git a/ru/narashchivanie-nogtey-izmir/index.html b/ru/narashchivanie-nogtey-izmir/index.html
+index eefdeab..17bdac4 100644
+--- a/ru/narashchivanie-nogtey-izmir/index.html
++++ b/ru/narashchivanie-nogtey-izmir/index.html
+@@ -242,10 +242,8 @@ document.addEventListener('click',r,true)})();</script>
+           <li><strong>Ремонт:</strong> восстановление одного ногтя без переделки всего набора.</li>
+         </ul>
+ 
+-        <h2>Гель, акрил или полигель?</h2>
+-        <p>Гель даёт естественный, слегка гибкий результат и чаще всего выбирается для повседневной носки. Акрил
+-        жёстче и прочнее — подходит для длинных выразительных форм. Полигель — среднее решение: легче акрила, но
+-        прочнее мягкого геля. Что подойдёт именно вам, зависит от ногтевой пластины и того, как вы работаете руками.</p>
++        <h2>Гель или полигель?</h2>
++        <p>Гель даёт естественный, слегка гибкий результат и чаще всего выбирается для повседневной носки. Полигель лёгкий, но прочнее мягкого геля и хорошо держит длинные формы. Что подойдёт именно вам, зависит от ногтевой пластины и того, как вы работаете руками.</p>
+ 
+         <h2>А может, наращивание не нужно?</h2>
+         <p>Если хочется только стойкого цвета, достаточно <a href="/ru/gel-lak-izmir" class="inline-link">гель-лака</a>.
+diff --git a/urla-kalici-oje.html b/urla-kalici-oje.html
+index c220d55..1039f74 100644
+--- a/urla-kalici-oje.html
++++ b/urla-kalici-oje.html
+@@ -34,8 +34,8 @@
+   <meta name="google-site-verification" content="pCyczzQFiQl4oXr1X1qkzBT-nM8sS0an9gPdZPX7sS0" />
+   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+-  <title>Urla Evde Kalıcı Oje ve Protez Tırnak | Fleura Nails</title>
+-  <meta name="description" content="Urla'da kalıcı oje, protez tırnak ve manikür için Fleura Nails. İskele, Zeytinalanı ve Altıntaş dahil tüm Urla'ya VIP ev ve yazlık hizmeti. 0555 890 35 11.">
++  <title>Urla Kalıcı Oje &amp; Protez Tırnak – Ev ve Yazlığa Gelir | Fleura</title>
++  <meta name="description" content="Urla'da evinize ya da yazlığınıza gelen tırnakçı: kalıcı oje 1.150 ₺'den, protez tırnak 1.500 ₺'den (+ulaşım). WhatsApp'tan gün seçin: 0555 890 35 11.">
+   <meta name="keywords" content="urla kalıcı oje, urla protez tırnak, urla tırnak, urla manikür, iskele kalıcı oje, zeytinalanı tırnak, urla nail art">
+   <meta name="author" content="Fleura Nails">
+   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+@@ -48,8 +48,8 @@
+   <link rel="alternate" hreflang="x-default" href="https://www.fleura.com.tr/urla-kalici-oje">
+   <meta property="og:type" content="website">
+   <meta property="og:url" content="https://www.fleura.com.tr/urla-kalici-oje">
+-  <meta property="og:title" content="Urla Evde Kalıcı Oje ve Protez Tırnak | Fleura Nails">
+-  <meta property="og:description" content="Urla'da VIP ev ve yazlık hizmeti — kalıcı oje, protez tırnak, manikür ve nail art.">
++  <meta property="og:title" content="Urla Kalıcı Oje &amp; Protez Tırnak – Ev ve Yazlığa Gelir | Fleura">
++  <meta property="og:description" content="Urla'da evinize ya da yazlığınıza gelen tırnakçı: kalıcı oje 1.150 ₺'den, protez tırnak 1.500 ₺'den (+ulaşım). WhatsApp'tan gün seçin: 0555 890 35 11.">
+   <meta property="og:image" content="https://www.fleura.com.tr/assets/og-image.jpg">
+   <meta property="og:image:width" content="1200">
+   <meta property="og:image:height" content="630">
+@@ -57,8 +57,8 @@
+   <meta property="og:locale" content="tr_TR">
+   <meta property="og:site_name" content="Fleura Nails">
+   <meta name="twitter:card" content="summary_large_image">
+-  <meta name="twitter:title" content="Urla Kalıcı Oje | Fleura Nails">
+-  <meta name="twitter:description" content="Urla'da kalıcı oje ve protez tırnak için adresinize geliyoruz.">
++  <meta name="twitter:title" content="Urla Kalıcı Oje &amp; Protez Tırnak – Ev ve Yazlığa Gelir | Fleura">
++  <meta name="twitter:description" content="Urla'da evinize ya da yazlığınıza gelen tırnakçı: kalıcı oje 1.150 ₺'den, protez tırnak 1.500 ₺'den (+ulaşım). WhatsApp'tan gün seçin: 0555 890 35 11.">
+   <meta name="twitter:image" content="https://www.fleura.com.tr/assets/og-image.jpg">
+   <meta name="theme-color" content="#c4a484">
+   <link rel="icon" type="image/x-icon" href="favicon.ico">
+-- 
+2.43.0
+

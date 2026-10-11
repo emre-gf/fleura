@@ -13,7 +13,7 @@
 - **Çalışma saatleri:** Her gün (Pazartesi–Pazar) 10:00–23:00. Pazar günleri de açığız; akşam ve gece randevuları için son başlangıç saati 22:00.
 - **Ödeme:** Uygulama sonrası nakit veya havale/EFT
 - **Diller:** Türkçe; İngilizce ve Rusça sayfalar mevcut, WhatsApp'ta İngilizce yazışma yapılabilir
-- **Hizmetler:** Kalıcı oje, protez tırnak (jel/akrilik), protez tırnak dolumu, klasik manikür, rus manikürü (kuru manikür), pedikür, nail art, French manikür, gelin tırnağı
+- **Hizmetler:** Kalıcı oje, protez tırnak (jel/polygel), protez tırnak dolumu, klasik manikür, rus manikürü (kuru manikür), pedikür, nail art, French manikür, gelin tırnağı
 - **Randevu:** Telefon veya WhatsApp ile
 - **Fiyatlandırma:** Sabit liste fiyatı uygulanır (aşağıdaki Fiyat Listesi bölümü). Fiyatlara adresinize ulaşım, ekipman ve tek kullanımlık steril malzeme dahildir
 - **Telefon:** +90 555 890 35 11
@@ -96,7 +96,7 @@ Fleura Nails'in uyguladığı protezin sökümü yeni randevuya dahildir.
 
 ## Hizmet Sayfaları
 
-- [İzmir Protez Tırnak](https://www.fleura.com.tr/izmir-protez-tirnak) — jel/akrilik tırnak uzatma, 90-150 dk
+- [İzmir Protez Tırnak](https://www.fleura.com.tr/izmir-protez-tirnak) — jel/polygel tırnak uzatma, 90-150 dk
 - [İzmir Kalıcı Oje](https://www.fleura.com.tr/izmir-kalici-oje) — 2-3 hafta dayanıklı, 45-60 dk
 - [İzmir Rus Manikürü](https://www.fleura.com.tr/izmir-rus-manikuru) — frezeli kuru manikür, kesmesiz, 60-75 dk
 - [İzmir Manikür ve Pedikür](https://www.fleura.com.tr/izmir-manikur-pedikur) — manikür 30-45 dk, pedikür 45-60 dk
