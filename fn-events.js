@@ -123,26 +123,34 @@
     });
   }
 
-  /* WhatsApp mesajına kaynak notu ekle — Emre gelen mesajda nereden
-     geldiğini doğrudan görsün diye. Kişisel veri içermez. */
-  var SRC_LABEL = {
-    chatgpt: 'ChatGPT', perplexity: 'Perplexity', claude: 'Claude',
-    gemini: 'Gemini', copilot: 'Copilot', ai_other: 'AI asistan',
-    google: 'Google', google_ads: 'Google Reklam', bing: 'Bing',
-    yandex: 'Yandex', duckduckgo: 'DuckDuckGo', instagram: 'Instagram',
-    facebook: 'Facebook', tiktok: 'TikTok', youtube: 'YouTube',
-    direct: 'Doğrudan'
-  };
+  /* WhatsApp mesajına SESSİZ kaynak kodu ekle.
+     Eski hali "— Doğrudan · /izmir-protez-tirnak-fiyatlari" yazıyordu; müşteriye
+     teknik ve rahatsız edici görünüyordu. Artık yalnızca kısa bir kod:
+
+         #rez.233   NOKTA  -> ChatGPT / AI asistanı (GEO çalışmasının getirisi)
+         #rez-342   TİRE   -> Google Ads (ücretli reklam)
+         (kod yok)         -> siteden, organik aramadan, sosyal medyadan gelen
+
+     Ayraç bilerek seçildi: nokta ile tire tek bakışta ayrılır, müşteriye hiçbir
+     şey ifade etmez. Sayı 101-999 arası rastgele; anlam taşımaz, yalnızca iki
+     mesajı ayırmaya yarar. Kişisel veri içermez, depolama kullanmaz. */
+  function rezKodu() {
+    var ayrac = '';
+    if (AI_SOURCES[SOURCE]) ayrac = '.';            /* ChatGPT ve diğer AI asistanları */
+    else if (SOURCE === 'google_ads') ayrac = '-';  /* Google Ads */
+    if (!ayrac) return '';                          /* diğer her şey: kod yazma */
+    return '#rez' + ayrac + (101 + Math.floor(Math.random() * 899));
+  }
   function tagWhatsApp(a) {
     if (a.dataset && a.dataset.fnSrcTagged) return;
     var href = a.getAttribute('href') || '';
     if (!/wa\.me|api\.whatsapp\.com/i.test(href)) return;
-    var label = SRC_LABEL[SOURCE] || SOURCE;
-    var note = '\n\n— ' + label + ' · ' + LANDING;
+    var kod = rezKodu();
+    if (!kod) { if (a.dataset) a.dataset.fnSrcTagged = '1'; return; }
     try {
       var u = new URL(href, location.origin);
       var t = u.searchParams.get('text') || '';
-      if (t.indexOf('\n\n— ') === -1) u.searchParams.set('text', t + note);
+      if (t.indexOf('#rez') === -1) u.searchParams.set('text', t + '\n\n' + kod);
       a.setAttribute('href', u.toString().replace(/\+/g, '%20'));
       if (a.dataset) a.dataset.fnSrcTagged = '1';
     } catch (e) {}

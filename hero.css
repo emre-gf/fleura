@@ -64,3 +64,59 @@
 }
 @media (max-width: 359px) { .fc-copy { padding-inline: 15px; } .fc-book, .fc-explore { padding-inline: 12px; gap: 8px; } .fc-controls { margin-inline: 15px; } .fc-caption { gap: 6px; font-size: 10px; } .fc-control-buttons { gap: 2px; } }
 @media (prefers-reduced-motion: reduce) { .hero-couture *, .hero-couture *::before, .hero-couture *::after { animation: none !important; transition: none !important; } }
+
+/* Ana sayfa: başlık ve doğrudan WhatsApp randevusu.
+   Kimlik seçicisi, ortak tema kurallarından bağımsız olarak bu hero'yu sınırlar. */
+#hero.hero-couture--atelier .fc-copy { text-align: center; }
+#hero.hero-couture--atelier .fc-eyebrow { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 0 0 24px; color: var(--fc-wine); font-size: 10px; font-weight: 600; letter-spacing: .15em; line-height: 1.6; text-transform: uppercase; }
+#hero.hero-couture--atelier .fc-eyebrow > span { flex: 0 0 22px; height: 1px; background: currentColor; }
+#hero.hero-couture--atelier .fc-eyebrow::after { content: ""; flex: 0 0 22px; height: 1px; background: currentColor; }
+#hero.hero-couture--atelier .hero-title { max-width: none; margin: 0 0 30px; font-family: "Playfair Display", Georgia, serif; font-size: clamp(48px, 6.2vw, 88px); font-weight: 400; line-height: 1.1; letter-spacing: -.05em; text-align: center; }
+#hero.hero-couture--atelier .fc-title-line em { display: inline-block; margin-top: 7px; color: var(--fc-wine); font-style: italic; font-weight: 400; }
+#hero.hero-couture--atelier .fc-title-signature { font-size: .88em; }
+#hero.hero-couture--atelier .fc-signature-word { position: relative; display: inline-block; }
+#hero.hero-couture--atelier .fc-signature-word::after { content: ""; position: absolute; right: -4%; bottom: -.08em; left: -5%; height: .13em; border-bottom: 2px solid #b97886; border-radius: 50%; transform: rotate(-5deg); }
+#hero.hero-couture--atelier .hero-subtitle { max-width: 59ch; margin: 0 auto; font-size: 16px; line-height: 1.8; text-align: center; color: var(--q-muted, #6a615b); text-wrap: pretty; }
+#hero.hero-couture--atelier .hero-subtitle strong { color: var(--q-body, #403a36); font-weight: 500; }
+#hero.hero-couture--atelier .fc-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 26px; }
+#hero.hero-couture--atelier .fc-book,
+#hero.hero-couture--atelier .fc-explore { flex: 0 1 auto; min-height: 54px; padding: 14px 21px; gap: 10px; border: 1px solid var(--fc-wine); border-radius: 8px; font-size: 13px; font-weight: 600; letter-spacing: 0; text-transform: none; box-shadow: none; }
+#hero.hero-couture--atelier .fc-whatsapp { background: var(--fc-wine); color: #fff; }
+#hero.hero-couture--atelier .fc-whatsapp:hover { background: #5e1427; border-color: #5e1427; box-shadow: 0 6px 18px #7a1b3218; }
+#hero.hero-couture--atelier .fc-button-arrow { margin-left: 12px; font-size: 19px; font-weight: 400; }
+#hero.hero-couture--atelier .fc-price { gap: 18px; background: transparent; color: var(--fc-wine); border-color: #d6c8c4; }
+#hero.hero-couture--atelier .fc-price:hover { background: #f3e8e3; border-color: var(--fc-wine); }
+#hero.hero-couture--atelier .fc-contact-note { margin: 11px 0 0; font-size: 12px; line-height: 1.5; color: var(--q-muted, #6a615b); }
+#hero.hero-couture--atelier .fc-starting-price { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 16px; max-width: 440px; margin: 26px auto 0; padding-top: 16px; border-top: 1px solid var(--q-line, #ded8d2); color: var(--q-muted, #6a615b); font-size: 11px; text-decoration: none; }
+#hero.hero-couture--atelier .fc-starting-price strong { color: var(--fc-wine); font-size: 13px; font-weight: 600; }
+#hero.hero-couture--atelier .fc-starting-price > span:last-child { white-space: nowrap; }
+#hero.hero-couture--atelier .fc-starting-price > span:last-child > span { margin-left: 8px; }
+#hero.hero-couture--atelier .fc-starting-price:hover strong { text-decoration: underline; text-underline-offset: 3px; }
+
+@media (min-width: 768px) and (max-width: 1099px) {
+  #hero.hero-couture--atelier .hero-title { font-size: clamp(48px, 6.2vw, 68px); }
+  #hero.hero-couture--atelier .fc-eyebrow { font-size: 9px; letter-spacing: .06em; margin-bottom: 18px; }
+  #hero.hero-couture--atelier .fc-book, #hero.hero-couture--atelier .fc-explore { padding-inline: 13px; font-size: 12px; }
+  #hero.hero-couture--atelier .fc-button-arrow { margin-left: 0; }
+  #hero.hero-couture--atelier .hero-subtitle { font-size: 14px; }
+  #hero.hero-couture--atelier .fc-starting-price { margin-top: 24px; }
+}
+@media (max-width: 767px) {
+  #hero.hero-couture--atelier .fc-eyebrow { gap: 8px; margin-bottom: 18px; font-size: 9px; letter-spacing: .04em; }
+  #hero.hero-couture--atelier .fc-eyebrow > span, #hero.hero-couture--atelier .fc-eyebrow::after { flex-basis: 12px; }
+  #hero.hero-couture--atelier .hero-title { max-width: 14ch; margin: 0 auto 23px; font-size: clamp(36px, 10vw, 62px); line-height: 1.08; letter-spacing: -.05em; }
+  #hero.hero-couture--atelier .fc-title-signature { font-size: .82em; white-space: nowrap; }
+  #hero.hero-couture--atelier .fc-title-line em { margin-top: 7px; }
+  #hero.hero-couture--atelier .hero-subtitle { max-width: 46ch; font-size: 14px; line-height: 1.65; }
+  #hero.hero-couture--atelier .fc-actions { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 8px; margin-top: 20px; }
+  #hero.hero-couture--atelier .fc-book, #hero.hero-couture--atelier .fc-explore { min-height: 50px; padding: 11px 10px; gap: 8px; font-size: 12px; }
+  #hero.hero-couture--atelier .fc-button-arrow { display: none; }
+  #hero.hero-couture--atelier .fc-contact-note { margin-top: 9px; font-size: 11px; }
+  #hero.hero-couture--atelier .fc-starting-price { margin-top: 18px; padding-top: 12px; max-width: none; font-size: 10px; }
+  #hero.hero-couture--atelier .fc-starting-price strong { font-size: 12px; }
+}
+@media (max-width: 359px) {
+  #hero.hero-couture--atelier .hero-title { font-size: 34px; }
+  #hero.hero-couture--atelier .fc-actions { grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); }
+  #hero.hero-couture--atelier .fc-book, #hero.hero-couture--atelier .fc-explore { gap: 6px; padding-inline: 8px; font-size: 11px; }
+}

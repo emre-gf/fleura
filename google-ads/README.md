@@ -40,7 +40,6 @@ göre değişiyor, o yüzden metinleri hazır liste olarak veriyor — Ads aray�
   *(site çalışma saati her gün 10:00-23:00, Pazar dahil — şemada 75× `opens 10:00` /
   `closes 23:00`, 7 gün. Yarım saat önce başlatmak WhatsApp mesajını yakalar.)*
   ⚠️ Eski ayar Pzt-Cmt 09:00-20:30 idi: **haftada 1 gün + her gün 2,5 saat** kapalıydı.
-  Akşam 20:00-23:00 ve Pazar, kişisel bakım aramalarında en yoğun dilimlerdir.
 - **Başlık sabitleme (pin)** → her reklamda Başlık 1'i **1. pozisyona** sabitle,
   `{KeyWord:…}` başlığını sabitleme
 - **Otomatik oluşturulan öğeler** → KAPAT *(uydurma başlık üretiyor, fiyat iddialarını bozar)*
@@ -69,9 +68,7 @@ sonra `Fiyatlar`, sonra `Manikur Pedikur`.
 ## Neyi neden değiştirdik (önceki sürüme göre)
 
 - **Arama ortakları kapatıldı** — 45 ₺/gün bütçede kaliteyi düşürüyordu.
-- **"Cumartesi de Randevu Var" → "Pazar Dahil Her Gün Açığız"** — 22.09.2026 commit'inde
-  (`adf28f8`) çalışma saatleri Pazar dahil 23:00'a uzatıldı; Ads dosyaları o tarihten
-  önce yazılmıştı ve güncellenmemişti. Sitede "Cumartesi" kelimesi **0 dosyada** geçiyor.
+- **Saat iddiaları 14.10.2026'da güncellendi** — site Pazartesi-Cumartesi 09:00-21:00.
 - **"Belgeli Nail Artist" → "Google'da 5,0 Puan · 20 Yorum"** — 7/8 reklamda tekrar
   ediyordu ve açılış sayfalarında "belge" kelimesi geçmiyor. Yeni iddia `aggregateRating`
   şemasında ve `llms.txt`'te doğrulanabilir.

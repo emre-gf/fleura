@@ -1,0 +1,152 @@
+/* Fiyat sayfası: önce paketler, sonra ayrıntılar. Tema sonrası yüklenir. */
+body.pricing-page { --page-max: 1120px; }
+.pricing-page .page-shell { background: var(--q-paper); }
+.pricing-page .page-header { padding: 24px 20px 18px; border: 0; }
+.pricing-page .page-header > * { max-width: 1080px; padding: 0; }
+.pricing-page .page-kicker { display: block; margin: 0 auto 7px; color: var(--q-wine); font-size: 10px; letter-spacing: .16em; }
+.pricing-page .page-title { font-size: clamp(1.65rem, 3.4vw, 2.6rem); line-height: 1.18; }
+.pricing-page .page-header p { margin-top: 8px; font-size: .875rem; line-height: 1.5; }
+.pricing-page .page-header::before, .pricing-page .page-header::after { display: none; }
+.pricing-page .page-content { padding: 0 20px 70px; }
+.pricing-page .content-card { padding: 0; border: 0; background: transparent; overflow: visible; }
+.pricing-page .package-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 0 0 12px; }
+.pricing-page .package-heading h2 { margin: 0; font-family: var(--font-body); font-size: .875rem; font-weight: 650; letter-spacing: 0; }
+.pricing-page .package-heading a { font-size: .8125rem; white-space: nowrap; text-decoration: none; }
+.pricing-page .package-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.pricing-page .package-card { position: relative; display: flex; flex-direction: column; min-width: 0; padding: 24px; border: 1px solid var(--q-line); border-radius: 16px; background: #fff; transition: border-color .18s, box-shadow .18s; }
+.pricing-page .package-card--signature { border-color: var(--q-line-wine); background: linear-gradient(135deg, #f8eeeb, #fffaf7); }
+.pricing-page .package-card.is-selected { border-color: var(--q-wine); box-shadow: 0 0 0 1px var(--q-wine); }
+.pricing-page .package-eyebrow { color: var(--q-wine); font-size: 10px; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; }
+.pricing-page .package-card h3 { margin: 10px 0 6px; font-family: var(--font-display); font-weight: 400; font-size: 1.65rem; line-height: 1.15; }
+.pricing-page .package-price { margin: 10px 0 12px; color: var(--q-wine); line-height: 1; white-space: nowrap; }
+.pricing-page .package-price b { font-family: var(--font-display); font-weight: 500; font-size: 2.8rem; letter-spacing: -.045em; font-variant-numeric: tabular-nums; }
+.pricing-page .package-price span { font-size: 1.15rem; }
+.pricing-page .package-price small { display: block; margin-top: 7px; color: var(--q-muted); font-size: .72rem; }
+.pricing-page .package-card p { margin: 0 0 20px; font-size: .8125rem; line-height: 1.6; }
+.pricing-page .package-bottom { display: flex; align-items: center; gap: 12px; margin-top: auto; }
+.pricing-page .package-bottom a { font-size: .75rem; }
+.pricing-page .package-card .card-pick { flex: 1; justify-content: center; min-height: 44px; margin: 0; padding: 10px; border: 1px solid var(--q-wine); border-radius: 8px; background: var(--q-wine); color: #fff; font-size: .8125rem; }
+.pricing-page .package-card .card-pick:hover { background: var(--q-wine-dark); }
+.pricing-page .package-card .card-pick.is-on { background: #fff; color: var(--q-wine); }
+.pricing-page button:focus-visible, .pricing-page a:focus-visible { outline: 2px solid var(--q-wine); outline-offset: 4px; }
+.pricing-page .pricing-reassurance { display: flex; flex-wrap: wrap; gap: 6px 22px; margin: 14px 0 20px; color: var(--q-muted); font-size: .75rem; }
+.pricing-page .pricing-reassurance span::before { content: '\2713'; margin-right: 7px; color: var(--q-wine); }
+.pricing-page .catalog-section { padding: 24px; border: 1px solid var(--q-line); border-radius: 16px; background: #fff; scroll-margin-top: 90px; }
+.pricing-page .catalog-heading { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 20px; }
+.pricing-page .catalog-heading h2 { margin: 0; font-size: 1.55rem; }
+.pricing-page .catalog-heading p { margin: 0; font-size: .8125rem; }
+.pricing-page .price-jumps { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; }
+html .pricing-page main.page-content .price-jumps a { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 8px 14px; border: 1px solid var(--q-line); border-radius: 8px; color: var(--q-ink) !important; background: var(--q-paper); font-size: .8125rem; text-decoration: none; }
+.pricing-page .price-jumps a:hover { border-color: var(--q-wine); }
+.pricing-page .price-jumps span { font-size: .75rem; color: var(--q-wine); }
+.pricing-page .price-wrap { margin: 14px 0 0; border: 0; border-radius: 0; box-shadow: none; overflow: visible; }
+.pricing-page .content-card .price-table { display: table; overflow: visible; margin: 0; }
+.pricing-page .price-table caption { caption-side: bottom; padding: 12px 0 0; border: 0; font-size: .75rem; font-weight: 400; line-height: 1.55; letter-spacing: 0; text-transform: none; background: transparent; }
+.pricing-page .price-table tbody th { font-size: .875rem; letter-spacing: 0; text-transform: none; font-weight: 500; }
+.pricing-page .price-table .price-group th { padding: 20px 14px 10px; background: transparent; font-family: var(--font-body); font-size: .75rem; font-weight: 700; letter-spacing: .05em; }
+.pricing-page .price-group { scroll-margin-top: 100px; }
+.pricing-page .price-table td.amount { font-size: 1rem; }
+.pricing-page .pick-box { width: 24px; height: 24px; border-radius: 7px; }
+.pricing-page .pick-cell { width: 44px; }
+.pricing-page .price-note { max-width: none; margin-top: 16px; font-size: .8125rem; }
+.pricing-page .price-details { max-width: 880px; margin: 40px auto 0; padding: 32px; border: 1px solid var(--q-line); border-radius: 16px; background: #fff; }
+.pricing-page .price-details .breadcrumbs { margin: 0 0 20px; }
+.pricing-page .price-details .lead { font-size: .9375rem; margin-bottom: 18px; }
+.pricing-page .price-details > h2:first-of-type { margin-top: 28px; }
+.pricing-page .service-grid { background: var(--q-line); gap: 1px; border: 1px solid var(--q-line); border-radius: 10px; overflow: hidden; }
+.pricing-page .price-bar { padding: 0 20px max(14px, env(safe-area-inset-bottom)); background: transparent; border: 0; }
+.pricing-page .price-bar-inner { max-width: 1080px; gap: 12px; padding: 14px 20px; border-radius: 14px; background: var(--q-dark); box-shadow: 0 8px 32px #1c191733; }
+.pricing-page .pb-info { flex: 1; }
+.pricing-page .pb-total { font-family: var(--font-body); font-size: 1.25rem; font-weight: 650; }
+.pricing-page .pb-count { font-size: .75rem; }
+.pricing-page .pb-caption { font-size: .6875rem; color: #e2d9d1; }
+.pricing-page .pb-send { min-height: 44px; border-radius: 8px; font-size: .8125rem; letter-spacing: 0; text-transform: none; }
+.pricing-page .pb-clear { min-height: 44px; border-radius: 8px; font-size: .8125rem; }
+.pricing-page.has-bar { padding-bottom: 124px; }
+.pricing-page.has-bar.fn-cookie-open { padding-bottom: calc(124px + var(--fn-cookie-h, 167px)); }
+@media (max-width: 700px) {
+  .pricing-page .page-header { padding: 18px 16px 14px; }
+  .pricing-page .page-title { max-width: 28ch; margin-left: 0; font-size: 1.6rem; }
+  .pricing-page .page-header p { max-width: none; font-size: .8125rem; }
+  .pricing-page .page-content { padding: 0 16px 48px; }
+  .pricing-page .package-grid { grid-template-columns: 1fr; gap: 9px; }
+  .pricing-page .package-card { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0 12px; padding: 14px 16px; border-radius: 12px; }
+  .pricing-page .package-eyebrow { font-size: 9px; }
+  .pricing-page .package-card h3 { margin: 5px 0; font-size: 1.3rem; }
+  .pricing-page .package-price { grid-column: 2; grid-row: 1 / span 2; margin: 0; text-align: right; align-self: center; }
+  .pricing-page .package-price b { font-size: 2rem; }
+  .pricing-page .package-price span { font-size: .875rem; }
+  .pricing-page .package-price small { font-size: .625rem; margin-top: 5px; }
+  .pricing-page .package-card p { grid-column: 1; margin: 0; font-size: .8125rem; line-height: 1.45; }
+  .pricing-page .package-bottom { grid-column: 2; grid-row: 3; margin: 3px 0 0; }
+  .pricing-page .package-bottom a { display: none; }
+  .pricing-page .package-card .card-pick { min-height: 44px; padding: 8px 12px; font-size: .75rem; }
+  .pricing-page .pricing-reassurance { gap: 4px 14px; margin: 12px 0 18px; font-size: .6875rem; }
+  .pricing-page .catalog-section { padding: 18px 14px; }
+  .pricing-page .catalog-heading h2 { font-size: 1.4rem; }
+  .pricing-page .catalog-heading p { font-size: .75rem; }
+  .pricing-page .price-jumps { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 14px; }
+  html .pricing-page main.page-content .price-jumps a { padding: 7px 9px; justify-content: space-between; gap: 4px; font-size: .75rem; }
+  .pricing-page .price-jumps span { font-size: .6875rem; }
+  .pricing-page .price-table tbody { display: block; }
+  .pricing-page .price-table tr { gap: 10px; margin: 0; padding: 13px 0; border: 0; border-bottom: 1px solid var(--q-line); border-radius: 0; box-shadow: none; }
+  .pricing-page .price-table th, .pricing-page .price-table td { padding: 0; border: 0; }
+  .pricing-page .price-table tbody th { font-size: .8125rem; }
+  .pricing-page .price-table td.amount { font-size: .875rem; }
+  .pricing-page .price-table .pick-cell { flex: 0 0 30px; }
+  .pricing-page .price-table .price-group { margin: 18px 0 0; padding: 0; }
+  .pricing-page .price-table .price-group th { padding: 0 0 8px; font-size: .75rem; }
+  .pricing-page .price-table caption { display: table-caption; font-size: .75rem; }
+  .pricing-page .price-details { margin-top: 28px; padding: 22px 18px; }
+  .pricing-page .price-bar { padding-inline: 10px; }
+  .pricing-page .price-bar-inner { padding: 12px; gap: 10px; }
+  .pricing-page .pb-actions { width: auto; margin: 0; }
+  .pricing-page .pb-clear { padding: 8px; font-size: .75rem; }
+  .pricing-page .pb-send { padding: 10px 12px; font-size: .75rem; }
+}
+@media (max-width: 430px) {
+  .pricing-page .pb-actions { width: 100%; }
+  .pricing-page .pb-send { flex: 1; }
+  .pricing-page .pb-info { flex-direction: row; flex-wrap: wrap; align-items: baseline; gap: 3px 10px; }
+  .pricing-page .pb-caption { margin-left: auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pricing-page .package-card { transition: none; }
+}
+@media print {
+  .pricing-page .price-jumps, .pricing-page .card-pick, .pricing-page .pick-cell { display: none; }
+  .pricing-page .package-grid { grid-template-columns: repeat(3, 1fr); }
+  .pricing-page .package-card { break-inside: avoid; }
+}
+
+/* --- Devamlilik bolumu: duzenli gelen musteriye ne var --- */
+.pricing-page .loyalty {
+  margin: 0 0 18px;
+  padding: 18px 20px;
+  border: 1px solid var(--q-line-wine);
+  border-radius: 14px;
+  background: linear-gradient(135deg, #f8eeeb, #fffaf7);
+}
+.pricing-page .loyalty h3 {
+  margin: 0 0 10px;
+  font-family: var(--font-body);
+  font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--q-wine);                        /* #7a1b32 / #f8eeeb = 8.9:1 AA+ */
+}
+.pricing-page .loyalty-list { display: grid; gap: 9px; margin: 0; padding: 0; list-style: none; }
+.pricing-page .loyalty-list li {
+  position: relative;
+  padding-left: 20px;
+  font-size: .8125rem; line-height: 1.55;
+  color: var(--q-body);                        /* #403a36 / #f8eeeb = 9.9:1 AA+ */
+}
+.pricing-page .loyalty-list li::before {
+  content: "✓"; position: absolute; left: 0; top: 0;
+  color: var(--q-wine); font-weight: 700;
+}
+.pricing-page .loyalty-list strong { color: var(--q-ink); font-weight: 650; }
+
+
+@media (max-width: 640px) {
+  .pricing-page .loyalty { padding: 16px; border-radius: 12px; }
+}
