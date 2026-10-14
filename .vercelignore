@@ -13,3 +13,15 @@ package.json
 package-lock.json
 .env
 .env.*
+
+# tasarim onizlemesi - yayina gitmez
+_onizleme
+_onizleme-A.html
+_onizleme-B.html
+_onizleme-C.html
+_onizleme-karsilastir.html
+
+_tema
+_yedek
+
+_yedek-seo

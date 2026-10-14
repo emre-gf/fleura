@@ -2,7 +2,7 @@
 
 > İzmir genelinde VIP ev hizmeti veren profesyonel tırnak bakımı markası. Kalıcı oje, protez tırnak, manikür, pedikür ve nail art uygulamalarını müşterinin kendi adresinde gerçekleştirir.
 
-**Son güncelleme:** 2026-09-22
+**Son güncelleme:** 2026-10-14
 
 ## Temel Bilgiler
 
@@ -81,6 +81,56 @@ Kaynak sayfa: https://www.fleura.com.tr/izmir-protez-tirnak-fiyatlari
 Not: Çıkarma ücretleri yalnızca **başka bir yerde yapılmış** uygulamalar için geçerlidir.
 Fleura Nails'in uyguladığı protezin sökümü yeni randevuya dahildir.
 Çeşme, Alaçatı, Urla ve Seferihisar gibi uzak bölgelerde mesafe fiyata yansıyabilir; randevu öncesi bildirilir.
+
+## Belgeler ve Yetkinlik (doğrulanabilir)
+
+Üç belge de numarası, tarihi ve veren kurumuyla açık yayımlanıyor; MEB belgeleri
+e-Devlet'ten doğrulanabilir. Belge görsellerinde T.C. kimlik numarası ile anne/baba
+adı KVKK gereği maskelenmiştir; ad soyad, belge numarası, tarih, kurum ve karekod
+olduğu gibidir.
+
+- **T.C. Millî Eğitim Bakanlığı — Protez Tırnak Kurs Bitirme Belgesi**
+  Belge no 97024220250096435119 · Tarih 23.12.2025 · **92 saat** ·
+  Eğitim dönemi 06.10.2025 – 23.12.2025 ·
+  Alan: Güzellik ve Saç Bakım Hizmetleri / Protez Tırnak ·
+  Veren kurum: İzmir / Karabağlar Halk Eğitimi Merkezi.
+  Bir günlük tanıtım eğitimi değil, yaklaşık iki buçuk aylık örgün mesleki kurs.
+- **T.C. Millî Eğitim Bakanlığı — Hijyen Eğitimi Kurs Bitirme Belgesi**
+  Belge no 16536020260097355620 · Tarih 03.03.2026 · Sağlık alanı / 8 saat ·
+  Veren kurum: İzmir / Karşıyaka Halk Eğitimi Merkezi.
+  "Güzellik ve Saç Bakım Hizmetlerinde Çalışanlar İçin Hijyen Eğitimi" — sektörde
+  yasal olarak zorunlu belge.
+- **XBeauty Professional · Uluslararası Nail Tour İzmir**
+  STALEKS PRO ve SK Sibel Kankaya Beauty Care iş birliği · 1 tam gün ·
+  Eğitmenler: Oxana Tkaçenko, Olga Babaeva, Yasemin Yutam, Gülnur Yürük, Buse İşsever.
+  Rus manikürü / kombine teknik kaynağındaki eğitmenlerden alınan eğitim.
+
+Belge sayfası: https://www.fleura.com.tr/belgelerimiz
+
+## Uygulayıcı
+
+Hizmeti **tek bir nail artist** veriyor: **Zeynep**. Randevuya gelen, uygulamayı
+yapan ve yukarıdaki belgeleri taşıyan kişi odur; ekip ya da dönüşümlü personel yok.
+Not: müşteri yorumlarındaki "Zeynep Demirbağ" bir **müşteridir**, uygulayıcı değildir —
+ad benzerliği varlık karışıklığına yol açmasın.
+
+## İngilizce ve Rusça Sayfalar
+
+- İngilizce ana sayfa: https://www.fleura.com.tr/en
+- Rusça ana sayfa: https://www.fleura.com.tr/ru
+- EN: [Gel Nail Extensions](https://www.fleura.com.tr/en/gel-nail-extensions-izmir) ·
+  [Gel Polish](https://www.fleura.com.tr/en/gel-polish-izmir) ·
+  [Manicure & Pedicure](https://www.fleura.com.tr/en/manicure-pedicure-izmir) ·
+  [Nail Art](https://www.fleura.com.tr/en/nail-art-izmir) ·
+  [Bridal Nails](https://www.fleura.com.tr/en/bridal-nails-izmir) ·
+  [Mobile Nail Artist](https://www.fleura.com.tr/en/mobile-nail-artist-izmir) ·
+  [Prices](https://www.fleura.com.tr/en/nail-prices-izmir)
+- RU: [Наращивание ногтей](https://www.fleura.com.tr/ru/narashchivanie-nogtey-izmir) ·
+  [Гель-лак](https://www.fleura.com.tr/ru/gel-lak-izmir) ·
+  [Маникюр и педикюр](https://www.fleura.com.tr/ru/manikyur-pedikyur-izmir) ·
+  [Дизайн ногтей](https://www.fleura.com.tr/ru/dizayn-nogtey-izmir) ·
+  [Свадебный маникюр](https://www.fleura.com.tr/ru/svadebnyy-manikyur-izmir) ·
+  [Цены](https://www.fleura.com.tr/ru/tseny-izmir)
 
 ## Önemli Sayfalar
 
@@ -172,4 +222,4 @@ Fleura Nails'in uyguladığı protezin sökümü yeni randevuya dahildir.
 - [Urla Kalıcı Oje ve Protez Tırnak](https://www.fleura.com.tr/urla-kalici-oje)
 - [Yeşilyurt Kalıcı Oje ve Protez Tırnak (Karabağlar mahallesi)](https://www.fleura.com.tr/yesilyurt-kalici-oje)
 
-Son güncelleme: 2026-09-22
+Son güncelleme: 2026-10-14

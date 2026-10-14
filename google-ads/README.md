@@ -36,8 +36,11 @@ göre değişiyor, o yüzden metinleri hazır liste olarak veriyor — Ads aray�
   yoksa İstanbul'dan İzmir arayanlara reklam çıkar)*
 - **Görüntülü Reklam Ağı** → kapalı olduğunu doğrula
 - **Arama ortakları** → dosya 01'de kapalı geliyor; ilk ay kapalı kalsın
-- **Reklam zamanlaması** → **Pzt-Cmt 09:00-20:30**, Pazar kapalı
-  *(site çalışma saati 10:00-20:00; 1 saat önce/sonra WhatsApp mesajı yakalamak için)*
+- **Reklam zamanlaması** → **Pzt-Paz 09:30-23:00** (hafta sonu dahil)
+  *(site çalışma saati her gün 10:00-23:00, Pazar dahil — şemada 75× `opens 10:00` /
+  `closes 23:00`, 7 gün. Yarım saat önce başlatmak WhatsApp mesajını yakalar.)*
+  ⚠️ Eski ayar Pzt-Cmt 09:00-20:30 idi: **haftada 1 gün + her gün 2,5 saat** kapalıydı.
+  Akşam 20:00-23:00 ve Pazar, kişisel bakım aramalarında en yoğun dilimlerdir.
 - **Başlık sabitleme (pin)** → her reklamda Başlık 1'i **1. pozisyona** sabitle,
   `{KeyWord:…}` başlığını sabitleme
 - **Otomatik oluşturulan öğeler** → KAPAT *(uydurma başlık üretiyor, fiyat iddialarını bozar)*
@@ -66,8 +69,24 @@ sonra `Fiyatlar`, sonra `Manikur Pedikur`.
 ## Neyi neden değiştirdik (önceki sürüme göre)
 
 - **Arama ortakları kapatıldı** — 45 ₺/gün bütçede kaliteyi düşürüyordu.
-- **"Hafta Sonu Randevu Var" → "Cumartesi de Randevu Var"** — Pazar kapalısınız;
-  eski metin yanlış beklenti yaratıyordu.
+- **"Cumartesi de Randevu Var" → "Pazar Dahil Her Gün Açığız"** — 22.09.2026 commit'inde
+  (`adf28f8`) çalışma saatleri Pazar dahil 23:00'a uzatıldı; Ads dosyaları o tarihten
+  önce yazılmıştı ve güncellenmemişti. Sitede "Cumartesi" kelimesi **0 dosyada** geçiyor.
+- **"Belgeli Nail Artist" → "Google'da 5,0 Puan · 20 Yorum"** — 7/8 reklamda tekrar
+  ediyordu ve açılış sayfalarında "belge" kelimesi geçmiyor. Yeni iddia `aggregateRating`
+  şemasında ve `llms.txt`'te doğrulanabilir.
+- **"Otoklavda Steril Aletler" → "Gece 23:00'a Kadar Randevu"** — aynı reklamdaki
+  "Tek Kullanımlık Steril Set" ile aynı temadaydı; sterilizasyon iddiası D3
+  açıklamasında zaten duruyor.
+- **Reklam metni ↔ sayfa çelişkileri giderildi** (reklam sayfaya uyduruldu, tersi değil):
+  protez süresi 90-150 dk → **2-2,5 saat**; kalıcı oje 45-60 → **45-75 dk**;
+  "söküm 400 ₺" ve "Pedikür + Kalıcı Oje 1.250 ₺" o sayfalarda yok → kaldırıldı;
+  "Cat Eye" iki sayfada da geçmiyor → **French ve Ombre**; evde sayfasında "ofis"
+  geçmiyor → **rezidans/otel/villa**.
+- **Türkçe ekli negatifler eklendi (+43)** — Google negatiflerde yakın varyant
+  eşleştirmez; `kurs` negatifi `kursu`/`kursları`/`kursa`'yı engellemiyordu.
+- **Dil hedefi Türkçe → Türkçe + İngilizce + Rusça** — eşleştirme anahtar kelimeyle
+  yapıldığı için alaka kaybı yaratmaz, erişim ekler (EN/RU sayfalarınız var).
 - **"Grup Randevusu Yapıyoruz" ve grup randevu açıklaması kaldırıldı** — sitenin hiçbir
   yerinde bu iddiayı destekleyen içerik yok, açılış sayfası eşleşmiyordu.
 - **Açıklamalar reklam grubuna özel yazıldı** — 6 reklamın 4 açıklaması da aynıydı,

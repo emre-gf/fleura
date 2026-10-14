@@ -16,7 +16,12 @@
     });
     try {
       if (localStorage.getItem('fn-cookie-consent') === 'accepted') {
-        gtag('consent', 'update', { analytics_storage: 'granted' });
+        gtag('consent', 'update', {
+          analytics_storage: 'granted',
+          ad_storage: 'granted',
+          ad_user_data: 'granted',
+          ad_personalization: 'granted'
+        });
       }
     } catch (e) {}
     gtag('js', new Date());
@@ -58,9 +63,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/seo-shell.css">
-  <link rel="stylesheet" href="/i18n-page.css">
-  <link rel="stylesheet" href="/cookie-consent.css">
+  <link rel="stylesheet" href="/seo-shell.css?v=20261014">
+  <link rel="stylesheet" href="/i18n-page.css?v=20261014">
+  <link rel="stylesheet" href="/cookie-consent.css?v=20261014">
   <script src="/seo-shell.js" defer></script>
   <script src="/cookie-consent.js" defer></script>
 
@@ -195,6 +200,8 @@ document.addEventListener('click',r,true)})();</script>
       window.clarity('consent', localStorage.getItem('fn-cookie-consent') === 'accepted');
     } catch (e) {}
   </script>
+<!-- fleura-tema -->
+<link rel="stylesheet" href="/tema.css?v=20261014" />
 </head>
 <body>
   <a class="seo-skip-link" href="#main">Перейти к содержанию</a>

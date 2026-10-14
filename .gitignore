@@ -18,3 +18,14 @@ assets/sertifikalar/_ham/
 .env
 .env.*
 !.env.example
+
+# tasarim onizlemesi (yerel)
+_onizleme/
+_onizleme-*.html
+
+_tema/
+_yedek/
+
+_yedek-seo/
+
+_tema/tema.okunur.css

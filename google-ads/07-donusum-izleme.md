@@ -22,59 +22,67 @@ Site etiketi (`fleura`, G-5MWKVSGTQV / GT-M39Z8P9Q) Ads hesabına bağlandı.
   (whatsapp_click → 250 ₺, phone_click → 250 ₺, booking_complete ×2 → 400 ₺)
 - Sözdizimi `node --check` ile doğrulandı
 
-## ⛔ YAPILMASI GEREKEN — Consent Mode izinleri
+## ✅ TAMAMLANDI — Consent Mode izinleri
 
-**Bu adım olmadan yukarıdakilerin hiçbiri veri toplamaz.**
+**Durum: kapandı (14.10.2026 denetiminde doğrulandı).**
 
-Şu an Consent Mode v2 bloğu `ad_storage`, `ad_user_data` ve `ad_personalization`
-izinlerini `denied` ile başlatıyor ve çerez onayı verildiğinde **yalnızca**
-`analytics_storage`'ı `granted` yapıyor. Reklam izinleri hiçbir zaman açılmıyor,
-dolayısıyla Ads dönüşümleri ölçülemez.
+`cookie-consent.js:47-51` ve `:65-69` dört izni birden yönetiyor
+(`analytics_storage`, `ad_storage`, `ad_user_data`, `ad_personalization`).
+Ölçüm: **70 canlı sayfada** `ad_storage: 'granted'` satırı var.
 
-### Değişiklik 1 — `cookie-consent.js` (satır ~46 ve ~56)
+> Bu bölüm daha önce "bu adım olmadan hiçbiri veri toplamaz, kampanyayı
+> başlatma" diyordu. Artık geçerli değil; güncellenmeseydi kampanya **yanlış
+> sebeple** bekletilecekti.
 
-```js
-// grantAnalytics() — MEVCUT:
-window.gtag('consent', 'update', { analytics_storage: 'granted' });
-// OLMASI GEREKEN:
-window.gtag('consent', 'update', {
-  analytics_storage: 'granted',
-  ad_storage: 'granted',
-  ad_user_data: 'granted',
-  ad_personalization: 'granted'
-});
+### ⛔ KALAN GERÇEK ENGELLER (kampanyayı başlatmadan önce)
 
-// denyAnalytics() — MEVCUT:
-window.gtag('consent', 'update', { analytics_storage: 'denied' });
-// OLMASI GEREKEN:
-window.gtag('consent', 'update', {
-  analytics_storage: 'denied',
-  ad_storage: 'denied',
-  ad_user_data: 'denied',
-  ad_personalization: 'denied'
-});
-```
+**1. 6 Rusça alt sayfası eski blokta kalmış — düzeltildi (14.10.2026)**
+`ru/{dizayn-nogtey,gel-lak,manikyur-pedikyur,narashchivanie-nogtey,svadebnyy-manikyur,tseny}-izmir/`
+sayfalarında rıza verildiğinde yalnızca `analytics_storage` açılıyordu;
+`ad_storage` denied kalıyordu → o oturumda Ads dönüşümü ölçülmüyordu.
 
-### Değişiklik 2 — 65 HTML dosyasının head bloğu (satır ~29)
+**2. Eski GA4 dönüşümleri hâlâ Birincil → çift sayım (HESAPTA yapılmalı)**
+`fn-events.js:210` her WhatsApp tıklamasında GA4'e `generate_lead` gönderiyor
+**ve aynı tıklamada** `:211` AW etiketini yakıyor. Hesapta GA4'ten içe aktarılmış
+"Kişi" / "Kişi (1)" / "Kişi (2)" / "Randevu rezervasyonları" dönüşümleri
+**Birincil** kaldığı sürece aynı tıklama iki kez sayılır.
+→ Dördünü de **İkincil**'e çevir.
 
-```js
-// MEVCUT:
-gtag('consent', 'update', { analytics_storage: 'granted' });
-// OLMASI GEREKEN: (aynı dört anahtar, hepsi 'granted')
-```
+**3. 400 ₺'lik "Randevu Formu Tamamlandı" reklam trafiğinden tetiklenemiyor**
+8 reklam açılış sayfasının hiçbirinde `<form>`, takvim veya `#randevu-al` yok;
+bu sayfalar `script.js` yüklemiyor. `fnTrackBookingRequest` yalnızca
+`script.js`'ten çağrılıyor ve onu yükleyen tek sayfa `index.html`.
+→ Bu dönüşümü **İkincil**'e al. Açılış sayfalarına randevu bloğu eklenirse
+tekrar Birincil yapılabilir.
 
-Tek komutla (repo kökünde):
+**4. WhatsApp + Telefon ikisi de Birincil → çift sayım riski**
+Aynı oturumda ikisine de basan kullanıcı 250 + 250 = **500 ₺** üretir.
+"Bir" sayma kuralı yalnız **aynı** dönüşüm işlemi içinde tekrarı engeller,
+iki farklı işlem arasında dedupe yapmaz.
+→ Ya ikisini tek "İletişim" işleminde birleştir, ya telefonu İkincil'e al.
+Kanal kırılımını GA4'teki `whatsapp_click` / `phone_click` olaylarından raporla.
 
-```bash
-grep -rl "gtag('consent', 'update', { analytics_storage: 'granted' });" --include=*.html . \
-  | xargs sed -i '' "s/gtag('consent', 'update', { analytics_storage: 'granted' });/gtag('consent', 'update', { analytics_storage: 'granted', ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted' });/"
-```
+### Consent Mode v2 + Türkiye — modellenmiş dönüşüm ÇALIŞMAYACAK
 
-### Değişiklik 3 — KVKK / çerez metni
+İki bağımsız sebeple:
+1. **Coğrafya** — Türkiye AEA/İngiltere/İsviçre dışında. Dönüşüm modellemesi
+   AEA trafiği için sunuluyor; TR'de `ad_storage: denied` ile gelen dönüşüm
+   modelleme ile geri gelmez.
+2. **Hacim** — modelleme eşiği ülke+alan adı başına 7 günde ~700 reklam tıklaması.
+   45 ₺/gün ≈ haftada 45-50 tıklama.
 
-Reklam çerezleri devreye girdiği için `kvkk-aydinlatma-metni.html` ve çerez banner
-metnine "reklam ve ölçümleme çerezleri" ifadesi eklenmeli. Şu an yalnızca analitikten
-söz ediliyor; bu haliyle rıza metni kapsamı eksik kalır.
+**Pratik sonuç:** çerez bildirimine dokunmadan WhatsApp'a basan her kullanıcı
+kalıcı olarak ölçülmemiş bir dönüşümdür.
+
+**Önerilen çözüm (rızayı kaldırmadan): gclid → WhatsApp mesajı → Çevrimdışı
+Dönüşüm Yükleme (OCI).** `fn-events.js:86` gclid'i zaten okuyor ama yalnız
+kaynağı etiketlemek için kullanıp atıyor; `tagWhatsApp()` mesaj sonuna zaten
+`— Google Reklam · /sayfa` ekliyor. gclid'i de oraya ekle, randevu
+gerçekleştiğinde gclid + **gerçek ciro** (1.150-1.500 ₺) Ads'e yüklenir.
+Üstünlüğü: çerez rızasından bağımsız (URL parametresi, depolama yok),
+250 ₺ vekil değer yerine gerçek ciro, iptal edilen randevu yüklenmez.
+Dikkat: gclid'i `sessionStorage`'a **yazma** (rıza öncesi depolama olur),
+90 gün içinde yükle, KVKK metnine "reklam ölçümleme tanımlayıcısı" satırı ekle.
 
 ## Doğrulama
 
