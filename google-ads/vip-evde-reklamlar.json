@@ -1,0 +1,79 @@
+{
+  "campaign": "Izmir Cekirdek - Arama",
+  "daily_budget_try": 110,
+  "status": "prepared_not_published",
+  "ads": [
+    {
+      "group": "Manikur & Genel Tirnak",
+      "url": "https://www.fleura.com.tr/izmir-evde-tirnak-hizmeti",
+      "headlines": [
+        "İzmir VIP Evde Tırnak Hizmeti",
+        "Nail Artist Evinize Geliyor",
+        "Salon Sırası Beklemeyin",
+        "Yola Değil Kendinize Zaman",
+        "Trafik ve Park Derdi Yok",
+        "Evinizde Size Özel Seans",
+        "Salon Bütçesine Yakın Hizmet",
+        "Evde Manikür 650 ₺'den",
+        "Kalıcı Oje 1.150 ₺'den",
+        "Protez Tırnak 1.500 ₺'den",
+        "Ekipman ve Malzeme Bizden",
+        "WhatsApp'tan Saat Sorun"
+      ],
+      "descriptions": [
+        "Salona siz gitmeyin, nail artist size gelsin. İzmir'de evinize gelen VIP tırnak hizmeti.",
+        "Trafik, park ve salon sırası olmadan; evinizde yalnızca size ayrılan bir seans.",
+        "Salon bütçesine yakın fiyatlarla ev konforu. Manikür 650 ₺, kalıcı oje 1.150 ₺'den.",
+        "İlçenizi WhatsApp'tan yazın; evinize gelelim. Fiyatı ve randevuyu birlikte netleştirelim."
+      ]
+    },
+    {
+      "group": "Protez & Jel Tirnak",
+      "url": "https://www.fleura.com.tr/izmir-protez-tirnak",
+      "headlines": [
+        "İzmir Evde Protez Tırnak",
+        "Protez Tırnak İçin Biz Gelelim",
+        "Nail Artist Evinize Geliyor",
+        "Trafik ve Park Derdi Yok",
+        "Salon Sırası Beklemeyin",
+        "Evinizde VIP Protez Tırnak",
+        "Size Ayrılmış Özel Seans",
+        "Protez Tırnak 1.500 ₺'den",
+        "Manikür ve Kalıcı Oje Dahil",
+        "Ekipman ve Malzeme Bizden",
+        "Salon Bütçesine Yakın Hizmet",
+        "WhatsApp'tan Saat Sorun"
+      ],
+      "descriptions": [
+        "İzmir'de evinize gelen nail artist. Salona gitmeden, evinizde VIP protez tırnak hizmeti.",
+        "Evde manikür + protez + kalıcı oje 1.500 ₺'den. Size özel seans için WhatsApp'tan yazın.",
+        "Yolda ve salon sırasında zaman kaybetmeyin. Ekipman bizden, evinizde size özel seans.",
+        "Salon bütçesine yakın fiyatla ev konforu. İlçenizi yazın, fiyatı ve saati netleştirelim."
+      ]
+    },
+    {
+      "group": "Kalici Oje",
+      "url": "https://www.fleura.com.tr/izmir-kalici-oje",
+      "headlines": [
+        "İzmir Evde Kalıcı Oje",
+        "Kalıcı Oje İçin Biz Gelelim",
+        "Nail Artist Evinize Geliyor",
+        "Manikür + Oje 1.150 ₺'den",
+        "Trafik ve Park Derdi Yok",
+        "Salon Sırası Beklemeyin",
+        "Evinizde VIP Kalıcı Oje",
+        "Size Ayrılmış Özel Seans",
+        "Yola Değil Kendinize Zaman",
+        "Ekipman ve Malzeme Bizden",
+        "Salon Bütçesine Yakın Hizmet",
+        "WhatsApp'tan Saat Sorun"
+      ],
+      "descriptions": [
+        "Kalıcı oje için salona gitmeyin; İzmir'de nail artist evinize gelsin. Size özel seans.",
+        "Evde manikür + kalıcı oje 1.150 ₺'den. Evinizde size özel seans için WhatsApp'tan yazın.",
+        "Trafik, park ve salon sırası olmadan tırnak bakımı. Evinizin konforunda VIP hizmet.",
+        "Salon bütçesine yakın fiyatla ev konforu. WhatsApp'tan ilçenizi ve uygun gününüzü yazın."
+      ]
+    }
+  ]
+}
