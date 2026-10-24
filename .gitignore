@@ -31,3 +31,7 @@ _yedek-seo/
 _tema/tema.okunur.css
 
 _yedek-header/
+
+# OCI: randevu kaydı ve Google Ads yükleme dosyaları tıklama kimliği içerir — repoya girmez
+google-ads/oci/randevular.csv
+google-ads/oci/yukleme-*.csv

@@ -77,7 +77,12 @@
       "tools/**",
       "package.json",
       "package-lock.json",
-      ".env*"
+      ".env*",
+      "_yedek-saat/**",
+      "google-ads/**",
+      "Claude outputs/**",
+      "fleura-degisiklikler.patch",
+      "medium-yazisi.md"
     ],
     "errorDocument": "404.html",
     "headers": [

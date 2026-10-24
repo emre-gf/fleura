@@ -13,7 +13,8 @@ function listHtml(dir = ROOT, out = []) {
   for (const name of fs.readdirSync(dir)) {
     const full = path.join(dir, name);
     const st = fs.statSync(full);
-    if (st.isDirectory()) { if (!SKIP_DIRS.has(name)) listHtml(full, out); }
+    // "_" ile başlayan klasörler yedek/önizlemedir (_yedek-saat, _tema…) ve yayına çıkmaz.
+    if (st.isDirectory()) { if (!SKIP_DIRS.has(name) && !name.startsWith('_')) listHtml(full, out); }
     else if (name.endsWith('.html') && !VERIFY_FILE.test(name)) out.push(path.relative(ROOT, full));
   }
   return out.sort();

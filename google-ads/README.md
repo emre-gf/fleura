@@ -17,6 +17,10 @@ Editor ücretsiz masaüstü uygulaması: https://ads.google.com/home/tools/ads-e
 | 5 | `04-reklamlar-rsa.csv` | 8 duyarlı arama reklamı (3'ü aktif), her biri 15 başlık + 4 açıklama |
 | 6 | `06-oge-uzantilar.csv` | Öğe/uzantı metinleri — **elle** girilecek referans listesi |
 | 7 | `07-donusum-izleme.md` | Dönüşüm izleme kurulumu (kod değişiklikleri dahil) |
+| 8 | `08-cevrimdisi-donusum.md` | Hizmete göre dönüşüm değeri + haftalık randevu yükleme (OCI) |
+
+> Bu klasör siteye **yüklenmez** (`.vercelignore`). 24.10.2026'ya kadar canlıda
+> herkese açıktı: anahtar kelime, negatif ve reklam metinleri okunabiliyordu.
 
 `06` dosyası Ads Editor içe aktarma formatı **değildir**; öğe formatları Editor sürümüne
 göre değişiyor, o yüzden metinleri hazır liste olarak veriyor — Ads arayüzünden yapıştır.

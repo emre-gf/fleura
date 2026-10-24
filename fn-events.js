@@ -20,8 +20,30 @@
     phone:    'AW-10868274290/_VwpCNHl8PccEPLosr4o',
     booking:  'AW-10868274290/XHvaCM7l8PccEPLosr4o'
   };
-  var AW_VALUE = { whatsapp: 250, phone: 250, booking: 400 };
-  function conv(key, callback) {
+  /* Dönüşüm değeri = hizmetin sitedeki fiyatı (izmir-protez-tirnak-fiyatlari ile aynı tut;
+   * tools/oci-csv.js de bu tabloyu kullanır). Sabit 250 ₺ protezi manikürle eşit gösteriyordu.
+   * Ads'te dönüşüm işlemi "her dönüşüm için farklı değer" olmalı, yoksa bu değer yok sayılır. */
+  var FIYAT = {
+    'protez-tirnak': 1500,   /* manikür + protez + kalıcı oje paketi */
+    'gelin-tirnagi': 1500,   /* sayfada ayrı fiyat yok: protez paketi varsayıldı */
+    'kalici-oje': 1150,      /* manikür + kalıcı oje */
+    'nail-art': 1150,        /* tasarım kalıcı oje üstüne eklenir: taban fiyat */
+    'manikur-pedikur': 650,  /* manikür 650, pedikür 850: düşük olan */
+    'rus-manikuru': 650,     /* sayfada ayrı fiyat yok: manikür varsayıldı */
+    'tirnak-bakimi': 650,
+    'diger': 650
+  };
+  var VARSAYILAN_DEGER = 650;  /* hizmet bilinmiyorsa en düşük hizmet fiyatı */
+  var YOL_HIZMET = [
+    [/protez-tirnak(?!-fiyat)|gel-nail-extensions|narashchivanie/, 'protez-tirnak'],
+    [/gelin-tirnagi|bridal-nails|svadebnyy/, 'gelin-tirnagi'],
+    [/kalici-oje|gel-polish|gel-lak/, 'kalici-oje'],
+    [/nail-art|dizayn-nogtey/, 'nail-art'],
+    [/rus-manikuru/, 'rus-manikuru'],
+    [/manikur-pedikur|manicure-pedicure|manikyur-pedikyur/, 'manikur-pedikur']
+  ];
+
+  function conv(key, callback, service) {
     if (typeof window.gtag !== 'function' || !AW[key]) {
       if (callback) callback();
       return;
@@ -29,9 +51,7 @@
     try {
       window.gtag('event', 'conversion', {
         send_to: AW[key],
-        // Ads'teki dönüşüm işlemi değerleriyle aynı (WhatsApp/Telefon 250 ₺, Randevu 400 ₺).
-        // 0 göndermek bu değerleri ezer ve değer bazlı teklif stratejilerini bozar.
-        value: AW_VALUE[key] || 0,
+        value: FIYAT[service || hizmet()] || VARSAYILAN_DEGER,
         currency: 'TRY',
         event_callback: callback,
         event_timeout: 800
@@ -102,6 +122,43 @@
   var SOURCE = detectSource();
   var LANDING = read('fn_src_landing') || location.pathname;
 
+  /* Hizmet: reklam grubunun "Nihai URL son eki"ndeki ?hizmet= (anasayfaya inen reklamlar
+     için tek bilgi kaynağı) oturum boyunca korunur; yoksa sayfa yolundan çıkarılır.
+     Blog yazıları bilgi amaçlı okunduğu için hizmete bağlanmaz. */
+  (function () {
+    var h = new URLSearchParams(location.search).get('hizmet');
+    if (h && FIYAT[h]) store('fn_hizmet', h);
+  })();
+  function hizmet() {
+    var h = read('fn_hizmet');
+    if (FIYAT[h]) return h;
+    var p = location.pathname;
+    if (/^\/blog\//.test(p)) return '';
+    for (var i = 0; i < YOL_HIZMET.length; i++) {
+      if (YOL_HIZMET[i][0].test(p)) return YOL_HIZMET[i][1];
+    }
+    return '';
+  }
+
+  /* Google Ads tıklama kimliği (çevrimdışı dönüşüm içe aktarma için).
+     Önce sayfa URL'si, sonra Google'ın kendi _gcl_aw/_gcl_gb çerezleri — bunlar yalnızca
+     reklam çerezlerine rıza verildiyse vardır. Kimliği kendi depolamamıza yazmıyoruz. */
+  function gclCookie(name) {
+    var m = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)'));
+    if (!m) return '';
+    var p = decodeURIComponent(m[1]).split('.');   /* GCL.<zaman>.<kimlik> */
+    return p.length > 2 ? p.slice(2).join('.') : '';
+  }
+  function clickId() {
+    var q = new URLSearchParams(location.search);
+    var id = q.get('gclid') || gclCookie('_gcl_aw');
+    if (id) return /^[\w-]+$/.test(id) ? id : '';
+    id = q.get('gbraid') || gclCookie('_gcl_gb');
+    if (id) return /^[\w-]+$/.test(id) ? 'gb-' + id : '';
+    id = q.get('wbraid');
+    return id && /^[\w-]+$/.test(id) ? 'wb-' + id : '';
+  }
+
   /* Oturumda bir kez: kaynağı GA4'e bildir + tüm olaylara iliştir */
   if (typeof window.gtag === 'function') {
     try {
@@ -127,14 +184,19 @@
      Eski hali "— Doğrudan · /izmir-protez-tirnak-fiyatlari" yazıyordu; müşteriye
      teknik ve rahatsız edici görünüyordu. Artık yalnızca kısa bir kod:
 
-         #rez.233   NOKTA  -> ChatGPT / AI asistanı (GEO çalışmasının getirisi)
-         #rez-342   TİRE   -> Google Ads (ücretli reklam)
-         (kod yok)         -> siteden, organik aramadan, sosyal medyadan gelen
+         #rez.233        NOKTA  -> ChatGPT / AI asistanı (GEO çalışmasının getirisi)
+         #rez-Cj0KCQ...  TİRE   -> Google Ads, tıklama kimliğiyle (gclid; gb-/wb- önekli
+                                   olanlar iOS kimliği). Randevuya dönerse kodun tamamı
+                                   google-ads/oci/randevular.csv'ye yazılır (dosya 08).
+         #rez-342        TİRE   -> Google Ads, ama tıklama kimliği alınamadı
+         (kod yok)              -> siteden, organik aramadan, sosyal medyadan gelen
 
      Ayraç bilerek seçildi: nokta ile tire tek bakışta ayrılır, müşteriye hiçbir
      şey ifade etmez. Sayı 101-999 arası rastgele; anlam taşımaz, yalnızca iki
-     mesajı ayırmaya yarar. Kişisel veri içermez, depolama kullanmaz. */
+     mesajı ayırmaya yarar. Ad, telefon gibi kişisel veri içermez. */
   function rezKodu() {
+    var id = clickId();
+    if (id) return '#rez-' + id;
     var ayrac = '';
     if (AI_SOURCES[SOURCE]) ayrac = '.';            /* ChatGPT ve diğer AI asistanları */
     else if (SOURCE === 'google_ads') ayrac = '-';  /* Google Ads */
@@ -167,6 +229,7 @@
       page_path: location.pathname,
       page_language: document.documentElement.getAttribute('lang') || '',
       cta_location: ctaLocation(el),
+      service: hizmet() || 'bilinmiyor',
       link_text: (el.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 80),
       traffic_source: SOURCE,
       is_ai_source: AI_SOURCES[SOURCE] ? 'yes' : 'no'
@@ -200,7 +263,7 @@
     var allowed = ['kalici-oje', 'manikur-pedikur', 'protez-tirnak', 'tirnak-bakimi', 'nail-art', 'diger'];
     if (allowed.indexOf(service) !== -1) params.service = service;
     send('booking_request', params);
-    conv('booking');
+    conv('booking', null, params.service);
   };
 
   document.addEventListener('click', function (ev) {

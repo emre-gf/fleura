@@ -12,7 +12,8 @@
     "seo:indexnow:keyfile": "node tools/indexnow.js keyfile",
     "test": "node tools/seo-check.js",
     "seo:verify-meta": "node tools/verification-meta.js",
-    "seo:verify-meta:check": "node tools/verification-meta.js --check"
+    "seo:verify-meta:check": "node tools/verification-meta.js --check",
+    "ads:oci": "node tools/oci-csv.js"
   },
   "engines": {
     "node": ">=18"

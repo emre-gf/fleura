@@ -12,6 +12,10 @@ Site etiketi (`fleura`, G-5MWKVSGTQV / GT-M39Z8P9Q) Ads hesabına bağlandı.
 | Randevu Formu Tamamlandi | Randevu rezervasyonu | 400 ₺ | Bir | `AW-10868274290/XHvaCM7l8PccEPLosr4o` |
 
 Üçü de **Birincil** (teklif optimizasyonunda kullanılır).
+
+> **24.10.2026:** Site artık sabit 250/400 ₺ yerine **hizmetin fiyatını** gönderiyor
+> (protez 1.500, kalıcı oje 1.150, manikür 650 ₺). Hesapta üç işlemin değer ayarı
+> "Her dönüşüm için farklı değerler kullan" yapılmalı → `08-cevrimdisi-donusum.md`.
 "Gelişmiş dönüşümler" bilinçli olarak **kapalı** bırakıldı — açmak Google'ın veri işleme
 şartlarını kabul etmek demek ve KVKK metninin buna göre güncellenmesi gerekir.
 
@@ -73,6 +77,8 @@ Kanal kırılımını GA4'teki `whatsapp_click` / `phone_click` olaylarından ra
 
 **Pratik sonuç:** çerez bildirimine dokunmadan WhatsApp'a basan her kullanıcı
 kalıcı olarak ölçülmemiş bir dönüşümdür.
+
+**✅ 24.10.2026'da uygulandı → `08-cevrimdisi-donusum.md`.** Aşağıdaki not tarihçe için duruyor.
 
 **Önerilen çözüm (rızayı kaldırmadan): gclid → WhatsApp mesajı → Çevrimdışı
 Dönüşüm Yükleme (OCI).** `fn-events.js:86` gclid'i zaten okuyor ama yalnız

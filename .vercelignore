@@ -25,3 +25,12 @@ _tema
 _yedek
 
 _yedek-seo
+
+# yayına çıkmaması gerekenler (2026-10-24: hepsi canlıda 200 dönüyordu)
+# _yedek-saat: canlı sayfaların kopyaları — aynı canonical, boşa tarama bütçesi
+_yedek-saat
+# google-ads: anahtar kelime, negatif ve reklam metinleri + OCI randevu kayıtları
+google-ads
+Claude outputs
+fleura-degisiklikler.patch
+medium-yazisi.md
